@@ -176,7 +176,7 @@
                             <div class="rotate">
                                 <i class="fa fa-share fa-4x"></i>
                             </div>
-                            <h6 class="text-uppercase">Otro</h6>
+                            <h6 class="text-uppercase">Otros</h6>
                             <h1 class="display-4">36</h1>
                         </div>
                     </div>
