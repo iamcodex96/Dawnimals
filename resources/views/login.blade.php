@@ -6,8 +6,8 @@
         <img class="center-block" src="../storage/app/public/imagenes/spam.jpg" width= "200px" alt="">
     </div>
     <main class="login-form">
-        <div class="cotainer">
-            <div class="row align-items-center h-75">
+        <div class="cotainer mt-5">
+            <div class="row align-items-center h-60">
                 <div class="col-6 mx-auto">
                     <div class="card">
                         <div class="card-header">Login</div>
@@ -40,7 +40,7 @@
 
                     </div>
                     <div class="loginAnimal col-2 mx-auto mt-5">
-                        <img class="rounded float-right" src="../../storage/app/public/imagenes/loginDog.png" width= "200px" alt="">
+                        <img class="rounded float-right" src="../storage/app/public/imagenes/loginDog.png" width= "200px" alt="">
                         </div>
                 </div>
             </div>
