@@ -40,9 +40,10 @@
 
             <ul class="list-unstyled components">
 
-                <li class="">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Panel de control</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                <a href="{{asset('/backend')}}">Panel de control</a>
+                   
+                   <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
                             <a href="#">Graficos</a>
                         </li>
@@ -69,7 +70,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Donantes</a>
+                    <a href="{{url('donantes')}}">Donantes</a>
                 </li>
                 <li>
                     <a href="#">Perfil de Usuario</a>
