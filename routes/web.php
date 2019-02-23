@@ -23,10 +23,9 @@ Route::get('/backend', function () {
     return view('paginas.backend');
 });
 
-Route::get('/landing', function () {
-    return view('paginas.landing');
+
+Route::get('/donantes', function () {
+    return view('paginas.donantes');
 });
 
-Route::get('/master', function () {
-    return view('plantillas.master-private');
-});
+Route::get('/donantes', 'donantesController@indexDonantes')->name('donantes');
