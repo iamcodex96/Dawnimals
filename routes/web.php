@@ -22,3 +22,7 @@ Route::get('/login', function () {
 Route::get('/backend', function () {
     return view('backend');
 });
+
+Route::get('/master', function () {
+    return view('plantillas.master-private');
+});
