@@ -16,11 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/login', function () {
-    return view('login');
+    return view('paginas.login');
 });
 
 Route::get('/backend', function () {
-    return view('backend');
+    return view('paginas.backend');
 });
 
 Route::get('/master', function () {
