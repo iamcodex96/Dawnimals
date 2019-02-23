@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('Bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Bootstrap/css/bootstrap_login.min.css') }}">
-    
     @yield('css_propio')
+
     <script src="{{ asset('Bootstrap/js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('Bootstrap/js/bootstrap.min.js') }}"></script>
     @yield('js_onload')
-    <title>Document</title>
+
+    <title>@yield('titulo')</title>
 </head>
 <body>
 

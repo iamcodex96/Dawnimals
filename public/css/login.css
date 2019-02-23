@@ -1,0 +1,69 @@
+html,
+body,
+.login-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#login-form {
+    z-index: 2;
+    max-width: 500px;
+    width: 100%;
+    animation: aparecer ease-out 1s;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        margin-left: -200px;
+        transform: rotateY(90deg);
+    }
+    to{
+        opacity: 1;
+        margin-left: 0;
+        transform: rotateY(0deg);
+    }
+}
+
+#logo {
+    position: absolute;
+    top: -125px;
+    left: calc(50% - 117.5px);
+    width: 235px;
+    height: 235px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    z-index: 3;
+}
+#logo img{
+    width: 200px;
+}
+
+body::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    background-image: url("../storage/imagenes/login-back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(4px);
+}
+
+button {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    border-radius: 25px !important;
+    background-color: #b6b221 !important;
+    border-color: #b6b221 !important;
+}
+
+button:hover{
+    background-color: white !important;
+    color: gray !important;
+
+}

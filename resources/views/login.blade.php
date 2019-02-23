@@ -1,52 +1,64 @@
 
 @extends('Plantillas.master-private')
 
+@section('titulo', 'Login')
+
+@section('css_propio')
+    <link rel="stylesheet" href="{{ asset("css/login.css")}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+@endsection
+
 @section('contenido')
-    <div class="logo col-2 mx-auto mt-3">
-        <img class="center-block" src="../storage/app/public/imagenes/spam.jpg" width= "200px" alt="">
-    </div>
-    <main class="login-form">
-        <div class="cotainer mt-5">
-            <div class="row align-items-center h-60">
-                <div class="col-6 mx-auto">
-                    <div class="card">
-                        <div class="card-header">Login</div>
-                        <div class="card-body">
-                            <form action="" method="">
-                                <div class="form-group row">
-                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="email_address" class="form-control" name="email-address" required autofocus>
+
+
+<main class="login-container d-flex justify-content-center align-items-center">
+        <div id="login-form" class="position-relative">
+
+            <div id="logo" class="rounded-circle shadow">
+                <img  class="" src="{{ asset("storage/imagenes/spam.jpg") }}" alt="">
+            </div>
+
+
+            <div class="card p-2 shadow" style="padding-top:120px !important;">
+                <div class="card-body">
+                    <form action="" method="">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="fa fa-user"></span>
                                     </div>
                                 </div>
+                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Correo">
+                            </div>
+                        </div>
 
-                                <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">Contraseña</label>
-                                    <div class="col-md-6">
-                                        <input type="password" id="password" class="form-control" name="password" required>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="fa fa-lock"></span>
                                     </div>
                                 </div>
-
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Iniciar sesión
-                                    </button>
-                                    <a href="#" class="btn btn-link">
-                                        Has olvidado tu contraseña?
-                                    </a>
-                                </div>
+                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Password">
+                            </div>
                         </div>
-                        </form>
 
-                    </div>
-                    <div class="loginAnimal col-2 mx-auto mt-5">
-                        <img class="rounded float-right" src="../storage/app/public/imagenes/loginDog.png" width= "200px" alt="">
+                        <div class="form-group text-center mt-4">
+                            <button type="submit" class="btn btn-lg btn-primary">
+                                Iniciar sesión
+                            </button>
                         </div>
+
+                        <a href="#" class="btn btn-link float-right">
+                            Has olvidado tu contraseña?
+                        </a>
+                    </form>
                 </div>
             </div>
         </div>
-        </div>
     </main>
+
 @endsection
 
 
