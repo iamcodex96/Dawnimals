@@ -1,0 +1,41 @@
+Filtros
+
+Donativos
+	Donativos sin coste
+	Búsqueda por receptor/Centro Destino
+	Por tipo
+	Por localidad/País
+	Fecha o rando de fechas
+	Por colaborador
+	Por canal?
+
+
+Donantes
+	Búsqueda por Donante
+	Búsqueda tipo donante (empresa, particular, escuela, anónimo, habitual?)
+	Sexo
+	Tienen animales o no
+	Vinculo Entidad
+	Quieren recibir info?
+	Visualizar y modificar (perfil ojo -> más detalles y poder editar)
+
+
+Poder ver
+	Donativos por donante (dentro de perfil?)
+	Listado donantes habituales
+
+Estadísticas - (tangible en cifras, descargable)
+
+	Automatizadas	
+		Periodos fuertes
+		Necesidades
+		Tendencias
+		Donaciones por centro
+		Población donaciones
+		Para qué animal
+
+	Otras
+		Gráfico de animales adoptados/mes
+		Escuelas(preguntar)
+		 
+	
