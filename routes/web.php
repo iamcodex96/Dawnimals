@@ -32,3 +32,9 @@ Route::get('/donantes', function () {
 });
 
 Route::get('/donantes', 'donantesController@indexDonantes')->name('donantes');
+
+
+Route::get('/fichaDonante', function () { //habrá que pasarle el id del donante y mostrar sus datos
+    return view('paginas.fichaDonante');
+});
+
