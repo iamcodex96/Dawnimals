@@ -176,13 +176,15 @@
                                     @foreach ($donantes as $donante)
                                     <tr>
 
-                                        <td class="text-center">1,001</td>
+                                        <td class="text-center min-wdth">1,001</td>
                                         <td class="text-center">{{$donante->nombreORazonSocial}}</td>
                                         <td class="text-center">{{$donante->direccion}}</td>
                                         <td class="text-center">{{$donante->telefono}}</td>
                                         <td class="text-center">{{$donante->email}}</td>
-                                        <td style="width: 1%" class="text-center">  <a href="{{url('fichaDonante')}}" data-toggle="tooltip" title="Ver Detalle" class="btn btn-info" data-original-title="Ver"><i class="fa fa-eye"></i></a></td> 
-                                        <td style="width: 1%"class="text-center">  <a href="#" data-toggle="tooltip" title="Borrar" class="btn btn-danger" data-original-title="Ver"><i class="fa fa-trash"></i></a></td> 
+                                        <td colspan="2" style="width: 1%" class="text-center">  
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                        <a href="{{url('fichaDonante')}}" data-toggle="tooltip" title="Ver Detalle" class="btn btn-info m-1" data-original-title="Ver"><i class="fa fa-eye"></i></a> <a href="#" data-toggle="tooltip" title="Borrar" class="btn btn-danger m-1" data-original-title="Ver"><i class="fa fa-trash"></i></a></td> 
+                                        </div>
                                        
                                     </tr>
 
