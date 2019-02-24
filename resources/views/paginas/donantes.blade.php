@@ -47,11 +47,22 @@
                                 <input type="text" name="filter_email" value="" placeholder="E-Mail" id="input-email" class="form-control" autocomplete="off">
                                 <ul class="dropdown-menu"></ul>
                             </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="input-customer-group">Donante habitual</label>
+                                <select name="filter_donante_habitual" id="input-donante-habitual" class="form-control">
+                                    <option value="*"></option>
+                                    <option value="">Sí</option>
+                                    <option value="">No</option>
+                                </select>
+                            </div>
+
                         </div>
                         <div class="col-lg-4 col-md-12 col-sm-12">
+
                             <div class="form-group">
                                 <label class="control-label" for="input-customer-group">Tipo Donante</label>
-                                <select name="filter_customer_group_id" id="input-customer-group" class="form-control">
+                                <select name="filter_donante_tipo" id="input-donante-tipo" class="form-control">
                                     <option value="*"></option>
                                     <option value="">Particular</option>
                                     <option value="">Empresa</option>
@@ -62,7 +73,7 @@
 
                             <div class="form-group">
                                 <label class="control-label" for="input-customer-group">Localidad</label>
-                                <select name="filter_customer_group_id" id="input-customer-group" class="form-control">
+                                <select name="filter_donante_localidad" id="input-donante-localidad" class="form-control">
                                     <option value="*"></option>
                                     <option value="">BD</option>
                                     <option value="">BD</option>
@@ -72,13 +83,22 @@
                                 </select>
                             </div>
 
+                            <div class="form-group">
+                                <label class="control-label" for="input-customer-group">Ha adoptado antes?</label>
+                                <select name="filter_haAdoptado" id="input-haAdoptado" class="form-control">
+                                    <option value="*"></option>
+                                    <option value="1">Sí</option>
+                                    <option value="2">No</option>
+
+                                </select>
+                            </div>
 
 
                         </div>
                         <div class="col-lg-4 col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label class="control-label" for="input-customer-group">Sexo</label>
-                                <select name="filter_customer_group_id" id="input-customer-group" class="form-control">
+                                <select name="filter_sexo" id="input-donante-sexo" class="form-control">
                                     <option value="*"></option>
                                     <option value="">Mujer</option>
                                     <option value="">Hombre</option>
@@ -88,14 +108,37 @@
 
                             <div class="form-group">
                                 <label class="control-label" for="input-customer-group">Vínculo Entidad</label>
-                                <select name="filter_customer_group_id" id="input-customer-group" class="form-control">
+                                <select name="filter_donante_vinculo" id="input-donante-vinculo" class="form-control">
                                     <option value="*"></option>
                                     <option value="">Socio</option>
                                     <option value="">Patrocinador</option>
                                     <option value="">Teamer</option>
+                                    <option value="">Adoptante</option>
+                                    <option value="">Voluntario acogidas</option>
+
                                 </select>
                             </div>
+
+
+
+                            <div class="form-group">
+                                <label class="control-label">Fecha Alta</label>
+                                <!--pendiente saber de qué, alta o última donación-->
+                                <input class="form-control" name="filter_donante_fecha"id="input-donante-fecha" type="date">
+                            </div>
+
                             <button type="button" id="button-filter" class="btn btn-primary float-right"><i class="fa fa-search"></i> Filtro</button>
+
+
+                            <div class="form-group" id="listaAnimales" hidden>
+                                <label class="control-label" for="input-customer-group">Animal Adoptado</label>
+                                <select name="filter_donante_animales" id="input-donante-animales" class="form-control">
+                                    <option value="*">Gato</option>
+                                    <option value="">Perro</option>
+                                    <option value="">Otros</option>
+
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -121,8 +164,7 @@
                                     <th class="text-center">Dirección</th>
                                     <th class="text-center">Teléfono</th>
                                     <th class="text-center">Email</th>
-                                    <th class="text-center">Ver detalles</th>
-                                    <th class="text-center">Borrar</th>
+                                    <th colspan="2" class="text-center">Acción</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -135,10 +177,9 @@
                                         <td class="text-center">{{$donante->direccion}}</td>
                                         <td class="text-center">{{$donante->telefono}}</td>
                                         <td class="text-center">{{$donante->email}}</td>
-                                        <td class="text-center"> <i class="fas fa-eye"></i> </td>
-                                        <td class="text-center"> <i class="fas fa-trash-alt"></i></td>
-
-
+                                        <td style="width: 1%" class="text-center">  <a href="{{url('fichaDonante')}}" data-toggle="tooltip" title="Ver Detalle" class="btn btn-info" data-original-title="Ver"><i class="fa fa-eye"></i></a></td> 
+                                        <td style="width: 1%"class="text-center">  <a href="#" data-toggle="tooltip" title="Borrar" class="btn btn-danger" data-original-title="Ver"><i class="fa fa-trash"></i></a></td> 
+                                       
                                     </tr>
 
                                     @endforeach
@@ -154,6 +195,24 @@
 
     </form>
 
+
+
+    <script>
+
+        $('#haAdoptado').change(function() {
+
+            opt = $(this).val();
+
+            console.log(opt);
+
+            if (opt == "1") {
+                $('listaAnimales').show();
+            } else if (opt == "2") {
+                $('#listaAnimales').hide();
+            }
+
+        });
+    </script>
 
 
     @endsection 

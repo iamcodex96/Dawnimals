@@ -4,8 +4,8 @@ Donativos
 	Donativos sin coste
 	Búsqueda por receptor/Centro Destino
 	Por tipo
-	Por localidad/País
-	Fecha o rando de fechas
+	Por localidad/País - Revisar clase para añadir variables Localidad/País
+	Fecha o rando de fechas /alta o donación?
 	Por colaborador
 	Por canal?
 
