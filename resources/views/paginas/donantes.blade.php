@@ -119,7 +119,15 @@
                                 </select>
                             </div>
 
+                            <div class="form-group" id="listaAnimales" style="display: none;">
+                                <label class="control-label" for="input-customer-group">Animal Adoptado</label>
+                                <select name="filter_donante_animales" id="input-donante-animales" class="form-control">
+                                    <option value="*">Gato</option>
+                                    <option value="">Perro</option>
+                                    <option value="">Otro</option>
 
+                                </select>
+                            </div>
 
                             <div class="form-group">
                                 <label class="control-label">Fecha Alta</label>
@@ -127,19 +135,15 @@
                                 <input class="form-control" name="filter_donante_fecha"id="input-donante-fecha" type="date">
                             </div>
 
+
                             <button type="button" id="button-filter" class="btn btn-primary float-right"><i class="fa fa-search"></i> Filtro</button>
 
-
-                            <div class="form-group" id="listaAnimales" hidden>
-                                <label class="control-label" for="input-customer-group">Animal Adoptado</label>
-                                <select name="filter_donante_animales" id="input-donante-animales" class="form-control">
-                                    <option value="*">Gato</option>
-                                    <option value="">Perro</option>
-                                    <option value="">Otros</option>
-
-                                </select>
-                            </div>
                         </div>
+
+
+
+
+                        
                     </div>
                 </div>
         </div>
@@ -196,22 +200,22 @@
     </form>
 
 
-
     <script>
 
-        $('#haAdoptado').change(function() {
+        $('#input-haAdoptado').change(function() {
 
-            opt = $(this).val();
+            opt = $('#input-haAdoptado').val();
 
             console.log(opt);
 
             if (opt == "1") {
-                $('listaAnimales').show();
-            } else if (opt == "2") {
+                $('#listaAnimales').show();
+            } else if (opt == "2"|| opt =="*") {
                 $('#listaAnimales').hide();
             }
 
         });
+    
     </script>
 
 
