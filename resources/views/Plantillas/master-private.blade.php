@@ -22,6 +22,9 @@
     <script defer src="{{ asset('Bootstrap/js/solid.js') }}"></script>
     <script defer src="{{ asset('Bootstrap/js/fontawesome.js') }}"></script>
 
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="{{ asset('Bootstrap/js/jquery-3.3.1.slim.min.js') }}"></script>
+
 
 </head>
 
@@ -106,8 +109,6 @@
             @yield('contenido')
 
 
-            <!-- jQuery CDN - Slim version (=without AJAX) -->
-            <script src="{{ asset('Bootstrap/js/jquery-3.3.1.slim.min.js') }}"></script>
             <!-- Popper.JS -->
             <script src="{{ asset('Bootstrap/js/popper.min.js') }}"></script>
             <!-- Bootstrap JS -->

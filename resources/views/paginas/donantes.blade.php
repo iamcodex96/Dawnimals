@@ -119,7 +119,15 @@
                                 </select>
                             </div>
 
+                            <div class="form-group" id="listaAnimales" style="display: none;">
+                                <label class="control-label" for="input-customer-group">Animal Adoptado</label>
+                                <select name="filter_donante_animales" id="input-donante-animales" class="form-control">
+                                    <option value="*">Gato</option>
+                                    <option value="">Perro</option>
+                                    <option value="">Otro</option>
 
+                                </select>
+                            </div>
 
                             <div class="form-group">
                                 <label class="control-label">Fecha Alta</label>
@@ -127,19 +135,15 @@
                                 <input class="form-control" name="filter_donante_fecha"id="input-donante-fecha" type="date">
                             </div>
 
+
                             <button type="button" id="button-filter" class="btn btn-primary float-right"><i class="fa fa-search"></i> Filtro</button>
 
-
-                            <div class="form-group" id="listaAnimales" hidden>
-                                <label class="control-label" for="input-customer-group">Animal Adoptado</label>
-                                <select name="filter_donante_animales" id="input-donante-animales" class="form-control">
-                                    <option value="*">Gato</option>
-                                    <option value="">Perro</option>
-                                    <option value="">Otros</option>
-
-                                </select>
-                            </div>
                         </div>
+
+
+
+
+                        
                     </div>
                 </div>
         </div>
@@ -172,13 +176,15 @@
                                     @foreach ($donantes as $donante)
                                     <tr>
 
-                                        <td class="text-center">1,001</td>
+                                        <td class="text-center min-wdth">1,001</td>
                                         <td class="text-center">{{$donante->nombreORazonSocial}}</td>
                                         <td class="text-center">{{$donante->direccion}}</td>
                                         <td class="text-center">{{$donante->telefono}}</td>
                                         <td class="text-center">{{$donante->email}}</td>
-                                        <td style="width: 1%" class="text-center">  <a href="{{url('fichaDonante')}}" data-toggle="tooltip" title="Ver Detalle" class="btn btn-info" data-original-title="Ver"><i class="fa fa-eye"></i></a></td> 
-                                        <td style="width: 1%"class="text-center">  <a href="#" data-toggle="tooltip" title="Borrar" class="btn btn-danger" data-original-title="Ver"><i class="fa fa-trash"></i></a></td> 
+                                        <td colspan="2" style="width: 1%" class="text-center">  
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                        <a href="{{url('fichaDonante')}}" data-toggle="tooltip" title="Ver Detalle" class="btn btn-info m-1" data-original-title="Ver"><i class="fa fa-eye"></i></a> <a href="#" data-toggle="tooltip" title="Borrar" class="btn btn-danger m-1" data-original-title="Ver"><i class="fa fa-trash"></i></a></td> 
+                                        </div>
                                        
                                     </tr>
 
@@ -196,22 +202,22 @@
     </form>
 
 
-
     <script>
 
-        $('#haAdoptado').change(function() {
+        $('#input-haAdoptado').change(function() {
 
-            opt = $(this).val();
+            opt = $('#input-haAdoptado').val();
 
             console.log(opt);
 
             if (opt == "1") {
-                $('listaAnimales').show();
-            } else if (opt == "2") {
+                $('#listaAnimales').show();
+            } else if (opt == "2"|| opt =="*") {
                 $('#listaAnimales').hide();
             }
 
         });
+    
     </script>
 
 
