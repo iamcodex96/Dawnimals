@@ -122,6 +122,7 @@
                             <div class="form-group" id="listaAnimales" style="display: none;">
                                 <label class="control-label" for="input-customer-group">Animal Adoptado</label>
                                 <select name="filter_donante_animales" id="input-donante-animales" class="form-control">
+                                    <option value="*"></option>
                                     <option value="*">Gato</option>
                                     <option value="">Perro</option>
                                     <option value="">Otro</option>
@@ -136,7 +137,7 @@
                             </div>
 
 
-                            <button type="button" id="button-filter" class="btn btn-primary float-right"><i class="fa fa-search"></i> Filtro</button>
+                            <button type="button" id="button-filter" class="btn btn-primary float-right mt-5"><i class="fa fa-search"></i> Buscar</button>
 
                         </div>
 
