@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -26,10 +26,10 @@ class donantesController extends Controller
         $empresa ->esHabitual = true;
 
 
-    
+
         array_push($donantes,$empresa);
-    
-      
+
+
         $particular = new particular();
         $particular ->nombreORazonSocial='Pepito';
         $particular ->dni='7856695K';
@@ -43,11 +43,11 @@ class donantesController extends Controller
         $particular ->vinculo = "socio";
         $particular ->esHabitual = true;
 
-    
+
         array_push($donantes,$particular);
 
-        
-    
+
+
         return $donantes;
     }
 
@@ -60,14 +60,14 @@ class donantesController extends Controller
 
         }else{
 
-            $donantes = self::rellenarDonantes(); 
+            $donantes = self::rellenarDonantes();
             $request->session()->put('donaciones',$donantes); //guardar
 
         }
 
         $datos['donantes']=$donantes;
         $datos['titulo']='donaciones';
-    
-        return view('paginas.donantes',$datos);
+
+        return view('backend.paginas.donantes',$datos);
     }
 }

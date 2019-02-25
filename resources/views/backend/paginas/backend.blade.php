@@ -1,12 +1,8 @@
-@extends('Plantillas.master-private')
+@extends('backend.plantillas.master')
 
+@section('titulo','SPAM Panel de control')
 
 @section('contenido')
-
-    <title>Collapsible sidebar using Bootstrap 4</title>
-
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="/Dawnimals/public/css/dashboard.css">
 
 <div class="container-fluid" id="main">
     <div class="row row-offcanvas row-offcanvas-left">
@@ -119,7 +115,7 @@
             <a id="features"></a>
             <hr>
             <p class="lead mt-5">
-              
+
             </p>
             <div class="row my-4">
                 <div class="col-lg-3 col-md-4">

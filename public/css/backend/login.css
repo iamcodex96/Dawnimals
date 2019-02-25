@@ -48,7 +48,7 @@ body::before {
     height: 100%;
     position: absolute;
     z-index: 1;
-    background-image: url("../storage/imagenes/login-back.jpg");
+    background-image: url("../../img/login-back.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     filter: blur(4px);

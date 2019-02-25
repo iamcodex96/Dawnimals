@@ -1,23 +1,19 @@
-
-@extends('Plantillas.master-private')
+@extends('backend.plantillas.empty')
 
 @section('titulo', 'Login')
 
 @section('css_propio')
-    <link rel="stylesheet" href="{{ asset("css/login.css")}}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset("css/backend/login.css")}}">
 @endsection
 
 @section('contenido')
 
-
-<main class="login-container d-flex justify-content-center align-items-center">
+    <main class="login-container d-flex justify-content-center align-items-center">
         <div id="login-form" class="position-relative">
 
             <div id="logo" class="rounded-circle shadow">
-                <img  class="" src="{{ asset("storage/imagenes/spam.jpg") }}" alt="">
+                <img src="{{ asset("img/spam.jpg") }}">
             </div>
-
 
             <div class="card p-2 shadow" style="padding-top:120px !important;">
                 <div class="card-body">
@@ -29,7 +25,7 @@
                                         <span class="fa fa-user"></span>
                                     </div>
                                 </div>
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Correo">
+                                <input type="text" class="form-control" id="txtCorreo" placeholder="Correo">
                             </div>
                         </div>
 
@@ -40,7 +36,7 @@
                                         <span class="fa fa-lock"></span>
                                     </div>
                                 </div>
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Password">
+                                <input type="text" class="form-control" id="txtPassword" placeholder="Password">
                             </div>
                         </div>
 
@@ -58,9 +54,4 @@
             </div>
         </div>
     </main>
-
 @endsection
-
-
-
-

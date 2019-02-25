@@ -1,7 +1,7 @@
-@extends('Plantillas.master-public')
+@extends('frontend.plantillas.master')
 
 @section('css_propio')
-<link rel="stylesheet" href="{{ asset('css/landing.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/landing.css') }}">
 @endsection
 
 @section('titulo')

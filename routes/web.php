@@ -11,30 +11,33 @@
 |
 */
 
+//////////////////////////// PAGS BACKEND ////////////////////////////////////
 Route::get('/', function () {
-    return view('welcome');
+    return view('backend.paginas.login');
 });
 
 Route::get('/login', function () {
-    return view('paginas.login');
+    return view('backend.paginas.login');
 });
 
 Route::get('/backend', function () {
-    return view('paginas.backend');
+    return view('backend.paginas.backend');
 });
-Route::get('/landing', function () {
-    return view('paginas.landing');
-});
-
 
 Route::get('/donantes', function () {
-    return view('paginas.donantes');
+    return view('backend.paginas.donantes');
 });
 
-Route::get('/donantes', 'donantesController@indexDonantes')->name('donantes');
-
+Route::get('/donantes', 'Backend\donantesController@indexDonantes')->name('donantes');
 
 Route::get('/fichaDonante', function () { //habrá que pasarle el id del donante y mostrar sus datos
-    return view('paginas.fichaDonante');
+    return view('backend.paginas.fichaDonante');
 });
+//////////////////////////// PAGS BACKEND ////////////////////////////////////
+
+//////////////////////////// PAGS FRONTEND ///////////////////////////////////
+Route::get('/landing', function () {
+    return view('frontend.paginas.landing');
+});
+//////////////////////////// PAGS FRONTEND ///////////////////////////////////
 

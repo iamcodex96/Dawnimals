@@ -1,4 +1,6 @@
-@extends('Plantillas.master-private')@section('titulo','donaciones')
+@extends('backend.plantillas.master')
+
+@section('titulo','donaciones')
 
 
 @section('contenido')
@@ -12,7 +14,6 @@
             </div>
             <div class="col-md-1 col-sm-12">
                 <button type="button" class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="Agregar donante"> <i class="fa fa-plus"></i> </button>
-
             </div>
         </div>
 
@@ -143,7 +144,7 @@
 
 
 
-                        
+
                     </div>
                 </div>
         </div>
@@ -159,7 +160,7 @@
                     <div class="col-lg-12 col-md-8">
                         <div class="table-responsive" text-align="center">
                             <table class="table table-bordered table-striped>
-                           
+
                             <thead class=" thead-dark">
 
                                 <tr>
@@ -181,11 +182,11 @@
                                         <td class="text-center">{{$donante->direccion}}</td>
                                         <td class="text-center">{{$donante->telefono}}</td>
                                         <td class="text-center">{{$donante->email}}</td>
-                                        <td colspan="2" style="width: 1%" class="text-center">  
+                                        <td colspan="2" style="width: 1%" class="text-center">
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{url('fichaDonante')}}" data-toggle="tooltip" title="Ver Detalle" class="btn btn-info m-1" data-original-title="Ver"><i class="fa fa-eye"></i></a> <a href="#" data-toggle="tooltip" title="Borrar" class="btn btn-danger m-1" data-original-title="Ver"><i class="fa fa-trash"></i></a></td> 
+                                        <a href="{{url('fichaDonante')}}" data-toggle="tooltip" title="Ver Detalle" class="btn btn-info m-1" data-original-title="Ver"><i class="fa fa-eye"></i></a> <a href="#" data-toggle="tooltip" title="Borrar" class="btn btn-danger m-1" data-original-title="Ver"><i class="fa fa-trash"></i></a></td>
                                         </div>
-                                       
+
                                     </tr>
 
                                     @endforeach
@@ -217,8 +218,8 @@
             }
 
         });
-    
+
     </script>
 
 
-    @endsection 
+    @endsection
