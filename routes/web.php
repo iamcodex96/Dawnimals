@@ -16,9 +16,25 @@ Route::get('/', function () {
 });
 
 Route::get('/login', function () {
-    return view('login');
+    return view('paginas.login');
 });
 
 Route::get('/backend', function () {
-    return view('backend');
+    return view('paginas.backend');
 });
+Route::get('/landing', function () {
+    return view('paginas.landing');
+});
+
+
+Route::get('/donantes', function () {
+    return view('paginas.donantes');
+});
+
+Route::get('/donantes', 'donantesController@indexDonantes')->name('donantes');
+
+
+Route::get('/fichaDonante', function () { //habrá que pasarle el id del donante y mostrar sus datos
+    return view('paginas.fichaDonante');
+});
+
