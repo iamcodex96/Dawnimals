@@ -17,7 +17,7 @@
 
             <div class="card p-2 shadow" style="padding-top:120px !important;">
                 <div class="card-body">
-                    <form action="" method="">
+                <form action="{{ url('/backend')}}" method="">
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">

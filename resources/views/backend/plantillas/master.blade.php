@@ -97,7 +97,7 @@
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Cerrar Sesión</a>
+                    <a class="nav-link" href="{{ url('/landing') }}">Cerrar Sesión</a>
                     </li>
                 </ul>
             </nav>
