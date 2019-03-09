@@ -9,9 +9,14 @@
 @endsection
 
 @section('contenido')
-<h1>LANDING</h1>
+<main class="">
+    <div id="primero"></div>
+    <div id="segundo"></div>
+    <div id="tercero"></div>
+    <div id="cuarto"></div>
+</main>
+
 @endsection
 
 @section('js_loaded')
-
 @endsection

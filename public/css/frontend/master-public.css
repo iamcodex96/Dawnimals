@@ -1,59 +1,50 @@
-header {
-  text-align: center;
-  height: 300px;
-  padding-top: 50px;
+.navegacion {
+  position: fixed;
+  right: 30px;
+  top: 30%;
+  width: 30px;
+  background-color: rgba(0, 0, 0, 0);
+}
+.navegacion a {
+  color: black;
+}
+
+.btn-outline-info {
+  border: none;
+  color: #6632cd;
+}
+
+.btn-outline-info:hover {
+  border: none;
   color: whitesmoke;
-  background-color: #99cc33;
+  background-color: #6632cd;
 }
 
-.portal {
-  float: right;
-  margin: 10px;
-}
-
-nav {
-  background: #6b8f24;
-  position: relative;
+#overlay {
+  position: fixed;
+  display: none;
   width: 100%;
   height: 100%;
-  text-align: center;
-  justify-content: center;
-  transition: box-shadow 0.5s ease;
-}
-nav a {
-  text-decoration: none;
-  color: #fcfff5;
-  padding: 10px;
-  margin: 10px;
-}
-nav li {
-  margin-top: 30px;
-  display: inline-block;
-  list-style: none;
-  text-transform: uppercase;
-}
-nav li img {
-  border-radius: 50%;
-}
-nav h3 {
-  color: #fcfff5;
-  padding: 10px;
-  margin: 10px;
-}
-nav a:hover {
-  text-decoration: none;
-  color: #fcfff5;
-}
-
-.navScrolled {
-  position: fixed;
   top: 0;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 1px 5px #000;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7aa428 !important;
+  z-index: 2;
+  cursor: pointer;
+  transition: all 0.3s;
 }
-.navScrolled li {
-  margin-top: 0px !important;
+#overlay nav {
+  position: relative;
+  top: 20%;
+}
+#overlay nav a {
+  color: whitesmoke;
+  font-size: 80px;
+}
+#overlay nav a:hover {
+  background-color: #3d5214;
+  transition: all 1s;
 }
 
 /*# sourceMappingURL=master-public.css.map */

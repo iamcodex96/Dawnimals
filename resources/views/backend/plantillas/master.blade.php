@@ -82,7 +82,7 @@
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
