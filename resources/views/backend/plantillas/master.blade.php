@@ -58,7 +58,7 @@
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Donaciones</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Materiales</a>
+                            <a href="{{url('donaciones')}}" >Materiales</a>
                         </li>
                         <li>
                             <a href="#">Monetarias Mensuales</a>

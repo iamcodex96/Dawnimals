@@ -38,6 +38,12 @@ Route::get('/altaDonante', function () {
     return view('backend.paginas.altaDonante');
 });
 
+
+Route::get('/donaciones', function () {
+    return view('backend.paginas.donaciones');
+});
+
+
 //////////////////////////// PAGS BACKEND ////////////////////////////////////
 
 //////////////////////////// PAGS FRONTEND ///////////////////////////////////
