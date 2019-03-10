@@ -33,6 +33,11 @@ Route::get('/donantes', 'Backend\donantesController@indexDonantes')->name('donan
 Route::get('/fichaDonante', function () { //habrá que pasarle el id del donante y mostrar sus datos
     return view('backend.paginas.fichaDonante');
 });
+
+Route::get('/altaDonante', function () {
+    return view('backend.paginas.altaDonante');
+});
+
 //////////////////////////// PAGS BACKEND ////////////////////////////////////
 
 //////////////////////////// PAGS FRONTEND ///////////////////////////////////

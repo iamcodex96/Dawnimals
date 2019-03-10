@@ -13,7 +13,7 @@
                 <h1>DONANTES</h1>
             </div>
             <div class="col-md-1 col-sm-12">
-                <button type="button" class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="Agregar donante"> <i class="fa fa-plus"></i> </button>
+                <a type="button" href="{{url('altaDonante')}}"class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="Agregar donante"> <i class="fa fa-plus"></i> </a>
             </div>
         </div>
 
