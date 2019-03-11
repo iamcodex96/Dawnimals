@@ -30,12 +30,23 @@ Route::group(['middleware' => ['auth']], function () {
         return view('backend.paginas.backend');
     });
 
-    Route::get('/backend/donantes', function () {
-        return view('backend.paginas.donantes');
+    Route::get('/backend/fichaDonante', function () { //habrá que pasarle el id del donante y mostrar sus datos
+        return view('backend.paginas.fichaDonante');
+    });
+
+    Route::get('/backend/altaDonante', function () {
+        return view('backend.paginas.altaDonante');
+    });
+
+
+    Route::get('/backend/donaciones', function () {
+        return view('backend.paginas.donaciones');
     });
 
     Route::get('/backend/donantes', 'Backend\donantesController@indexDonantes')->name('donantes');
+});
 
+//////////////////////////// PAGS BACKEND ////////////////////////////////////
     Route::get('/backend/fichaDonante', function () { //habrá que pasarle el id del donante y mostrar sus datos
         return view('backend.paginas.fichaDonante');
     });
