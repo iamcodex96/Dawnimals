@@ -13,7 +13,7 @@
                 <h1>DONACIONES</h1>
             </div>
             <div class="col-md-1 col-sm-12">
-                <a type="button" href="{{url('altaDonación')}}"class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="Agregar donación"> <i class="fa fa-plus"></i> </a>
+                <a type="button" href="{{url('backend/altaDonación')}}"class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="Agregar donación"> <i class="fa fa-plus"></i> </a>
             </div>
         </div>
 

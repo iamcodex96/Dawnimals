@@ -45,10 +45,4 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/backend/donantes', 'Backend\donantesController@indexDonantes')->name('donantes');
 });
-
-//////////////////////////// PAGS BACKEND ////////////////////////////////////
-    Route::get('/backend/fichaDonante', function () { //habrá que pasarle el id del donante y mostrar sus datos
-        return view('backend.paginas.fichaDonante');
-    });
-});
 //////////////////////////// PAGS BACKEND ////////////////////////////////////
