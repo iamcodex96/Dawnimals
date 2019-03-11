@@ -17,7 +17,8 @@
 
             <div class="card p-2 shadow" style="padding-top:120px !important;">
                 <div class="card-body">
-                <form action="{{ url('/backend')}}" method="">
+                    <form action="{{ route("login") }}" method="post">
+                        @csrf
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -25,7 +26,7 @@
                                         <span class="fa fa-user"></span>
                                     </div>
                                 </div>
-                                <input type="text" class="form-control" id="txtCorreo" placeholder="Correo">
+                                <input type="text" class="form-control" name="correo" id="correo" placeholder="Correo">
                             </div>
                         </div>
 
@@ -36,7 +37,7 @@
                                         <span class="fa fa-lock"></span>
                                     </div>
                                 </div>
-                                <input type="text" class="form-control" id="txtPassword" placeholder="Password">
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                             </div>
                         </div>
 

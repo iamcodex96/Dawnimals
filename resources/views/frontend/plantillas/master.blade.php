@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <div class="portal"><a href="{{ url('/login') }}">Acceso Portal</a></div>
+    <div class="portal"><a href="{{ url('/backend/login') }}">Acceso Portal</a></div>
     <header>
         <h1>SPAM</h1>
         <h2>Protectora de Mataro</h2>
