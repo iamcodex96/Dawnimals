@@ -11,33 +11,38 @@
 |
 */
 
-//////////////////////////// PAGS BACKEND ////////////////////////////////////
-Route::get('/', function () {
-    return view('backend.paginas.login');
-});
-
-Route::get('/login', function () {
-    return view('backend.paginas.login');
-});
-
-Route::get('/backend', function () {
-    return view('backend.paginas.backend');
-});
-
-Route::get('/donantes', function () {
-    return view('backend.paginas.donantes');
-});
-
-Route::get('/donantes', 'Backend\donantesController@indexDonantes')->name('donantes');
-
-Route::get('/fichaDonante', function () { //habrá que pasarle el id del donante y mostrar sus datos
-    return view('backend.paginas.fichaDonante');
-});
-//////////////////////////// PAGS BACKEND ////////////////////////////////////
-
 //////////////////////////// PAGS FRONTEND ///////////////////////////////////
+Route::redirect('/', 'landing');
+
 Route::get('/landing', function () {
     return view('frontend.paginas.landing');
-});
+})->name("landing");
 //////////////////////////// PAGS FRONTEND ///////////////////////////////////
 
+
+//////////////////////////// PAGS BACKEND ////////////////////////////////////
+Route::get('/backend/login', 'Backend\AccountController@index');
+Route::post('/backend/login', 'Backend\AccountController@login')->name("login");
+Route::get('/backend/logout', 'Backend\AccountController@logout')->name("logout");
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/backend', function () {
+        return view('backend.paginas.backend');
+    });
+
+    Route::get('/backend/fichaDonante', function () { //habrá que pasarle el id del donante y mostrar sus datos
+        return view('backend.paginas.fichaDonante');
+    });
+
+    Route::get('/backend/altaDonante', function () {
+        return view('backend.paginas.altaDonante');
+    });
+
+
+    Route::get('/backend/donaciones', function () {
+        return view('backend.paginas.donaciones');
+    });
+
+    Route::get('/backend/donantes', 'Backend\donantesController@indexDonantes')->name('donantes');
+});
+//////////////////////////// PAGS BACKEND ////////////////////////////////////

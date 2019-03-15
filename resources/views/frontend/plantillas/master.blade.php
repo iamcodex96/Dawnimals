@@ -22,7 +22,6 @@
     <a href="#segundo" data-toggle="tooltip" data-placement="left" title="Opcion 2" class="nav-link mt-5">O</a>
     <a href="#tercero" data-toggle="tooltip" data-placement="left" title="Opcion 3" class="nav-link mt-5">O</a>
     <a href="#cuarto" data-toggle="tooltip" data-placement="left" title="Opcion 4" class="nav-link mt-5">O</a>
-
     </nav>
     <div id="overlay">
 

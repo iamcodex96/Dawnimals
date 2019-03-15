@@ -5,7 +5,8 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "chrome",
+            "name": "Listen for XDebug",
+            "type": "php",
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:8080/Dawnimals/public/landing",
