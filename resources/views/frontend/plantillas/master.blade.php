@@ -30,7 +30,7 @@
                 <a href="https://www.protectoramataro.org/es" class="nav-link">SPAM</a>
                 <a href="https://www.protectoramataro.org/es/quienes-somos-que-hacemos" class="nav-link">Quien Somos?</a>
                 <a href="https://www.protectoramataro.org/es/cercador-animals" class="nav-link">Animales</a>
-                <a href="{{ url('/login') }}" class="nav-link">Acceso Portal</a>
+                <a href="{{ url('/backend/login') }}" class="nav-link">Acceso Portal</a>
 
             </nav>
 
