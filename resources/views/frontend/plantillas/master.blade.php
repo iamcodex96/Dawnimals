@@ -18,10 +18,10 @@
     </nav>
     <nav class="nav flex-column p-0 navegacion">
 
-    <a href="#primero" data-toggle="tooltip" data-placement="left" title="Opcion 1" class="nav-link mt-5">O</a>
-    <a href="#segundo" data-toggle="tooltip" data-placement="left" title="Opcion 2" class="nav-link mt-5">O</a>
-    <a href="#tercero" data-toggle="tooltip" data-placement="left" title="Opcion 3" class="nav-link mt-5">O</a>
-    <a href="#cuarto" data-toggle="tooltip" data-placement="left" title="Opcion 4" class="nav-link mt-5">O</a>
+    <a href="#primero" onclick="updateIcon(0,'primero')" data-toggle="tooltip" data-placement="left" title="Opcion 1" class="nav-link mt-5"><i class="fas fa-circle"></i></a>
+    <a href="#segundo" onclick="updateIcon(1,'segundo')" data-toggle="tooltip" data-placement="left" title="Opcion 2" class="nav-link mt-5"><i class="far fa-circle"></i></a>
+    <a href="#tercero" onclick="updateIcon(2,'tercero')" data-toggle="tooltip" data-placement="left" title="Opcion 3" class="nav-link mt-5"><i class="far fa-circle"></i></a>
+    <a href="#cuarto" onclick="updateIcon(3,'cuarto')" data-toggle="tooltip" data-placement="left" title="Opcion 4" class="nav-link mt-5"><i class="far fa-circle"></i></a>
     </nav>
     <div id="overlay">
 
@@ -41,27 +41,6 @@
     <script src="{{ asset('Bootstrap/js/popper.min.js') }}"></script>
     <!-- Bootstrap JS -->
     <script src="{{ asset('Bootstrap/js/bootstrap.min.js') }}"></script>
-    <script>
-        var isOverlay=false;
-        function overlayController(){
-            if(isOverlay){
-                hideOverlay();
-                isOverlay=false;
-            }else{
-                showOverlay();
-                isOverlay=true;
-            }
-        }
-        $overlay = $('#overlay');
-        function showOverlay(){
-            $overlay.show("fast");
-        };
-        function hideOverlay(){
-            $overlay.hide("fast");
-        };
-        $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
+    <script src="{{ asset('js/frontend/master-scripts.js') }}"></script>
 </body>
 </html>

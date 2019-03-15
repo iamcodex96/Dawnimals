@@ -5,11 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Listen for XDebug",
-            "type": "php",
+            "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080/Dawnimals/public/landing",
+            "url": "http://localhost:8080/Dawnimals/public",
             "webRoot": "${workspaceFolder}"
         }
     ]
