@@ -27,7 +27,7 @@ function updateIcon(num,id){
     var count = 0;
     $('html, body').animate({
         scrollTop: $("#"+id).offset().top
-    }, 1000);
+    }, 600);
     nav.children().each(function(){
         if($(this).html()=='<i class="fas fa-circle"></i>'){
             $(this).html('<i class="far fa-circle"></i>')

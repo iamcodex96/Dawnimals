@@ -18,19 +18,19 @@
     </nav>
     <nav class="nav flex-column p-0 navegacion">
 
-    <a href="#primero" onclick="updateIcon(0,'primero')" data-toggle="tooltip" data-placement="left" title="Opcion 1" class="nav-link mt-5"><i class="fas fa-circle"></i></a>
-    <a href="#segundo" onclick="updateIcon(1,'segundo')" data-toggle="tooltip" data-placement="left" title="Opcion 2" class="nav-link mt-5"><i class="far fa-circle"></i></a>
-    <a href="#tercero" onclick="updateIcon(2,'tercero')" data-toggle="tooltip" data-placement="left" title="Opcion 3" class="nav-link mt-5"><i class="far fa-circle"></i></a>
-    <a href="#cuarto" onclick="updateIcon(3,'cuarto')" data-toggle="tooltip" data-placement="left" title="Opcion 4" class="nav-link mt-5"><i class="far fa-circle"></i></a>
+    <a href="#primero" onclick="updateIcon(0,'primero')" data-toggle="tooltip" data-placement="left" title="Opcion 1" class="nav-link mt-3"><i class="fas fa-circle"></i></a>
+    <a href="#segundo" onclick="updateIcon(1,'segundo')" data-toggle="tooltip" data-placement="left" title="Opcion 2" class="nav-link mt-3"><i class="far fa-circle"></i></a>
+    <a href="#tercero" onclick="updateIcon(2,'tercero')" data-toggle="tooltip" data-placement="left" title="Opcion 3" class="nav-link mt-3"><i class="far fa-circle"></i></a>
+    <a href="#cuarto" onclick="updateIcon(3,'cuarto')" data-toggle="tooltip" data-placement="left" title="Opcion 4" class="nav-link mt-3"><i class="far fa-circle"></i></a>
     </nav>
     <div id="overlay">
 
-            <nav class="nav flex-column p-0 d-flex align-content-center">
+            <nav class="nav flex-column p-0 d-flex justify-content-center">
 
-                <a href="https://www.protectoramataro.org/es" class="nav-link">SPAM</a>
-                <a href="https://www.protectoramataro.org/es/quienes-somos-que-hacemos" class="nav-link">Quien Somos?</a>
-                <a href="https://www.protectoramataro.org/es/cercador-animals" class="nav-link">Animales</a>
-                <a href="{{ url('/login') }}" class="nav-link">Acceso Portal</a>
+                <a href="https://www.protectoramataro.org/es" class="nav-link text-center">SPAM</a>
+                <a href="https://www.protectoramataro.org/es/quienes-somos-que-hacemos" class="nav-link text-center">Quien Somos?</a>
+                <a href="https://www.protectoramataro.org/es/cercador-animals" class="nav-link text-center">Animales</a>
+                <a href="{{ url('/login') }}" class="nav-link text-center">Acceso Portal</a>
 
             </nav>
 
