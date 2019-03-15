@@ -29,10 +29,6 @@
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
-            <div id="dismiss">
-                <i class="fas fa-arrow-left"></i>
-            </div>
-
             <div class="sidebar-header">
                 <h3>Donaciones SPAM</h3>
             </div>
@@ -86,10 +82,6 @@
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Menú</span>
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button>
                 </div>
@@ -114,20 +106,22 @@
 
             <script type="text/javascript">
                 $(document).ready(function() {
+                    var sidebarActive = false;
                     $("#sidebar").mCustomScrollbar({
                         theme: "minimal"
                     });
-
-                    $('#dismiss, .overlay').on('click', function() {
-                        $('#sidebar').removeClass('active');
-                        $('.overlay').removeClass('active');
-                    });
-
                     $('#sidebarCollapse').on('click', function() {
-                        $('#sidebar').addClass('active');
-                        $('.overlay').addClass('active');
-                        $('.collapse.in').toggleClass('in');
-                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                        if(!sidebarActive){
+                            $('#sidebar').addClass('active');
+                            $('.overlay').addClass('active');
+                            sidebarActive = true;
+                            $('#sidebarCollapse').html('<i class="fas fa-arrow-left"></i>');
+                        }else{
+                            $('#sidebar').removeClass('active');
+                            $('.overlay').removeClass('active');
+                            sidebarActive = false;
+                            $('#sidebarCollapse').html('<i class="fas fa-align-justify"></i>');
+                        }
                     });
                 });
             </script>

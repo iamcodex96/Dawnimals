@@ -14,7 +14,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand navbar-light bg-transparent d-flex justify-content-end sticky-top">
-        <button onclick="overlayController()" class="btn btn-outline-info"><i class="fas fa-bars"></i></button>
+        <button onclick="overlayController()" class="btn  btn-lg btn-outline-info"><i class="fas fa-bars"></i></button>
     </nav>
     <nav class="nav flex-column p-0 navegacion">
 
