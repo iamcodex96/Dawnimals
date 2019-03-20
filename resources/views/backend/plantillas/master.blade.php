@@ -88,20 +88,16 @@
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
+            <nav class="navbar navbar-dark bg-dark sticky-top">
+                    <div class="float-left">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info">
+                            <i class="fas fa-align-justify"></i>
+                        </button>
+                    </div>
+                    <div class="float-right">
+                        <a class="btn btn-danger" href="{{ url('/landing') }}"><i class="fas fa-sign-out-alt"></i></a>
+                    </div>
                 </div>
-
-                <ul class="navbar-nav ml-auto">
-
-                    <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/landing') }}">Cerrar Sesión</a>
-                    </li>
-                </ul>
             </nav>
 
             @yield('contenido')
