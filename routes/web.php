@@ -25,7 +25,7 @@ Route::get('/backend/login', 'Backend\AccountController@index');
 Route::post('/backend/login', 'Backend\AccountController@login')->name("login");
 Route::get('/backend/logout', 'Backend\AccountController@logout')->name("logout");
 
-Route::group(['middleware' => ['auth']], function () {
+//Route::group(['middleware' => ['auth']], function () {
     Route::get('/backend', function () {
         return view('backend.paginas.backend');
     });
@@ -44,5 +44,5 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     Route::get('/backend/donantes', 'Backend\donantesController@indexDonantes')->name('donantes');
-});
+//});
 //////////////////////////// PAGS BACKEND ////////////////////////////////////
