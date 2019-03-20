@@ -11,7 +11,7 @@
 @section('contenido')
 <main class="container-fluid m-0 p-0">
     <div id="primero">
-        <h1>SPAMÑITA</h1>
+        <h1>SPAM</h1>
         <hr>
         <div class="row d-flex align-content-center justify-content-center">
             <div class="col-md-10">
