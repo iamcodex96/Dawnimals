@@ -54,18 +54,28 @@
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Donaciones</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{url('backend/donaciones')}}" >Materiales</a>
+                            <a href="{{url('backend/Altadonacion')}}" >Añadir Donación</a>
                         </li>
                         <li>
-                            <a href="#">Monetarias Mensuales</a>
+                            <a href="{{url('backend/donaciones')}}">Buscar donación</a>
                         </li>
                         <li>
                             <a href="#">Otros</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a href="{{url('backend/donantes')}}">Donantes</a>
+                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false">Donantes</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu2">
+                        <li>
+                            <a href="{{url('backend/altaDonante')}}" >Añadir Donante</a>
+                        </li>
+                        <li>
+                            <a href="{{url('backend/donantes')}}">Buscar Donante</a>
+                        </li>
+                        <li>
+                            <a href="#">Otros</a>
+                        </li>
+                    </ul>
+
                 </li>
                 <li>
                     <a href="#">Perfil de Usuario</a>
