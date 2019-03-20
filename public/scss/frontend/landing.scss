@@ -1,7 +1,7 @@
 @import '../colores.scss';
 $divHeight:900px;
 body{
-    background-color: $color-spam;
+    background-color: whitesmoke;
 }
 div#primero{
     height: $divHeight;
@@ -19,5 +19,8 @@ div#primero{
     height: $divHeight;
     background: $color-spam-yellow;
 }
-
+.container-fluid{
+    margin: 0;
+    padding: 0;
+}
 

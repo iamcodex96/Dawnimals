@@ -13,15 +13,34 @@
     <title>@yield("titulo")</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand navbar-light bg-transparent d-flex justify-content-end sticky-top">
-        <button onclick="overlayController()" class="btn  btn-lg btn-outline-info"><i class="fas fa-bars"></i></button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav"><!-- d-flex justify-content-end -->
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="https://www.protectoramataro.org/es">SPAM</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.protectoramataro.org/es/quienes-somos-que-hacemos">Qui Som?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.protectoramataro.org/es/cercador-animals">Animals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"href="{{ url('backend/login') }}">Acceso Portal</a>
+              </li>
+            </ul>
+          </div>
     </nav>
     <nav class="nav flex-column p-0 navegacion">
-
-    <a href="#primero" onclick="updateIcon(0,'primero')" data-toggle="tooltip" data-placement="left" title="Opcion 1" class="nav-link mt-3"><i class="fas fa-circle"></i></a>
-    <a href="#segundo" onclick="updateIcon(1,'segundo')" data-toggle="tooltip" data-placement="left" title="Opcion 2" class="nav-link mt-3"><i class="far fa-circle"></i></a>
-    <a href="#tercero" onclick="updateIcon(2,'tercero')" data-toggle="tooltip" data-placement="left" title="Opcion 3" class="nav-link mt-3"><i class="far fa-circle"></i></a>
-    <a href="#cuarto" onclick="updateIcon(3,'cuarto')" data-toggle="tooltip" data-placement="left" title="Opcion 4" class="nav-link mt-3"><i class="far fa-circle"></i></a>
+    <div id="list-opciones">
+        <a href="#primero" onclick="updateIcon(0,'primero')" data-toggle="tooltip" data-placement="left" title="Opcion 1" class="nav-link mt-3"><i class="fas fa-circle"></i></a>
+        <a href="#segundo" onclick="updateIcon(1,'segundo')" data-toggle="tooltip" data-placement="left" title="Opcion 2" class="nav-link mt-3"><i class="far fa-circle"></i></a>
+        <a href="#tercero" onclick="updateIcon(2,'tercero')" data-toggle="tooltip" data-placement="left" title="Opcion 3" class="nav-link mt-3"><i class="far fa-circle"></i></a>
+        <a href="#cuarto" onclick="updateIcon(3,'cuarto')" data-toggle="tooltip" data-placement="left" title="Opcion 4" class="nav-link mt-3"><i class="far fa-circle"></i></a>
+    </div>
     </nav>
     <div id="overlay">
 

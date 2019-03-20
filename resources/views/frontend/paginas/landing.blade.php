@@ -9,19 +9,10 @@
 @endsection
 
 @section('contenido')
-<main class="container-fluid m-0 p-0">
+<main data-spy="scroll" data-target="#list-opciones" class="container-fluid">
     <div id="primero">
-        <h1>SPAM</h1>
-        <hr>
-        <div class="row d-flex align-content-center justify-content-center">
-            <div class="col-md-10">
-                    <div class="card">
-                        <div class="card-body">
-                            <h1>Estadisticas</h1>
-                        </div>
-                    </div>
-            </div>
-        </div>
+
+
 
     </div>
     <div id="segundo">
