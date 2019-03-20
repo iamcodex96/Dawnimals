@@ -13,7 +13,7 @@
                 <h1>DONACIONES</h1>
             </div>
             <div class="col-md-1 col-sm-12">
-                <a type="button" href="{{url('backend/altaDonación')}}"class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="Agregar donación"> <i class="fa fa-plus"></i> </a>
+                <a href="{{url('backend/altaDonación')}}" class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="Agregar donación"> <i class="fa fa-plus"></i> </a>
             </div>
         </div>
 
@@ -164,7 +164,7 @@
 
                     <div class="col-lg-12 col-md-8">
                         <div class="table-responsive" text-align="center">
-                            <table class="table table-bordered table-striped>
+                            <table class="table table-bordered table-striped">
 
                             <thead class=" thead-dark">
 

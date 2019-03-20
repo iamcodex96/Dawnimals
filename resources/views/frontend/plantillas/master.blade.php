@@ -27,10 +27,10 @@
 
             <nav class="nav flex-column p-0 d-flex justify-content-center">
 
-                <a href="https://www.protectoramataro.org/es" class="nav-link text-center">SPAM</a>
-                <a href="https://www.protectoramataro.org/es/quienes-somos-que-hacemos" class="nav-link text-center">Quien Somos?</a>
-                <a href="https://www.protectoramataro.org/es/cercador-animals" class="nav-link text-center">Animales</a>
-                <a href="{{ url('/login') }}" class="nav-link text-center">Acceso Portal</a>
+                <a href="https://www.protectoramataro.org/es" class="nav-link">SPAM</a>
+                <a href="https://www.protectoramataro.org/es/quienes-somos-que-hacemos" class="nav-link">Quien Somos?</a>
+                <a href="https://www.protectoramataro.org/es/cercador-animals" class="nav-link">Animales</a>
+                <a href="{{ url('/backend/login') }}" class="nav-link">Acceso Portal</a>
 
             </nav>
 
