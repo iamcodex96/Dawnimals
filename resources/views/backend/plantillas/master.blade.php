@@ -100,7 +100,10 @@
                 </div>
             </nav>
 
-            @yield('contenido')
+            <div class="container-fluid" style="margin-top: 100px">
+                @yield('contenido')
+            </div>
+
 
 
             <!-- Popper.JS -->

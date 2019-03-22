@@ -44,5 +44,7 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     Route::get('/backend/donantes', 'Backend\donantesController@indexDonantes')->name('donantes');
+
+    Route::resource("backend/mantenimientos/usuarios", "Backend\Mantenimientos\UsuariosController");
 });
 //////////////////////////// PAGS BACKEND ////////////////////////////////////
