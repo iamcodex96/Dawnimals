@@ -1,19 +1,57 @@
 @import '../colores.scss';
-$divHeight:900px;
+$divHeight:100%;
 body{
     background-color: whitesmoke;
+    overflow-x: hidden;
 }
 div#primero{
-    height: $divHeight;
+    margin: 0;
+    padding: 0;
     background: $color-spam;
 }
 #segundo{
     height: $divHeight;
-    background: $color-spam-blue;
+    background: #ff6600;
+    .texto-container{
+        z-index: 60;
+        color:white;
+        text-align: justify;
+        a{
+            color:white;
+            border:white 1px solid;
+        }
+    }
+    .texto{
+        width: 100%;
+    }
+    img{
+        width: 720px;
+        height: 480px;
+        margin-left:-120px;
+    }
+    .round-button{
+        background-color: $color-spam;
+        border-radius: 30px;
+        width: 300px;
+        margin-top: -100px;
+        margin-left: 100px;
+        color:white;
+        &:hover{
+            background-color: darken($color-spam,20%);
+        }
+    }
 }
 #tercero{
     height: $divHeight;
     background: $color-spam-purple;
+    .card{
+        height: 30rem;
+        transform: scale(0.7);
+        &:hover{
+            transform: scale(1);
+            transition: transform .2s ease-in;
+        }
+    }
 }
 #cuarto{
     height: $divHeight;

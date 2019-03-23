@@ -1,24 +1,62 @@
 body {
   background-color: whitesmoke;
+  overflow-x: hidden;
 }
 
 div#primero {
-  height: 900px;
+  margin: 0;
+  padding: 0;
   background: #99cd32;
 }
 
 #segundo {
-  height: 900px;
-  background: #3299cd;
+  height: 100%;
+  background: #ff6600;
+}
+#segundo .texto-container {
+  z-index: 60;
+  color: white;
+  text-align: justify;
+}
+#segundo .texto-container a {
+  color: white;
+  border: white 1px solid;
+}
+#segundo .texto {
+  width: 100%;
+}
+#segundo img {
+  width: 720px;
+  height: 480px;
+  margin-left: -120px;
+}
+#segundo .round-button {
+  background-color: #99cd32;
+  border-radius: 30px;
+  width: 300px;
+  margin-top: -100px;
+  margin-left: 100px;
+  color: white;
+}
+#segundo .round-button:hover {
+  background-color: #5c7b1e;
 }
 
 #tercero {
-  height: 900px;
+  height: 100%;
   background: #cd3299;
+}
+#tercero .card {
+  height: 30rem;
+  transform: scale(0.7);
+}
+#tercero .card:hover {
+  transform: scale(1);
+  transition: transform 0.2s ease-in;
 }
 
 #cuarto {
-  height: 900px;
+  height: 100%;
   background: #cdb432;
 }
 
