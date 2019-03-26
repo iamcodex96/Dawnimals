@@ -131,6 +131,7 @@
                     });
                 });
             </script>
+            @yield('js_onload');
 </body>
 
 </html>

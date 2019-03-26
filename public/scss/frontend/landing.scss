@@ -1,40 +1,66 @@
 @import '../colores.scss';
+@font-face {
+    font-family: 'Permanent';
+    src: url('../../fuentes/Permanent_Marker/PermanentMarker-Regular.ttf') ;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../fuentes/Roboto/Roboto-Medium.ttf') ;
+}
 $divHeight:100%;
 body{
-    background-color: whitesmoke;
+    background: lighten($color-spam,46%);
     overflow-x: hidden;
+}
+h1{
+    font-family:  Permanent;
+    color: white;
+}
+p{
+    font-family:  Roboto;
 }
 div#primero{
     margin: 0;
     padding: 0;
-    background: $color-spam;
 }
 #segundo{
     height: $divHeight;
-    background: #ff6600;
+    h1{
+        background-color: #ff6600;
+        width:70%;
+        padding:15px;
+        padding-left: 100px;
+        margin-left: -50px;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
     .texto-container{
         z-index: 60;
-        color:white;
+        color:black;
         text-align: justify;
         a{
-            color:white;
-            border:white 1px solid;
+            color:#ff6600;
+            border:#ff6600 1px solid;
+            &:hover{
+                color:white;
+                background-color: #ff6600;
+            }
         }
     }
     .texto{
         width: 100%;
     }
     img{
-        width: 720px;
-        height: 480px;
-        margin-left:-120px;
+        width: 100%;
+        height: 540px;
     }
     .round-button{
+        position: relative;
         background-color: $color-spam;
         border-radius: 30px;
         width: 300px;
-        margin-top: -100px;
-        margin-left: 100px;
+        bottom: 100px;
+        left: 35%;
         color:white;
         &:hover{
             background-color: darken($color-spam,20%);
@@ -43,19 +69,70 @@ div#primero{
 }
 #tercero{
     height: $divHeight;
-    background: $color-spam-purple;
+    h1{
+        background-color: $color-spam-purple;
+        width:70%;
+        padding:15px;
+        padding-left: 100px;
+        margin-left: -50px;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
     .card{
-        height: 30rem;
-        transform: scale(0.7);
+        height: 40rem;
+        transform: scale(0.85);
+        border:3px solid $color-spam;
+        border-radius: 15px;
+        overflow: hidden;
+        img{
+            border-bottom: 5px solid $color-spam;
+        }
         &:hover{
             transform: scale(1);
             transition: transform .2s ease-in;
+        }
+        h2{
+            position: relative;
+            padding: 0;
+            margin: 0;
+            top:-35px;
+            width: 70%;
+            padding: 10px;
+            border-top-right-radius: 40px;
+            border-bottom-right-radius: 40px;
+            background-color: $color-spam;
+            color: white;
         }
     }
 }
 #cuarto{
     height: $divHeight;
-    background: $color-spam-yellow;
+    h1{
+        background-color: $color-spam-yellow;
+        width:70%;
+        padding:15px;
+        padding-left: 100px;
+        margin-left: -50px;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+    button{
+        margin: 5px;
+        border: solid 5px $color-spam;
+        border-radius: 50px;
+        img{
+            width:90px;
+            height: 120px;
+        }
+        &:hover{
+            background-color: $color-spam;
+            transition: all .5s;
+
+        }
+    }
+    .info-necessidades{
+        border:solid 3px black;
+    }
 }
 .container-fluid{
     margin: 0;

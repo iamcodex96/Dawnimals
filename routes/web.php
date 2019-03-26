@@ -34,15 +34,14 @@ Route::get('/backend/logout', 'Backend\AccountController@logout')->name("logout"
         return view('backend.paginas.fichaDonante');
     });
 
-    Route::get('/backend/altaDonante', function () {
-        return view('backend.paginas.altaDonante');
-    });
+    Route::get('/backend/altaDonante', 'DonanteController@create')->name('altaDonante');
+    Route::post('/backend/altaDonante', 'DonanteController@store')->name('guardarDonante');
 
 
     Route::get('/backend/donaciones', function () {
         return view('backend.paginas.donaciones');
     });
 
-    Route::get('/backend/donantes', 'Backend\donantesController@indexDonantes')->name('donantes');
+    Route::get('/backend/donantes', 'DonanteController@index')->name('donantes');
 //});
 //////////////////////////// PAGS BACKEND ////////////////////////////////////
