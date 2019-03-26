@@ -140,15 +140,9 @@
                             <button type="button" id="button-filter" class="btn btn-primary float-right"><i class="fa fa-search"></i> Filtro</button>
 
                         </div>
-
-
-
-
-
                     </div>
                 </div>
         </div>
-
 
 
         <div class="card mt-3 mb-3 mr-3 ml-3">
@@ -158,8 +152,8 @@
                 <form action="" method="post">
 
                     <div class="col-lg-12 col-md-8">
-                        <div class="table-responsive" text-align="center">
-                            <table class="table table-bordered table-striped>
+                        <div class="table-responsive text-center">
+                            <table class="table table-bordered table-striped">
 
                             <thead class=" thead-dark">
 

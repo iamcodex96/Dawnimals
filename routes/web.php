@@ -44,4 +44,3 @@ Route::get('/backend/logout', 'Backend\AccountController@logout')->name("logout"
 
     Route::get('/backend/donantes', 'DonanteController@index')->name('donantes');
 //});
-//////////////////////////// PAGS BACKEND ////////////////////////////////////

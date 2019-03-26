@@ -19,7 +19,7 @@ class AccountController extends Controller
         if (Auth::attempt($credentials)){
             return redirect()->intended("backend");
         } else {
-            return redirect()->action("Backend\AccountController@index");
+            return redirect()->action("Backend\AccountController@index")->withInput();
         }
     }
 

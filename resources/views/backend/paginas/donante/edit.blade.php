@@ -162,9 +162,6 @@
                         <button class="btn btn-secondary col-5">CANCELAR</button>
 
                     </div>
-
-
-
                 </form>
             </div>
         </div>

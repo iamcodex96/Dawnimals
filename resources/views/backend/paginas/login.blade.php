@@ -26,7 +26,7 @@
                                         <span class="fa fa-user"></span>
                                     </div>
                                 </div>
-                                <input type="text" class="form-control" name="correo" id="correo" placeholder="Correo">
+                                <input type="text" class="form-control" name="correo" id="correo" value="{{ old("correo") }}" placeholder="Correo">
                             </div>
                         </div>
 
@@ -37,7 +37,7 @@
                                         <span class="fa fa-lock"></span>
                                     </div>
                                 </div>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                                <input type="password" class="form-control" name="password" id="password" value="{{ old("password") }}" placeholder="Password">
                             </div>
                         </div>
 
