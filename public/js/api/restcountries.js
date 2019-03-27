@@ -2,7 +2,7 @@
 function countryToData(country) {
     return {
         code: country.alpha2Code,
-        nombre: country.translations.es
+        nombre: (country.translations.es) ? country.translations.es : country.name
     };
 }
 
