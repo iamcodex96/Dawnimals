@@ -18,7 +18,7 @@ class Usuario extends Authenticatable
 
     public $timestamps = false;
 
-    public function role(){
+    public function role() {
         return $this->belongsTo("App\Models\Role", "roles_id");
     }
 

@@ -75,10 +75,13 @@
                             <a href="#">Otros</a>
                         </li>
                     </ul>
-
-                </li>
-                <li>
-                    <a href="#">Perfil de Usuario</a>
+                    <a href="#pageSubMantenimientos" data-toggle="collapse" aria-expanded="false">Mantenimientos</a>
+                    <ul class="collapse list-unstyled" id="pageSubMantenimientos">
+                        <li>
+                            <a href="{{url('backend/mantenimientos/usuarios')}}" >Usuarios</a>
+                            <a href="{{url('backend/mantenimientos/perfiles')}}" >Perfiles</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
 
@@ -101,7 +104,11 @@
             </nav>
 
             <div class="container-fluid" style="margin-top: 100px">
+                @include("backend.partial.mensajes")
+
                 @yield('contenido')
+
+                @yield('modals')
             </div>
 
 
@@ -134,6 +141,8 @@
                     });
                 });
             </script>
+
+            @yield("scripts")
 </body>
 
 </html>
