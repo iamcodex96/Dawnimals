@@ -14,6 +14,7 @@ function arrayToData(countries) {
 
     return countriesData;
 }
+
 var url = "https://restcountries.eu/rest/v2/";
 
 var restcountries = {
@@ -35,7 +36,7 @@ var restcountries = {
     },
     getCountry: function (code, setData) {
         $.ajax({
-            url: this.urlAll,
+            url: this.urlName,
             method: "get",
             contentType: "text",
             dataType: "text",
