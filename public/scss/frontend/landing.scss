@@ -1,23 +1,138 @@
 @import '../colores.scss';
-$divHeight:900px;
+@font-face {
+    font-family: 'Permanent';
+    src: url('../../fuentes/Permanent_Marker/PermanentMarker-Regular.ttf') ;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../fuentes/Roboto/Roboto-Medium.ttf') ;
+}
+$divHeight:100%;
 body{
-    background-color: whitesmoke;
+    background: lighten($color-spam,46%);
+    overflow-x: hidden;
+}
+h1{
+    font-family:  Permanent;
+    color: white;
+}
+p{
+    font-family:  Roboto;
 }
 div#primero{
-    height: $divHeight;
-    background: $color-spam;
+    margin: 0;
+    padding: 0;
 }
 #segundo{
     height: $divHeight;
-    background: $color-spam-blue;
+    h1{
+        background-color: #ff6600;
+        width:70%;
+        padding:15px;
+        padding-left: 100px;
+        margin-left: -50px;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+    .texto-container{
+        z-index: 60;
+        color:black;
+        text-align: justify;
+        a{
+            color:#ff6600;
+            border:#ff6600 1px solid;
+            &:hover{
+                color:white;
+                background-color: #ff6600;
+            }
+        }
+    }
+    .texto{
+        width: 100%;
+    }
+    img{
+        width: 100%;
+        height: 540px;
+    }
+    .round-button{
+        position: relative;
+        background-color: $color-spam;
+        border-radius: 30px;
+        width: 300px;
+        bottom: 100px;
+        left: 35%;
+        color:white;
+        &:hover{
+            background-color: darken($color-spam,20%);
+        }
+    }
 }
 #tercero{
     height: $divHeight;
-    background: $color-spam-purple;
+    h1{
+        background-color: $color-spam-purple;
+        width:70%;
+        padding:15px;
+        padding-left: 100px;
+        margin-left: -50px;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+    .card{
+        height: 40rem;
+        transform: scale(0.85);
+        border:3px solid $color-spam;
+        border-radius: 15px;
+        overflow: hidden;
+        img{
+            border-bottom: 5px solid $color-spam;
+        }
+        &:hover{
+            transform: scale(1);
+            transition: transform .2s ease-in;
+        }
+        h2{
+            position: relative;
+            padding: 0;
+            margin: 0;
+            top:-35px;
+            width: 70%;
+            padding: 10px;
+            border-top-right-radius: 40px;
+            border-bottom-right-radius: 40px;
+            background-color: $color-spam;
+            color: white;
+        }
+    }
 }
 #cuarto{
     height: $divHeight;
-    background: $color-spam-yellow;
+    h1{
+        background-color: $color-spam-yellow;
+        width:70%;
+        padding:15px;
+        padding-left: 100px;
+        margin-left: -50px;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+    button{
+        margin: 5px;
+        border: solid 5px $color-spam;
+        border-radius: 50px;
+        img{
+            width:90px;
+            height: 120px;
+        }
+        &:hover{
+            background-color: $color-spam;
+            transition: all .5s;
+
+        }
+    }
+    .info-necessidades{
+        border:solid 3px black;
+    }
 }
 .container-fluid{
     margin: 0;

@@ -12,9 +12,10 @@
 
 
 <div id="container" class="container">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-sm-12 col-md-12">
-                <form>
+                <form action="{{ action('DonanteController@update') }}" method="POST">
+                    @csrf
                     <div class="card mt-3">
                         <div class="card-header">
                                 <h4>Datos personales</h4>
@@ -22,13 +23,10 @@
                         <div class="card-body">
                             <div class="form-group float-left col-md-6"> <!-- State Button -->
                                 <label for="tipoD" class="control-label">Tipo de donante</label>
-                                <select class="form-control" id="tipoD">
-                                    <option value="*"></option>
-                                    <option value="PAR">Particular</option>
-                                    <option value="EMP">Empresa</option>
-                                    <option value="ESC">Escuela</option>
-                                    <option value="ANON">Anónimo</option>
-
+                                <select class="form-control" name="tipoD">
+                                    @foreach ($tipodonantes as $td)
+                                    <option value="{{$td->id}}">{{$td->tipo}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group float-left col-md-6">
@@ -58,7 +56,7 @@
 
                                 <div class="form-group float-left col-md-6">
                                     <label for="pais" class="control-label">País</label>
-                                    <select class="form-control" id="pais">
+                                    <select class="form-control" name="pais">
                                         <option value="ES">España</option>
                                         <option value="FR">Francia</option>
                                         <option value="PT">Portugal</option>
@@ -67,11 +65,10 @@
 
                                 <div class="form-group float-left col-md-6">
                                     <label for="sexo" class="control-label">Sexo</label>
-                                    <select class="form-control" id="sexo">
-                                            <option value="*"></option>
-                                            <option value="">Mujer</option>
-                                            <option value="">Hombre</option>
-                                            <option value="">Otro</option>
+                                    <select class="form-control" name="sexo">
+                                        @foreach ($sexos as $sexo)
+                                        <option value="{{$sexo->id}}">{{$sexo->sexo}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group float-left col-md-12">
@@ -87,10 +84,10 @@
                             <div class="card-body">
                                     <div class="form-group float-left col-md-6">
                                             <label for="tieneAnimales" class="control-label">¿Tiene animales?</label>
-                                            <select class="form-control" id="tieneAnimales">
+                                            <select class="form-control" name="tieneAnimales">
                                                 <option value="*"></option>
-                                                <option value="S">Sí</option>
-                                                <option value="N">No</option>
+                                                <option value="1">Sí</option>
+                                                <option value="0">No</option>
                                             </select>
                                         </div>
 
@@ -98,21 +95,21 @@
                                             <label for="esHabitual" class="control-label">¿Es donante habitual?
 
                                             </label>
-                                                <select class="form-control" id="esHabitual">
+                                                <select class="form-control" name="esHabitual">
                                                     <option value="*"></option>
-                                                    <option value="S">Sí</option>
-                                                    <option value="N">No</option>
+                                                    <option value="1">Sí</option>
+                                                    <option value="0">No</option>
                                                 </select>
                                         </div>
 
                                         <div class="form-group float-left col-md-6">
-                                                <label for="esHabitual" class="control-label">¿Ha adoptado alguna vez?
+                                                <label for="aAdoptado" class="control-label">¿Ha adoptado alguna vez?
 
                                                 </label>
-                                                    <select class="form-control" id="esHabitual">
+                                                    <select class="form-control" name="aAdoptado">
                                                         <option value="*"></option>
-                                                        <option value="S">Sí</option>
-                                                        <option value="N">No</option>
+                                                        <option value="1">Sí</option>
+                                                        <option value="0">No</option>
                                                     </select>
                                             </div>
 
@@ -121,10 +118,10 @@
                                                 <label for="esColaborador" class="control-label">¿Es colaborador?
 
                                                 </label>
-                                                    <select class="form-control" id="esColaborador">
+                                                    <select class="form-control" name="esColaborador">
                                                         <option value="*"></option>
-                                                        <option value="S">Sí</option>
-                                                        <option value="N">No</option>
+                                                        <option value="1">Sí</option>
+                                                        <option value="0">No</option>
                                                     </select>
                                         </div>
 
@@ -134,30 +131,29 @@
                                                 </label>
                                                     <select class="form-control" id="tipoColaborador">
                                                         <option value="*"></option>
-                                                        <option value="S">no sé</option>
-                                                        <option value="N">no sé</option>
+                                                        <option value="1">no sé</option>
+                                                        <option value="0">no sé</option>
                                                     </select>
                                         </div>
 
                                         <div class="form-group float-left col-md-6">
                                             <label for="vinculo" class="control-label">Vínculo Entidad</label>
-                                            <select class="form-control" id="vinculo">
+                                            <select class="form-control" name="vinculo">
                                                     <option value="*"></option>
-                                                    <option value="">Socio</option>
-                                                    <option value="">Patrocinador</option>
-                                                    <option value="">Teamer</option>
-                                                    <option value="">Adoptante</option>
-                                                    <option value="">Voluntario acogidas</option>
+                                                    <option value="Socio">Socio</option>
+                                                    <option value="Patrocinador">Patrocinador</option>
+                                                    <option value="Teamer">Teamer</option>
+                                                    <option value="Adoptante">Adoptante</option>
+                                                    <option value="Voluntario">Voluntario acogidas</option>
                                             </select>
                                         </div>
 
 
 
-                                        <div class="form-group float-left col-md-6">
-                                        <label class="control-label">Fecha Alta / **ESTO DEBERÍA AUTOGENERARSE**</label>
+
                                         <!--pendiente saber de qué, alta o última donación-->
-                                        <input class="form-control" name="filter_donante_fecha"id="input-donante-fecha" type="date">
-                                    </div>
+                                        <input class="form-control" name="fecha_actual"id="fecha" type="hidden">
+
                             </div>
                     </div>
                     <div class="botonAceptar text-center mb-5 mt-4">
@@ -170,5 +166,9 @@
             </div>
         </div>
     </div>
+
+@endsection
+
+@section('name')
 
 @endsection

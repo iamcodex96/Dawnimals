@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 //////////////////////////// PAGS FRONTEND ///////////////////////////////////
 Route::redirect('/', 'landing');
 
@@ -25,7 +14,7 @@ Route::get('/backend/login', 'Backend\AccountController@index');
 Route::post('/backend/login', 'Backend\AccountController@login')->name("login");
 Route::get('/backend/logout', 'Backend\AccountController@logout')->name("logout");
 
-Route::group(['middleware' => ['auth']], function () {
+//Route::group(['middleware' => ['auth']], function () {
     Route::get('/backend', function () {
         return view('backend.paginas.backend');
     });
@@ -34,9 +23,8 @@ Route::group(['middleware' => ['auth']], function () {
         return view('backend.paginas.fichaDonante');
     });
 
-    Route::get('/backend/altaDonante', function () {
-        return view('backend.paginas.altaDonante');
-    });
+    Route::get('/backend/altaDonante', 'DonanteController@create')->name('altaDonante');
+    Route::post('/backend/altaDonante', 'DonanteController@store')->name('guardarDonante');
 
 
     Route::get('/backend/donaciones', function () {
@@ -48,6 +36,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource("backend/mantenimientos/usuarios", "Backend\Mantenimientos\UsuariosController");
 
     Route::resource("backend/mantenimientos/perfiles", "Backend\Mantenimientos\PerfilesController");
-});
 
+    Route::get('/backend/donantes', 'DonanteController@index')->name('donantes');
+//});
 //////////////////////////// PAGS BACKEND ////////////////////////////////////
