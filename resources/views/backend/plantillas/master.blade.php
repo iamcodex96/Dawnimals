@@ -19,9 +19,9 @@
     <script defer src="{{ asset('Bootstrap/js/fontawesome.js') }}"></script>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="{{ asset('Bootstrap/js/jquery-3.3.1.slim.min.js') }}"></script>
+    <script src="{{ asset('Bootstrap/js/jquery-3.3.1.min.js') }}"></script>
 
-
+    <script src="{{ asset('js/api/restcountries.js') }}"></script>
 </head>
 
 <body>
