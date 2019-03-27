@@ -24,7 +24,7 @@
             <thead class="thead-dark">
                 <tr>
                     <th>Perfil</th>
-                    <th></th>
+                    <th class="buttons-2"></th>
                 </tr>
             </thead>
             <tbody>
@@ -32,8 +32,8 @@
                 <tr>
                     <td>{{ $role->rol }}</td>
                     <td class="text-center">
-                        <div class="form-group btn-group">
-                            <a href="{{ action('Backend\Mantenimientos\PerfilesController@edit', ['id' => $role->id ]) }}" class="btn btn-info"><span class="fa fa-edit"></span></a>
+                        <div class="form-group btn-group btn-group-form">
+                            <a href="{{ action('Backend\Mantenimientos\PerfilesController@edit', ['id' => $role->id]) }}" class="btn btn-info"><span class="fa fa-edit"></span></a>
                             <form action="{{ action('Backend\Mantenimientos\PerfilesController@destroy', ['id' => $role->id])}}" method="post">
                                 @method("delete")
                                 @csrf

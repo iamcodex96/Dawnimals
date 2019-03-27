@@ -26,12 +26,12 @@ class PerfilesController extends Controller
         return view(self::PREFIX . "create");
     }
 
-    public function store(Role $role, Request $request)
+    public function store(Role $perfile, Request $request)
     {
-        $role->rol = $request->input("rol");
+        $perfile->rol = $request->input("rol");
 
         try {
-            $role->save();
+            $perfile->save();
 
         } catch (QueryException $ex) {
             $mensaje = Utilitat::controlError($ex);
@@ -41,19 +41,19 @@ class PerfilesController extends Controller
         return redirect()->action(self::CONTROLADOR . 'index');
     }
 
-    public function edit($id)
+    public function edit(Role $perfile)
     {
-        $data["role"] = Role::find($id);
+        $data["role"] = $perfile;
 
         return view(self::PREFIX . "edit", $data);
     }
 
-    public function update(Role $role, Request $request)
+    public function update(Role $perfile, Request $request)
     {
-        $role->rol = $request->input("rol");
+        $perfile->rol = $request->input("rol");
 
         try {
-            $role->save();
+            $perfile->save();
 
         } catch (QueryException $ex) {
             $mensaje = Utilitat::controlError($ex);
@@ -63,10 +63,10 @@ class PerfilesController extends Controller
         return redirect()->action(self::CONTROLADOR . 'index');
     }
 
-    public function destroy(Request $request, $id)
+    public function destroy(Request $request, Role $perfile)
     {
         try {
-            Role::find($id)->delete();
+            $perfile->delete();
         } catch (QueryException $ex) {
             $mensaje = Utilitat::controlError($ex);
             $request->session()->flash("error", $mensaje);
