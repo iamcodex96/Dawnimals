@@ -56,10 +56,8 @@
 
                                 <div class="form-group float-left col-md-6">
                                     <label for="pais" class="control-label">País</label>
-                                    <select class="form-control" name="pais">
-                                        <option value="ES">España</option>
-                                        <option value="FR">Francia</option>
-                                        <option value="PT">Portugal</option>
+                                    <select class="form-control" name="pais" id="pais">
+
                                     </select>
                                 </div>
 
@@ -170,10 +168,17 @@
 
 @endsection
 
-@section('js_onload')
-<script>
-var fecha = $('#fecha');
-var ahora = new Date();
-fecha.val()=ahora;
-</script>
+@section('scripts')
+    <script>
+        restcountries.getAll(function(countries){
+            countries.forEach(function(country){
+                var $country = $("<option></option>").val(country.code).html(country.nombre);
+
+                if (country.code == restcountries.defaultCode){
+                    $country.attr("selected", "");
+                }
+                $("#pais").append($country);
+            });
+        });
+    </script>
 @endsection

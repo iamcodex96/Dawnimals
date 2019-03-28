@@ -10,7 +10,10 @@ use Auth;
 class AccountController extends Controller
 {
     public function index(){
-        return view("backend.paginas.login");
+        if (!Auth::check()){
+            return view("backend.paginas.login");
+        }
+        return redirect('/backend');
     }
 
     public function login(Request $request){

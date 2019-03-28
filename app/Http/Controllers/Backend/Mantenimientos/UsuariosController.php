@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Backend\Mantenimientos;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Usuario;
 use App\Models\Role;
+use App\Models\Usuario;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
+use App\clases\Utilitat;
+use Illuminate\Database\QueryException;
 
 class UsuariosController extends Controller
 {
@@ -18,14 +19,14 @@ class UsuariosController extends Controller
     {
         $data["usuarios"] = Usuario::all();
 
-        return view(UsuariosController::PREFIX . "index", $data);
+        return view(self::PREFIX . "index", $data);
     }
 
     public function create()
     {
         $data["roles"] = Role::all();
 
-        return view(UsuariosController::PREFIX . "create", $data);
+        return view(self::PREFIX . "create", $data);
     }
 
     public function store(Usuario $usuario, Request $request)
@@ -35,19 +36,21 @@ class UsuariosController extends Controller
         $usuario->correo = $request->input("correo");
 
         $password = $request->input("password");
-        if ($password != null){
+        if ($password != null) {
             $usuario->password = Hash::make($request->password);
         }
 
-        try{
+        try {
             $role = Role::find($request->input("role_id"));
             $usuario->roles_id = $role->id;
             $usuario->save();
 
-        } catch (QueryException $ex){
-            return redirect()->action(UsuariosController::CONTROLADOR . 'create')->withInput();
+        } catch (QueryException $ex) {
+            $mensaje = Utilitat::controlError($ex);
+            $request->session()->flash("error", $mensaje);
+            return redirect()->action(self::CONTROLADOR . 'create')->withInput();
         }
-        return redirect()->action(UsuariosController::CONTROLADOR . 'index');
+        return redirect()->action(self::CONTROLADOR . 'index');
     }
 
     public function edit(Usuario $usuario)
@@ -55,7 +58,7 @@ class UsuariosController extends Controller
         $data["roles"] = Role::all();
         $data["usuario"] = $usuario;
 
-        return view(UsuariosController::PREFIX . "edit", $data);
+        return view(self::PREFIX . "edit", $data);
     }
 
     public function update(Usuario $usuario, Request $request)
@@ -65,25 +68,31 @@ class UsuariosController extends Controller
         $usuario->correo = $request->input("correo");
 
         $password = $request->input("password");
-        if ($password != null){
+        if ($password != null) {
             $usuario->password = Hash::make($request->password);
         }
 
-        try{
+        try {
             $role = Role::find($request->input("role_id"));
             $usuario->roles_id = $role->id;
             $usuario->save();
 
-        } catch (QueryException $ex){
-            return redirect()->action(UsuariosController::CONTROLADOR . 'edit')->withInput();
+        } catch (QueryException $ex) {
+            $mensaje = Utilitat::controlError($ex);
+            $request->session()->flash("error", $mensaje);
+            return redirect()->action(self::CONTROLADOR . 'edit')->withInput();
         }
-        return redirect()->action(UsuariosController::CONTROLADOR . 'index');
+        return redirect()->action(self::CONTROLADOR . 'index');
     }
 
-    public function destroy()
+    public function destroy(Request $request, Usuario $usuario)
     {
-
+        try {
+            $usuario->delete();
+        } catch (QueryException $ex) {
+            $mensaje = Utilitat::controlError($ex);
+            $request->session()->flash("error", $mensaje);
+        }
+        return redirect()->action(self::CONTROLADOR . 'index');
     }
 }
-
-?>

@@ -11,7 +11,7 @@
         @csrf
 
         <div class="titulo text-center mb-3">
-            <h4>ALTA USUARIO</h4>
+            <h4>EDITAR USUARIO</h4>
         </div>
 
         <div class="card mt-3">

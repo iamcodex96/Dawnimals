@@ -205,3 +205,13 @@ a.article:hover {
 }
 
 /*# sourceMappingURL=dashboard.css.map */
+
+
+.btn-group-form form .btn {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+th.buttons-2 {
+    width: 120px;
+}

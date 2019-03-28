@@ -19,9 +19,9 @@
     <script defer src="{{ asset('Bootstrap/js/fontawesome.js') }}"></script>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="{{ asset('Bootstrap/js/jquery-3.3.1.slim.min.js') }}"></script>
+    <script src="{{ asset('Bootstrap/js/jquery-3.3.1.min.js') }}"></script>
 
-
+    <script src="{{ asset('js/api/restcountries.js') }}"></script>
 </head>
 
 <body>
@@ -75,10 +75,13 @@
                             <a href="#">Otros</a>
                         </li>
                     </ul>
-
-                </li>
-                <li>
-                    <a href="#">Perfil de Usuario</a>
+                    <a href="#pageSubMantenimientos" data-toggle="collapse" aria-expanded="false">Mantenimientos</a>
+                    <ul class="collapse list-unstyled" id="pageSubMantenimientos">
+                        <li>
+                            <a href="{{url('backend/mantenimientos/usuarios')}}" >Usuarios</a>
+                            <a href="{{url('backend/mantenimientos/perfiles')}}" >Perfiles</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
 
@@ -101,13 +104,11 @@
             </nav>
 
             <div class="container-fluid" style="margin-top: 100px">
+                @include("backend.partial.mensajes")
 
-                @if (Session::has('error'))
-                <div class="alert alert-danger" role="alert">
-                        {{Session::get('error')}}
-                </div>
-                @endif
                 @yield('contenido')
+
+                @yield('modals')
             </div>
 
 
@@ -140,7 +141,8 @@
                     });
                 });
             </script>
-            @yield('js_onload');
+
+            @yield("scripts")
 </body>
 
 </html>
