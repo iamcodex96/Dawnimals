@@ -14,7 +14,7 @@
 <div id="container" class="container">
         <div class="row mt-5">
             <div class="col-sm-12 col-md-12">
-                <form action="{{ action('DonanteController@store') }}" method="POST">
+                <form action="{{ action('Backend\DonanteController@store') }}" method="POST">
                     @csrf
                     <div class="card mt-3">
                         <div class="card-header">
@@ -71,10 +71,15 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group float-left col-md-12">
+
+                                    <div class="form-group float-left col-md-6">
                                         <label for="email" class="control-label">Email</label>
                                         <input type="text" class="form-control" id="email" name="email" placeholder="">
                                 </div>
+                                <div class="form-group float-left col-md-6">
+                                    <label for="telefono" class="control-label">Telefono</label>
+                                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="">
+                            </div>
                         </div>
                     </div>
                     <div class="card mt-3">

@@ -34,13 +34,21 @@ Route::get('/backend/logout', 'Backend\AccountController@logout')->name("logout"
         return view('backend.paginas.fichaDonante');
     });
 
-    Route::get('/backend/altaDonante', 'DonanteController@create')->name('altaDonante');
-    Route::post('/backend/altaDonante', 'DonanteController@store')->name('guardarDonante');
+    //DONANTES : |------->
+    //Route::get('/backend/donantes/nuevo', 'Backend\DonanteController@create')->name('altaDonante');
+    //Route::post('/backend/donantes/nuevo', 'Backend\DonanteController@store')->name('guardarDonante');
+    //Route::get('/backend/donantes/editar/{donante}', 'Backend\DonanteController@edit')->name('editarDonante');
+    //Route::post('/backend/donantes/editar/{donante}', 'Backend\DonanteController@update')->name('actualizarDonante');
+    //Route::get('/backend/donantes/mostrar/{donante}', 'Backend\DonanteController@show')->name('mostrarDonante');
+    //Route::delete('/backend/donantes/borrar/{donante}', 'Backend\DonanteController@destroy')->name('borrarDonante');
+    //DONANTES : <-------|
 
+    Route::resource('/backend/donantes', 'Backend\DonanteController');
 
     Route::get('/backend/donaciones', function () {
         return view('backend.paginas.donaciones');
     });
 
-    Route::get('/backend/donantes', 'DonanteController@index')->name('donantes');
+    //Route::get('/backend/donantes', 'Backend\DonanteController@index')->name('donantes');
 //});
+

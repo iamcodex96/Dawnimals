@@ -66,10 +66,10 @@
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false">Donantes</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu2">
                         <li>
-                            <a href="{{url('backend/altaDonante')}}" >Añadir Donante</a>
+                            <a href="{{url('/backend/donantes/create')}}" >Añadir Donante</a>
                         </li>
                         <li>
-                            <a href="{{url('backend/donantes')}}">Buscar Donante</a>
+                            <a href="{{url('/backend/donantes')}}">Buscar Donante</a>
                         </li>
                         <li>
                             <a href="#">Otros</a>
@@ -101,6 +101,12 @@
             </nav>
 
             <div class="container-fluid" style="margin-top: 100px">
+
+                @if (Session::has('error'))
+                <div class="alert alert-danger" role="alert">
+                        {{Session::get('error')}}
+                </div>
+                @endif
                 @yield('contenido')
             </div>
 

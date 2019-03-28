@@ -13,7 +13,7 @@
                 <h1>DONANTES</h1>
             </div>
             <div class="col-md-1 col-sm-12">
-                <a href="{{url('backend/altaDonante')}}"class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="Agregar donante"> <i class="fa fa-plus"></i> </a>
+                <a href="{{url('backend/donantes/create')}}"class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="Agregar donante"> <i class="fa fa-plus"></i> </a>
             </div>
         </div>
 
@@ -153,7 +153,7 @@
 
                     <div class="col-lg-12 col-md-8">
                         <div class="table-responsive text-center">
-                            <table class="table table-bordered table-striped">
+                            <table class="table table-striped">
 
                             <thead class=" thead-dark">
 
@@ -169,17 +169,32 @@
                                 <tbody>
 
                                     @foreach ($donantes as $donante)
-                                    <tr>
+                                <tr data-nombre ="{{ $donante->cif }}" data-nombre ="{{ $donante->nombre }}" data-direccion ="{{ $donante->direccion }}" data-telefono ="{{ $donante->telefono }}" data-correo ="{{ $donante->correo }}">
 
-                                        <td class="text-center min-wdth">1,001</td>
-                                        <td class="text-center">{{$donante->nombreORazonSocial}}</td>
+                                        <td class="text-center min-wdth">{{$donante->cif}}</td>
+                                        <td class="text-center">{{$donante->nombre}}</td>
                                         <td class="text-center">{{$donante->direccion}}</td>
                                         <td class="text-center">{{$donante->telefono}}</td>
-                                        <td class="text-center">{{$donante->email}}</td>
+                                        <td class="text-center">{{$donante->correo}}</td>
                                         <td colspan="2" style="width: 1%" class="text-center">
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                        <a href="{{url('backend/fichaDonante')}}" data-toggle="tooltip" title="Ver Detalle" class="btn btn-info m-1" data-original-title="Ver"><i class="fa fa-eye"></i></a> <a href="#" data-toggle="tooltip" title="Borrar" class="btn btn-danger m-1" data-original-title="Ver"><i class="fa fa-trash"></i></a></td>
+                                        <form class="p-0 m-0" action="{{ action('Backend\DonanteController@show',[$donante->id]) }}" method="GET">
+                                            @csrf
+                                            <button type="submit" data-toggle="tooltip" title="Ver" class="btn btn-primary" data-original-title="Ver"><i class="fa fa-eye"></i></button>
+                                        </form>
+                                        <form class="p-0 m-0" action="{{ action('Backend\DonanteController@edit',[$donante->id]) }}" method="GET">
+                                            @method('put')
+                                            @csrf
+                                            <button type="submit" data-toggle="tooltip" title="Modificar" class="btn btn-warning" data-original-title="Ver"><i class="fa fa-edit"></i></button>
+                                        </form>
+                                        <form class="p-0 m-0" action="{{ action('Backend\DonanteController@destroy',[$donante->id]) }}" method="post">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit" data-toggle="tooltip" title="Borrar" class="btn btn-danger" data-original-title="Ver"><i class="fa fa-trash"></i></button>
+                                        </form>
                                         </div>
+                                        </td>
+
 
                                     </tr>
 
