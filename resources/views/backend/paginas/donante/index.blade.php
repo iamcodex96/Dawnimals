@@ -1,7 +1,7 @@
 @extends('backend.plantillas.m_index')
 @section('titulo','Donants')
 @section('subtitulo','Llistat de donants')
-@section('crear-url', url('backend/donantes/create'))
+@section('url-crear', url('backend/donantes/create'))
 
 @section('m_contenido')
 <div class="card card-body m-3">

@@ -1,7 +1,7 @@
 @extends('backend.plantillas.m_index')
 @section('titulo','Perfils')
 @section('subtitulo','Llistat de perfils')
-@section('crear-url', url('backend/mantenimientos/perfiles/create'))
+@section('url-crear', url('backend/mantenimientos/perfiles/create'))
 
 @section('m_contenido')
 

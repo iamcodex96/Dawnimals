@@ -1,7 +1,7 @@
 @extends('backend.plantillas.m_index')
 @section('titulo','Usuaris')
 @section('subtitulo','Llistat de usuaris')
-@section('crear-url', url('backend/mantenimientos/usuarios/create'))
+@section('url-crear', url('backend/mantenimientos/usuarios/create'))
 @section('m_contenido')
 
 <table class="table table-bordered">
