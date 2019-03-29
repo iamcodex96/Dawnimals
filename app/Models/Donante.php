@@ -16,4 +16,9 @@ class Donante extends Model
     {
         return $this->belongsTo('App\Models\Sexo', 'sexos_id');
     }
+
+    public function tipoDonante()
+    {
+        return $this->belongsTo('App\Models\TipoDonante', 'tipos_donantes_id');
+    }
 }
