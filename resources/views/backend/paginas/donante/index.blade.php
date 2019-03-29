@@ -190,7 +190,7 @@
                                         <form class="p-0 m-0" action="{{ action('Backend\DonanteController@destroy',[$donante->id]) }}" method="post">
                                             @method('delete')
                                             @csrf
-                                            <button type="submit" data-toggle="tooltip" title="Borrar" class="btn btn-danger" data-original-title="Ver"><i class="fa fa-trash"></i></button>
+                                            <button type="submit" onclick="destroySubmit(this,event,{{$donante}})" data-toggle="tooltip" title="Borrar" class="btn btn-danger" data-original-title="Ver"><i class="fa fa-trash"></i></button>
                                         </form>
                                         </div>
                                         </td>
