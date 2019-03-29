@@ -24,7 +24,7 @@ class DonanteController extends Controller
         $donantes = Donante::all();
         $locale = App::getLocale();
         $data['donantes']=$donantes;
-        return view(DonanteController::PREFIX.'index',$data);
+        return view(self::PREFIX.'index',$data);
     }
 
     /**
@@ -36,7 +36,7 @@ class DonanteController extends Controller
     {
         $data['sexos']=Sexo::all();
         $data['tipodonantes']=TipoDonante::all();
-        return view(DonanteController::PREFIX.'create',$data);
+        return view(self::PREFIX.'create',$data);
     }
 
     /**
@@ -50,7 +50,7 @@ class DonanteController extends Controller
 
         $validation = validator($request->all());
         if($validation->fails()){
-            return redirect('DonanteController')
+            return redirect('DonanteController@create')
                         ->withErrors($validator)
                         ->withInput();
         }else{
@@ -75,11 +75,11 @@ class DonanteController extends Controller
 
             try{
                 $donante->save();
-                return redirect()->action(DonanteController::CONTROLADOR .'index');
+                return redirect()->action(self::CONTROLADOR .'index');
             }catch(QueryException $e){
                 $error = Utilitat::errorMessages($e);
                 $request->session()->flash('error',$error);
-                return redirect()->action(DonanteController::CONTROLADOR .'create')->withInput();
+                return redirect()->action(self::CONTROLADOR .'create')->withInput();
             }
         }
 
@@ -120,7 +120,7 @@ class DonanteController extends Controller
         $data['donante']=$donante;
         $data['sexos']=Sexo::all();
         $data['tipodonantes']=TipoDonante::all();
-        return view(DonanteController::PREFIX.'edit',$data);
+        return view(self::PREFIX.'edit',$data);
     }
 
     /**
@@ -158,11 +158,11 @@ class DonanteController extends Controller
 
             try{
                 $donante->save();
-                return redirect()->action(DonanteController::CONTROLADOR .'index');
+                return redirect()->action(self::CONTROLADOR .'index');
             }catch(QueryException $e){
                 $error = Utilitat::errorMessages($e);
                 $request->session()->flash('error',$error);
-                return redirect()->action(DonanteController::CONTROLADOR .'edit')->withInput();
+                return redirect()->action(self::CONTROLADOR .'edit')->withInput();
             }
         }
     }
@@ -178,12 +178,12 @@ class DonanteController extends Controller
         try{
             if($donante!=null){
                 $donante->delete();
-                return redirect()->action(DonanteController::CONTROLADOR .'index');
+                return redirect()->action(self::CONTROLADOR .'index');
             }
         }catch(QueryException $e){
             $error = Utilitat::errorMessages($e);
             $request->session()->flash('error',$error);
-            return redirect()->action(DonanteController::CONTROLADOR .'index');
+            return redirect()->action(self::CONTROLADOR .'index');
         }
 
     }
