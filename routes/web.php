@@ -8,10 +8,9 @@ Route::get('/landing', function () {
 })->name("landing");
 //////////////////////////// PAGS FRONTEND ///////////////////////////////////
 
-Route::get('backend/{locale}',function($locale){
+Route::get('backend/chgIdioma/{locale}', function ($locale) {
     App::setLocale($locale);
 });
-
 
 //////////////////////////// PAGS BACKEND ////////////////////////////////////
 Route::get('/backend/login', 'Backend\AccountController@index');
