@@ -4,9 +4,26 @@
 
 @section('contenido')
 
-    @yield('contenido')
-@endsection
+<div class="cabecera mb-4">
+    <div class="row">
+        <div class="col-md-11 col-sm-12">
+            <h1>@yield('titulo')</h1>
+        </div>
+        <div class="col-md-1 col-sm-12">
+            <a href="@yield('crear-url')" class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="Agregar donante"> <i class="fa fa-plus"></i> </a>
+        </div>
+    </div>
+</div>
 
+<div class="card">
+    <div class="card-header">
+        <h3>@yield('subtitulo')</h3>
+    </div>
+    <div class="card-body">
+        @yield('m_contenido')
+    </div>
+</div>
+@endsection
 
 @section("modals")
 <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-hidden="true">
