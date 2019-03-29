@@ -2,8 +2,11 @@
 @section("titulo") @yield("titulo")
 @endsection
 
-@section("contenido") @yield('contenido')
+@section('contenido')
+
+    @yield('contenido')
 @endsection
+
 
 @section("modals")
 <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-hidden="true">

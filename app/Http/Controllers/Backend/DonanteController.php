@@ -8,7 +8,7 @@ use App\Models\TipoDonante;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
-use App\Clases\Utilitat;
+use App\Classes\Utilitat;
 
 class DonanteController extends Controller
 {
@@ -50,7 +50,7 @@ class DonanteController extends Controller
 
         $validation = validator($request->all());
         if($validation->fails()){
-            redirect('DonanteController')
+            return redirect('DonanteController')
                         ->withErrors($validator)
                         ->withInput();
         }else{
@@ -134,7 +134,7 @@ class DonanteController extends Controller
     {
         $validation = validator($request->all());
         if($validation->fails()){
-            redirect('DonanteController')
+            return redirect('DonanteController')
                         ->withErrors($validator)
                         ->withInput();
         }else{
@@ -175,7 +175,6 @@ class DonanteController extends Controller
      */
     public function destroy(Donante $donante)
     {
-
         try{
             if($donante!=null){
                 $donante->delete();

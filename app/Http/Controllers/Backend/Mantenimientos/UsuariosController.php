@@ -7,7 +7,7 @@ use App\Models\Role;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\clases\Utilitat;
+use App\Classes\Utilitat;
 use Illuminate\Database\QueryException;
 
 class UsuariosController extends Controller

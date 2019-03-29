@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\clases\Utilitat;
+use App\Classes\Utilitat;
 use Illuminate\Database\QueryException;
 
 class PerfilesController extends Controller
