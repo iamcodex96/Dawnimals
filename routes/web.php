@@ -25,8 +25,6 @@ Route::get('/backend/logout', 'Backend\AccountController@logout')->name("logout"
         return view('backend.paginas.donaciones');
     });
 
-    Route::get('/backend/donantes', 'Backend\donantesController@indexDonantes')->name('donantes');
-
     Route::resource("backend/mantenimientos/usuarios", "Backend\Mantenimientos\UsuariosController");
 
     Route::resource("backend/mantenimientos/perfiles", "Backend\Mantenimientos\PerfilesController");
