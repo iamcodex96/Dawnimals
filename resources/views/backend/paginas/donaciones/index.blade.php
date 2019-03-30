@@ -145,7 +145,8 @@
                         <tr>
                             <th class="text-center">ID</th>
                             <th class="text-center">Tipo</th>
-                            <th class="text-center">Centro</th>
+                            <th class="text-center">Subtipo</th>
+                            <th class="text-center">Centro Receptor</th>
                             <th class="text-center">Coste</th>
                         </tr>
                         </thead>
@@ -153,7 +154,8 @@
                                 @foreach ($donaciones as $donacion)
 
                                     <td class="text-center">{{$donacion->id}}</td>
-                                    <td class="text-center">{{$donacion->id}}</td>
+                                    <td class="text-center">{{$donacion->subtipos->tipos->nombre}}</td>
+                                    <td class="text-center">{{$donacion->subtipos->nombre}}</td>
                                     <td class="text-center">{{$donacion->centro->nombre}}</td>
                                     <td class="text-center">{{$donacion->coste}}</td>
 

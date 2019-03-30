@@ -42,7 +42,7 @@
     <label for="pais" class="control-label">País</label>
     <select class="form-control" name="pais" id="pais">
 
-                </select>
+    </select>
 </div>
 
 <div class="form-group float-left col-md-6">

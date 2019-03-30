@@ -14,7 +14,7 @@ class Donacion extends Model
 
     public function subtipos()
     {
-        return $this->belongsTo('App\Models\Subtipo', 'subtipo_id');
+        return $this->belongsTo('App\Models\Subtipo', 'subtipos_id');
     }
     public function donantes()
     {
@@ -24,5 +24,6 @@ class Donacion extends Model
     {
         return $this->belongsTo('App\Models\Centro', 'centros_receptor_id');
     }
+
 
 }

@@ -25,6 +25,7 @@ Route::get('/backend/logout', 'Backend\AccountController@logout')->name("logout"
     });
 
     Route::resource('/backend/donantes', 'Backend\DonanteController');
+
     Route::resource('/backend/donaciones', 'Backend\DonacionController');
 
 

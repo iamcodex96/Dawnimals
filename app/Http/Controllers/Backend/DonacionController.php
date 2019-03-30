@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Models\Donacion;
 use App\Models\Centro;
+use App\Models\Tipo;
+use App\Models\Subtipo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -32,9 +34,14 @@ class DonacionController extends Controller
     {
         $centros= Centro::all();
 
-        $data['centros'] = $centros;
+        $tipos = Tipo::all();
+        $subtipos = Subtipo::all();
 
-        return view('donacion.create', $data);
+        $data['centros'] = $centros;
+        $data['tiposDonacion'] = $tipos;
+        $data['subtiposDonacion'] = $subtipos;
+
+        return view(self::PREFIX.'create', $data);
     }
 
     /**
@@ -52,7 +59,7 @@ class DonacionController extends Controller
         $donacion->centro_receptor_altres = $request->input('centro_receptor_altres');
         $donacion->usuarios_id = $request->input('usuarios_id');
         $donacion->usuario_receptor = $request->input('usuario_receptor');
-        $donacion->centro_desti_id = $request->input('centro_desti_id');
+        $donacion->centros_desti_id = $request->input('centros_desti_id');
         $donacion->donantes_id = $request->input('donantes_id');
         $donacion->coste = $request->input('coste');
         $donacion->unidades = $request->input('unidades');
