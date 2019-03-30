@@ -22,7 +22,6 @@ class DonanteController extends Controller
     public function index()
     {
         $donantes = Donante::all();
-        $locale = App::getLocale();
         $data['donantes']=$donantes;
         return view(self::PREFIX.'index',$data);
     }

@@ -97,65 +97,7 @@
                                         <option value="*">Gato</option>
                                         <option value="">Perro</option>
                                         <option value="">Otro</option>
-
-<<<<<<< HEAD
-    <div class="card mt-3 mb-3 mr-3 ml-3">
-        <!--Body-->
-        <div class="card-body">
-            <div class="col-lg-12 col-md-8">
-                <div class="table-responsive text-center">
-                    <table class="table table-striped">
-                        <thead class=" thead-dark">
-                            <tr>
-                                <th class="text-center">#</th>
-                                <th class="text-center">Nombre/Razon Social</th>
-                                <th class="text-center">Dirección</th>
-                                <th class="text-center">Teléfono</th>
-                                <th class="text-center">Email</th>
-                                <th colspan="2" class="text-center">Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($donantes as $donante)
-                            <tr data-nombre="{{ $donante->cif }}" data-nombre="{{ $donante->nombre }}" data-direccion="{{ $donante->direccion }}" data-telefono="{{ $donante->telefono }}"
-                                data-correo="{{ $donante->correo }}">
-
-                                <td class="text-center min-wdth">{{$donante->cif}}</td>
-                                <td class="text-center">{{$donante->nombre}}</td>
-                                <td class="text-center">{{$donante->direccion}}</td>
-                                <td class="text-center">{{$donante->telefono}}</td>
-                                <td class="text-center">{{$donante->correo}}</td>
-                                <td colspan="2" style="width: 1%" class="text-center">
-                                    <div class="btn-group" role="group" aria-label="Basic example">
-                                        <form class="p-0 m-0" action="{{ action('Backend\DonanteController@show',[$donante->id]) }}" method="GET">
-                                            @csrf
-                                            <button type="submit" data-toggle="tooltip" title="Ver" class="btn btn-primary" data-original-title="Ver"><i class="fa fa-eye"></i></button>
-                                        </form>
-                                        <form class="p-0 m-0" action="{{ action('Backend\DonanteController@edit',[$donante->id]) }}" method="GET">
-                                            @method('put') @csrf
-                                            <button type="submit" data-toggle="tooltip" title="Modificar" class="btn btn-warning" data-original-title="Ver"><i class="fa fa-edit"></i></button>
-                                        </form>
-                                        <form class="p-0 m-0" action="{{ action('Backend\DonanteController@destroy',[$donante->id]) }}" method="post">
-<<<<<<< HEAD
-                                            @method('delete')
-                                            @csrf
-                                            <button type="submit" onclick="destroySubmit(this,event,{{$donante}})" data-toggle="tooltip" title="Borrar" class="btn btn-danger" data-original-title="Ver"><i class="fa fa-trash"></i></button>
-=======
-                                            @method('delete') @csrf
-                                            <button type="submit" onclick="destroySubmit(this, event, {{$donante->nombre}})" data-toggle="tooltip" title="Borrar" class="btn btn-danger"
-                                                data-original-title="Ver"><i class="fa fa-trash"></i></button>
->>>>>>> master
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
-                            @endforeach
-                            </tr>
-                        </tbody>
-                    </table>
-=======
                                     </select>
->>>>>>> master
                 </div>
 
                 <div class="form-group">
