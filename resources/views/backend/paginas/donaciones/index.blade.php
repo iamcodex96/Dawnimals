@@ -1,9 +1,9 @@
-@extends('backend.plantillas.master')
+@extends('backend.plantillas.m_index')
+@section('titulo','Donacions')
+@section('subtitulo','Llistat de donancions')
+@section('url-crear', url('backend/donaciones/create'))
 
-@section('titulo','donaciones')
-
-
-@section('contenido')
+@section('m_contenido')
 
 <div class="container-fluid">
 
@@ -18,7 +18,6 @@
         </div>
 
     </div>
-
 
 </div>
 
@@ -99,7 +98,7 @@
                         <div class="col-lg-4 col-md-12 col-sm-12">
 
                             <div class="form-group">
-                                <label class="control-label" for="input-customer-group">Receptor</label>
+                                <label class="control-label" for="input-customer-group">Centro receptor</label>
                                 <select name="filter_receptor" id="input-receptor" class="form-control">
                                     <option value="*"></option>
                                     <option value="">Lista</option>
