@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Donacion;
@@ -13,11 +14,7 @@ class DonacionController extends Controller
 {
     const PREFIX = 'backend.paginas.donaciones.';
     const CONTROLADOR = 'Backend\DonacionController@';
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function index()
     {
         $donaciones = Donacion::all();

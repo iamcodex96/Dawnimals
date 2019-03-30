@@ -98,6 +98,7 @@
                                         <option value="">Perro</option>
                                         <option value="">Otro</option>
                     </select>
+
                 </div>
 
                 <div class="form-group">
