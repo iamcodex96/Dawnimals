@@ -6,144 +6,121 @@
 
 <div class="form-group float-left col-md-6">
     <!-- State Button -->
-    <label for="tipoD" class="control-label">Tipo de donante</label>
-    <select class="form-control" name="tipoD">
-                @foreach ($tipodonantes as $td)
-                <option value="{{$td->id}}">{{$td->tipo}}</option>
-                @endforeach
-            </select>
-</div>
-<div class="form-group float-left col-md-6">
-    <label for="full_name_id" class="control-label">Nombre o Razón social</label>
-    <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="">
-</div>
-<div class="form-group float-left col-md-6">
-    <label for="cif" class="control-label">CIF/NIF</label>
-    <input type="text" class="form-control" id="cif" name="cif" placeholder="">
+    <label for="tipoDonacion" class="control-label">Tipo Donación</label>
+    <select class="form-control" name="tipos_id">
+        @foreach ($tiposDonacion as $td)
+        <option value="{{$td->id}}">{{$td->nombre}}</option>
+        @endforeach
+        </select>
 </div>
 
 <div class="form-group float-left col-md-6">
-    <label for="direccion" class="control-label">Dirección</label>
-    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="">
-</div>
-
-<div class="form-group float-left col-md-6">
-    <label for="ciudad" class="control-label">Ciudad</label>
-    <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="">
-</div>
-
-<div class="form-group float-left col-md-6">
-    <label for="cp" class="control-label">Código Postal</label>
-    <input type="text" class="form-control" id="cp" name="cp" placeholder="">
+    <!-- State Button -->
+    <label for="subtipos_id" class="control-label">Subtipo Donación</label>
+    <select class="form-control" name="subtipos_id">
+        @foreach ($subtiposDonacion as $td)
+        <option value="{{$td->id}}">{{$td->nombre}}</option>
+        @endforeach
+        </select>
 </div>
 
 
 <div class="form-group float-left col-md-6">
-    <label for="pais" class="control-label">País</label>
-    <select class="form-control" name="pais" id="pais">
+    <!-- State Button -->
+    <label for="subtipos_id" class="control-label">Centro receptor</label>
+    <select class="form-control" name="centros_receptor_id">
+        @foreach ($centros as $centro)
+        <option value="{{$centro->id}}">{{$centro->nombre}}</option>
+        @endforeach
+    </select>
+</div>
 
+
+<div class="form-group float-left col-md-6">
+    <label for="desc_animal" class="control-label">Donación para:</label>
+    <select class="form-control" name="desc_animal">
+                    <option value="Perro">Perro</option>
+                    <option value="Gato">Gato</option></option>
+                    <option value="Otros">Otros</option>
+                    <option value="Todos">Todos</option>
                 </select>
 </div>
 
+
+{{-- este tendrá que asignarse según el usuario logado!!!! --}}
+
 <div class="form-group float-left col-md-6">
-    <label for="sexo" class="control-label">Sexo</label>
-    <select class="form-control" name="sexo">
-                    @foreach ($sexos as $sexo)
-                    <option value="{{$sexo->id}}">{{$sexo->sexo}}</option>
-                    @endforeach
+    <label for="ciudad" class="control-label">Usuario</label>
+    <input type="number" class="form-control" id="usuarios_id" name="usuarios_id" placeholder="">
+</div>
+
+
+<div class="form-group float-left col-md-6">
+    <label for="cp" class="control-label">Usuario Receptor</label>
+    <input type="text" class="form-control" id="usuario_receptor" name="usuario_receptor" placeholder="">
+</div>
+
+
+<div class="form-group float-left col-md-6">
+
+    <label for="subtipos_id" class="control-label">Centro destino</label>
+    <select class="form-control" name="centros_desti_id">
+        @foreach ($centros as $centro)
+        <option value="{{$centro->id}}">{{$centro->nombre}}</option>
+        @endforeach
+    </select>
+</div>
+
+<div class="form-group float-left col-md-6">
+    <label for="ciudad" class="control-label">Donante ID</label>
+    <input type="number" class="form-control" id="donantes_id" name="donantes_id" placeholder="">
+</div>
+
+
+<div class="form-group float-left col-md-6">
+    <label for="ciudad" class="control-label">Coste</label>
+    <input type="number" class="form-control" id="coste" name="coste" placeholder="">
+</div>
+
+<div class="form-group float-left col-md-6">
+    <label for="ciudad" class="control-label">Unidades</label>
+    <input type="number" class="form-control" id="unidades" name="unidades" placeholder="">
+</div>
+
+<div class="form-group float-left col-md-6">
+    <label for="desc_animal" class="control-label">Tipo Unidad</label>
+    <select class="form-control" name="unidades_tipo">
+                    <option value="Uni">Unidades</option>
+                    <option value="KG">Quilos</option></option>
+                    <option value="Otros">Litros</option>
+                    <option value="Otros">Otros</option>
                 </select>
 </div>
 
+
+
+
 <div class="form-group float-left col-md-6">
-    <label for="email" class="control-label">Email</label>
-    <input type="text" class="form-control" id="email" name="email" placeholder="">
+    <label for="ciudad" class="control-label">Peso</label>
+    <input type="number" class="form-control" id="peso" name="peso" placeholder="">
 </div>
 
-<div class="form-group float-left col-md-6">
-    <label for="telefono" class="control-label">Telefono</label>
-    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="">
-</div>
-
-<hr class="w-100">
 
 <div class="form-group float-left col-md-6">
-    <label for="tieneAnimales" class="control-label">¿Tiene animales?</label>
-    <select class="form-control" name="tieneAnimales">
-                    <option value="*"></option>
+    <label for="desc_animal" class="control-label">Es coordinada</label>
+    <select class="form-control" name="es_coordinada">
                     <option value="1">Sí</option>
-                    <option value="0">No</option>
+                    <option value="0">No</option></option>
                 </select>
 </div>
 
-<div class="form-group float-left col-md-6">
-    <label for="esHabitual" class="control-label">¿Es donante habitual?
-
-                </label>
-    <select class="form-control" name="esHabitual">
-                        <option value="*"></option>
-                        <option value="1">Sí</option>
-                        <option value="0">No</option>
-                    </select>
-</div>
 
 <div class="form-group float-left col-md-6">
-    <label for="aAdoptado" class="control-label">¿Ha adoptado alguna vez?
-
-                    </label>
-    <select class="form-control" name="aAdoptado">
-                            <option value="*"></option>
-                            <option value="1">Sí</option>
-                            <option value="0">No</option>
-                        </select>
+    <label for="cp" class="control-label">Factura</label>
+    <input type="text" class="form-control" id="ruta_factura" name="ruta_factura" placeholder="cambiar por fichero">
 </div>
 
 
-<div class="form-group float-left col-md-6">
-    <label for="esColaborador" class="control-label">¿Es colaborador?
-
-                    </label>
-    <select class="form-control" name="esColaborador">
-                            <option value="*"></option>
-                            <option value="1">Sí</option>
-                            <option value="0">No</option>
-                        </select>
-</div>
-
-<div class="form-group float-left col-md-6">
-    <label for="tipoColaborador" class="control-label">Tipo de colaboración
-
-                    </label>
-    <select class="form-control" id="tipoColaborador">
-                            <option value="*"></option>
-                            <option value="1">no sé</option>
-                            <option value="0">no sé</option>
-                        </select>
-</div>
-
-<div class="form-group float-left col-md-6">
-    <label for="vinculo" class="control-label">Vínculo Entidad</label>
-    <select class="form-control" name="vinculo">
-                        <option value="*"></option>
-                        <option value="Socio">Socio</option>
-                        <option value="Patrocinador">Patrocinador</option>
-                        <option value="Teamer">Teamer</option>
-                        <option value="Adoptante">Adoptante</option>
-                        <option value="Voluntario">Voluntario acogidas</option>
-                </select>
-</div>
 @endsection
 
-@section('scripts')
-<script>
-    restcountries.getAll(function(countries){
-            countries.forEach(function(country){
-                var $country = $("<option></option>").val(country.code).html(country.nombre);
 
-                if (country.code == restcountries.defaultCode){
-                    $country.attr("selected", "");
-                }
-                $("#pais").append($country);
-            });
-        });
-</script>
-@endsection
