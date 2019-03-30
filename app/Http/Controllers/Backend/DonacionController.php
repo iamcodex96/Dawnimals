@@ -1,21 +1,24 @@
 <?php
 
-namespace App\Http\Controllers;
+
+namespace App\Http\Controllers\Backend;
 
 use App\Models\Donacion;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use App\Classes\Utilitat;
 
 class DonacionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    const PREFIX = 'backend.paginas.donaciones.';
+    const CONTROLADOR = 'Backend\DonacionController@';
+  
     public function index()
     {
-        //
+        $donaciones = Donacion::all();
+        $data['donaciones']=$donaciones;
+        return view(DonacionController::PREFIX.'index',$data);
     }
 
     /**
