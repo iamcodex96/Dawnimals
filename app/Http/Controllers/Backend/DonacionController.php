@@ -4,6 +4,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Donacion;
+use App\Models\Centro;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +29,11 @@ class DonacionController extends Controller
      */
     public function create()
     {
-        //
+        $centros= Centro::all();
+
+        $data['centros'] = $centros;
+
+        return view('donacion.create', $data);
     }
 
     /**

@@ -169,14 +169,19 @@
 
                                 <tr>
                                     <th class="text-center">ID</th>
-                                    <th class="text-center">Fecha</th>
-                                    <th class="text-center">Concepto</th>
-                                    <th class="text-center">Importe</th>
-                                    <th class="text-center">Centro destino</th>
+                                    <th class="text-center">Centro</th>
+                                    <th class="text-center">Coste</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                        @foreach ($donaciones as $donacion)
 
+                                            <td class="text-center">{{$donacion->id}}</td>
+                                            <td class="text-center">{{$donacion->centroReceptor->nombre}}</td>
+                                            <td class="text-center">{{$donacion->coste}}</td>
+
+                                        </tr>
+                                        @endforeach
 
                                 </tbody>
                             </table>
