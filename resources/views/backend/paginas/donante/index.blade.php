@@ -168,6 +168,7 @@
 
 @section("scripts")
 @parent
+<script src="{{ asset('js/api/dawnimalsAPI.js') }}"></script>
 <script>
         $('#input-haAdoptado').change(function() {
 
