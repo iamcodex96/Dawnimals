@@ -20,8 +20,9 @@ class Donacion extends Model
     {
         return $this->belongsTo('App\Models\Donante', 'donantes_id');
     }
-    public function centroReceptor()
+    public function centro()
     {
-        return $this->belongsTo('App\Models\Centro', 'centro_receptor_id');
+        return $this->belongsTo('App\Models\Centro', 'centros_receptor_id');
     }
+
 }
