@@ -4,6 +4,7 @@ var ftipos=[];
 var froles=[];
 var fsexos=[];
 var inputTipo = $('#tipo');
+var inputSubTipo=$('#subtipo');
 setAttr();
 function pushDatos(datos){
 
@@ -24,6 +25,7 @@ function pushDatos(datos){
     ftipos = tiposData;
     fsexos = sexosData;
     froles = rolesData;
+    crearOpcionesTipo(ftipos);
 }
 
 inputTipo.on("change",function(){
@@ -32,28 +34,43 @@ inputTipo.on("change",function(){
 
 function setSubtiposByTipo(){
     $.ajax({
-        url:urlApi+'subtipo',
-        method:get,
-        data:$(inputTipo).val(),
+        url:urlApi+'subtipo/'+$(inputTipo).val(),
+        method:'get',
         contentType: "text",
         dataType: "text",
         success: function(subtipos){
             subtipos = JSON.parse(subtipos);
-            console.log(subtipos);
+            crearOpcionesSubtipo(subtipos);
         }
     })
 }
-
 function setAttr(){
     $.ajax({
-        url:urlApi,
+        url:urlApi+'formdata',
         method: "get",
         contentType: "text",
         dataType: "text",
         success: function (data) {
             data = JSON.parse(data);
-            console.log(data);
             pushDatos(data);
         }
      });
+}
+
+function crearOpcionesTipo(listaTipo){
+    listaTipo.forEach(function(tipo){
+        var option=$('<option></option>');
+        option.attr('value',tipo.id);
+        option.html(tipo.nombre);
+        inputTipo.append(option);
+    });
+}
+function crearOpcionesSubtipo(subtipos){
+        inputSubTipo.html('');
+        subtipos['data'].forEach(function(subtipo){
+        var option=$('<option></option>');
+        option.attr('value',subtipo.id);
+        option.html(subtipo.nombre);
+        inputSubTipo.append(option);
+    });
 }

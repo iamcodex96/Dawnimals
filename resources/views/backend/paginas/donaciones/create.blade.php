@@ -7,20 +7,24 @@
 <div class="form-group float-left col-md-6">
     <!-- State Button -->
     <label for="tipoDonacion" class="control-label">Tipo Donación</label>
-    <select class="form-control" name="tipos_id">
+    <select id="tipo" class="form-control" name="tipos_id">
+        <!--
         @foreach ($tiposDonacion as $td)
         <option value="{{$td->id}}">{{$td->nombre}}</option>
         @endforeach
+        -->
         </select>
 </div>
 
 <div class="form-group float-left col-md-6">
     <!-- State Button -->
     <label for="subtipos_id" class="control-label">Subtipo Donación</label>
-    <select class="form-control" name="subtipos_id">
+    <select id="subtipo" class="form-control" name="subtipos_id">
+        <!--
         @foreach ($subtiposDonacion as $td)
         <option value="{{$td->id}}">{{$td->nombre}}</option>
         @endforeach
+        -->
         </select>
 </div>
 
@@ -123,4 +127,7 @@
 
 @endsection
 
-
+@section('scripts')
+@parent
+    <script src="{{ asset('js/api/dawnimalsAPI.js') }}"></script>
+@endsection
