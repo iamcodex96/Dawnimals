@@ -1,13 +1,13 @@
 //web : http://localhost:8080/Dawnimals/public/api/formdata
-var urlApi = 'http://localhost:8080/Dawnimals/public/api/formdata';
+var urlApi = 'http://localhost:8080/Dawnimals/public/api/';
 var ftipos=[];
 var froles=[];
 var fsexos=[];
+var inputTipo = $('#tipo');
 setAttr();
 function pushDatos(datos){
 
     var datos = datos['data'];
-    console.log(datos);
     var tiposData = [];
     var sexosData = [];
     var rolesData = [];
@@ -20,10 +20,28 @@ function pushDatos(datos){
     datos['roles'].forEach(function(elem){
         rolesData.push(elem);
     });
-    console.log( tiposData);
+
     ftipos = tiposData;
     fsexos = sexosData;
     froles = rolesData;
+}
+
+inputTipo.on("change",function(){
+    setSubtiposByTipo();
+})
+
+function setSubtiposByTipo(){
+    $.ajax({
+        url:urlApi+'subtipo',
+        method:get,
+        data:$(inputTipo).val(),
+        contentType: "text",
+        dataType: "text",
+        success: function(subtipos){
+            subtipos = JSON.parse(subtipos);
+            console.log(subtipos);
+        }
+    })
 }
 
 function setAttr(){
@@ -34,6 +52,7 @@ function setAttr(){
         dataType: "text",
         success: function (data) {
             data = JSON.parse(data);
+            console.log(data);
             pushDatos(data);
         }
      });

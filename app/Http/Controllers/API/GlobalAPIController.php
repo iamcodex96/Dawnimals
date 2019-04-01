@@ -10,6 +10,7 @@ use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\GlobalAPIResource;
+use App\Http\Resources\SubtipoResource;
 use Illuminate\Database\QueryException;
 use App\Classes\Utilitat;
 
@@ -26,8 +27,9 @@ class GlobalAPIController extends Controller{
     protected function getTipos(){
         return Tipo::all();
     }
-    protected function getSubTiposByTipo($tipo){
-
+    protected function getSubTiposByTipo($id_tipo){
+        $subtipo = Subtipo::where('tipos_id',$id_tipo)->get();
+         return new SubtipoResource($subtipo);
     }
     protected function getSexos(){
         return Sexo::all();

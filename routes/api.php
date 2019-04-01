@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/formdata', 'API\GlobalAPIController@getFormData');
+Route::get('/subtipo/{id}', 'API\GlobalAPIController@getSubTiposByTipo');
