@@ -54,7 +54,7 @@
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Donaciones</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{url('backend/Altadonacion')}}">Añadir Donación</a>
+                            <a href="{{url('backend/donaciones/create')}}">Añadir Donación</a>
                         </li>
                         <li>
                             <a href="{{url('/backend/donaciones')}}">Buscar donación</a>
