@@ -97,7 +97,8 @@
                                         <option value="*">Gato</option>
                                         <option value="">Perro</option>
                                         <option value="">Otro</option>
-                                    </select>
+                    </select>
+
                 </div>
 
                 <div class="form-group">

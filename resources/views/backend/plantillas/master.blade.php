@@ -57,7 +57,7 @@
                             <a href="{{url('backend/Altadonacion')}}">Añadir Donación</a>
                         </li>
                         <li>
-                            <a href="{{url('backend/donaciones')}}">Buscar donación</a>
+                            <a href="{{url('/backend/donaciones')}}">Buscar donación</a>
                         </li>
                         <li>
                             <a href="#">Otros</a>

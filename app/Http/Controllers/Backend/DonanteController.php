@@ -35,6 +35,7 @@ class DonanteController extends Controller
     {
         $data['sexos']=Sexo::all();
         $data['tipodonantes']=TipoDonante::all();
+
         return view(self::PREFIX.'create',$data);
     }
 
