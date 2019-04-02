@@ -15,9 +15,14 @@ class UsuariosController extends Controller
     const PREFIX = "backend.paginas.mantenimientos.usuarios.";
     const CONTROLADOR = "Backend\Mantenimientos\UsuariosController@";
 
-    public function index()
+    public function index(Request $request)
     {
-        $data["usuarios"] = Usuario::all();
+        $query = Usuario::query();
+
+        $data = [];
+        $query = Utilitat::setFiltros($request, $query, $data);
+
+        $data["usuarios"] = $query->paginate(1);
 
         return view(self::PREFIX . "index", $data);
     }

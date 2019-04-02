@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="{{ asset('Bootstrap/css/bootstrap.min.css') }}">
 
-    <link rel="stylesheet" href="{{asset("css/backend/dashboard.css")}}">
+    <link rel="stylesheet" href="{{asset('css/backend/dashboard.css')}}">
     <link rel="stylesheet" href="{{ asset('Bootstrap/css/jquery.mCustomScrollbar.min.css') }}">
 
     <!-- Font Awesome JS -->
@@ -36,9 +36,9 @@
             <ul class="list-unstyled components">
 
                 <li>
-                <a href="{{asset('/backend')}}">Panel de control</a>
+                    <a href="{{asset('/backend')}}">Panel de control</a>
 
-                   <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
                             <a href="#">Graficos</a>
                         </li>
@@ -54,7 +54,7 @@
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Donaciones</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="{{url('backend/Altadonacion')}}" >Añadir Donación</a>
+                            <a href="{{url('backend/Altadonacion')}}">Añadir Donación</a>
                         </li>
                         <li>
                             <a href="{{url('backend/donaciones')}}">Buscar donación</a>
@@ -66,7 +66,7 @@
                     <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false">Donantes</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu2">
                         <li>
-                            <a href="{{url('/backend/donantes/create')}}" >Añadir Donante</a>
+                            <a href="{{url('/backend/donantes/create')}}">Añadir Donante</a>
                         </li>
                         <li>
                             <a href="{{url('/backend/donantes')}}">Buscar Donante</a>
@@ -78,8 +78,8 @@
                     <a href="#pageSubMantenimientos" data-toggle="collapse" aria-expanded="false">Mantenimientos</a>
                     <ul class="collapse list-unstyled" id="pageSubMantenimientos">
                         <li>
-                            <a href="{{url('backend/mantenimientos/usuarios')}}" >Usuarios</a>
-                            <a href="{{url('backend/mantenimientos/perfiles')}}" >Perfiles</a>
+                            <a href="{{url('backend/mantenimientos/usuarios')}}">Usuarios</a>
+                            <a href="{{url('backend/mantenimientos/perfiles')}}">Perfiles</a>
                         </li>
                     </ul>
                 </li>
@@ -92,36 +92,32 @@
         <div id="content">
 
             <nav class="navbar navbar-dark bg-dark sticky-top">
-                    <div class="float-left">
-                        <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <div class="float-left">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
                             <i class="fas fa-align-justify"></i>
                         </button>
-                    </div>
-                    <div class="float-right">
-                        <a class="btn btn-danger" href="{{ url('/landing') }}"><i class="fas fa-sign-out-alt"></i></a>
-                    </div>
                 </div>
-            </nav>
+                <div class="float-right">
+                    <a class="btn btn-danger" href="{{ url('/backend/logout') }}"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+        </div>
+        </nav>
 
-            <div class="container" style="margin-top: 100px;">
-                @include("backend.partial.mensajes")
-
-                @yield('contenido')
-
-                @yield('modals')
-            </div>
+        <div class="container" style="margin-top: 100px;">
+    @include('backend.partial.mensajes') @yield('contenido') @yield('modals')
+        </div>
 
 
 
-            <!-- Popper.JS -->
-            <script src="{{ asset('Bootstrap/js/popper.min.js') }}"></script>
-            <!-- Bootstrap JS -->
-            <script src="{{ asset('Bootstrap/js/bootstrap.min.js') }}"></script>
-            <!-- jQuery Custom Scroller CDN -->
-            <script src="{{ asset('Bootstrap/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+        <!-- Popper.JS -->
+        <script src="{{ asset('Bootstrap/js/popper.min.js') }}"></script>
+        <!-- Bootstrap JS -->
+        <script src="{{ asset('Bootstrap/js/bootstrap.min.js') }}"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script src="{{ asset('Bootstrap/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
 
-            <script type="text/javascript">
-                $(document).ready(function() {
+        <script type="text/javascript">
+            $(document).ready(function() {
                     var sidebarActive = false;
                     $("#sidebar").mCustomScrollbar({
                         theme: "minimal"
@@ -140,9 +136,9 @@
                         }
                     });
                 });
-            </script>
+        </script>
 
-            @yield("scripts")
+        @yield("scripts")
 </body>
 
 </html>

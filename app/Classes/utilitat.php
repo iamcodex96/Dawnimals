@@ -1,12 +1,45 @@
 <?php
 
-namespace App\Clases;
+namespace App\Classes;
 
 class Utilitat
 {
+    public static function setFiltros($request, $query, &$data){
+        $filtros = $request->input('filtros');
+
+        $data["filtros"] = $filtros;
+
+        if ($filtros != null){
+
+            foreach ($filtros as $filtro => $valor){
+                $query = self::setFiltro($query, $filtro, $valor);
+            }
+        }
+
+        return $query;
+    }
+
+    public static function setFiltro($query, $filtro, $valor){
+        if ($valor != null && $valor != ""){
+            $nValor = "%".$valor."%";
+
+            $pos = strpos($filtro, ".");
+            if ($pos === false){
+                $query = $query->where($filtro, "like", $nValor);
+            } else{
+                $parent = substr($filtro, 0, $pos);
+                $campo = substr($filtro, $pos+1, strlen($filtro)-$pos);
+
+                $query = $query->whereHas($parent, function($nQuery) use($campo, $nValor) {
+                    $nQuery->where($campo, "like", $nValor);
+                });
+            }
+        }
+        return $query;
+    }
+
     public static function controlError($ex)
     {
-
         $mensaje = "";
         if (!empty($ex->errorInfo[1]))
         {
