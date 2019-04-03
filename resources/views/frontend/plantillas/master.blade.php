@@ -13,14 +13,14 @@
     <title>@yield("titulo")</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" background="none">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav"><!-- d-flex justify-content-end -->
+        <div class="collapse navbar-collapse text-black-50 text-center" id="navbarNav"><!-- d-flex justify-content-end -->
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href="https://www.protectoramataro.org/es">SPAM</a>
+               <img  src="{{ asset('./img/Spami_M.png') }}" width="60px" height="60px"  alt="">
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="https://www.protectoramataro.org/es/quienes-somos-que-hacemos">Qui Som?</a>
@@ -41,12 +41,16 @@
         <a href="#cuarto" onclick="updateIcon(3,'cuarto')" data-toggle="tooltip" data-placement="left" title="Opcion 4" class="nav-link mt-3"><i class="far fa-circle"></i></a>
     </nav>
     <div id="overlay">
+
             <nav class="nav flex-column p-0 d-flex justify-content-center">
+
                 <a href="https://www.protectoramataro.org/es" class="nav-link text-center">SPAM</a>
                 <a href="https://www.protectoramataro.org/es/quienes-somos-que-hacemos" class="nav-link text-center">Quien Somos?</a>
                 <a href="https://www.protectoramataro.org/es/cercador-animals" class="nav-link text-center">Animales</a>
                 <a href="{{ url('backend/login') }}" class="nav-link text-center">Acceso Portal</a>
+
             </nav>
+
     </div>
     @yield('contenido')
     @yield('js_loaded')
