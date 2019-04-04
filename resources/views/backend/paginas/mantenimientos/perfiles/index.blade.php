@@ -1,6 +1,6 @@
 @extends('backend.plantillas.m_index')
-@section('titulo','Perfils')
-@section('subtitulo','Llistat de perfils')
+@section('titulo', __('backend.perfiles'))
+@section('subtitulo', __('backend.listado_perfiles'))
 @section('url-crear',
 url('backend/mantenimientos/perfiles/create'))
 @section('m_contenido')
@@ -16,7 +16,7 @@ url('backend/mantenimientos/perfiles/create'))
             </form>
         </tr>
         <tr>
-            <th>Perfil</th>
+            <th>{{ __('backend.perfil') }}</th>
             <th class="buttons-2"></th>
         </tr>
     </thead>

@@ -8,31 +8,29 @@ Route::get('/landing', function () {
 })->name("landing");
 //////////////////////////// PAGS FRONTEND ///////////////////////////////////
 
-
-// Route::get('backend/chgIdioma/{locale}', function ($locale) {
-//     App::setLocale($locale);
-// });
-
-
 //////////////////////////// PAGS BACKEND ////////////////////////////////////
-Route::get('/backend/login', 'Backend\AccountController@index');
-Route::post('/backend/login', 'Backend\AccountController@login')->name("login");
-Route::get('/backend/logout', 'Backend\AccountController@logout')->name("logout");
+Route::prefix("backend/")->middleware("locale")->group(function() {
 
-//Route::group(['middleware' => ['auth']], function () {
-    Route::get('/backend', function () {
-        return view('backend.paginas.backend');
+    Route::get('chgIdioma/{lang}', 'LocalizationController@chgIdioma');
+
+    Route::get('login', 'Backend\AccountController@index');
+    Route::post('login', 'Backend\AccountController@login')->name("login");
+    Route::get('logout', 'Backend\AccountController@logout')->name("logout");
+
+    Route::group(['middleware' => ['auth']], function () {
+        Route::get('/', function () {
+            return view('backend.paginas.backend');
+        });
+
+        Route::resource('donantes', 'Backend\DonanteController');
+
+        Route::resource('donaciones', 'Backend\DonacionController');
+
+        Route::resource("mantenimientos/usuarios", "Backend\Mantenimientos\UsuariosController");
+
+        Route::resource("mantenimientos/perfiles", "Backend\Mantenimientos\PerfilesController");
     });
-
-    Route::resource('/backend/donantes', 'Backend\DonanteController');
-
-    Route::resource('/backend/donaciones', 'Backend\DonacionController');
-
-
-    Route::resource("backend/mantenimientos/usuarios", "Backend\Mantenimientos\UsuariosController");
-
-    Route::resource("backend/mantenimientos/perfiles", "Backend\Mantenimientos\PerfilesController");
-
-
-//});
+});
 //////////////////////////// PAGS BACKEND ////////////////////////////////////
+
+

@@ -1,25 +1,25 @@
 @extends('backend.plantillas.m_index')
-@section('titulo','Usuaris')
-@section('subtitulo','Llistat de usuaris')
+@section('titulo', __('backend.usuarios'))
+@section('subtitulo', __('backend.listado_usuarios'))
 @section('url-crear', url('backend/mantenimientos/usuarios/create'))
 @section('m_contenido')
 
 <form class="card card-body m-2" action="{{ action('Backend\Mantenimientos\UsuariosController@index') }}" method="GET">
     <div class="row">
         <div class="form-group col-md-6">
-            <label for="">Nom</label>
+            <label for="">{{ __('backend.nombre') }}</label>
             <input type="text" class="form-control" name="filtros[nombre]" id="filtrosNombre" value="{{ $filtros['nombre'] }}">
         </div>
         <div class="form-group col-md-6">
-            <label for="">Usuari</label>
+            <label for="">{{ __('backend.usuario') }}</label>
             <input type="text" class="form-control" name="filtros[nombre_usuario]" id="filtrosNombre" value="{{ $filtros['nombre_usuario'] }}">
         </div>
         <div class="form-group col-md-6">
-            <label for="">Correu</label>
+            <label for="">{{ __('backend.correo') }}</label>
             <input type="text" class="form-control" name="filtros[correo]" id="filtrosNombre" value="{{ $filtros['correo'] }}">
         </div>
         <div class="form-group col-md-6">
-            <label for="">Perfil</label>
+            <label for="">{{ __('backend.perfil') }}</label>
             <input type="text" class="form-control" name="filtros[role.rol]" id="filtrosNombre" value="{{ $filtros['role.rol'] }}">
         </div>
 
@@ -32,10 +32,10 @@
 <table class="table table-bordered">
     <thead class="thead-dark">
         <tr>
-            <th>Nom</th>
-            <th>Username</th>
-            <th>Correu</th>
-            <th>Perfil</th>
+            <th>{{ __('backend.nombre') }}</th>
+            <th>{{ __('backend.usuario') }}</th>
+            <th>{{ __('backend.correo') }}</th>
+            <th>{{ __('backend.perfil') }}</th>
             <th class="buttons-2"></th>
         </tr>
     </thead>
