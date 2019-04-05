@@ -4,7 +4,7 @@
 @section('url-crear', url('backend/mantenimientos/usuarios/create'))
 @section('m_contenido')
 
-<form class="card card-body m-2" action="{{ action('Backend\Mantenimientos\UsuariosController@index') }}" method="GET">
+<form class="card card-body m-2 collapse filtro" action="{{ action('Backend\Mantenimientos\UsuariosController@index') }}" method="GET">
     <div class="row">
         <div class="form-group col-md-6">
             <label for="">{{ __('backend.nombre') }}</label>

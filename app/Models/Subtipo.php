@@ -17,4 +17,8 @@ class Subtipo extends Model
         return $this->hasMany('App\Models\Donacion', 'subtipos_id');
     }
 
+    public function tipo(){
+        return $this->belongsTo('App\Models\Tipo', 'tipos_id');
+    }
+
 }

@@ -7,7 +7,7 @@ url('backend/mantenimientos/perfiles/create'))
 
 <table class="table table-bordered">
     <thead class="thead-dark">
-        <tr class="filtro">
+        <tr class="filtro collapse">
             <form action="{{ action('Backend\Mantenimientos\PerfilesController@index')}}" method="GET">
                 <td>
                     <input type="text" class="form-control" name="filtros[rol]" id="rol" value="{{ $filtros['rol'] }}">

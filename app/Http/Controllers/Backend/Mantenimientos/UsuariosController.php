@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Backend\Mantenimientos;
 use App\Http\Controllers\Controller;
 use App\Models\Role;
 use App\Models\Usuario;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 use App\Classes\Utilitat;
 use Illuminate\Database\QueryException;
 
@@ -22,7 +22,7 @@ class UsuariosController extends Controller
         $data = [];
         $query = Utilitat::setFiltros($request, $query, $data);
 
-        $data["usuarios"] = $query->paginate(1);
+        $data["usuarios"] = $query->paginate(10);
 
         return view(self::PREFIX . "index", $data);
     }
