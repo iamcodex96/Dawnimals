@@ -49,3 +49,26 @@
 }
 
 /*# sourceMappingURL=master-public.css.map */
+
+li.nav-item.texto{
+
+    margin-right:234px;
+    margin-top:11px;
+    color:black;
+
+}
+
+li.nav-item.navLogo{
+
+    margin-right:140px;
+
+}
+
+a.nav-link{
+    color:purple !important;
+
+}
+
+
+
+
