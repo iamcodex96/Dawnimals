@@ -1,4 +1,4 @@
-//web : http://localhost:8080/Dawnimals/public/api/formdata
+
 var urlApi = 'http://localhost:8080/Dawnimals/public/api/';
 var ftipos=[];
 var froles=[];
