@@ -1,13 +1,13 @@
 @extends('backend.plantillas.m_index')
-@section('titulo','Perfils')
-@section('subtitulo','Llistat de perfils')
+@section('titulo', __('backend.perfiles'))
+@section('subtitulo', __('backend.listado_perfiles'))
 @section('url-crear',
 url('backend/mantenimientos/perfiles/create'))
 @section('m_contenido')
 
 <table class="table table-bordered">
     <thead class="thead-dark">
-        <tr class="filtro">
+        <tr class="filtro collapse">
             <form action="{{ action('Backend\Mantenimientos\PerfilesController@index')}}" method="GET">
                 <td>
                     <input type="text" class="form-control" name="filtros[rol]" id="rol" value="{{ $filtros['rol'] }}">
@@ -16,7 +16,7 @@ url('backend/mantenimientos/perfiles/create'))
             </form>
         </tr>
         <tr>
-            <th>Perfil</th>
+            <th>{{ __('backend.perfil') }}</th>
             <th class="buttons-2"></th>
         </tr>
     </thead>

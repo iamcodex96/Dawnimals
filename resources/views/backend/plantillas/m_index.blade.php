@@ -6,11 +6,12 @@
 
 <div class="cabecera mb-4">
     <div class="row">
-        <div class="col-md-11 col-sm-12">
+        <div class="col-md-9 col-sm-12">
             <h1>@yield('titulo')</h1>
         </div>
-        <div class="col-md-1 col-sm-12">
-            <a href="@yield('url-crear')" class="btn btn-success float-right" data-toggle="tooltip" data-placement="top" title="Agregar donante"> <i class="fa fa-plus"></i> </a>
+        <div class="col-md-3 col-sm-12 d-flex justify-content-end align-items-center">
+            <button class="btn btn-primary" style="margin-right: 10px;" data-toggle="collapse" data-target=".filtro"><span class="fa fa-filter"></span></button>
+            <a href="@yield('url-crear')" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Agregar donante"> <i class="fa fa-plus"></i> </a>
         </div>
     </div>
 </div>
@@ -36,11 +37,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Desitges esborrar aquest registre?</p>
+                <p>{{ __('backend.pregunta_borrar') }}</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btnAceptar">ACEPTAR</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
+                <button type="button" class="btn btn-primary btnAceptar">{{ __('backend.aceptar') }}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('backend.cancelar') }}</button>
             </div>
         </div>
     </div>

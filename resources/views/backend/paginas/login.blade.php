@@ -26,7 +26,7 @@
                                         <span class="fa fa-user"></span>
                                     </div>
                                 </div>
-                                <input type="text" class="form-control" name="correo" id="correo" value="{{ old("correo") }}" placeholder="Correo">
+                                <input type="text" class="form-control" name="correo" id="correo" value="{{ old("correo") }}" placeholder='{{ __("backend.correo")}}'>
                             </div>
                         </div>
 
@@ -43,12 +43,12 @@
 
                         <div class="form-group text-center mt-4">
                             <button type="submit" class="btn btn-lg btn-primary">
-                                Iniciar sesión
+                                {{ __("backend.iniciar_sesion")}}
                             </button>
                         </div>
 
                         <a href="#" class="btn btn-link float-right">
-                            Has olvidado tu contraseña?
+                            {{ __("backend.pregunta_contraseña")}}
                         </a>
                     </form>
                 </div>
