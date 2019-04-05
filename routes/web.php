@@ -17,7 +17,7 @@ Route::prefix("backend/")->middleware("locale")->group(function() {
     Route::post('login', 'Backend\AccountController@login')->name("login");
     Route::get('logout', 'Backend\AccountController@logout')->name("logout");
 
-    Route::group(['middleware' => ['auth']], function () {
+    //Route::group(['middleware' => ['auth']], function () {
         Route::get('/', function () {
             return view('backend.paginas.backend');
         });
@@ -29,7 +29,7 @@ Route::prefix("backend/")->middleware("locale")->group(function() {
         Route::resource("mantenimientos/usuarios", "Backend\Mantenimientos\UsuariosController");
 
         Route::resource("mantenimientos/perfiles", "Backend\Mantenimientos\PerfilesController");
-    });
+    //});
 });
 //////////////////////////// PAGS BACKEND ////////////////////////////////////
 

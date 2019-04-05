@@ -1,21 +1,42 @@
 <?php
     return [
+        //Login
         "nombre_menu" => "Donacions SPAM",
         "correo" => "Correu",
         "password" => "Contrasenya",
         "iniciar_sesion" => "Iniciar sessió",
         "pregunta_contraseña" => "Has oblidat la teva contrasenya?",
         "panel_control" => "Panel de control",
-
+        //Donaciones
         "donaciones" => "Donacions",
         "donacion" => "Donació",
         "donacion_añadir" => "Afegir Donació",
         "donacion_buscar" => "Cercar Donació",
-
+        //Donantes
         "donantes" => "Donants",
         "donante_añadir" => "Afegir Donant",
         "donante_buscar" => "Cercar Donant",
-
+        "lista_donantes"=>"Llista de donantes",
+        "nombre_donante"=>"Nom o raó social",
+        "animal_adoptado"=>"Animal adoptat",
+        "tipo_donante"=>"Tipus Donant",
+        "sexo"=>"Sexe",
+        "localidad"=>"localitat",
+        "vinculo"=>"Vincle Entitat",
+        "habitual"=>"Donant Habitual",
+        "adopta"=>"Ha adoptat abans?",
+        "fecha_alta"=>"Data d'alta",
+        "direccion"=>"Direcció",
+        "telefono"=>"Telèfon",
+        "accion"=>"Acció",
+        "filtro"=>"Filtre",
+        "ciudad"=>"Ciutat",
+        "cp"=>"Codi postal",
+        "pais"=>"Païs",
+        "donante_animales"=>"¿Té animals?",
+        "colaborador"=>"Es colaborador?",
+        "tipo_colab"=>"Tipu de colaboració",
+        //Usuarios/Perfiles
         "mantenimientos" => "Manteniments",
         "usuarios" => "Usuaris",
         "usuario" => "Usuari",

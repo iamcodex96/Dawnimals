@@ -9,19 +9,19 @@
         <div class="row search">
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="form-group">
-                    <label class="control-label" for="input-name">Nombre o Razón social</label>
+                    <label class="control-label" for="input-name">{{__('backend.nombre_donante')}}</label>
                     <input type="text" name="filtros[nombre]" value="" placeholder="Nombre o Razón social del donante" id="input-name" class="form-control"
                         autocomplete="off">
                     <ul class="dropdown-menu"></ul>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="input-email">E-Mail</label>
+                    <label class="control-label" for="input-email">{{__('backend.correo')}}</label>
                     <input type="text" name="filter_email" value="" placeholder="E-Mail" id="input-email" class="form-control" autocomplete="off">
                     <ul class="dropdown-menu"></ul>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label" for="input-customer-group">Donante habitual</label>
+                    <label class="control-label" for="input-customer-group">{{__('backend.habitual')}}</label>
                     <select name="filter_donante_habitual" id="input-donante-habitual" class="form-control">
                                         <option value="*"></option>
                                         <option value="">Sí</option>
@@ -33,7 +33,7 @@
             <div class="col-lg-4 col-md-12 col-sm-12">
 
                 <div class="form-group">
-                    <label class="control-label" for="input-customer-group">Tipo Donante</label>
+                    <label class="control-label" for="input-customer-group">{{__('backend.tipo_donante')}}</label>
                     <select name="filter_donante_tipo" id="input-donante-tipo" class="form-control">
                                         <option value="*"></option>
                                         <option value="">Particular</option>
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label" for="input-customer-group">Localidad</label>
+                    <label class="control-label" for="input-customer-group">{{__('backend.localidad')}}</label>
                     <select name="filter_donante_localidad" id="input-donante-localidad" class="form-control">
                                         <option value="*"></option>
                                         <option value="">BD</option>
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label" for="input-customer-group">Ha adoptado antes?</label>
+                    <label class="control-label" for="input-customer-group">{{__('backend.adopta')}}</label>
                     <select name="filter_haAdoptado" id="input-haAdoptado" class="form-control">
                                         <option value="*"></option>
                                         <option value="1">Sí</option>
@@ -69,7 +69,7 @@
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="form-group">
-                    <label class="control-label" for="input-customer-group">Sexo</label>
+                    <label class="control-label" for="input-customer-group">{{__('backend.sexo')}}</label>
                     <select name="filter_sexo" id="input-donante-sexo" class="form-control">
                                         <option value="*"></option>
                                         <option value="">Mujer</option>
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label" for="input-customer-group">Vínculo Entidad</label>
+                    <label class="control-label" for="input-customer-group">{{__('backend.vinculo')}}</label>
                     <select name="filter_donante_vinculo" id="input-donante-vinculo" class="form-control">
                                         <option value="*"></option>
                                         <option value="">Socio</option>
@@ -92,7 +92,7 @@
                 </div>
 
                 <div class="form-group" id="listaAnimales" style="display: none;">
-                    <label class="control-label" for="input-customer-group">Animal Adoptado</label>
+                    <label class="control-label" for="input-customer-group">{{__('backend.animal_adoptado')}}</label>
                     <select name="filter_donante_animales" id="input-donante-animales" class="form-control">
                                         <option value="*">Gato</option>
                                         <option value="">Perro</option>
@@ -102,13 +102,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label">Fecha Alta</label>
+                    <label class="control-label">{{__('backend.fecha_alta')}}</label>
                     <!--pendiente saber de qué, alta o última donación-->
                     <input class="form-control" name="filter_donante_fecha" id="input-donante-fecha" type="date">
                 </div>
 
 
-                <button type="button" id="button-filter" class="btn btn-primary float-right"><i class="fa fa-search"></i> Filtro</button>
+                <button type="button" id="button-filter" class="btn btn-primary float-right"><i class="fa fa-search"></i> {{__('backend.filtro')}}</button>
             </div>
         </div>
     </form>
@@ -122,11 +122,11 @@
                 <thead class=" thead-dark">
                     <tr>
                         <th class="text-center">#</th>
-                        <th class="text-center">Nombre/Razon Social</th>
-                        <th class="text-center">Dirección</th>
-                        <th class="text-center">Teléfono</th>
-                        <th class="text-center">Email</th>
-                        <th colspan="2" class="text-center">Acción</th>
+                        <th class="text-center">{{__('backend.nombre_donante')}}</th>
+                        <th class="text-center">{{__('backend.direccion')}}</th>
+                        <th class="text-center">{{__('backend.telefono')}}</th>
+                        <th class="text-center">{{__('backend.correo')}}</th>
+                        <th colspan="2" class="text-center">{{__('backend.accion')}}</th>
                     </tr>
                 </thead>
                 <tbody>
