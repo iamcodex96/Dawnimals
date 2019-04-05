@@ -13,7 +13,7 @@
 
     <div class="card mt-3">
         <div class="card-header">
-            <h4>Dades</h4>
+            <h4>{{ __('backend.datos') }}</h4>
         </div>
         <div class="card-body row">
 
@@ -22,8 +22,8 @@
         </div>
     </div>
     <div class="botonAceptar text-center mb-5 mt-4">
-        <button type="submit" class="btn btn-primary col-5">GUARDAR</button>
-        <a class="btn btn-secondary col-5" href="@yield('url-index')">CANCELAR</a>
+        <button type="submit" class="btn btn-primary col-5">{{ __('backend.guardar') }}</button>
+        <a class="btn btn-secondary col-5" href="@yield('url-index')">{{ __('backend.cancelar') }}</a>
     </div>
 </form>
 @endsection

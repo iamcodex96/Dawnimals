@@ -14,9 +14,14 @@ class PerfilesController extends Controller
     const PREFIX = "backend.paginas.mantenimientos.perfiles.";
     const CONTROLADOR = "Backend\Mantenimientos\PerfilesController@";
 
-    public function index()
+    public function index(Request $request)
     {
-        $data["roles"] = Role::all();
+        $query = Role::query();
+
+        $data = [];
+        $query = Utilitat::setFiltros($request, $query, $data);
+
+        $data["roles"] = $query->paginate(1);
 
         return view(self::PREFIX . "index", $data);
     }

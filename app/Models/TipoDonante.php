@@ -16,5 +16,4 @@ class TipoDonante extends Model
     {
         return $this->hasMany('App\Models\Donante', 'tipos_donantes_id');
     }
-
 }

@@ -1,16 +1,41 @@
 <?php
+    return [
+        "nombre_menu" => "Donacions SPAM",
+        "correo" => "Correu",
+        "password" => "Contrasenya",
+        "iniciar_sesion" => "Iniciar sessió",
+        "pregunta_contraseña" => "Has oblidat la teva contrasenya?",
+        "panel_control" => "Panel de control",
 
-return [
-    "sexo"=>"Sexe",
-    "email"=>"Correu electronic",
-    "telefono"=>"telefon",
-    "titulo"=>"Donants",
-    "cardTitle"=>"Llistat de donants",
-    "nombre"=>"Nom o Rao social",
-    "tipo"=>"Tipus Donant",
-    "vinculo"=>"vincle Entitat",
-    "habitual"=>"Donant habitual",
-    "adopta"=>"Ha adoptat abans?",
-    "alta"=>"Data d'alta",
-    "direccion"=>"Adreça"];
+        "donaciones" => "Donacions",
+        "donacion" => "Donació",
+        "donacion_añadir" => "Afegir Donació",
+        "donacion_buscar" => "Cercar Donació",
+
+        "donantes" => "Donants",
+        "donante_añadir" => "Afegir Donant",
+        "donante_buscar" => "Cercar Donant",
+
+        "mantenimientos" => "Manteniments",
+        "usuarios" => "Usuaris",
+        "usuario" => "Usuari",
+        "usuario_alta" => "ALTA USUARI",
+        "usuario_editar" => "EDITAR USUARI",
+        "listado_usuarios" => "Llistat d'usuaris",
+        "perfiles" => "Perfils",
+        "perfil_alta" => "ALTA PERFIL",
+        "perfil_editar" => "EDITAR PERFIL",
+        "listado_perfiles" => "Llistat de perfils",
+
+        "otros" => "Altres",
+        "nombre" => "Nom",
+        "perfil" => "Perfil",
+        "datos" => "Dades",
+        "crear" => "Crear",
+        "cancelar" => "Cancel·lar",
+        "guardar" => "Desar",
+        "aceptar" => "Acceptar",
+
+        "pregunta_borrar" => "Desitges esborrar aquest registre?",
+    ]
 ?>

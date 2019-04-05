@@ -5,12 +5,12 @@
 
 @section('m_contenido')
 <div class="card card-body m-3">
-    <form class="form-horizontal" action="" method="post">
+    <form class="form-horizontal" action="{{ action('Backend\DonanteController@index') }}" method="post">
         <div class="row search">
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="form-group">
                     <label class="control-label" for="input-name">Nombre o Razón social</label>
-                    <input type="text" name="filter_name" value="" placeholder="Nombre o Razón social del donante" id="input-name" class="form-control"
+                    <input type="text" name="filtros[nombre]" value="" placeholder="Nombre o Razón social del donante" id="input-name" class="form-control"
                         autocomplete="off">
                     <ul class="dropdown-menu"></ul>
                 </div>

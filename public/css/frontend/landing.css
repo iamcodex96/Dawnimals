@@ -1,146 +1,178 @@
 @font-face {
-  font-family: "Permanent";
-  src: url("../../fuentes/Permanent_Marker/PermanentMarker-Regular.ttf");
-}
-@font-face {
-  font-family: "Roboto";
-  src: url("../../fuentes/Roboto/Roboto-Medium.ttf");
-}
-body {
-  background: #f7fbef;
-  overflow-x: hidden;
-}
+    font-family: "Permanent";
+    src: url("../../fuentes/Permanent_Marker/PermanentMarker-Regular.ttf");
+  }
+  @font-face {
+    font-family: "Roboto";
+    src: url("../../fuentes/Roboto/Roboto-Medium.ttf");
+  }
 
-h1 {
-  font-family: Permanent;
-  color: white;
-}
+  @font-face {
+      font-family: "Josefin";
+      src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
+    }
 
-p {
-  font-family: Roboto;
-}
+  body {
+    background: white;
+    overflow-x: hidden;
+  }
 
-div#primero {
-  margin: 0;
-  padding: 0;
-}
+  #img1{
+   background-image: url("../../img/cat_.png");
+   min-height: 500px;
 
-#segundo {
-  height: 100%;
-}
-#segundo h1 {
-  background-color: #ff6600;
-  width: 70%;
-  padding: 15px;
-  padding-left: 100px;
-  margin-left: -50px;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-}
-#segundo .texto-container {
-  z-index: 60;
-  color: black;
-  text-align: justify;
-}
-#segundo .texto-container a {
-  color: #ff6600;
-  border: #ff6600 1px solid;
-}
-#segundo .texto-container a:hover {
-  color: white;
-  background-color: #ff6600;
-}
-#segundo .texto {
-  width: 100%;
-}
-#segundo img {
-  width: 100%;
-  height: 540px;
-}
-#segundo .round-button {
-  position: relative;
-  background-color: #99cd32;
-  border-radius: 30px;
-  width: 300px;
-  bottom: 100px;
-  left: 35%;
-  color: white;
-}
-#segundo .round-button:hover {
-  background-color: #5c7b1e;
-}
 
-#tercero {
-  height: 100%;
-}
-#tercero h1 {
-  background-color: #cd3299;
-  width: 70%;
-  padding: 15px;
-  padding-left: 100px;
-  margin-left: -50px;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-}
-#tercero .card {
-  height: 40rem;
-  transform: scale(0.85);
-  border: 3px solid #99cd32;
-  border-radius: 15px;
-  overflow: hidden;
-}
-#tercero .card img {
-  border-bottom: 5px solid #99cd32;
-}
-#tercero .card:hover {
-  transform: scale(1);
-  transition: transform 0.2s ease-in;
-}
-#tercero .card h2 {
-  position: relative;
-  padding: 0;
-  margin: 0;
-  top: -35px;
-  width: 70%;
-  padding: 10px;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-  background-color: #99cd32;
-  color: white;
-}
+  }
 
-#cuarto {
-  height: 100%;
-}
-#cuarto h1 {
-  background-color: #cdb432;
-  width: 70%;
-  padding: 15px;
-  padding-left: 100px;
-  margin-left: -50px;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-}
-#cuarto button {
-  margin: 5px;
-  border: solid 5px #99cd32;
-  border-radius: 50px;
-}
-#cuarto button img {
-  width: 90px;
-  height: 120px;
-}
-#cuarto button:hover {
-  background-color: #99cd32;
-  transition: all 0.5s;
-}
-#cuarto .info-necessidades {
-  border: solid 3px black;
-}
+  #img2{
+      background-image: url("../../img/cat_.png");
+      min-height: 500px;
 
-.container-fluid {
-  margin: 0;
-  padding: 0;
-}
+  }
 
-/*# sourceMappingURL=landing.css.map */
+  .imgParallax{
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat:no-repeat;
+  background-size:cover;
+
+  }
+
+  h1 {
+    font-family: Josefin;
+    color: #454049;
+  }
+
+  p {
+    font-family: Roboto;
+    color: #454049;
+  }
+
+  div#primero {
+    margin: 0;
+    padding: 0;
+  }
+
+  #segundo {
+    height: 100%;
+    margin:30px;
+  }
+  #segundo h1 {
+
+    width: 100%;
+    padding: 15px;
+    padding-left: 100px;
+    margin-left: -50px;
+    text-align: center;
+  }
+
+  #segundo .imgQuienes{
+      width: 100%;
+      height: 450px !important;
+  }
+
+  #segundo .texto-container {
+    z-index: 60;
+    color: black;
+    text-align: justify;
+  }
+  #segundo .texto-container a {
+    color: #ff6600;
+    border: #ff6600 1px solid;
+    margin:20px;
+  }
+  #segundo .texto-container a:hover {
+    color: white;
+    background-color: #ff6600;
+  }
+  #segundo .texto {
+    width: 100%;
+    font-size:1.5rem;
+    text-align: center;
+    font-family: Josefin;
+  }
+
+  #segundo .round-button {
+    position: relative;
+    background-color: #99cd32;
+    border-radius: 30px;
+    width: 300px;
+    bottom: 100px;
+    left: 35%;
+    color: white;
+  }
+  #segundo .round-button:hover {
+    background-color: #5c7b1e;
+  }
+
+  #tercero {
+    height: 100%;
+  }
+  #tercero h1 {
+      width: 100%;
+      padding: 15px;
+      padding-left: 100px;
+      margin-left: -50px;
+      text-align: center;
+  }
+  #tercero .card {
+
+    transform: scale(0.85);
+    border: 3px solid #99cd32;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  #tercero .card img {
+    border-bottom: 5px solid #99cd32;
+  }
+  #tercero .card:hover {
+    transform: scale(1);
+    transition: transform 0.2s ease-in;
+  }
+  #tercero .card h2 {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    top: -35px;
+    width: 70%;
+    padding: 10px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-color: #99cd32;
+    color: white;
+  }
+
+  #cuarto {
+    height: 100%;
+  }
+  #cuarto h1 {
+      width: 100%;
+      padding: 15px;
+      padding-left: 100px;
+      margin-left: -50px;
+      text-align: center;
+  }
+  #cuarto button {
+    margin: 5px;
+    border: solid 5px #99cd32;
+    border-radius: 50px;
+  }
+  #cuarto button img {
+    width: 90px;
+    height: 120px;
+  }
+  #cuarto button:hover {
+    background-color: #99cd32;
+    transition: all 0.5s;
+  }
+  #cuarto .info-necessidades {
+    border: solid 3px black;
+  }
+
+  .container-fluid {
+    margin: 0;
+    padding: 0;
+  }
+
+  /*# sourceMappingURL=landing.css.map */

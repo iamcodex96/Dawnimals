@@ -12,12 +12,7 @@ class Subtipo extends Model
     protected $keyType = 'int';
     public $timestamps = false;
 
-    public function tipos()
-    {
-        return $this->belongsTo('App\Models\Tipo','tipos_id');
-    }
-
-    public function donaciones()
+    public function donacion()
     {
         return $this->hasMany('App\Models\Donacion', 'subtipos_id');
     }

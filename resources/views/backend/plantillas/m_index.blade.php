@@ -36,11 +36,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Desitges esborrar aquest registre?</p>
+                <p>{{ __('backend.pregunta_borrar') }}</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btnAceptar">ACEPTAR</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCELAR</button>
+                <button type="button" class="btn btn-primary btnAceptar">{{ __('backend.aceptar') }}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('backend.cancelar') }}</button>
             </div>
         </div>
     </div>
