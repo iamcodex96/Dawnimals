@@ -53,5 +53,15 @@
 
         "todos" => "TODOS",
         "todas" => "TODAS",
+
+        "challenges" => "Retos",
+        "challenge" => "Reto",
+        "listado_challenges" => "Listado de retos",
+        "challenge_alta" => "ALTA RETO",
+        "challenge_editar" => "EDITAR RETO",
+        "descripcion" => "Descripción",
+        "fecha_ini" => "Fecha Inicio",
+        "fecha_fin" => "Fecha Fin",
+        "objetivo" => "Objetivo",
     ]
 ?>

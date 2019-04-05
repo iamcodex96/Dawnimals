@@ -53,5 +53,15 @@
 
         "todos" => "TOTS",
         "todas" => "TOTES",
+
+        "challenges" => "Reptes",
+        "challenge" => "Repte",
+        "listado_challenges" => "Llistat de reptes",
+        "challenge_alta" => "ALTA REPTE",
+        "challenge_editar" => "EDITAR REPTE",
+        "descripcion" => "Descripció",
+        "fecha_ini" => "Data Inici",
+        "fecha_fin" => "Data Fi",
+        "objetivo" => "Objectiu",
     ]
 ?>

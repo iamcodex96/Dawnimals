@@ -30,6 +30,7 @@ Route::prefix("backend/")->middleware("locale")->group(function() {
             Route::resource("usuarios", "Backend\Mantenimientos\UsuariosController");
             Route::resource("perfiles", "Backend\Mantenimientos\PerfilesController");
             Route::resource("subtipos", "Backend\Mantenimientos\SubtiposController");
+            Route::resource("challenges", "Backend\Mantenimientos\ChallengesController");
         });
 
     //});
