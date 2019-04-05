@@ -13,22 +13,22 @@
     <title>@yield("titulo")</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" background="none">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" background="none">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse text-black-50 text-center" id="navbarNav"><!-- d-flex justify-content-end -->
+        <div class="collapse navbar-collapse text-black-50" id="navbarNav"><!-- d-flex justify-content-end -->
             <ul class="navbar-nav">
-              <li class="nav-item active">
+              <li class="nav-item active navLogo">
                <img  src="{{ asset('./img/Spami_M.png') }}" width="60px" height="60px"  alt="">
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://www.protectoramataro.org/es/quienes-somos-que-hacemos">Qui Som?</a>
+              <li class="nav-item texto">
+                <a class="nav-link" href="https://www.protectoramataro.org/es/quienes-somos-que-hacemos">¿Quiénes somos?</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item texto">
                 <a class="nav-link" href="https://www.protectoramataro.org/es/cercador-animals">Animals</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item texto">
                 <a class="nav-link"href="{{ url('backend/login') }}">Acceso Portal</a>
               </li>
             </ul>

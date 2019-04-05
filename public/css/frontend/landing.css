@@ -19,25 +19,50 @@
 
   #img1{
    background-image: url("../../img/cat_.png");
-   min-height: 500px;
+   min-height: 400px;
 
 
   }
 
   #img2{
       background-image: url("../../img/cat_.png");
-      min-height: 500px;
+      min-height: 400px;
 
   }
+
+  #imghuellas{
+    background-image: url("../../img/paw.png");
+    min-height: 500px;
+    max-width: 500px;
+
+}
+
+
 
   .imgParallax{
 
   background-attachment: fixed;
   background-position: center;
-  background-repeat:no-repeat;
+  background-repeat:repeat;
   background-size:cover;
 
   }
+
+  .imgParallax2{
+
+    background-attachment: fixed;
+    background-position: left;
+    background-repeat:no-repeat;
+
+
+
+
+    }
+
+#imgPrincipal{
+  top: -20px;
+
+}
 
   h1 {
     font-family: Josefin;
@@ -56,7 +81,9 @@
 
   #segundo {
     height: 100%;
-    margin:30px;
+    margin:0px;
+    margin-top:0px;
+    margin-bottom:0px;
   }
   #segundo h1 {
 
@@ -120,7 +147,7 @@
 
     transform: scale(0.85);
     border: 3px solid #99cd32;
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
   }
   #tercero .card img {
@@ -135,7 +162,7 @@
     padding: 0;
     margin: 0;
     top: -35px;
-    width: 70%;
+    width: 80%;
     padding: 10px;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
@@ -174,5 +201,9 @@
     margin: 0;
     padding: 0;
   }
+
+  .rounded-circle {
+    border-radius: 30%!important;
+}
 
   /*# sourceMappingURL=landing.css.map */
