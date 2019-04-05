@@ -21,7 +21,7 @@ class PerfilesController extends Controller
         $data = [];
         $query = Utilitat::setFiltros($request, $query, $data);
 
-        $data["roles"] = $query->paginate(1);
+        $data["roles"] = $query->paginate(8);
 
         return view(self::PREFIX . "index", $data);
     }

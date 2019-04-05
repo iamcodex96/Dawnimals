@@ -58,5 +58,21 @@
         "aceptar" => "Acceptar",
 
         "pregunta_borrar" => "Desitges esborrar aquest registre?",
+
+        "subtipo" => "Subtipus",
+        "subtipos" => "Subtipus",
+        "subtipo_alta" => "ALTA SUBTIPUS",
+        "subtipo_editar" => "EDITAR SUBTIPUS",
+        "listado_subtipos" => "Llistat de subtipus",
+        "tipos" => "Tipus",
+        "tipo" => "Tipus",
+        "gama" => "Gama",
+        "unidad" => "Unitat",
+        "alta" => "Alta",
+        "media" => "Mitjana",
+        "baja" => "Baixa",
+
+        "todos" => "TOTS",
+        "todas" => "TOTES",
     ]
 ?>

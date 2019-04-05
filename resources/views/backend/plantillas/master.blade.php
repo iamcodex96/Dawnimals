@@ -80,6 +80,7 @@
                         <li>
                             <a href="{{url('backend/mantenimientos/usuarios')}}">{{ __("backend.usuarios") }}</a>
                             <a href="{{url('backend/mantenimientos/perfiles')}}">{{ __("backend.perfiles") }}</a>
+                            <a href="{{url('backend/mantenimientos/subtipos')}}">{{ __("backend.subtipos") }}</a>
                         </li>
                     </ul>
                 </li>
@@ -96,9 +97,9 @@
                 </button>
                 <div id="left-menu">
                     <div class="dropdown" style="float: left;margin-right: 10px;">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="drIdioma" data-toggle="dropdown" aria-haspopup="true"
+                        <button class="btn btn-secondary " type="button" id="drIdioma" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                                  {{ __("global.idioma") }}
+                                  <span class="fa fa-globe"></span> <span class="fa fa-sort-down mb-1"></span>
                                 </button>
                         <div class="dropdown-menu" aria-labelledby="drIdioma">
                             <a class="dropdown-item" href="{{ url('backend/chgIdioma/ca') }}">Català</a>

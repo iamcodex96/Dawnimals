@@ -26,9 +26,12 @@ Route::prefix("backend/")->middleware("locale")->group(function() {
 
         Route::resource('donaciones', 'Backend\DonacionController');
 
-        Route::resource("mantenimientos/usuarios", "Backend\Mantenimientos\UsuariosController");
+        Route::prefix("mantenimientos")->group(function() {
+            Route::resource("usuarios", "Backend\Mantenimientos\UsuariosController");
+            Route::resource("perfiles", "Backend\Mantenimientos\PerfilesController");
+            Route::resource("subtipos", "Backend\Mantenimientos\SubtiposController");
+        });
 
-        Route::resource("mantenimientos/perfiles", "Backend\Mantenimientos\PerfilesController");
     //});
 });
 //////////////////////////// PAGS BACKEND ////////////////////////////////////

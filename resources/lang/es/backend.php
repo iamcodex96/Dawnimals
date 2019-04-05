@@ -58,5 +58,21 @@
         "aceptar" => "Aceptar",
 
         "pregunta_borrar" => "¿Deseas eliminar este registro?",
+
+        "subtipo" => "Subtipo",
+        "subtipos" => "Subtipos",
+        "subtipo_alta" => "ALTA SUBTIPO",
+        "subtipo_editar" => "EDITAR SUBTIPO",
+        "listado_subtipos" => "Listado de subtipos",
+        "tipos" => "Tipos",
+        "tipo" => "Tipo",
+        "gama" => "Gama",
+        "unidad" => "Unidad",
+        "alta" => "Alta",
+        "media" => "Media",
+        "baja" => "Baja",
+
+        "todos" => "TODOS",
+        "todas" => "TODAS",
     ]
 ?>
