@@ -5,7 +5,7 @@
 
 @section('contenido')
 
-<form action="{{ route('login') }}" method="post">
+<form action="{{ action('Backend\AccountController@sendResetPassword') }}" method="post">
     @csrf
     <div class="form-group">
         <div class="input-group">
@@ -18,25 +18,14 @@
         </div>
     </div>
 
-    <div class="form-group">
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <div class="input-group-text">
-                    <span class="fa fa-lock"></span>
-                </div>
-            </div>
-            <input type="password" class="form-control" name="password" id="password" value="{{ old('password') }}" placeholder="Password">
-        </div>
-    </div>
-
     <div class="form-group text-center mt-4">
         <button type="submit" class="btn btn-lg btn-primary">
-                {{ __("backend.iniciar_sesion")}}
-            </button>
-    </div>
-
-    <a href="{{ route('requestReset') }}" class="btn btn-link float-right">
-            {{ __("backend.pregunta_contraseña")}}
+                {{ __("backend.enviar_peticion")}}
+        </button>
+        <a href="{{ action('Backend\AccountController@index')}}" class="btn btn-lg btn-secondary">
+            {{ __("backend.cancelar")}}
         </a>
+    </div>
 </form>
+
 @endsection

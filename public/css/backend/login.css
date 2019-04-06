@@ -58,15 +58,19 @@ body::before {
     filter: blur(4px);
 }
 
-button {
+.btn {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
     border-radius: 25px !important;
+
+}
+
+.btn-primary {
     background-color: #b6b221 !important;
     border-color: #b6b221 !important;
 }
 
-button:hover{
+.btn:hover{
     background-color: white !important;
     color: gray !important;
 

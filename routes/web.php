@@ -17,6 +17,11 @@ Route::prefix("backend/")->middleware("locale")->group(function() {
     Route::post('login', 'Backend\AccountController@login')->name("login");
     Route::get('logout', 'Backend\AccountController@logout')->name("logout");
 
+    Route::get('requestResetPassword', 'Backend\AccountController@requestResetPassword')->name("requestReset");
+    Route::post('sendResetPassword', 'Backend\AccountController@sendResetPassword')->name("sendRequest");
+    Route::get('sendResetPassword/{token}', 'Backend\AccountController@resetPassword')->name("resetPassword");
+    Route::post('setNewPassword', 'Backend\AccountController@setNewPassword')->name('setNewPassword');
+
     //Route::group(['middleware' => ['auth']], function () {
         Route::get('/', function () {
             return view('backend.paginas.backend');

@@ -25,9 +25,10 @@ class Usuario extends Authenticatable
     {
         return $this->hasMany('App\Models\Donacion', 'usuario_id');
     }
-    // protected $hidden = [
-    //     'password', 'remember_token',
-    // ];
+
+    protected $hidden = [
+         'password', 'remember_token',
+    ];
 
     // public function getEmailAttribute() {
     //     return $this->attributes['correo'];

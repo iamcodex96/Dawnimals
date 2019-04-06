@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="{{ asset('Bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/allfa.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/backend/login.css')}}">
     @yield('css_propio')
 
     <script src="{{ asset('Bootstrap/js/jquery-3.3.1.min.js') }}"></script>
@@ -20,7 +21,21 @@
 </head>
 
 <body>
-    @yield('contenido')
+    <main class="login-container d-flex justify-content-center align-items-center">
+        <div id="login-form" class="position-relative">
+
+            <div id="logo" class="rounded-circle shadow">
+                <img src="{{ asset('img/spam.jpg') }}">
+            </div>
+
+            <div class="card p-2 shadow" style="padding-top:120px !important;">
+                <div class="card-body">
+                    @include('backend.partial.mensajes')
+                    @yield("contenido")
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
