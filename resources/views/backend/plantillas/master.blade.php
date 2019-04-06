@@ -10,6 +10,7 @@
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="{{ asset('Bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/backend/bootstrap-datepicker.min.css') }}">
 
     <link rel="stylesheet" href="{{asset('css/backend/dashboard.css')}}">
     <link rel="stylesheet" href="{{ asset('Bootstrap/css/jquery.mCustomScrollbar.min.css') }}">
@@ -20,6 +21,7 @@
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="{{ asset('Bootstrap/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('js/backend/bootstrap-datepicker.min.js') }}"></script>
 
     <script src="{{ asset('js/api/restcountries.js') }}"></script>
 </head>
@@ -81,6 +83,7 @@
                             <a href="{{url('backend/mantenimientos/usuarios')}}">{{ __("backend.usuarios") }}</a>
                             <a href="{{url('backend/mantenimientos/perfiles')}}">{{ __("backend.perfiles") }}</a>
                             <a href="{{url('backend/mantenimientos/subtipos')}}">{{ __("backend.subtipos") }}</a>
+                            <a href="{{url('backend/mantenimientos/challenges')}}">{{ __("backend.challenges") }}</a>
                         </li>
                     </ul>
                 </li>
@@ -97,8 +100,7 @@
                 </button>
                 <div id="left-menu">
                     <div class="dropdown" style="float: left;margin-right: 10px;">
-                        <button class="btn btn-secondary " type="button" id="drIdioma" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
+                        <button class="btn btn-secondary " type="button" id="drIdioma" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   <span class="fa fa-globe"></span> <span class="fa fa-sort-down mb-1"></span>
                                 </button>
                         <div class="dropdown-menu" aria-labelledby="drIdioma">
@@ -126,6 +128,10 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
+                    $(".fecha").datepicker({
+                        format: 'dd/mm/yyyy',
+                    });
+
                     var sidebarActive = false;
                     $("#sidebar").mCustomScrollbar({
                         theme: "minimal"

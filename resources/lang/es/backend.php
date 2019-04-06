@@ -6,6 +6,18 @@
         "iniciar_sesion" => "Iniciar sesión",
         "pregunta_contraseña" => "¿Has olvidado tu contraseña?",
         "panel_control" => "Panel de control",
+        "enviar_peticion" => "Enviar petición",
+        "nueva_password" => "Nueva contraseña",
+        "repite_password" => "Repite la nueva contraseña",
+        "guardar_password" => "Guardar nueva contraseña",
+        "usuario_incorrecto" => "Usuario y/o contraseña incorrectos.",
+        "mensaje_recuperacion_enviado" => "Correo enviado con los pasos correspondientes para recuperar la contraseña.",
+        "contraseña_no_coincide" => "La contraseña no coincide.",
+        "token_invalido" => "El token introducido no es valido o ya ha sido utilitzado.",
+        "usuario_inexistente" => "Este usuario no existe.",
+        "mail_link_no_funciona" => "Si tienes problemas para acceder con el boton, copia y pega la siguiente dirección\n en tu navegador: [:actionURL](:actionURL)",
+        "atentamente" => "Atentamente",
+        "saludo" => "¡Hola!",
 
         "donaciones" => "Donaciones",
         "donacion" => "Donación",
@@ -74,5 +86,15 @@
 
         "todos" => "TODOS",
         "todas" => "TODAS",
+
+        "challenges" => "Retos",
+        "challenge" => "Reto",
+        "listado_challenges" => "Listado de retos",
+        "challenge_alta" => "ALTA RETO",
+        "challenge_editar" => "EDITAR RETO",
+        "descripcion" => "Descripción",
+        "fecha_ini" => "Fecha Inicio",
+        "fecha_fin" => "Fecha Fin",
+        "objetivo" => "Objetivo",
     ]
 ?>
