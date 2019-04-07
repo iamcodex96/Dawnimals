@@ -6,6 +6,9 @@ Route::redirect('/', 'landing');
 Route::get('/landing', function () {
     return view('frontend.paginas.landing');
 })->name("landing");
+Route::get('/quien_somos', function () {
+    return view('frontend.paginas.quien_somos');
+})->name("landing");
 //////////////////////////// PAGS FRONTEND ///////////////////////////////////
 
 //////////////////////////// PAGS BACKEND ////////////////////////////////////

@@ -1,0 +1,60 @@
+@import '../colores.scss';
+@font-face {
+    font-family: "Roboto";
+    src: url("../../fuentes/Roboto/Roboto-Medium.ttf");
+  }
+
+
+  @font-face {
+    font-family: "Josefin";
+    src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
+  }
+
+  body {
+    background: white;
+    overflow-x: hidden;
+  }
+
+  h1,h2,h3,h5 {
+    font-family: Josefin;
+    color: #454049;
+  }
+
+  p {
+    font-family: Roboto;
+    color: #454049;
+  }
+  .info{
+      span{
+          color:$color-spam;
+      }
+      p{
+          text-align: justify;
+      }
+  }
+  #empleados{
+    .card{
+        width:20rem;
+
+        .card-body{
+          padding: 0;
+              .foto{
+                  width: 200px !important;
+                  height: 200px !important;
+                  margin-top:-100px !important;
+                  margin-left:18% !important;
+                  border:5px solid $color-spam;
+              }
+            .em-color{
+                height: 200px;
+                width: 100%;
+                background-color:$color-spam;
+            }
+            .card-info{
+              text-align: center;
+              width: 100%;
+            }
+        }
+    }
+
+  }

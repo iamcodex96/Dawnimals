@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../../fuentes/Roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "Josefin";
+  src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
+}
+body {
+  background: white;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h5 {
+  font-family: Josefin;
+  color: #454049;
+}
+
+p {
+  font-family: Roboto;
+  color: #454049;
+}
+
+.info span {
+  color: #99cd32;
+}
+.info p {
+  text-align: justify;
+}
+
+#empleados .card {
+  width: 20rem;
+}
+#empleados .card .card-body {
+  padding: 0;
+}
+#empleados .card .card-body .foto {
+  width: 200px !important;
+  height: 200px !important;
+  margin-top: -100px !important;
+  margin-left: 18% !important;
+  border: 5px solid #99cd32;
+}
+#empleados .card .card-body .em-color {
+  height: 200px;
+  width: 100%;
+  background-color: #99cd32;
+}
+#empleados .card .card-body .card-info {
+  text-align: center;
+  width: 100%;
+}
+
+/*# sourceMappingURL=quien-somos.css.map */
