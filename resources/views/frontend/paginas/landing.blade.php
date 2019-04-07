@@ -11,124 +11,94 @@
 @section('contenido')
 <main data-spy="scroll" data-target="#list-opciones" class="container-fluid">
     <div id="primero">
-        <div class="">
-            <img id="imgPrincipal" width="100%" height="750px" src="{{ asset('./img/login-back_ant.jpg') }}">
+
+        <div class="imgParallax3" id="background1">
+                <div id="segundo">
+                        <div class="row mt-0 mr-3">
+                            <div class="col-md-5 texto-container mt-5">
+                                <div class="texto">
+                                    <p class="m-5 landingText">Gestionamos centros de acogida con una filosofía proteccionista, luchamos por la vida de los animales y trabajamos día tras día para evitar su sufrimiento. Nuestra tarea también es divulgativa: concienciamos a la sociedad sobre la tenencia responsable de los animales de compañía, los derechos de los animales, los beneficios de la adopción y una buena convivencia entre los animales y los ciudadanos</p>
+                                    <p class="m-5 landingText">¿Nos ayudas?</p>
+                                </div>
+
+                                <div class="logoQuienes text-center">
+                                  <img src="{{ asset('./img/logo_OK_transparencia_2.png') }}" width="350px" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6 texto-container mt-5">  </div>
+                        </div>
+                    </div>
         </div>
     </div>
 
-    <div id="segundo">
-        <div class="row mt-0 mr-3">
-
-            <div class="col-md-6 texto-container" height="900px">
-                <div class="imgParallax2" id="imghuellas">
-                </div>
-            </div>
-
-            <div class="col-md-6 texto-container mt-5">
-                    <h1 text-center>¿ Quiénes Somos ?</h1>
-                <div class="texto">
-                    <p> eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse luctus per interdum ad.</p>
-                </div>
-
-                <div class="logoQuienes text-center">
-                  <img src="{{ asset('./img/logo_OK_transparencia_2.png') }}" width="250px" alt="">
-                </div>
-
-            </div>
-        </div>
+    <div class="intermedio">
+    <div class="col-md-12 col-sm-0 imgParallax2" id="imghuellas">
     </div>
 
-    <div class="imgParallax" id="img1">
-        </div>
+
+    </div>
+
+    {{-- <div class="imgParallax" id="img1">
+        </div> --}}
         </div>
     </div>
     <div id="tercero" class="p-5">
-        <h1 class="">¿ Como puedo ayudar ?</h1>
+        <h1 class="" z-index= "-1">¿ Como puedes ayudar ?</h1>
+
+        <h2 class="texto-container text-center mb-5" z-index= "-1">eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse luctus per interdum ad.</h2>
         <div class="row">
             <div class="col-md-4">
                     <div class="card rounded-circle">
                         <img class="card-img-top" src="{{ asset('./img/insta001.png') }}" alt="Card image cap">
-                        <h2><img src="{{ asset('./img/SPAMI_LOGO_AMOR.png') }}" width="60px" alt=""> Dona Amor</h2>
-                        <div class="card-body text-center">
-                            <p>Hazte Voluntario </p>
-                        </div>
+                        <h2 class="text-center"> Dona amor</h2>
+                        <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_AMOR.png') }}" width="70px" alt=""></div>
+
                     </div>
             </div>
             <div class="col-md-4">
                     <div class="card rounded-circle">
-
                         <img class="card-img-top" src="{{ asset('./img/insta002.png') }}" alt="Card image cap">
-                        <h2><img src="{{ asset('./img/SPAMI_LOGO_MONEDA.png') }}" width="60px" alt=""> Dona dinero</h2>
-                        <div class="card-body text-center">
-                            <p>Hazte Voluntario </p>
-                        </div>
+                        <h2 class="text-center"> Dona dinero</h2>
+                        <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_MONEDA.png') }}" width="70px" alt=""></div>
                     </div>
             </div>
             <div class="col-md-4">
                     <div class="card rounded-circle">
                         <img class="card-img-top" src="{{ asset('./img/insta003.png') }}" alt="Card image cap">
-                        <h2><img src="{{ asset('./img/SPAMI_LOGO_TIEMPO.png') }}" width="60px" alt=""> Dona Tiempo</h2>
-                        <div class="card-body text-center">
-                            <p>Hazte Voluntario </p>
-                        </div>
+                        <h2 class="text-center"> Dona tiempo</h2>
+                        <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_TIEMPO.png') }}" width="70px" alt=""></div>
                     </div>
             </div>
         </div>
-    </div>
-    <div class="imgParallax" id="img2">
 
     </div>
+
     <div id="cuarto" class="p-5">
-        <h1 class="">¿ Qué necessitamos ?</h1>
+        <h1 class="">Nuestras donaciones</h1>
+        <h2 class="texto-container text-center mb-5">eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse luctus per interdum ad.</h2>
+
         <div class="row">
-                {{-- <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-6 d-flex justify-content-center">
-                                <button class="btn btn-lg w-100 shadow">
-                                    <img src="{{ asset('./img/info-iconos/comida.png') }}" alt="">
-                                    <p>Comida</p>
-                                </button>
-                            </div>
-                            <div class="col-md-6 d-flex justify-content-center">
-                                    <button class="btn btn-lg w-100 shadow">
-                                    <img src="{{ asset('./img/info-iconos/accesorios.png') }}" alt="">
-                                    <p>Accesorios</p>
-                                </button>
-                            </div>
-                            <div class="col-md-6 d-flex justify-content-center">
-                                    <button class="btn btn-lg w-100 shadow">
-                                        <img src="{{ asset('./img/info-iconos/veterinario.png') }}" alt="">
-                                        <p>Material Veterinario</p>
-                                    </button>
-                                </div>
-                            <div class="col-md-6 d-flex justify-content-center">
-                                    <button class="btn btn-lg w-100 shadow">
-                                    <img src="{{ asset('./img/info-iconos/encantes.png') }}" alt="">
-                                    <p>Material Oficina</p>
-                                </button>
-                            </div>
-                            <div class="col-md-6 d-flex justify-content-center">
-                                    <button class="btn btn-lg w-100 shadow">
-                                    <img src="{{ asset('./img/info-iconos/oficina.png') }}" alt="">
-                                    <p>Dinero</p>
-                                </button>
-                            </div>
-                            <div class="col-md-6 d-flex justify-content-center">
-                                    <button class="btn btn-lg w-100 shadow">
-                                    <img src="{{ asset('./img/info-iconos/monedas.png') }}" alt="">
-                                    <p>Comida</p>
-                                </button>
-                            </div>--}}
-                        </div>
-                    </div>
-                    <div class="col-md-6 info-necessidades"></div>
+
+                <div class="col-md-6 col-sm-12 quesito">
+                    <img  src="{{ asset('./img/quesito.png') }}" width="800px" alt="">
+                </div>
+
+                <div class="col-md-6 col-sm-12 line">
+                        <img  src="{{ asset('./img/line.png') }}" width="850px" alt="">
+                </div>
+
+                <div class="col-md-12 text-center mb-5">
+                    <a name="" id="" class="btn btn-primary" href="#" role="button">DONACIONES</a>
+                </div>
         </div>
 
+
     </div>
+    <div class="imgParallax" id="img2"></div>
 </main>
 
 @endsection
 
 @section('js_loaded')
-<script src="{{ asset('./js/frontend/landing.js') }}"></script>
+{{-- <script src="{{ asset('./js/frontend/landing.js') }}"></script> --}}
 @endsection
