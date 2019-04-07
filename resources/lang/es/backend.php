@@ -55,6 +55,8 @@
         "usuario_alta" => "ALTA USUARIO",
         "usuario_editar" => "EDITAR USUARIO",
         "listado_usuarios" => "Listado de usuarios",
+        "administrador" => "Administrador",
+        "trabajador" => "Trabajador",
         "perfiles" => "Perfiles",
         "perfil_alta" => "ALTA PERFIL",
         "perfil_editar" => "EDITAR PERFIL",

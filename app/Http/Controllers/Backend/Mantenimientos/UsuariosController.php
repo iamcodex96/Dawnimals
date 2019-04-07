@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Backend\Mantenimientos;
 
 use App\Http\Controllers\Controller;
-use App\Models\Role;
 use App\Models\Usuario;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -14,6 +13,13 @@ class UsuariosController extends Controller
 {
     const PREFIX = "backend.paginas.mantenimientos.usuarios.";
     const CONTROLADOR = "Backend\Mantenimientos\UsuariosController@";
+
+    public function getRoles(){
+        return [
+            true => __("backend.administrador"),
+            false => __("backend.trabajador")
+        ];
+    }
 
     public function index(Request $request)
     {
@@ -29,16 +35,19 @@ class UsuariosController extends Controller
 
     public function create()
     {
-        $data["roles"] = Role::all();
+        $data["roles"] = $this->getRoles();
 
         return view(self::PREFIX . "create", $data);
     }
 
-    public function store(Usuario $usuario, Request $request)
+    public function store(Request $request)
     {
+        $usuario = new Usuario();
+
         $usuario->nombre = $request->input("nombre");
         $usuario->nombre_usuario = $request->input("nombre_usuario");
         $usuario->correo = $request->input("correo");
+        $usuario->admin = boolval($request->input("admin"));
 
         $password = $request->input("password");
         if ($password != null) {
@@ -46,8 +55,6 @@ class UsuariosController extends Controller
         }
 
         try {
-            $role = Role::find($request->input("role_id"));
-            $usuario->roles_id = $role->id;
             $usuario->save();
 
         } catch (QueryException $ex) {
@@ -60,7 +67,7 @@ class UsuariosController extends Controller
 
     public function edit(Usuario $usuario)
     {
-        $data["roles"] = Role::all();
+        $data["roles"] = $this->getRoles();
         $data["usuario"] = $usuario;
 
         return view(self::PREFIX . "edit", $data);
@@ -71,6 +78,7 @@ class UsuariosController extends Controller
         $usuario->nombre = $request->input("nombre");
         $usuario->nombre_usuario = $request->input("nombre_usuario");
         $usuario->correo = $request->input("correo");
+        $usuario->admin = boolval($request->input("admin"));
 
         $password = $request->input("password");
         if ($password != null) {
@@ -78,8 +86,6 @@ class UsuariosController extends Controller
         }
 
         try {
-            $role = Role::find($request->input("role_id"));
-            $usuario->roles_id = $role->id;
             $usuario->save();
 
         } catch (QueryException $ex) {

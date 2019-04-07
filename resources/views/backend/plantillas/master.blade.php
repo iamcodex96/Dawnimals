@@ -77,15 +77,17 @@
                             <a href="#">{{ __("backend.otros") }}</a>
                         </li>
                     </ul>
-                    <a href="#pageSubMantenimientos" data-toggle="collapse" aria-expanded="false">{{ __("backend.mantenimientos") }}</a>
-                    <ul class="collapse list-unstyled" id="pageSubMantenimientos">
-                        <li>
-                            <a href="{{url('backend/mantenimientos/usuarios')}}">{{ __("backend.usuarios") }}</a>
-                            <a href="{{url('backend/mantenimientos/perfiles')}}">{{ __("backend.perfiles") }}</a>
-                            <a href="{{url('backend/mantenimientos/subtipos')}}">{{ __("backend.subtipos") }}</a>
-                            <a href="{{url('backend/mantenimientos/challenges')}}">{{ __("backend.challenges") }}</a>
-                        </li>
-                    </ul>
+                    @if(Auth::user()->admin)
+                        <a href="#pageSubMantenimientos" data-toggle="collapse" aria-expanded="false">{{ __("backend.mantenimientos") }}</a>
+                        <ul class="collapse list-unstyled" id="pageSubMantenimientos">
+                            <li>
+                                <a href="{{url('backend/mantenimientos/usuarios')}}">{{ __("backend.usuarios") }}</a>
+                                <a href="{{url('backend/mantenimientos/perfiles')}}">{{ __("backend.perfiles") }}</a>
+                                <a href="{{url('backend/mantenimientos/subtipos')}}">{{ __("backend.subtipos") }}</a>
+                                <a href="{{url('backend/mantenimientos/challenges')}}">{{ __("backend.challenges") }}</a>
+                            </li>
+                        </ul>
+                    @endif
                 </li>
             </ul>
 

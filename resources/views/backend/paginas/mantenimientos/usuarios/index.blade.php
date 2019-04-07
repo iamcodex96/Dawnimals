@@ -45,7 +45,7 @@
             <td>{{ $usuario->nombre }}</td>
             <td>{{ $usuario->nombre_usuario }}</td>
             <td>{{ $usuario->correo }}</td>
-            <td>{{ $usuario->role->rol }}</td>
+            <td>{{ $usuario->admin ? __('backend.administrador') : __('backend.trabajador') }}</td>
             <td class="text-center">
                 <div class="form-group btn-group btn-group-form">
                     <a href="{{ action('Backend\Mantenimientos\UsuariosController@edit', ['id' => $usuario->id ]) }}" class="btn btn-info"><span class="fa fa-edit"></span></a>
