@@ -12,28 +12,26 @@
 <main data-spy="scroll" data-target="#list-opciones" class="container-fluid">
     <div id="primero">
         <div class="">
-            <img id="imgPrincipal" width="100%" height="750px" src="{{ asset('./img/login-back_ant.jpg') }}">
+            <img class="img-fluid" id="imgPrincipal" width="100%" height="750px" src="{{ asset('./img/login-back_ant.jpg') }}" alt="Responsive image">
         </div>
     </div>
 
     <div id="segundo">
         <div class="row mt-0 mr-3">
 
-            <div class="col-md-6 texto-container" height="900px">
-                <div class="imgParallax2" id="imghuellas">
-                </div>
-            </div>
-
-            <div class="col-md-6 texto-container mt-5">
+            <div class="col-md-12 texto-container mt-5">
                     <h1 text-center>¿ Quiénes Somos ?</h1>
-                <div class="texto">
-                    <p> eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse luctus per interdum ad.</p>
+                <div class="texto m-5">
+                    <p class="m-5"> eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse luctus per interdum ad.</p>
                 </div>
 
                 <div class="logoQuienes text-center">
-                  <img src="{{ asset('./img/logo_OK_transparencia_2.png') }}" width="250px" alt="">
+                  <img src="{{ asset('./img/logo_OK_transparencia_2.png') }}" width="350px" alt="">
                 </div>
 
+            </div>
+
+            <div class="col-md-12 imgParallax2" id="imghuellas">
             </div>
         </div>
     </div>
@@ -130,5 +128,5 @@
 @endsection
 
 @section('js_loaded')
-<script src="{{ asset('./js/frontend/landing.js') }}"></script>
+{{-- <script src="{{ asset('./js/frontend/landing.js') }}"></script> --}}
 @endsection

@@ -33,7 +33,7 @@
   #imghuellas{
     background-image: url("../../img/paw.png");
     min-height: 500px;
-    max-width: 500px;
+
 
 }
 
@@ -51,7 +51,7 @@
   .imgParallax2{
 
     background-attachment: fixed;
-    background-position: left;
+    background-position: center;
     background-repeat:no-repeat;
 
 
