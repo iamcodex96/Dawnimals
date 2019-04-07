@@ -29,12 +29,12 @@
   }
 
   #background1{
-    background-image: url("../../img/login-back_ant.jpg");
+    background-image: url("../../img/prote_4.png");
     min-height: 900px;
   }
 
   #img1{
-   background-image: url("../../img/cat_.png");
+   background-image: url("../../img/perro_gato.jpeg");
    min-height: 600px;
 
 
@@ -74,6 +74,14 @@
 
     }
 
+    .imgParallax3{
+
+        background-attachment: fixed;
+        background-repeat:repeat;
+        background-size:cover;
+
+        }
+
 #imgPrincipal{
   top: -20px;
 
@@ -81,7 +89,7 @@
 
 .intermedio{
 
-    min-height: 400px;
+    min-height: 200px;
 }
 
   h1 {

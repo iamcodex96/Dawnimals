@@ -12,20 +12,20 @@
 <main data-spy="scroll" data-target="#list-opciones" class="container-fluid">
     <div id="primero">
 
-        <div class="imgParallax" id="background1">
+        <div class="imgParallax3" id="background1">
                 <div id="segundo">
                         <div class="row mt-0 mr-3">
-                                <div class="col-md-6 texto-container mt-5">  </div>
-                            <div class="col-md-6 texto-container mt-5">
-                                <div class="texto m-5">
-                                    <p class="m-5 landingText"> eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse luctus per interdum ad.</p>
+                            <div class="col-md-5 texto-container mt-5">
+                                <div class="texto">
+                                    <p class="m-5 landingText">Gestionamos centros de acogida con una filosofía proteccionista, luchamos por la vida de los animales y trabajamos día tras día para evitar su sufrimiento. Nuestra tarea también es divulgativa: concienciamos a la sociedad sobre la tenencia responsable de los animales de compañía, los derechos de los animales, los beneficios de la adopción y una buena convivencia entre los animales y los ciudadanos</p>
+                                    <p class="m-5 landingText">¿Nos ayudas?</p>
                                 </div>
 
                                 <div class="logoQuienes text-center">
                                   <img src="{{ asset('./img/logo_OK_transparencia_2.png') }}" width="350px" alt="">
                                 </div>
-
                             </div>
+                            <div class="col-md-6 texto-container mt-5">  </div>
                         </div>
                     </div>
         </div>
@@ -44,6 +44,8 @@
     </div>
     <div id="tercero" class="p-5">
         <h1 class="" z-index= "-1">¿ Como puedes ayudar ?</h1>
+
+        <h2 class="texto-container text-center mb-5" z-index= "-1">eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse luctus per interdum ad.</h2>
         <div class="row">
             <div class="col-md-4">
                     <div class="card rounded-circle">
@@ -73,16 +75,26 @@
 
     <div id="cuarto" class="p-5">
         <h1 class="">Nuestras donaciones</h1>
+        <h2 class="texto-container text-center mb-5">eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse luctus per interdum ad.</h2>
+
         <div class="row">
 
-                        </div>
-                    </div>
-                    <div class="col-md-6 info-necessidades"></div>
-        </div>
-        <div class="imgParallax" id="img2">
+                <div class="col-md-6 col-sm-12 quesito">
+                    <img  src="{{ asset('./img/quesito.png') }}" width="800px" alt="">
+                </div>
 
-            </div>
+                <div class="col-md-6 col-sm-12 line">
+                        <img  src="{{ asset('./img/line.png') }}" width="850px" alt="">
+                </div>
+
+                <div class="col-md-12 text-center mb-5">
+                    <a name="" id="" class="btn btn-primary" href="#" role="button">DONACIONES</a>
+                </div>
+        </div>
+
+
     </div>
+    <div class="imgParallax" id="img2"></div>
 </main>
 
 @endsection
