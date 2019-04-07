@@ -42,11 +42,12 @@ p {
   border: 5px solid #99cd32;
 }
 #empleados .card .card-body .em-color {
-  height: 200px;
+  height: 170px;
   width: 100%;
   background-color: #99cd32;
 }
 #empleados .card .card-body .card-info {
+  padding: 1rem;
   text-align: center;
   width: 100%;
 }
