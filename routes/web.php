@@ -8,7 +8,10 @@ Route::get('/landing', function () {
 })->name("landing");
 Route::get('/quien_somos', function () {
     return view('frontend.paginas.quien_somos');
-})->name("landing");
+})->name("quien_somos");
+Route::get('/como_ayudar', function () {
+    return view('frontend.paginas.como_ayudar');
+})->name("como_ayudar");
 //////////////////////////// PAGS FRONTEND ///////////////////////////////////
 
 //////////////////////////// PAGS BACKEND ////////////////////////////////////

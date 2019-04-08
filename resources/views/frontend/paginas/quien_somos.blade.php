@@ -10,7 +10,6 @@
 
 @section('contenido')
 <main class="container-fluid">
-    <h1>¿Quien Somos?</h1>
     <img src="{{ asset('img/quien-somos/img-quien-somos-1.png') }}" class="img-fluid" alt="Responsive image">
     <hr>
     <div class="p-5">
@@ -75,11 +74,13 @@
             <iframe width="1280" height="720" src="https://www.youtube.com/embed/qRdSLZ5UmSE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <hr>
-    <h1>{{__("frontend.who-junta")}}</h1>
-    <div id="empleados" class="row p-5">
+    <h1 class="pl-5 mt-5">{{__("frontend.who-junta")}}</h1>
+    <div id="empleados" class="row p-5 d-flex justify-content-center">
         <div class="card m-3">
             <div class="card-body">
-                <div class="em-color"></div>
+                <div class="em-color">
+                    <img src="" alt="">
+                </div>
                 <img class="foto rounded-circle m-0" class="rounded-circle"src="{{ asset('img/quien-somos/presidenta.jpg') }}">
                 <div class="card-info mt-5">
                     <h3>Presidenta</h3>
@@ -110,7 +111,7 @@
         <div class="card m-3">
             <div class="card-body">
                 <div class="em-color"></div>
-                <img class="foto rounded-circle m-0" class="rounded-circle"src="{{ asset('img/quien-somos/tresorera.jpg') }}">
+                <img class="foto rounded-circle m-0" class="rounded-circle"src="{{ asset('img/quien-somos/tresorera.jpg.png') }}">
                 <div class="card-info mt-5">
                     <h3>Tresorera</h3>
                     <h5>Marta Masmitjà Prada</h5>

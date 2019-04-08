@@ -6,12 +6,20 @@
   font-family: "Josefin";
   src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
 }
+@font-face {
+  font-family: "J-light";
+  src: url("../../fuentes/Josefin_Sans/JosefinSans-Light.ttf");
+}
 body {
   background: white;
   overflow-x: hidden;
 }
 
-h1, h2, h3, h5 {
+h5 {
+  font-family: J-light;
+}
+
+h1, h2, h3 {
   font-family: Josefin;
   color: #454049;
 }
