@@ -135,87 +135,36 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-8">
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead class="thead-inverse">
-                                <tr>
-                                    <th>#</th>
-                                    <th>Material</th>
-                                    <th>Importe</th>
-                                    <th>Donante</th>
-                                    <th>Fecha</th>
-                                </tr>
+                <div class="col-lg-12 col-md-8">
+                    <div class="table-responsive" text-align="center">
+                        <table class="table table-bordered table-striped">
+
+                        <thead class=" thead-dark">
+
+                            <tr>
+                                <th class="text-center">ID</th>
+                                <th class="text-center">Tipo</th>
+                                <th class="text-center">Subtipo</th>
+                                <th class="text-center">Centro Receptor</th>
+                                <th class="text-center">Coste</th>
+                            </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1,001</td>
-                                    <td>responsive</td>
-                                    <td>bootstrap</td>
-                                    <td>cards</td>
-                                    <td>grid</td>
-                                </tr>
-                                <tr>
-                                    <td>1,002</td>
-                                    <td>rwd</td>
-                                    <td>web designers</td>
-                                    <td>theme</td>
-                                    <td>responsive</td>
-                                </tr>
-                                <tr>
-                                    <td>1,003</td>
-                                    <td>free</td>
-                                    <td>open-source</td>
-                                    <td>download</td>
-                                    <td>template</td>
-                                </tr>
-                                <tr>
-                                    <td>1,003</td>
-                                    <td>frontend</td>
-                                    <td>developer</td>
-                                    <td>coding</td>
-                                    <td>card panel</td>
-                                </tr>
-                                <tr>
-                                    <td>1,004</td>
-                                    <td>migration</td>
-                                    <td>bootstrap 4</td>
-                                    <td>mobile-first</td>
-                                    <td>design</td>
-                                </tr>
-                                <tr>
-                                    <td>1,005</td>
-                                    <td>navbar</td>
-                                    <td>sticky</td>
-                                    <td>jumbtron</td>
-                                    <td>header</td>
-                                </tr>
-                                <tr>
-                                    <td>1,006</td>
-                                    <td>collapse</td>
-                                    <td>affix</td>
-                                    <td>submenu</td>
-                                    <td>flexbox</td>
-                                </tr>
-                                <tr>
-                                    <td>1,007</td>
-                                    <td>layout</td>
-                                    <td>examples</td>
-                                    <td>themes</td>
-                                    <td>grid</td>
-                                </tr>
-                                <tr>
-                                    <td>1,008</td>
-                                    <td>migration</td>
-                                    <td>bootstrap 4</td>
-                                    <td>flexbox</td>
-                                    <td>design</td>
-                                </tr>
+                                    @foreach ($donaciones as $donacion)
+
+                                        <td class="text-center">{{$donacion->id}}</td>
+                                        <td class="text-center">{{$donacion->subtipos->tipos->nombre}}</td>
+                                        <td class="text-center">{{$donacion->subtipos->nombre}}</td>
+                                        <td class="text-center">{{$donacion->centro->nombre}}</td>
+                                        <td class="text-center">{{$donacion->coste}}</td>
+
+                                    </tr>
+                                    @endforeach
+
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>
             <!--/row-->
 
 
