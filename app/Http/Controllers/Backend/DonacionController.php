@@ -17,7 +17,7 @@ class DonacionController extends Controller
     {
         $donaciones = Donacion::all();
         $data['donaciones']=$donaciones;
-        return view(DonacionController::PREFIX.'index',$data);
+        return view(self::PREFIX.'index',$data);
     }
     /**
      * Show the form for creating a new resource.
@@ -29,6 +29,7 @@ class DonacionController extends Controller
         $centros= Centro::all();
         $tipos = Tipo::all();
         $subtipos = Subtipo::all();
+
         $data['centros'] = $centros;
         $data['tiposDonacion'] = $tipos;
         $data['subtiposDonacion'] = $subtipos;

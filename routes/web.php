@@ -1,5 +1,5 @@
 <?php
-
+use App\Models\Donacion;
 //////////////////////////// PAGS FRONTEND ///////////////////////////////////
 Route::redirect('/', 'landing');
 
@@ -30,14 +30,17 @@ Route::prefix("backend/")->middleware("locale")->group(function() {
 
     //Route::group(['middleware' => ['auth']], function () {
         Route::get('/', function () {
-            return view('backend.paginas.backend');
-        });
+            $donaciones = Donacion::all();
+            $data['donaciones']=$donaciones;
 
+            return view('backend.paginas.backend',$data);
+        });
+        Route::resource('donaciones', 'Backend\DonacionController');
         Route::resource('donantes', 'Backend\DonanteController');
 
-        Route::resource('donaciones', 'Backend\DonacionController');
 
-        Route::prefix("mantenimientos")->middleware('needAdmin')->group(function() {
+
+            Route::prefix("mantenimientos")->middleware('needAdmin')->group(function() {
             Route::resource("usuarios", "Backend\Mantenimientos\UsuariosController");
             Route::resource("subtipos", "Backend\Mantenimientos\SubtiposController");
             Route::resource("challenges", "Backend\Mantenimientos\ChallengesController");

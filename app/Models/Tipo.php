@@ -8,6 +8,7 @@ class Tipo extends Model
     public $incrementing = true;
     protected $keyType = 'int';
     public $timestamps = false;
+
     public function subtipos()
     {
         return $this->hasMany('App\Models\Subtipo','tipos_id');

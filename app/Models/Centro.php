@@ -12,8 +12,8 @@ class Centro extends Model
     protected $keyType = 'int';
     public $timestamps = false;
 
-    public function donacionesRecividas()
+    public function donaciones()
     {
-        return $this->hasMany('App\Models\Donacion', 'centro_receptor_id');
+        return $this->hasMany('App\Models\Donacion', 'centros_receptor_id');
     }
 }
