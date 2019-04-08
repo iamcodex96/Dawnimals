@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Classes\Utilitat;
 use App\Exports\ConverterExcel;
-use Maatwebsite\Excel\Facades\Excel;
+
 
 class DonanteController extends Controller
 {
