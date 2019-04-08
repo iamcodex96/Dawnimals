@@ -1,7 +1,6 @@
 
 var urlApi = 'http://localhost:8080/Dawnimals/public/api/';
 var ftipos=[];
-var froles=[];
 var fsexos=[];
 var inputTipo = $('#tipo');
 var inputSubTipo=$('#subtipo');
@@ -11,20 +10,15 @@ function pushDatos(datos){
     var datos = datos['data'];
     var tiposData = [];
     var sexosData = [];
-    var rolesData = [];
     datos['tipos'].forEach(function(elem){
         tiposData.push(elem);
     });
     datos['sexos'].forEach(function(elem){
         sexosData.push(elem);
     });
-    datos['roles'].forEach(function(elem){
-        rolesData.push(elem);
-    });
 
     ftipos = tiposData;
     fsexos = sexosData;
-    froles = rolesData;
     crearOpcionesTipo(ftipos);
 }
 

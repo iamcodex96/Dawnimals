@@ -17,8 +17,6 @@ class GlobalAPIResource extends JsonResource
         //return parent::toArray($request);
         return [
             "tipos" => $this['tipos'],
-            "sexos" => $this['sexos'],
-            "roles" => $this['roles']
-        ];
+            "sexos" => $this['sexos']        ];
     }
 }
