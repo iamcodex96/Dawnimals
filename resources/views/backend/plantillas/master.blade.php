@@ -40,43 +40,14 @@
                 <li>
                     <a href="{{asset('/backend')}}">{{ __("backend.panel_control") }}</a>
 
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Graficos</a>
-                        </li>
-                        <li>
-                            <a href="#">Otro</a>
-                        </li>
-                        <li>
-                            <a href="#">Otro</a>
-                        </li>
-                    </ul>
                 </li>
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">{{ __("backend.donaciones") }}</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="{{url('backend/donaciones/create')}}">{{ __("backend.donacion_añadir") }}</a>
-                        </li>
-                        <li>
-                            <a href="{{url('/backend/donaciones')}}">{{ __("backend.donacion_buscar") }}</a>
-                        </li>
-                        <li>
-                            <a href="#">{{__("backend.otros")}}</a>
-                        </li>
-                    </ul>
-                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false">{{ __("backend.donantes") }}</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu2">
-                        <li>
-                            <a href="{{url('/backend/donantes/create')}}">{{ __("backend.donante_añadir") }}</a>
-                        </li>
-                        <li>
-                            <a href="{{url('/backend/donantes')}}">{{ __("backend.donante_buscar") }}</a>
-                        </li>
-                        <li>
-                            <a href="#">{{ __("backend.otros") }}</a>
-                        </li>
-                    </ul>
+                        <a href="{{url('/backend/donaciones')}}">{{ __("backend.donaciones") }}</a>
+
+                        <a  href="{{url('/backend/donantes')}}">{{ __("backend.donantes") }}</a>
+
+
+
                     @if(Auth::user()->admin)
                         <a href="#pageSubMantenimientos" data-toggle="collapse" aria-expanded="false">{{ __("backend.mantenimientos") }}</a>
                         <ul class="collapse list-unstyled" id="pageSubMantenimientos">
