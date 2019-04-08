@@ -18,9 +18,9 @@ class Usuario extends Authenticatable
 
     public $timestamps = false;
 
-    public function role() {
-        return $this->belongsTo("App\Models\Role", "roles_id");
-    }
+    // public function role() {
+    //     return $this->belongsTo("App\Models\Role", "roles_id");
+    // }
     public function donacion()
     {
         return $this->hasMany('App\Models\Donacion', 'usuario_id');

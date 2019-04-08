@@ -26,12 +26,12 @@
 </div>
 
 <div class="form-group col-md-6">
-    <label for="role_id">{{ __('backend.perfil') }}</label>
-    <select name="role_id" id="role_id" class="col form-control">
-                        @foreach($roles as $rol)
-                            <option value="{{ $rol->id }}" {{ ($usuario->roles_id == $rol->id) ? "selected" : "" }}>{{ $rol->rol }}</option>
-                        @endforeach
-                    </select>
+    <label for="admin">{{ __("backend.perfil") }}</label>
+    <select name="admin" id="admin" class="col form-control">
+        @foreach($roles as $rol => $texto)
+            <option value="{{ $rol }}" {{ $usuario->admin == $rol ? "selected" : ""}}>{{ $texto }}</option>
+        @endforeach
+    </select>
 </div>
 
 @endsection

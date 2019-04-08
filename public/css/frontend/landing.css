@@ -12,28 +12,44 @@
       src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
     }
 
+    @font-face {
+        font-family: "Montserrat Light";
+        src: url("../../fuentes/Montserrat/Montserrat-Light.ttf");
+      }
+
+      @font-face {
+        font-family: "Montserrat Bold";
+        src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
+      }
+
+
   body {
     background: white;
     overflow-x: hidden;
   }
 
+  #background1{
+    background-image: url("../../img/prote_4.png");
+    min-height: 900px;
+  }
+
   #img1{
-   background-image: url("../../img/cat_.png");
-   min-height: 400px;
+   background-image: url("../../img/perro_gato.jpeg");
+   min-height: 600px;
 
 
   }
 
   #img2{
       background-image: url("../../img/cat_.png");
-      min-height: 400px;
+      min-height: 600px;
 
   }
 
   #imghuellas{
     background-image: url("../../img/paw.png");
-    min-height: 500px;
-    max-width: 500px;
+    min-height: 900px;
+
 
 }
 
@@ -51,17 +67,29 @@
   .imgParallax2{
 
     background-attachment: fixed;
-    background-position: left;
+    background-position: center;
     background-repeat:no-repeat;
-
-
-
+    position: absolute;
+    z-index: -2;
 
     }
+
+    .imgParallax3{
+
+        background-attachment: fixed;
+        background-repeat:repeat;
+        background-size:cover;
+
+        }
 
 #imgPrincipal{
   top: -20px;
 
+}
+
+.intermedio{
+
+    min-height: 200px;
 }
 
   h1 {
@@ -70,8 +98,13 @@
   }
 
   p {
-    font-family: Roboto;
-    color: #454049;
+    font-family: Montserrat Light;
+    color: white;
+  }
+
+  .landingText{
+    font-family: Montserrat Bold;
+    color: white;
   }
 
   div#primero {
@@ -84,6 +117,7 @@
     margin:0px;
     margin-top:0px;
     margin-bottom:0px;
+    min-height: 700px;
   }
   #segundo h1 {
 
@@ -101,18 +135,11 @@
 
   #segundo .texto-container {
     z-index: 60;
-    color: black;
+    color:white;
     text-align: justify;
   }
-  #segundo .texto-container a {
-    color: #ff6600;
-    border: #ff6600 1px solid;
-    margin:20px;
-  }
-  #segundo .texto-container a:hover {
-    color: white;
-    background-color: #ff6600;
-  }
+
+
   #segundo .texto {
     width: 100%;
     font-size:1.5rem;
@@ -120,21 +147,9 @@
     font-family: Josefin;
   }
 
-  #segundo .round-button {
-    position: relative;
-    background-color: #99cd32;
-    border-radius: 30px;
-    width: 300px;
-    bottom: 100px;
-    left: 35%;
-    color: white;
-  }
-  #segundo .round-button:hover {
-    background-color: #5c7b1e;
-  }
-
   #tercero {
-    height: 100%;
+    height: 900px;
+    min-height: 600px;
   }
   #tercero h1 {
       width: 100%;
@@ -152,6 +167,7 @@
   }
   #tercero .card img {
     border-bottom: 5px solid #99cd32;
+    background-color: #99cd32;
   }
   #tercero .card:hover {
     transform: scale(1);
@@ -162,16 +178,14 @@
     padding: 0;
     margin: 0;
     top: -35px;
-    width: 80%;
+    width: 100%;
     padding: 10px;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
     background-color: #99cd32;
     color: white;
   }
 
   #cuarto {
-    height: 100%;
+    height: 1000px;
   }
   #cuarto h1 {
       width: 100%;
@@ -204,6 +218,7 @@
 
   .rounded-circle {
     border-radius: 30%!important;
+    background-color: #99cd32;
 }
 
   /*# sourceMappingURL=landing.css.map */
