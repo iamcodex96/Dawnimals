@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Classes\Utilitat;
 use Illuminate\Database\QueryException;
+use App\Exports\ConverterExcel;
 
 class UsuariosController extends Controller
 {
@@ -27,6 +28,33 @@ class UsuariosController extends Controller
 
         $data = [];
         $query = Utilitat::setFiltros($request, $query, $data);
+
+        // if ($request->has("filtroEspecial[perfil]")) {
+        //     collect($this->getRoles())->where;
+        // }
+
+        if ($request->input('submit') == 'excel'){
+            $queryFin = [];
+
+            foreach($query->get() as $item){
+                array_push($queryFin, [
+                    $item->nombre,
+                    $item->nombre_usuario,
+                    $item->correo,
+                    $item->admin ? __("backend.administrador") : __("backend.trabajador")
+                ]);
+            }
+            $queryFin = collect($queryFin);
+
+            $headings = [
+                __("backend.nombre"),
+                __("backend.usuario"),
+                __("backend.correo"),
+                __("backend.perfil")
+            ];
+
+            return ConverterExcel::export($queryFin, $headings, __("backend.usuarios"));
+        }
 
         $data["usuarios"] = $query->paginate(10);
 

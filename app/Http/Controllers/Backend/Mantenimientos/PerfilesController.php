@@ -21,6 +21,17 @@ class PerfilesController extends Controller
         $data = [];
         $query = Utilitat::setFiltros($request, $query, $data);
 
+        if ($request->input('submit') == 'excel'){
+            $headings = [
+                __("backend.nombre"),
+                __("backend.usuario"),
+                __("backend.correo"),
+                __("backend.perfil")
+            ];
+
+            return ConverterExcel::export($query->get(), $headings, __("backend.usuarios"));
+        }
+
         $data["roles"] = $query->paginate(8);
 
         return view(self::PREFIX . "index", $data);

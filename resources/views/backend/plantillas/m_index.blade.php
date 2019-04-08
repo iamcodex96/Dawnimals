@@ -11,6 +11,7 @@
         </div>
         <div class="col-md-3 col-sm-12 d-flex justify-content-end align-items-center">
             <button class="btn btn-primary" style="margin-right: 10px;" data-toggle="collapse" data-target=".filtro"><span class="fa fa-filter"></span></button>
+            <button class="btn btn-info" style="margin-right:10px;" onclick="exportExcel()"><span class="fa fa-file-excel"></span></button>
             <a href="@yield('url-crear')" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Agregar donante"> <i class="fa fa-plus"></i> </a>
         </div>
     </div>
@@ -64,6 +65,11 @@
         $("#modalDelete .btnAceptar").on("click", function(){
             elemento.form.submit();
         });
+
+        function exportExcel(){
+            var exportar = $("#exportarExcel");
+            exportar.click();
+        }
 
 </script>
 @endsection

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Classes\Utilitat;
 use Illuminate\Database\QueryException;
+use App\Exports\ConverterExcel;
 
 class SubtiposController extends Controller
 {
@@ -20,6 +21,33 @@ class SubtiposController extends Controller
 
         $data = [];
         $query = Utilitat::setFiltros($request, $query, $data);
+
+        if ($request->input('submit') == 'excel'){
+            $queryFin = [];
+
+            foreach($query->get() as $item){
+                array_push($queryFin, [
+                    $item->nombre,
+                    $item->tipo->nombre,
+                    $item->gama_alta,
+                    $item->gama_media,
+                    $item->gama_baja,
+                    $item->tipo_unidad
+                ]);
+            }
+            $queryFin = collect($queryFin);
+
+            $headings = [
+                __("backend.nombre"),
+                __("backend.tipo"),
+                __("backend.alta"),
+                __("backend.media"),
+                __("backend.baja"),
+                __("backend.unidad")
+            ];
+
+            return ConverterExcel::export($queryFin, $headings, __("backend.subtipos"));
+        }
 
         $data["subtipos"] = $query->paginate(10);
         $data["tipos"] = Tipo::all();
