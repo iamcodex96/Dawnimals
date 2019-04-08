@@ -20,7 +20,12 @@
         </div>
         <div class="form-group col-md-6">
             <label for="">{{ __('backend.perfil') }}</label>
-            <input type="text" class="form-control" name="filtros[role.rol]" id="filtrosNombre" value="{{ $filtros['role.rol'] }}">
+            <select class="form-control" name="filtroEspecial[admin]" id="filtrosNombre">
+                <option value="">{{ __("backend.todos") }}</option>
+                @foreach($roles as $role => $valor)
+                    <option value="{{$role}}" {{ $filtroEspecial["admin"] === $role ? "selected" : ""}}>{{$valor}}</option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group col-md-6">
