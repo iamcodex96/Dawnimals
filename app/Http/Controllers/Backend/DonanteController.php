@@ -9,9 +9,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Classes\Utilitat;
+use App\Exports\ConverterExcel;
+use Maatwebsite\Excel\Facades\Excel;
 
 class DonanteController extends Controller
 {
+
     const PREFIX = 'backend.paginas.donante.';
     const CONTROLADOR = 'Backend\DonanteController@';
     /**
@@ -23,6 +26,12 @@ class DonanteController extends Controller
     {
         $donantes = Donante::all();
         $data['donantes']=$donantes;
+        $headings = [
+            'id','tipos_donantes_id','es_habitual','nombre','cif','cp','sexos_id','tiene_aninales','telefono',
+            'correo','direccion','vinculo_entidad','spam','poblacion','pais','es_colaborador','tipo_colaboracion',
+            'fecha_alta'
+        ];
+        return ConverterExcel::export($donantes, $headings, "Donantes");
         return view(self::PREFIX.'index',$data);
     }
 
@@ -187,4 +196,5 @@ class DonanteController extends Controller
         }
 
     }
+
 }
