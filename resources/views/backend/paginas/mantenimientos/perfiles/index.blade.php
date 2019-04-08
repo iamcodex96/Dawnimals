@@ -11,6 +11,7 @@ url('backend/mantenimientos/perfiles/create'))
             <form action="{{ action('Backend\Mantenimientos\PerfilesController@index')}}" method="GET">
                 <td>
                     <input type="text" class="form-control" name="filtros[rol]" id="rol" value="{{ $filtros['rol'] }}">
+                    <input type="submit" name="submit" class="d-none" id="exportarExcel" value="excel">
                 </td>
                 <td></td>
             </form>

@@ -30,6 +30,7 @@
 
         <div class="form-group col-md-6">
             <input type="submit" class="btn btn-primary" value="Filtrar">
+            <input type="submit" name="submit" class="d-none" id="exportarExcel" value="excel">
         </div>
     </div>
 </form>

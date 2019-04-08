@@ -82,7 +82,6 @@
                         <ul class="collapse list-unstyled" id="pageSubMantenimientos">
                             <li>
                                 <a href="{{url('backend/mantenimientos/usuarios')}}">{{ __("backend.usuarios") }}</a>
-                                <a href="{{url('backend/mantenimientos/perfiles')}}">{{ __("backend.perfiles") }}</a>
                                 <a href="{{url('backend/mantenimientos/subtipos')}}">{{ __("backend.subtipos") }}</a>
                                 <a href="{{url('backend/mantenimientos/challenges')}}">{{ __("backend.challenges") }}</a>
                             </li>
