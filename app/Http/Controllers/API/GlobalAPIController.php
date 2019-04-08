@@ -6,7 +6,6 @@ use App\Models\Centro;
 use App\Models\Subtipo;
 use App\Models\Tipo;
 use App\Models\Sexo;
-use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\GlobalAPIResource;
@@ -20,7 +19,6 @@ class GlobalAPIController extends Controller{
     public function getFormData(){
         $data['tipos']=self::getTipos();
         $data['sexos']=self::getSexos();
-        $data['roles']=self::getRoles();
         return new GlobalAPIResource($data);
     }
 

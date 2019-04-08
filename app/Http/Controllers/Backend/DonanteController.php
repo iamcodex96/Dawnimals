@@ -31,7 +31,7 @@ class DonanteController extends Controller
             'correo','direccion','vinculo_entidad','spam','poblacion','pais','es_colaborador','tipo_colaboracion',
             'fecha_alta'
         ];
-        return ConverterExcel::export($donantes, $headings, "Donantes");
+        //return ConverterExcel::export($donantes, $headings, "Donantes");
         return view(self::PREFIX.'index',$data);
     }
 
