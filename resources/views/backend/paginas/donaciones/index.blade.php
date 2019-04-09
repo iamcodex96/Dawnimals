@@ -15,14 +15,8 @@
 
                     <div class="form-group">
                         <label class="control-label" for="input-customer-group">Tipo Donativo</label>
-                        <select name="filter_tipo_donativo" id="input-tipo_donativo" class="form-control">
+                        <select id="tipo" name="filter_tipo_donativo" id="input-tipo_donativo" class="form-control">
                             <option value="*"></option>
-                            <option value="">Alimentos</option>
-                            <option value="">Veterinario</option>
-                            <option value="">Oficinas</option>
-                            <option value="">Complementos</option>
-                            <option value="">Encantes</option>
-                            <option value="">Aportaciones monetarias</option>
                         </select>
                     </div>
 
@@ -31,10 +25,6 @@
                             <label class="control-label" for="input-customer-group">Subtipo Donativo</label>
                             <select name="filter_subtipo_donativo" id="input-subtipo_donativo" class="form-control">
                                 <option value="*"></option>
-                                <option value="">Se </option>
-                                <option value="">Rellena</option>
-                                <option value="">Según</option>
-                                <option value="">Tipo</option>
 
                             </select>
                         </div>

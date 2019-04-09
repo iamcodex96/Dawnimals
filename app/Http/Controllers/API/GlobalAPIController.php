@@ -27,7 +27,7 @@ class GlobalAPIController extends Controller{
     }
     protected function getSubTiposByTipo($id_tipo){
         $subtipo = Subtipo::where('tipos_id',$id_tipo)->get();
-         return new SubtipoResource($subtipo);
+        return new SubtipoResource($subtipo);
     }
     protected function getSexos(){
         return Sexo::all();

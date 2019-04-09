@@ -55,7 +55,10 @@ function crearOpcionesTipo(listaTipo){
     listaTipo.forEach(function(tipo){
         var option=$('<option></option>');
         option.attr('value',tipo.id);
-        option.html(tipo.nombre);
+        switch(idioma){
+            case 'es': option.html(tipo.nombre_esp);break;
+            case 'ca': option.html(tipo.nombre_cat);break;
+        }
         inputTipo.append(option);
     });
 }
@@ -64,7 +67,10 @@ function crearOpcionesSubtipo(subtipos){
         subtipos['data'].forEach(function(subtipo){
         var option=$('<option></option>');
         option.attr('value',subtipo.id);
-        option.html(subtipo.nombre);
+        switch(idioma){
+            case 'es': option.html(subtipo.nombre_esp);break;
+            case 'ca': option.html(subtipo.nombre_cat);break;
+        }
         inputSubTipo.append(option);
     });
 }
