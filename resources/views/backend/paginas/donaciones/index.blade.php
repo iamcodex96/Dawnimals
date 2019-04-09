@@ -148,6 +148,7 @@
                             <th class="text-center">Subtipo</th>
                             <th class="text-center">Centro Receptor</th>
                             <th class="text-center">Coste</th>
+                            <th class="text-center">Acción</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -158,6 +159,25 @@
                                     <td class="text-center">{{$donacion->subtipos->nombre}}</td>
                                     <td class="text-center">{{$donacion->centro->nombre}}</td>
                                     <td class="text-center">{{$donacion->coste}}</td>
+
+                                    <td colspan="2" style="width: 1%" class="text-center">
+
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <form class="p-0 m-0" action="" method="GET">
+                                            @csrf
+                                            <button type="submit" data-toggle="tooltip" title="Ver" class="btn btn-primary" data-original-title="Ver"><i class="fa fa-eye"></i></button>
+                                        </form>
+                                        <form class="p-0 m-0" action="{{ action('Backend\DonacionController@edit',[$donacion->id]) }}" method="GET">
+                                            @method('put') @csrf
+                                            <button type="submit" data-toggle="tooltip" title="Modificar" class="btn btn-warning" data-original-title="Ver"><i class="fa fa-edit"></i></button>
+                                        </form>
+                                        <form class="p-0 m-0" action="{{ action('Backend\DonacionController@destroy',[$donacion->id]) }}" method="post">
+                                            @method('delete') @csrf
+                                            <button type="submit" onclick="destroySubmit(this, event, {{$donacion->nombre}})" data-toggle="tooltip" title="Borrar" class="btn btn-danger"
+                                                data-original-title="Ver"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
 
                                 </tr>
                                 @endforeach
