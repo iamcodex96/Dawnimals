@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Donante;
+use App\Models\Donacion;
 use App\Models\Sexo;
 use App\Models\TipoDonante;
 use Illuminate\Http\Request;
@@ -114,7 +115,12 @@ class DonanteController extends Controller
      */
     public function show(Donante $donante)
     {
-        //
+        $data['donante']=$donante;
+        $donaciones=Donacion::where('donantes_id',$donante->id)->get();
+        $data['donaciones'] = $donaciones;
+        $data['titulo']=$donante->nombre;
+
+        return view(self::PREFIX.'show',$data);
     }
 
     /**
@@ -125,7 +131,6 @@ class DonanteController extends Controller
      */
     public function edit(Donante $donante)
     {
-
         $data['donante']=$donante;
         $data['sexos']=Sexo::all();
         $data['tipodonantes']=TipoDonante::all();

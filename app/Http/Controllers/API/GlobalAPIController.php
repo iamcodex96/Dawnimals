@@ -18,7 +18,7 @@ class GlobalAPIController extends Controller{
 
     public function getDonacionesData(){
         $data['tipos']=self::getTipos();
-        $data['centro']=self::getCentros();
+        $data['centros']=self::getCentros();
         return new DonanteResource($data);
     }
 

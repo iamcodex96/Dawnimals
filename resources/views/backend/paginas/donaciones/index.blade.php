@@ -64,11 +64,8 @@
 
                     <div class="form-group">
                         <label class="control-label" for="input-customer-group">Centro receptor</label>
-                        <select name="filter_receptor" id="input-receptor" class="form-control">
+                        <select id="centroR" name="filter_receptor" id="input-receptor" class="form-control">
                             <option value="*"></option>
-                            <option value="">Lista</option>
-                            <option value="">de</option>
-                            <option value="">usuarios?</option>
                         </select>
                     </div>
 
@@ -89,13 +86,8 @@
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="form-group">
                         <label class="control-label" for="input-customer-group">Centro Destino</label>
-                        <select name="filter_destino" id="input-destino" class="form-control">
+                        <select id="centroD" name="filter_destino" id="input-destino" class="form-control">
                             <option value="*"></option>
-                            <option value="">Lista</option>
-                            <option value="">de</option>
-                            <option value="">Destinos</option>
-                            <option value="">BD</option>
-
                         </select>
                     </div>
 
@@ -137,7 +129,7 @@
                             <th class="text-center">Tipo</th>
                             <th class="text-center">Subtipo</th>
                             <th class="text-center">Centro Receptor</th>
-                            <th class="text-center">Coste</th>                            
+                            <th class="text-center">Coste</th>
 
                             <th class="text-center">Acción</th>
 

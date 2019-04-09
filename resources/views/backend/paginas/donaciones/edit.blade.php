@@ -117,3 +117,10 @@
     <input type="text" class="form-control" id="ruta_factura" name="ruta_factura" placeholder="cambiar por fichero">
 </div>
 @endsection
+@section('scripts')
+@parent
+    <script>
+        idioma = "{{App::getLocale()}}";
+    </script>
+    <script src="{{ asset('js/api/donacionesAPI.js') }}"></script>
+@endsection

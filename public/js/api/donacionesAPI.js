@@ -1,20 +1,28 @@
 
 var urlApi = 'http://localhost:8080/Dawnimals/public/api/';
 var ftipos=[];
-var fsexos=[];
+var fcentros=[];
 var inputTipo = $('#tipo');
 var inputSubTipo=$('#subtipo');
+var inputCentroR=$('#centroR');
+var inputCentroD=$('#centroD');
 setAttr();
+
 function pushDatos(datos){
 
     var datos = datos['data'];
     var tiposData = [];
-    var sexosData = [];
+    var  centroData= [];
     datos['tipos'].forEach(function(elem){
         tiposData.push(elem);
     });
+    datos['centros'].forEach(function(elem){
+        centroData.push(elem);
+    });
     ftipos = tiposData;
+    fcentros = centroData;
     crearOpcionesTipo(ftipos);
+    crearOpcionesCentro(fcentros);
 }
 
 inputTipo.on("change",function(){
@@ -33,6 +41,22 @@ function setSubtiposByTipo(){
         }
     })
 }
+
+function crearOpcionesCentro(listaCentros){
+    listaCentros.forEach(function(centro){
+        var option=$('<option></option>');
+        option.attr('value',centro.id);
+        option.html(centro.nombre);
+        inputCentroD.append(option);
+    });
+    listaCentros.forEach(function(centro){
+        var option=$('<option></option>');
+        option.attr('value',centro.id);
+        option.html(centro.nombre);
+        inputCentroR.append(option);
+    });
+}
+
 function setAttr(){
     $.ajax({
         url:urlApi+'donacionesData',
@@ -50,7 +74,6 @@ function crearOpcionesTipo(listaTipo){
     listaTipo.forEach(function(tipo){
         var option=$('<option></option>');
         option.attr('value',tipo.id);
-        console.log(tipo.nombre);
         option.html(tipo.nombre);
         inputTipo.append(option);
     });
