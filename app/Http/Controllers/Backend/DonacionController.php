@@ -86,7 +86,13 @@ class DonacionController extends Controller
      */
     public function edit(Donacion $donacion)
     {
-        //
+        $donacion = Donacion::find($id);
+
+        $data['donacion'] = $donacion;
+        $data['tiposDonacion'] = Tipo::all();
+        $data['subtiposDonacion'] = Subtipo::all();
+        $data['centros'] = Centro::all();
+        return view(self::PREFIX.'edit',$data);
     }
     /**
      * Update the specified resource in storage.
@@ -97,7 +103,38 @@ class DonacionController extends Controller
      */
     public function update(Request $request, Donacion $donacion)
     {
-        //
+        $donacion = Donacion::find($id);
+
+        $validation = validator($request->all());
+        if($validation->fails()){
+            return redirect('DonanteController')
+                        ->withErrors($validator)
+                        ->withInput();
+        }else{
+            $donacion->subtipos_id = $request->input('subtipos_id');
+            $donacion->desc_animal = $request->input('desc_animal');
+            $donacion->centros_receptor_id = $request->input('centros_receptor_id');
+            $donacion->centro_receptor_altres = $request->input('centro_receptor_altres');
+            $donacion->usuarios_id = $request->input('usuarios_id');
+            $donacion->usuario_receptor = $request->input('usuario_receptor');
+            $donacion->centros_desti_id = $request->input('centros_desti_id');
+            $donacion->donantes_id = $request->input('donantes_id');
+            $donacion->coste = $request->input('coste');
+            $donacion->unidades = $request->input('unidades');
+            $donacion->peso = $request->input('peso');
+            $donacion->hay_factura = $request->input('hay_factura');
+            $donacion->ruta_factura = $request->input('ruta_factura');
+            $donacion->es_coordinada = $request->input('es_coordinada');
+
+            try{
+                $donacion->save();
+                return redirect()->action(self::CONTROLADOR .'index');
+            }catch(QueryException $e){
+                $error = Utilitat::errorMessages($e);
+                $request->session()->flash('error',$error);
+                return redirect()->action(self::CONTROLADOR .'edit')->withInput();
+            }
+        }
     }
     /**
      * Remove the specified resource from storage.
@@ -107,6 +144,16 @@ class DonacionController extends Controller
      */
     public function destroy(Donacion $donacion)
     {
-        //
+        $donacion = Donacion::find($id);
+        try{
+            if($donacion!=null){
+                $donacion->delete();
+                return redirect()->action(self::CONTROLADOR .'index');
+            }
+        }catch(QueryException $e){
+            $error = Utilitat::errorMessages($e);
+            $request->session()->flash('error',$error);
+            return redirect()->action(self::CONTROLADOR .'index');
+        }
     }
 }

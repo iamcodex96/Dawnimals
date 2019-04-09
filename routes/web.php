@@ -59,4 +59,15 @@ Route::prefix("backend/")->middleware("locale")->group(function() {
 });
 //////////////////////////// PAGS BACKEND ////////////////////////////////////
 
+//////////////////////////// PAGS CHARTS ////////////////////////////////////
+
+Route::get('/testing', function () {
+    return view('chart');
+});
+Route::get('/get-post-chart-data', 'ChartDataController@getMonthlyPostData');
+
+Route::get('/test', 'ChartDataController@getMoneyPostCount');
+
+//////////////////////////// PAGS CHARTS ////////////////////////////////////
+
 
