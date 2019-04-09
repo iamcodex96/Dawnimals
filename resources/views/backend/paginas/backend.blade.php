@@ -5,11 +5,12 @@
 @section('contenido')
 
 <div class="container-fluid" id="main">
-   {{-- <h2>Panel de control</h2> --}}
+   <h2>Panel de control</h2>
         <div class="col main">
 
-            <div class="row">
-            <div class="col-xl-5 col-sm-5 py-2">
+    {{-- ************************************  DONACIONES / DONANTES  ************************************ --}}
+        <div class="row">
+            <div class="col-xl-6 col-sm-6 py-2">
                 <div class="card text-white bg-success h-100">
                     <div class="card-body bg-success">
                         <div class="row">
@@ -30,18 +31,8 @@
                 </div>
             </div>
 
-            <div class="col-xl-7 col-sm-7 py-2">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h6 class="text-uppercase">Gráfico sobre donaciones</h6>
-                    </div>
-                </div>
-            </div>
 
-                </div>
-
-        <div class="row">
-            <div class="col-xl-5 col-sm-5 py-2">
+            <div class="col-xl-6 col-sm-6 py-2">
                 <div class="card text-white bg-secondary h-100">
                     <div class="card-body bg-secondary">
                         <div class="row">
@@ -59,44 +50,56 @@
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
 
-            <div class="col-xl-7 col-sm-7 py-2">
-                <div class="card h-100">
+   {{-- ************************************  GRÁFICO / RETOS  ************************************ --}}
+        <div class="row mt-5 mb-5">
+
+            <div class="col-xl-6 col-sm-6 py-2">
+                <h6 class="text-uppercase">Donaciones del mes</h6>
+                <div class="card h-100 text-center">
                     <div class="card-body">
-                        <h6 class="text-uppercase">Gráfico sobre donantes</h6>
+                        <img src="{{ asset('./img/ejemploGrafico.png') }}" width="300px" alt="">
                     </div>
                 </div>
             </div>
 
-        </div>
-
-            <div class="row">
-                <div class="col-xl-12 col-sm-12 py-10 text-center">
+            <div class="col-xl-6 col-sm-6 py-2">
+                <h6 class="text-uppercase">Retos Activos</h6>
                     <div class="card text-white bg-info h-100">
                         <div class="card-body bg-info">
                             <div class="rotate">
                                 <i class="fa fa-twitter fa-4x"></i>
                             </div>
-                            <h6 class="text-uppercase">Reto Activo</h6>
-                            <h6 class="text-uppercase">Nombre</h6>
-                            <h6 class="text-uppercase">35/50</h6>
+
+                            <div class="row">
+                                <h6 class="text-uppercase">Nombre</h6>
+                                <h6 class="text-uppercase"> 35/50</h6>
+                            </div>
+                             <h6 class="text-uppercase">[------------------->              ]</h6>
                         </div>
                     </div>
                 </div>
-            </div>
-            </div>
-            <!--/row-->
+        </div>
+</div>
 
-            <hr>
+    <hr>
 {{-- ****************************************ULTIMAS DONACIONES****************************** --}}
 
-                <h3>Últimas Donaciones</h3>
+<div class="card mt-3 mb-3 mr-3 ml-3">
+        <!--Body-->
+        <div class="card-body">
+
+            <form action="" method="post">
+
                 <div class="col-lg-12 col-md-8">
                     <div class="table-responsive" text-align="center">
                         <table class="table table-bordered table-striped">
+
                         <thead class=" thead-dark">
+
                             <tr>
                                 <th class="text-center">ID</th>
                                 <th class="text-center">Tipo</th>
@@ -106,19 +109,24 @@
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach ($donaciones as $donacion)
-                                    <td class="text-center">{{$donacion->id}}</td>
-                                    <td class="text-center">{{$donacion->subtipos->tipos->nombre}}</td>
-                                    <td class="text-center">{{$donacion->subtipos->nombre}}</td>
-                                    <td class="text-center">{{$donacion->centro->nombre}}</td>
-                                    <td class="text-center">{{$donacion->coste}}</td>
-                                @endforeach
+                                    @foreach ($donaciones as $donacion)
+
+                                        <td class="text-center">{{$donacion->id}}</td>
+                                        <td class="text-center">{{$donacion->subtipos->tipos->nombre}}</td>
+                                        <td class="text-center">{{$donacion->subtipos->nombre}}</td>
+                                        <td class="text-center">{{$donacion->centro->nombre}}</td>
+                                        <td class="text-center">{{$donacion->coste}}</td>
+
+                                    </tr>
+                                    @endforeach
 
                             </tbody>
                         </table>
                     </div>
                 </div>
-            <!--/row-->
+        </div>
+        </form>
+    </div>
 
     @endsection
 
