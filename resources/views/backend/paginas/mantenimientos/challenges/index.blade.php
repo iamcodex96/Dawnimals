@@ -20,10 +20,10 @@
 
         <div class="form-group col-md-6">
             <label for="filtrosSubtipo">{{ __('backend.subtipo') }}</label>
-            <select class="form-control" name="filtros[subtipo.nombre]" id="filtrosTipo">
+            <select class="form-control" name="filtrosEspeciales[subtipo]" id="filtrosTipo">
                     <option value="">{{ __("backend.todos") }}</option>
                     @foreach ($subtipos as $subtipo)
-                        <option value="{{ $subtipo->nombre }}" {{ $filtros["subtipo.nombre"] == $subtipo->nombre ? "selected" : ""}}>{{ $subtipo->nombre }}</option>
+                        <option value="{{ $subtipo->id }}" {{ $filtrosEspeciales["subtipo"] == $subtipo->id ? "selected" : ""}}>{{ \App::getLocale() == "ca" ? $subtipo->nombre_cat : $subtipo->nombre_esp }}</option>
                     @endforeach
                 </select>
         </div>
@@ -56,7 +56,7 @@
                         <td class="text-center">{{ date('d/m/Y', strtotime($challenge->fecha_ini)) }}</td>
                         <td class="text-center">{{ date('d/m/Y', strtotime($challenge->fecha_fin)) }}</td>
                         <td>{{ $challenge->objetivo }}</td>
-                        <td>{{ $challenge->subtipo->nombre }}</td>
+                        <td>{{ \App::getLocale() == "ca" ? $challenge->subtipo->nombre_cat : $challenge->subtipo->nombre_esp }}</td>
                         <td class="text-center">
                             <div class="form-group btn-group btn-group-form">
                                 <a href="{{ action('Backend\Mantenimientos\ChallengesController@edit', ['id' => $challenge->id ]) }}" class="btn btn-info"><span class="fa fa-edit"></span></a>

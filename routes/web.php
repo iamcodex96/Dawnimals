@@ -1,10 +1,12 @@
 <?php
 use App\Models\Donacion;
+use App\Models\Challenge;
 //////////////////////////// PAGS FRONTEND ///////////////////////////////////
 Route::redirect('/', 'landing');
 
 Route::get('/landing', function () {
-    return view('frontend.paginas.landing');
+    $data["retos"] = Challenge::all();
+    return view('frontend.paginas.landing', $data);
 })->name("landing");
 Route::get('/quien_somos', function () {
     return view('frontend.paginas.quien_somos');
