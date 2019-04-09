@@ -22,6 +22,11 @@ class ChallengesController extends Controller
         $data = [];
         $query = Utilitat::setFiltros($request, $query, $data);
 
+        if ($request->get("filtrosEspeciales")["subtipo"] != null){
+            $query = $query->where('subtipo_id', $request->get("filtrosEspeciales")["subtipo"]);
+        }
+        $data["filtrosEspeciales"] = $request->get("filtrosEspeciales");
+
         if ($request->input('submit') == 'excel'){
             $queryFin = [];
 

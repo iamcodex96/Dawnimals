@@ -6,8 +6,18 @@
 @section('m_contenido')
 
 <div class="form-group col-md-6">
-    <label for="nombre">{{ __('backend.nombre') }}</label>
-    <input type="text" class="form-control" name="nombre" id="nombre" value="{{ $subtipo->nombre }}">
+    <label for="nombre">{{ __('backend.nombre') }} {{ __("backend.catalan") }}</label>
+    <input type="text" class="form-control" name="nombre_cat" id="nombre_cat" value="{{ $subtipo->nombre_cat }}">
+</div>
+
+<div class="form-group col-md-6">
+    <label for="nombre">{{ __('backend.nombre') }} {{ __("backend.español") }}</label>
+    <input type="text" class="form-control" name="nombre_esp" id="nombre_esp" value="{{ $subtipo->nombre_esp }}">
+</div>
+
+<div class="form-group col-md-6">
+    <label for="nombre">{{ __('backend.nombre') }} {{ __("backend.ingles") }}</label>
+    <input type="text" class="form-control" name="nombre_eng" id="nombre_eng" value="{{ $subtipo->nombre_eng }}">
 </div>
 
 <div class="form-group col-md-6">

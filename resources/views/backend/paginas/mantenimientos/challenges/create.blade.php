@@ -34,7 +34,7 @@
     <label for="subtipo">{{ __('backend.subtipo') }}</label>
     <select class="form-control" name="subtipo_id" id="subtipo">
             @foreach ($subtipos as $subtipo)
-                <option value="{{ $subtipo->id }}" {{ $subtipo->id == old('subtipo_id') ? "selected" : ""}}>{{ $subtipo->nombre }}</option>
+                <option value="{{ $subtipo->id }}" {{ $subtipo->id == old('subtipo_id') ? "selected" : ""}}>{{ \App::getLocale() == "ca" ? $subtipo->nombre_cat : $subtipo_nombre_esp }}</option>
             @endforeach
         </select>
 </div>
