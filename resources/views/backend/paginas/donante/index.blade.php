@@ -4,7 +4,7 @@
 @section('url-crear', url('backend/donantes/create'))
 
 @section('m_contenido')
-<div class="card card-body m-3">
+<div class="card card-body m-3 collapse filtro">
     <form class="form-horizontal" action="{{ action('Backend\DonanteController@index') }}" method="post">
         <div class="row search">
             <div class="col-lg-4 col-md-12 col-sm-12">

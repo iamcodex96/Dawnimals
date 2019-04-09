@@ -5,7 +5,7 @@
 
 @section('m_contenido')
 
-<div class="card m-3">
+<div class="card m-3 collapse filtro">
     <form class="form-horizontal" action="" method="post">
 
         <div class="m-5">
@@ -23,7 +23,7 @@
                     <div id="subtipoDonativos" style="display: none;">
                     <div class="form-group">
                             <label class="control-label" for="input-customer-group">Subtipo Donativo</label>
-                            <select name="filter_subtipo_donativo" id="input-subtipo_donativo" class="form-control">
+                            <select id="subtipo" name="filter_subtipo_donativo" id="input-subtipo_donativo" class="form-control">
                                 <option value="*"></option>
 
                             </select>
@@ -162,26 +162,29 @@
 
 
 </form>
+@section('scripts')
+@parent
+    <script>
+        idioma = "{{App::getLocale()}}";
+        console.log(idioma);
+    </script>
+    <script>
+            $('#tipo').change(function() {
 
-<script>
+                opt = $('#tipo').val();
 
-    $('#input-tipo_donativo').change(function() {
+                console.log(opt);
 
-        opt = $('#input-tipo_donativo').val();
+                if (opt != "") {
+                    $('#subtipoDonativos').show();
+                } else {
+                    $('#subtipoDonativos').hide();
+                }
 
-        console.log(opt);
-
-        if (opt == "") {
-            $('#subtipoDonativos').show();
-        } else {
-            $('#subtipoDonativos').hide();
-        }
-
-    });
-
-</script>
-
-
+            });
+        </script>
+    <script src="{{ asset('js/api/donacionesAPI.js') }}"></script>
+    @endsection
 
 
 @endsection

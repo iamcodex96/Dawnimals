@@ -32,8 +32,5 @@ class GlobalAPIController extends Controller{
     protected function getSexos(){
         return Sexo::all();
     }
-    protected function getRoles(){
-        return Role::all();
-    }
 
 }

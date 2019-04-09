@@ -122,7 +122,7 @@
 @section('scripts')
 @parent
     <script>
-        idioma = {{App::getLocale()}}
+        idioma = "{{App::getLocale()}}";
     </script>
     <script src="{{ asset('js/api/donacionesAPI.js') }}"></script>
 @endsection

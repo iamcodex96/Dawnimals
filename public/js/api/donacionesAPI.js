@@ -55,10 +55,8 @@ function crearOpcionesTipo(listaTipo){
     listaTipo.forEach(function(tipo){
         var option=$('<option></option>');
         option.attr('value',tipo.id);
-        switch(idioma){
-            case 'es': option.html(tipo.nombre_esp);break;
-            case 'ca': option.html(tipo.nombre_cat);break;
-        }
+        console.log(tipo.nombre);
+        option.html(tipo.nombre);
         inputTipo.append(option);
     });
 }
