@@ -14,14 +14,15 @@ class Donacion extends Model
 
     public function subtipos()
     {
-        return $this->belongsTo('App\Models\Subtipo', 'subtipo_id');
+        return $this->belongsTo('App\Models\Subtipo', 'subtipos_id');
+
     }
     public function donantes()
     {
         return $this->belongsTo('App\Models\Donante', 'donantes_id');
     }
-    public function centroReceptor()
+    public function centro()
     {
-        return $this->belongsTo('App\Models\Centro', 'centro_receptor_id');
+        return $this->belongsTo('App\Models\Centro', 'centros_receptor_id');
     }
 }
