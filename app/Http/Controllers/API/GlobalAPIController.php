@@ -8,7 +8,7 @@ use App\Models\Tipo;
 use App\Models\Sexo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\GlobalAPIResource;
+use App\Http\Resources\DonanteResource;
 use App\Http\Resources\SubtipoResource;
 use Illuminate\Database\QueryException;
 use App\Classes\Utilitat;
@@ -16,10 +16,10 @@ use App\Classes\Utilitat;
 
 class GlobalAPIController extends Controller{
 
-    public function getFormData(){
+    public function getDonacionesData(){
         $data['tipos']=self::getTipos();
-        $data['sexos']=self::getSexos();
-        return new GlobalAPIResource($data);
+        $data['centro']=self::getCentros();
+        return new DonanteResource($data);
     }
 
     protected function getTipos(){
@@ -33,4 +33,11 @@ class GlobalAPIController extends Controller{
         return Sexo::all();
     }
 
+    protected function getCentros(){
+        return Centro::all();
+    }
+
+    protected function getDonantesData(){
+
+    }
 }

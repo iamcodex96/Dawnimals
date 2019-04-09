@@ -13,12 +13,7 @@ function pushDatos(datos){
     datos['tipos'].forEach(function(elem){
         tiposData.push(elem);
     });
-    datos['sexos'].forEach(function(elem){
-        sexosData.push(elem);
-    });
-
     ftipos = tiposData;
-    fsexos = sexosData;
     crearOpcionesTipo(ftipos);
 }
 
@@ -40,7 +35,7 @@ function setSubtiposByTipo(){
 }
 function setAttr(){
     $.ajax({
-        url:urlApi+'formdata',
+        url:urlApi+'donacionesData',
         method: "get",
         contentType: "text",
         dataType: "text",
