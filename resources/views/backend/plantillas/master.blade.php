@@ -32,7 +32,7 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>{{ __("backend.nombre_menu") }}</h3>
+                    <img src="{{ asset('./img/logo_OK_transparencia_2.png') }}" width="200px" alt="">
             </div>
 
             <ul class="list-unstyled components">

@@ -13,6 +13,7 @@ return [
     "who-sensibilizacion"=>"Sensibilización",
     "who-sensibilizacion-desc"=>"Acercamos a la ciudadanía la realidad del abandono de los animales de compañía y la necesidad de tenerlos de manera responsable.",
     "who-junta"=>"Junta directiva",
+    "nuestros_retos"=>"Nuestros retos",
     ]
 
 ?>
