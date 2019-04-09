@@ -140,6 +140,7 @@
                         <td class="text-center">{{$donante->telefono}}</td>
                         <td class="text-center">{{$donante->correo}}</td>
                         <td colspan="2" style="width: 1%" class="text-center">
+
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <form class="p-0 m-0" action="{{ action('Backend\DonanteController@show',[$donante->id]) }}" method="GET">
                                     @csrf

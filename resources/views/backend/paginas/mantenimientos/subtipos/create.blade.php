@@ -6,15 +6,25 @@
 @section('m_contenido')
 
 <div class="form-group col-md-6">
-    <label for="nombre">{{ __('backend.nombre') }}</label>
-    <input type="text" class="form-control" name="nombre" id="nombre" value="{{ old('nombre') }}">
+<label for="nombre">{{ __('backend.nombre') }} {{ __("backend.catalan") }}</label>
+    <input type="text" class="form-control" name="nombre_cat" id="nombre_cat" value="{{ old('nombre_cat') }}">
+</div>
+
+<div class="form-group col-md-6">
+    <label for="nombre">{{ __('backend.nombre') }} {{ __("backend.español") }}</label>
+    <input type="text" class="form-control" name="nombre_esp" id="nombre_esp" value="{{ old('nombre_esp') }}">
+</div>
+
+<div class="form-group col-md-6">
+    <label for="nombre">{{ __('backend.nombre') }} {{ __("backend.ingles") }}</label>
+    <input type="text" class="form-control" name="nombre_eng" id="nombre_eng" value="{{ old('nombre_eng') }}">
 </div>
 
 <div class="form-group col-md-6">
     <label for="tipo">{{ __('backend.tipo') }}</label>
-    <select class="form-control" name="tipos_id" id="tipo">
+    <select class="form-control" name="tipos_id" id="tipos_id">
             @foreach ($tipos as $tipo)
-                <option value="{{ $tipo->tipos_id }}" {{ $tipo->tipos_id == old('tipos_id') ? "selected" : ""}}>{{ $tipo->nombre }}</option>
+                <option value="{{ $tipo->id }}" {{ $tipo->id == old('tipos_id') ? "selected" : ""}}>{{ $tipo->nombre }}</option>
             @endforeach
         </select>
 </div>
