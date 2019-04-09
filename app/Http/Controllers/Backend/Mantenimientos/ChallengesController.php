@@ -37,7 +37,7 @@ class ChallengesController extends Controller
                     $item->fecha_ini,
                     $item->fecha_fin,
                     $item->objetivo,
-                    $item->subtipo->nombre
+                    \App::getLocale() != "ca" ? $item->subtipo->nombre_cat : $item->subtipo->nombre_esp
                 ]);
             }
             $queryFin = collect($queryFin);
