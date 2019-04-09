@@ -95,6 +95,29 @@
 
     </div>
     <div class="imgParallax" id="img2"></div>
+    <div id="quinto" class="p-5">
+        <h1 class="">{{ __("frontend.nuestros_retos") }}</h1>
+        <h2 class="texto-container text-center mb-5">Participa en nuestros retos y ayudanos a cumplir nuestra meta :).</h2>
+
+        <div class="row">
+            @foreach($retos as $reto)
+                <div class="col-12 d-flex justify-content-between">
+                    <h4 style="width:110px">0 {{ $reto->subtipo->tipo_unidad}}</h4>
+                    <h4>{{ $reto->subtipo->nombre_cat }}</h4>
+                    <h4 style="width:110px" class="text-right">{{ $reto->objetivo }} {{ $reto->subtipo->tipo_unidad}}</h4>
+                </div>
+                <div class="col-12">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="{{ $reto->objetivo }}"></div>
+                    </div>
+                </div>
+            @endforeach
+
+        </div>
+
+
+
+    </div>
 </main>
 
 @endsection

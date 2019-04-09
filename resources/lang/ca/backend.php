@@ -98,5 +98,9 @@
         "fecha_ini" => "Data Inici",
         "fecha_fin" => "Data Fi",
         "objetivo" => "Objectiu",
+
+        "catalan" => "Català",
+        "español" => "Castellà",
+        "ingles" => "Anglès",
     ]
 ?>

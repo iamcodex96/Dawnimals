@@ -48,8 +48,8 @@
     <tbody>
         @foreach($subtipos as $subtipo)
         <tr>
-            <td>{{ $subtipo->nombre }}</td>
-            <td>{{ $subtipo->tipo != null ? $subtipo->tipo->nombre : "" }}</td>
+            <td>{{ App::getLocale() == "ca" ? $subtipo->nombre_cat : $subtipo->nombre_esp }}</td>
+            <td>{{ $subtipo->tipos != null ? $subtipo->tipos->nombre : "" }}</td>
             <td>{{ $subtipo->gama_alta }}</td>
             <td>{{ $subtipo->gama_media }}</td>
             <td>{{ $subtipo->gama_baja }}</td>

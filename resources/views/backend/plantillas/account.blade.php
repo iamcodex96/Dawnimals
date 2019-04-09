@@ -28,7 +28,7 @@
                 <img src="{{ asset('img/spam.jpg') }}">
             </div>
 
-            <div class="card p-2 shadow" style="padding-top:120px !important;">
+            <div class="card p-2 shadow" style="padding-top:120px !important; border-radius: 35px;">
                 <div class="card-body">
                     @include('backend.partial.mensajes')
                     @yield("contenido")

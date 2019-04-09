@@ -25,10 +25,12 @@ class SubtiposController extends Controller
         if ($request->input('submit') == 'excel'){
             $queryFin = [];
 
+            $lang = \App::getLocale();
+
             foreach($query->get() as $item){
                 array_push($queryFin, [
-                    $item->nombre,
-                    $item->tipo->nombre,
+                    $lang = "ca" ? $item->nombre_cat : $item->nombre_esp,
+                    $item->tipos->nombre,
                     $item->gama_alta,
                     $item->gama_media,
                     $item->gama_baja,
@@ -66,7 +68,9 @@ class SubtiposController extends Controller
     {
         $subtipo = new Subtipo();
 
-        $subtipo->nombre = $request->input("nombre");
+        $subtipo->nombre_cat = $request->input("nombre_cat");
+        $subtipo->nombre_esp = $request->input("nombre_esp");
+        $subtipo->nombre_eng = $request->input("nombre_eng");
         $subtipo->tipos_id = $request->input("tipos_id");
         $subtipo->gama_alta = $request->input("gama_alta");
         $subtipo->gama_media = $request->input("gama_media");
@@ -94,7 +98,9 @@ class SubtiposController extends Controller
 
     public function update(Request $request, Subtipo $subtipo)
     {
-        $subtipo->nombre = $request->input("nombre");
+        $subtipo->nombre_cat = $request->input("nombre_cat");
+        $subtipo->nombre_esp = $request->input("nombre_esp");
+        $subtipo->nombre_eng = $request->input("nombre_eng");
         $subtipo->tipos_id = $request->input("tipos_id");
         $subtipo->gama_alta = $request->input("gama_alta");
         $subtipo->gama_media = $request->input("gama_media");
