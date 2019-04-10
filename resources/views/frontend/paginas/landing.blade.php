@@ -11,9 +11,8 @@
 @section('contenido')
 <main data-spy="scroll" data-target="#list-opciones" class="container-fluid">
     <div id="primero">
-
         <div class="imgParallax3" id="background1">
-                <div id="segundo">
+                <div class="explicacion">
                         <div class="row mt-0 mr-3">
                             <div class="col-md-5 texto-container mt-5">
                                 <div class="texto">
@@ -28,7 +27,7 @@
                             <div class="col-md-6 texto-container mt-5">  </div>
                         </div>
                     </div>
-        </div>
+                </div>
     </div>
 
     <div class="intermedio">
@@ -42,7 +41,7 @@
         </div> --}}
         </div>
     </div>
-    <div id="tercero" class="p-5">
+    <div id="segundo" class="p-5">
         <h1 class="" z-index= "-1">¿ Como puedes ayudar ?</h1>
 
         <h2 class="texto-container text-center mb-5" z-index= "-1">eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse luctus per interdum ad.</h2>
@@ -73,14 +72,24 @@
 
     </div>
 
-    <div id="cuarto" class="p-5">
+    <div id="tercero" class="p-5">
         <h1 class="">Nuestras donaciones</h1>
         <h2 class="texto-container text-center mb-5">eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse luctus per interdum ad.</h2>
 
         <div class="row">
 
                 <div class="col-md-6 col-sm-12 quesito">
-                    <img  src="{{ asset('./img/quesito.png') }}" width="800px" alt="">
+
+                        <!-- Area Chart -->
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <i class="fa fa-area-chart"></i> Blog Posting Trend </div>
+                            <div class="card-body">
+                                <canvas id="myAreaChart" width="100%" height="30"></canvas>
+                            </div>
+                            <div class="card-footer small text-muted">Updated yesterday at @php  echo date('F j, Y', time() ) @endphp</div>
+                        </div>
+
                 </div>
 
                 <div class="col-md-6 col-sm-12 line">
@@ -95,7 +104,7 @@
 
     </div>
     <div class="imgParallax" id="img2"></div>
-    <div id="quinto" class="p-5">
+    <div id="cuarto" class="p-5">
         <h1 class="">{{ __("frontend.nuestros_retos") }}</h1>
         <h2 class="texto-container text-center mb-5">Participa en nuestros retos y ayudanos a cumplir nuestra meta :).</h2>
         <div class="container">
@@ -121,4 +130,9 @@
 
 @section('js_loaded')
 {{-- <script src="{{ asset('./js/frontend/landing.js') }}"></script> --}}
+    <script src="{{url( 'js/charts/jquery.min.js' )}}"></script>
+
+    <script src="{{url( 'js/charts/Chart.min.js' )}}"></script>
+
+    <script src="{{url( 'js/charts/create-charts.js' )}}"></script>
 @endsection

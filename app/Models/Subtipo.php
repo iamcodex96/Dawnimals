@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Tipo;
+use App\Models\Donacion;
 
 class Subtipo extends Model
 {
@@ -15,12 +16,12 @@ class Subtipo extends Model
 
     public function donacion()
     {
-        return $this->hasMany('App\Models\Donacion', 'subtipos_id');
+        return $this->hasMany(Donacion::class, 'subtipos_id');
     }
 
 
     public function tipos(){
-        return $this->belongsTo(Tipo::class, 'tipos_id');
+        return $this->belongsTo('App\Models\Tipo', 'tipos_id');
     }
 
 }

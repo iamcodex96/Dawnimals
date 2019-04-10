@@ -70,21 +70,20 @@
                 <h6 class="text-uppercase">Retos Activos</h6>
                     <div class="card text-white bg-info h-100">
                         <div class="card-body bg-info">
-                            <div class="rotate">
-                                <i class="fa fa-twitter fa-4x"></i>
+                            <div class="text-left col-9">
+                                <i class="fa fa-flag-checkered fa-4x mb-3"></i>
                             </div>
 
                             <div class="row">
-                                <h6 class="text-uppercase">Nombre</h6>
-                                <h6 class="text-uppercase"> 35/50</h6>
+                                <div class="izquierda text-left col-10">
+                                <h6 class="text-uppercase">Retos (Completados / Activos)</h6>
+                                <h1 class="display-4">{{ $retos_completados }}/{{ $retos_total }}</h1>
                             </div>
-                             <h6 class="text-uppercase">[------------------->              ]</h6>
                         </div>
                     </div>
                 </div>
         </div>
 </div>
-
     <hr>
 {{-- ****************************************ULTIMAS DONACIONES****************************** --}}
 
@@ -113,7 +112,7 @@
 
                                         <td class="text-center">{{$donacion->id}}</td>
                                         <td class="text-center">{{$donacion->subtipos->tipos->nombre}}</td>
-                                        <td class="text-center">{{$donacion->subtipos->nombre}}</td>
+                                        <td class="text-center">{{ App::getLocale() == "ca" ? $donacion->subtipos->nombre_cat : $donacion->subtipos->nombre_esp }}</td>
                                         <td class="text-center">{{$donacion->centro->nombre}}</td>
                                         <td class="text-center">{{$donacion->coste}}</td>
 
