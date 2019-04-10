@@ -21,7 +21,7 @@ class Subtipo extends Model
 
 
     public function tipos(){
-        return $this->belongsTo(Tipo::class, 'tipos_id');
+        return $this->belongsTo('App\Models\Tipo', 'tipos_id');
     }
 
 }
