@@ -44,6 +44,7 @@ Route::prefix("backend/")->middleware("locale")->group(function() {
 
             return view('backend.paginas.backend',$data);
         });
+
         Route::resource('donaciones', 'Backend\DonacionController');
         Route::resource('donantes', 'Backend\DonanteController');
 

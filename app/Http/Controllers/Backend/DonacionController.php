@@ -84,11 +84,10 @@ class DonacionController extends Controller
      * @param  \App\Models\Donacion  $donacion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Donacion $donacion)
+    public function edit(Donacion $donacione)
     {
-        $donacion = Donacion::find($id);
 
-        $data['donacion'] = $donacion;
+        $data['donacion'] = $donacione;
         $data['tiposDonacion'] = Tipo::all();
         $data['subtiposDonacion'] = Subtipo::all();
         $data['centros'] = Centro::all();
@@ -101,9 +100,8 @@ class DonacionController extends Controller
      * @param  \App\Models\Donacion  $donacion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Donacion $donacion)
+    public function update(Request $request, Donacion $donacione)
     {
-        $donacion = Donacion::find($id);
 
         $validation = validator($request->all());
         if($validation->fails()){
@@ -111,23 +109,23 @@ class DonacionController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }else{
-            $donacion->subtipos_id = $request->input('subtipos_id');
-            $donacion->desc_animal = $request->input('desc_animal');
-            $donacion->centros_receptor_id = $request->input('centros_receptor_id');
-            $donacion->centro_receptor_altres = $request->input('centro_receptor_altres');
-            $donacion->usuarios_id = $request->input('usuarios_id');
-            $donacion->usuario_receptor = $request->input('usuario_receptor');
-            $donacion->centros_desti_id = $request->input('centros_desti_id');
-            $donacion->donantes_id = $request->input('donantes_id');
-            $donacion->coste = $request->input('coste');
-            $donacion->unidades = $request->input('unidades');
-            $donacion->peso = $request->input('peso');
-            $donacion->hay_factura = $request->input('hay_factura');
-            $donacion->ruta_factura = $request->input('ruta_factura');
-            $donacion->es_coordinada = $request->input('es_coordinada');
+            $donacione->subtipos_id = $request->input('subtipos_id');
+            $donacione->desc_animal = $request->input('desc_animal');
+            $donacione->centros_receptor_id = $request->input('centros_receptor_id');
+            $donacione->centro_receptor_altres = $request->input('centro_receptor_altres');
+            $donacione->usuarios_id = $request->input('usuarios_id');
+            $donacione->usuario_receptor = $request->input('usuario_receptor');
+            $donacione->centros_desti_id = $request->input('centros_desti_id');
+            $donacione->donantes_id = $request->input('donantes_id');
+            $donacione->coste = $request->input('coste');
+            $donacione->unidades = $request->input('unidades');
+            $donacione->peso = $request->input('peso');
+            $donacione->hay_factura = $request->input('hay_factura');
+            $donacione->ruta_factura = $request->input('ruta_factura');
+            $donacione->es_coordinada = $request->input('es_coordinada');
 
             try{
-                $donacion->save();
+                $donacione->save();
                 return redirect()->action(self::CONTROLADOR .'index');
             }catch(QueryException $e){
                 $error = Utilitat::errorMessages($e);
