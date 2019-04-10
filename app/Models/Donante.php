@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Animal;
+use App\Models\Donacion;
 
 class Donante extends Model
 {
@@ -14,6 +15,10 @@ class Donante extends Model
     protected $keyType = 'int';
     public $timestamps = false;
 
+
+    public function donaciones(){
+        return $this->belongsToMany(Donacion::class,"donativos",'id','donantes_id');
+    }
     public function sexo()
     {
         return $this->belongsTo('App\Models\Sexo', 'sexos_id');
@@ -25,6 +30,6 @@ class Donante extends Model
     }
 
     public function animales(){
-        return $this->belongsToMany(Animal::class, "donantes_id");
+        return $this->belongsToMany(Animal::class,"donantes_animales","donantes_id","animales_id");
     }
 }

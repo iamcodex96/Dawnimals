@@ -15,6 +15,6 @@ class Animal extends Model
     public $timestamps = false;
 
     public function donantes(){
-        return $this->belongsToMany(Donante::class, "animales_id");
+        return $this->belongsToMany(Donante::class, "donantes_animales","animales_id","donantes_id");
     }
 }

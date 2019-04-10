@@ -212,7 +212,12 @@ class DonanteController extends Controller
     {
         try{
             if($donante!=null){
-                $donante->animales->detach();
+                $donante->animales()->detach();
+                $donaciones = Donacion::where('donantes_id',$donante->id)->get();
+                foreach ($donaciones as $d) {
+                    $d->donantes_id = null;
+                    $d->save();
+                }
                 $donante->delete();
                 return redirect()->action(self::CONTROLADOR .'index');
             }
