@@ -1,5 +1,7 @@
 <?php
     return [
+        "si" => "Sí",
+        "no" => "No",
         "nombre_menu" => "Donaciones SPAM",
         "correo" => "Correo",
         "password" => "Contraseña",

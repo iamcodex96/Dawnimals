@@ -1,6 +1,8 @@
 <?php
     return [
         //Login
+        "si" => "Si",
+        "no" => "No",
         "nombre_menu" => "Donacions SPAM",
         "correo" => "Correu",
         "password" => "Contrasenya",

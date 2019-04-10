@@ -29,14 +29,6 @@ class UsuariosController extends Controller
         $data = [];
         $query = Utilitat::setFiltros($request, $query, $data);
 
-        if ($request->has("filtroEspecial")){
-            $tipo = $request->get("filtroEspecial")["admin"];
-            if ($tipo != null){
-                $query = $query->where("admin", boolval($tipo));
-            }
-        }
-        $data["filtroEspecial"] = $request->get("filtroEspecial");
-
         if ($request->input('submit') == 'excel'){
             $queryFin = [];
 

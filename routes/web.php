@@ -78,10 +78,6 @@ Route::middleware('locale')->group(function(){
 });
 
 
-
-
-
-
 //////////////////////////// PAGS CHARTS ////////////////////////////////////
 
 Route::get('/testing', function () {

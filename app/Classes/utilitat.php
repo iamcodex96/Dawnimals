@@ -6,20 +6,35 @@ class Utilitat
 {
     public static function setFiltros($request, $query, &$data){
         $filtros = $request->input('filtros');
+        $filtrosNumericos = $request->input('filtrosNumericos');
+        $filtrosBooleanos = $request->input('filtrosBooleanos');
 
         $data["filtros"] = $filtros;
+        $data["filtrosNumericos"] = $filtrosNumericos;
+        $data["filtrosBooleanos"] = $filtrosBooleanos;
 
         if ($filtros != null){
-
             foreach ($filtros as $filtro => $valor){
-                $query = self::setFiltro($query, $filtro, $valor);
+                $query = self::setFiltroLike($query, $filtro, $valor);
+            }
+        }
+
+        if ($filtrosNumericos != null){
+            foreach ($filtrosNumericos as $filtro => $valor){
+                $query = self::setFiltroNumerico($query, $filtro, $valor);
+            }
+        }
+
+        if ($filtrosBooleanos != null){
+            foreach ($filtrosBooleanos as $filtro => $valor){
+                $query = self::setFiltroBooleano($query, $filtro, $valor);
             }
         }
 
         return $query;
     }
 
-    public static function setFiltro($query, $filtro, $valor){
+    public static function setFiltroLike($query, $filtro, $valor){
         if ($valor != null && $valor != ""){
             $nValor = "%".$valor."%";
 
@@ -32,6 +47,42 @@ class Utilitat
 
                 $query = $query->whereHas($parent, function($nQuery) use($campo, $nValor) {
                     $nQuery->where($campo, "like", $nValor);
+                });
+            }
+        }
+        return $query;
+    }
+
+    public static function setFiltroNumerico($query, $filtro, $valor){
+        if ($valor != null && $valor != ""){
+
+            $pos = strpos($filtro, ".");
+            if ($pos === false){
+                $query = $query->where($filtro, $valor);
+            } else{
+                $parent = substr($filtro, 0, $pos);
+                $campo = substr($filtro, $pos+1, strlen($filtro)-$pos);
+
+                $query = $query->whereHas($parent, function($nQuery) use($campo, $nValor) {
+                    $nQuery->where($campo, $valor);
+                });
+            }
+        }
+        return $query;
+    }
+
+    public static function setFiltroBooleano($query, $filtro, $valor){
+        if ($valor != null && $valor != ""){
+
+            $pos = strpos($filtro, ".");
+            if ($pos === false){
+                $query = $query->where($filtro, boolval($valor));
+            } else{
+                $parent = substr($filtro, 0, $pos);
+                $campo = substr($filtro, $pos+1, strlen($filtro)-$pos);
+
+                $query = $query->whereHas($parent, function($nQuery) use($campo, $nValor) {
+                    $nQuery->where($campo, boolval($valor));
                 });
             }
         }

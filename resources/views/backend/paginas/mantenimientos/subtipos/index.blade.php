@@ -10,14 +10,14 @@
     <div class="row">
         <div class="form-group col-md-6">
             <label for="filtrosNombre">{{ __('backend.nombre') }}</label>
-            <input type="text" class="form-control" name="filtros[nombre]" id="filtrosNombre" value="{{ $filtros['nombre'] }}">
+            <input type="text" class="form-control" name="filtros[nombre_cat]" id="filtrosNombre" value="{{ $filtros['nombre_cat'] }}">
         </div>
         <div class="form-group col-md-6">
             <label for="filtrosTipo">{{ __('backend.tipo') }}</label>
-            <select class="form-control" name="filtros[tipo.nombre]" id="filtrosTipo">
+            <select class="form-control" name="filtrosNumericos[tipos_id]" id="filtrosTipo">
                 <option value="">{{ __("backend.todos") }}</option>
                 @foreach ($tipos as $tipo)
-                    <option value="{{ $tipo->nombre }}" {{ $filtros["tipo.nombre"] == $tipo->nombre ? "selected" : ""}}>{{ $tipo->nombre }}</option>
+                    <option value="{{ $tipo->id }}" {{ $filtrosNumericos["tipos_id"] == $tipo->id ? "selected" : ""}}>{{ $tipo->nombre }}</option>
                 @endforeach
             </select>
         </div>

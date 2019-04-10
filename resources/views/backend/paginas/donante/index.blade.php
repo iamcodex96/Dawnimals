@@ -5,111 +5,95 @@
 
 @section('m_contenido')
 <div class="card card-body m-3 collapse filtro">
-    <form class="form-horizontal" action="{{ action('Backend\DonanteController@index') }}" method="post">
+    <form class="form-horizontal" action="{{ action('Backend\DonanteController@index') }}" method="GET">
+        @csrf
         <div class="row search">
-            <div class="col-lg-4 col-md-12 col-sm-12">
-                <div class="form-group">
+
+                <div class="form-group col-sm-4">
                     <label class="control-label" for="input-name">{{__('backend.nombre_donante')}}</label>
-                    <input type="text" name="filtros[nombre]" value="" placeholder="Nombre o Razón social del donante" id="input-name" class="form-control"
-                        autocomplete="off">
-                    <ul class="dropdown-menu"></ul>
+                    <input type="text" name="filtros[nombre]" value="{{ $filtros["nombre"] }}" placeholder="Nombre o Razón social del donante" id="input-name" class="form-control">
                 </div>
-                <div class="form-group">
+                <div class="form-group col-sm-4">
                     <label class="control-label" for="input-email">{{__('backend.correo')}}</label>
-                    <input type="text" name="filter_email" value="" placeholder="E-Mail" id="input-email" class="form-control" autocomplete="off">
-                    <ul class="dropdown-menu"></ul>
+                    <input type="text" name="filtros[correo]" value="{{ $filtros["correo"] }}" placeholder="E-Mail" id="input-email" class="form-control" autocomplete="off">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-sm-4">
                     <label class="control-label" for="input-customer-group">{{__('backend.habitual')}}</label>
-                    <select name="filter_donante_habitual" id="input-donante-habitual" class="form-control">
-                                        <option value="*"></option>
-                                        <option value="">Sí</option>
-                                        <option value="">No</option>
-                                    </select>
+                    <select name="filtrosBooleanos[es_habitual]" id="input-donante-habitual" class="form-control">
+                            <option value="">{{ __('backend.todos') }}</option>
+                            <option value="true" {{ $filtrosBooleanos["es_habitual"] === true ? "selected" : ""}}>{{ __('backend.si') }}</option>
+                            <option value="false" {{ $filtrosBooleanos["es_habitual"] === false ? "selected" : ""}}>{{ __('backend.no') }}</option>
+                        </select>
                 </div>
 
-            </div>
-            <div class="col-lg-4 col-md-12 col-sm-12">
-
-                <div class="form-group">
+                <div class="form-group col-sm-4">
                     <label class="control-label" for="input-customer-group">{{__('backend.tipo_donante')}}</label>
-                    <select name="filter_donante_tipo" id="input-donante-tipo" class="form-control">
-                                        <option value="*"></option>
-                                        <option value="">Particular</option>
-                                        <option value="">Empresa</option>
-                                        <option value="">Escuela</option>
-                                        <option value="">Anónimo</option>
-                                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label" for="input-customer-group">{{__('backend.localidad')}}</label>
-                    <select name="filter_donante_localidad" id="input-donante-localidad" class="form-control">
-                                        <option value="*"></option>
-                                        <option value="">BD</option>
-                                        <option value="">BD</option>
-                                        <option value="">BD</option>
-                                        <option value="">BD</option>
-                                        <option value="">BD</option>
-                                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label" for="input-customer-group">{{__('backend.adopta')}}</label>
-                    <select name="filter_haAdoptado" id="input-haAdoptado" class="form-control">
-                                        <option value="*"></option>
-                                        <option value="1">Sí</option>
-                                        <option value="2">No</option>
-
-                                    </select>
-                </div>
-
-
-            </div>
-            <div class="col-lg-4 col-md-12 col-sm-12">
-                <div class="form-group">
-                    <label class="control-label" for="input-customer-group">{{__('backend.sexo')}}</label>
-                    <select name="filter_sexo" id="input-donante-sexo" class="form-control">
-                                        <option value="*"></option>
-                                        <option value="">Mujer</option>
-                                        <option value="">Hombre</option>
-                                        <option value="">Otro</option>
-                                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label" for="input-customer-group">{{__('backend.vinculo')}}</label>
-                    <select name="filter_donante_vinculo" id="input-donante-vinculo" class="form-control">
-                                        <option value="*"></option>
-                                        <option value="">Socio</option>
-                                        <option value="">Patrocinador</option>
-                                        <option value="">Teamer</option>
-                                        <option value="">Adoptante</option>
-                                        <option value="">Voluntario acogidas</option>
-
-                                    </select>
-                </div>
-
-                <div class="form-group" id="listaAnimales" style="display: none;">
-                    <label class="control-label" for="input-customer-group">{{__('backend.animal_adoptado')}}</label>
-                    <select name="filter_donante_animales" id="input-donante-animales" class="form-control">
-                                        <option value="*">Gato</option>
-                                        <option value="">Perro</option>
-                                        <option value="">Otro</option>
+                    <select name="filtrosNumericos[tipos_donantes_id]" id="input-donante-tipo" class="form-control">
+                        <option value="">{{ __('backend.todos') }}</option>
+                        @foreach($tipos_donante as $tipo)
+                            <option value="{{ $tipo->id }}" {{ $tipo->id == $filtrosNumericos["tipos_donantes_id"] ? "selected" : "" }}>{{ $tipo->tipo }}</option>
+                        @endforeach
                     </select>
-
                 </div>
 
-                <div class="form-group">
+                <div class="form-group col-sm-4">
+                    <label class="control-label" for="input-customer-group">{{__('backend.localidad')}}</label>
+                    <input type="text" name="filtros[poblacion]" value="{{ $filtros["poblacion"] }}" id="input-donante-localidad" class="form-control" />
+                </div>
+
+                <div class="form-group col-sm-4">
+                    <label class="control-label" for="input-customer-group">{{__('backend.sexo')}}</label>
+                    <select name="filtrosNumericos[sexo.id]" id="input-donante-sexo" class="form-control">
+                        <option value="">{{ __('backend.todos') }}</option>
+                        @foreach($sexos as $sexo)
+                            <option value="{{ $sexo->id }}" {{ $sexo->id == $filtrosNumericos["sexo.id"] ? "selected" : "" }}>{{ $sexo->sexo }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group col-sm-4">
+                    <label class="control-label" for="input-customer-group">{{__('backend.vinculo')}}</label>
+                    <select name="filtros[vinculo_entidad]" id="input-donante-vinculo" class="form-control">
+                        <option value="">{{ __('backend.todos') }}</option>
+                        <option value="Socio" {{ $filtros["vinculo_entidad"] == "Socio" ? "selected" : "" }}>Socio</option>
+                        <option value="Patrocinador" {{ $filtros["vinculo_entidad"] == "Patrocinador" ? "selected" : "" }}>Patrocinador</option>
+                        <option value="Teamer" {{ $filtros["vinculo_entidad"] == "Teamer" ? "selected" : "" }}>Teamer</option>
+                        <option value="Adoptante" {{ $filtros["vinculo_entidad"] == "Adoptante" ? "selected" : "" }}>Adoptante</option>
+                        <option value="Voluntario acogidas" {{ $filtros["vinculo_entidad"] == "Voluntario acogidas" ? "selected" : "" }}>Voluntario acogidas</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-sm-4">
                     <label class="control-label">{{__('backend.fecha_alta')}}</label>
-                    <!--pendiente saber de qué, alta o última donación-->
                     <input class="form-control" name="filter_donante_fecha" id="input-donante-fecha" type="date">
                 </div>
 
+                <div class="form-group col-sm-4">
+                    <label class="control-label" for="input-customer-group">{{__('backend.adopta')}}</label>
+                    <select name="filter_haAdoptado" id="input-haAdoptado" class="form-control">
+                        <option value="*"></option>
+                        <option value="1">Sí</option>
+                        <option value="2">No</option>
+                    </select>
+                </div>
 
-                <button type="button" id="button-filter" class="btn btn-primary float-right"><i class="fa fa-search"></i> {{__('backend.filtro')}}</button>
-            </div>
+                <div class="form-group col-sm-4" id="listaAnimales" style="display: none;">
+                    <label class="control-label" for="input-customer-group">{{__('backend.animal_adoptado')}}</label>
+                    <select name="filtrosNumericos[animales.animales_id]" id="input-donante-animales" class="form-control">
+                        <option value="">{{ __('backend.todos') }}</option>
+                        @foreach($animales as $animal)
+                            <option value="{{ $animal->id }}" {{ $animal->id == $filtrosNumericos["animales.animales_id"] ? "selected" : "" }}>{{ $animal->nombre }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group col-sm-4">
+                    <button type="submit" name="submit" id="button-filter" class="btn btn-primary"><i class="fa fa-search"></i> {{__('backend.filtro')}}</button>
+                    <input type="submit" name="submit" class="d-none" id="exportarExcel" value="excel">
+                </div>
+
+
         </div>
     </form>
 </div>

@@ -20,12 +20,12 @@
 
         <div class="form-group col-md-6">
             <label for="filtrosSubtipo">{{ __('backend.subtipo') }}</label>
-            <select class="form-control" name="filtrosEspeciales[subtipo]" id="filtrosTipo">
-                    <option value="">{{ __("backend.todos") }}</option>
-                    @foreach ($subtipos as $subtipo)
-                        <option value="{{ $subtipo->id }}" {{ $filtrosEspeciales["subtipo"] == $subtipo->id ? "selected" : ""}}>{{ \App::getLocale() == "ca" ? $subtipo->nombre_cat : $subtipo->nombre_esp }}</option>
-                    @endforeach
-                </select>
+            <select class="form-control" name="filtrosNumericos[subtipo_id]" id="filtrosTipo">
+                <option value="">{{ __("backend.todos") }}</option>
+                @foreach ($subtipos as $subtipo)
+                    <option value="{{ $subtipo->id }}" {{ $filtrosNumericos["subtipo_id"] == $subtipo->id ? "selected" : ""}}>{{ \App::getLocale() == "ca" ? $subtipo->nombre_cat : $subtipo->nombre_esp }}</option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group col-md-6">

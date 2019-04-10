@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Animal;
+
 class Donante extends Model
 {
     protected $table = 'donantes';
@@ -20,5 +22,9 @@ class Donante extends Model
     public function tipoDonante()
     {
         return $this->belongsTo('App\Models\TipoDonante', 'tipos_donantes_id');
+    }
+
+    public function animales(){
+        return $this->belongsToMany(Animal::class, "donantes_id");
     }
 }

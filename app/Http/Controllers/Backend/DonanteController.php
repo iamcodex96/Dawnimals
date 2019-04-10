@@ -6,6 +6,7 @@ use App\Models\Donante;
 use App\Models\Donacion;
 use App\Models\Sexo;
 use App\Models\TipoDonante;
+use App\Models\Animal;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -23,16 +24,27 @@ class DonanteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $donantes = Donante::all();
-        $data['donantes']=$donantes;
-        $headings = [
-            'id','tipos_donantes_id','es_habitual','nombre','cif','cp','sexos_id','tiene_aninales','telefono',
-            'correo','direccion','vinculo_entidad','spam','poblacion','pais','es_colaborador','tipo_colaboracion',
-            'fecha_alta'
-        ];
-        //return ConverterExcel::export($donantes, $headings, "Donantes");
+        $query = Donante::query();
+
+        $data = [];
+        $query = Utilitat::setFiltros($request, $query, $data);
+
+        if ($request->input('submit') == 'excel'){
+            $headings = [
+                'id','tipos_donantes_id','es_habitual','nombre','cif','cp','sexos_id','tiene_aninales','telefono',
+                'correo','direccion','vinculo_entidad','spam','poblacion','pais','es_colaborador','tipo_colaboracion',
+                'fecha_alta'
+            ];
+            return ConverterExcel::export($query, $headings, "Donantes");
+        }
+
+        $data['donantes'] = $query->get();
+        $data['animales'] = Animal::all();
+        $data['sexos'] = Sexo::all();
+        $data['tipos_donante'] = TipoDonante::all();
+
         return view(self::PREFIX.'index',$data);
     }
 
@@ -45,6 +57,7 @@ class DonanteController extends Controller
     {
         $data['sexos']=Sexo::all();
         $data['tipodonantes']=TipoDonante::all();
+        $data['animales'] = Animal::all();
 
         return view(self::PREFIX.'create',$data);
     }
@@ -85,6 +98,9 @@ class DonanteController extends Controller
 
             try{
                 $donante->save();
+
+                $donante->animales->attach($request->input('animal_id'));
+
                 return redirect()->action(self::CONTROLADOR .'index');
             }catch(QueryException $e){
                 $error = Utilitat::errorMessages($e);
@@ -134,6 +150,8 @@ class DonanteController extends Controller
         $data['donante']=$donante;
         $data['sexos']=Sexo::all();
         $data['tipodonantes']=TipoDonante::all();
+        $data['animales'] = Animal::all();
+
         return view(self::PREFIX.'edit',$data);
     }
 
@@ -171,6 +189,9 @@ class DonanteController extends Controller
             $donante->fecha_alta = (new \DateTime())->format('Y-m-d H:i:s');
 
             try{
+                $donante->animales->detach();
+                $donante->animales->attach($request->input('animal_id'));
+
                 $donante->save();
                 return redirect()->action(self::CONTROLADOR .'index');
             }catch(QueryException $e){
@@ -191,6 +212,7 @@ class DonanteController extends Controller
     {
         try{
             if($donante!=null){
+                $donante->animales->detach();
                 $donante->delete();
                 return redirect()->action(self::CONTROLADOR .'index');
             }
