@@ -67,6 +67,7 @@ class ChartDataController extends Controller
     }
 
     function getAllTipesOfAnimals(){
+        $now = Carbon::now();
         $animal_donacion = array();
         $background_color = array('#4ccd32','#6632cd','#cdb432','#3299cd','#c45850');
 		$posts_animals = Donacion::orderBy( 'desc_animal', 'ASC' )->distinct()->pluck( 'desc_animal' );
@@ -74,7 +75,7 @@ class ChartDataController extends Controller
 
         if ( ! empty( $posts_animals ) ) {
 			foreach ( $posts_animals as $animal ){
-                $animal_donacion_count = $this->getDonationAnimalCount( $animal );
+                $animal_donacion_count = $this->getDonationAnimalCount( $animal, $now->month );
 				array_push( $animal_donacion, $animal_donacion_count );
 			}
         }
@@ -88,8 +89,8 @@ class ChartDataController extends Controller
           return $animal_donacion_array;
     }
 
-    function getDonationAnimalCount( $animal ) {
-        $animal_donacion_count = Donacion::where( 'desc_animal', $animal )->get()->count();
+    function getDonationAnimalCount( $animal, $month ) {
+        $animal_donacion_count = Donacion::where( 'desc_animal', $animal )->whereMonth( 'fecha_donativo', $month )->get()->count();
 		return $animal_donacion_count;
     }
 }

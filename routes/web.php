@@ -80,7 +80,7 @@ Route::middleware('locale')->group(function(){
 
 //////////////////////////// PAGS CHARTS ////////////////////////////////////
 
-Route::get('/testing', function () {
+Route::get('/estadisticas', function () {
     return view('chart');
 });
 Route::get('/get-post-chart-data', 'ChartDataController@getMonthlyPostData');

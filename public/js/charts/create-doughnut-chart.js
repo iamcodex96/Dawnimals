@@ -52,16 +52,15 @@
 					}],
                 },
                 options: {
-                    cutoutPercentage: 50,
-            rotation: 120,
                     legend:{
                         display:true,
                         position:'right',
                         labels:{
                             fontColor:'#000',
                         }
-                        },
-                }
+                    },
+                },
+
 			});
 		}
 	};
