@@ -80,7 +80,17 @@
         <div class="row">
 
                 <div class="col-md-6 col-sm-12 quesito">
-                    <img  src="{{ asset('./img/quesito.png') }}" width="800px" alt="">
+
+                        <!-- Area Chart -->
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <i class="fa fa-area-chart"></i> Blog Posting Trend </div>
+                            <div class="card-body">
+                                <canvas id="myAreaChart" width="100%" height="30"></canvas>
+                            </div>
+                            <div class="card-footer small text-muted">Updated yesterday at @php  echo date('F j, Y', time() ) @endphp</div>
+                        </div>
+
                 </div>
 
                 <div class="col-md-6 col-sm-12 line">
@@ -121,4 +131,9 @@
 
 @section('js_loaded')
 {{-- <script src="{{ asset('./js/frontend/landing.js') }}"></script> --}}
+    <script src="{{url( 'js/charts/jquery.min.js' )}}"></script>
+
+    <script src="{{url( 'js/charts/Chart.min.js' )}}"></script>
+
+    <script src="{{url( 'js/charts/create-charts.js' )}}"></script>
 @endsection

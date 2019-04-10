@@ -11,7 +11,9 @@
 		},
 
 		ajaxGetPostMonthlyData: function () {
-			var urlPath =  'http://' + window.location.hostname + ':8000/get-post-chart-data';
+            //artisan serve
+            //var urlPath =  'http://' + window.location.hostname + ':8000/get-post-chart-data';
+            var urlPath ='http://localhost:8080/Dawnimals/public/get-post-chart-data';
 			var request = $.ajax( {
 				method: 'GET',
 				url: urlPath
@@ -19,14 +21,14 @@
 
 			request.done( function ( response ) {
 				console.log( response );
-				charts.createCompletedJobsChart( response );
+				charts.createDonativoYDineroChart( response );
 			});
 		},
 
 		/**
-		 * Created the Completed Jobs Chart
+		 * Crea el grafico donaciones por mes y cantidad monetaria
 		 */
-		createCompletedJobsChart: function ( response ) {
+		createDonativoYDineroChart: function ( response ) {
 
 			var ctx = document.getElementById("myAreaChart");
 			var myLineChart = new Chart(ctx, {
