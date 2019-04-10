@@ -85,7 +85,7 @@ Route::get('/testing', function () {
 });
 Route::get('/get-post-chart-data', 'ChartDataController@getMonthlyPostData');
 
-Route::get('/test', 'ChartDataController@getMoneyPostCount');
+Route::get('/get-post-animal-data', 'ChartDataController@getAllTipesOfAnimals');
 
 //////////////////////////// PAGS CHARTS ////////////////////////////////////
 

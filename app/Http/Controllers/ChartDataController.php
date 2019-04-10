@@ -13,7 +13,7 @@ class ChartDataController extends Controller
 
 		$month_array = array();
 		$posts_dates = Donacion::orderBy( 'fecha_donativo', 'ASC' )->pluck( 'fecha_donativo' );
-		//$posts_dates = json_decode( $posts_dates );
+		$posts_dates = json_decode( $posts_dates );
 
 		if ( ! empty( $posts_dates ) ) {
 			foreach ( $posts_dates as $unformatted_date ) {
@@ -23,9 +23,7 @@ class ChartDataController extends Controller
 				$month_array[ $month_no ] = $month_name;
 			}
         }
-
           return $month_array;
-        //   return $posts_dates;
 	}
 
 	function getMonthlyPostCount( $month ) {
@@ -34,7 +32,6 @@ class ChartDataController extends Controller
     }
 
     function getMoneyPostCount( $month ){
-        //$month = '04';
         $dinero = Donacion::whereMonth( 'fecha_donativo', $month )->sum('coste');
         return $dinero;
     }
@@ -56,8 +53,6 @@ class ChartDataController extends Controller
 			}
         }
 
-        //$month_money_array = $this->getMoneyPostCount();
-
 		$max_no = max( $monthly_money_count_array );
 		$max = round(( $max_no + 10/2 ) / 10 ) * 10;
 		$monthly_post_data_array = array(
@@ -69,6 +64,33 @@ class ChartDataController extends Controller
 
 		return $monthly_post_data_array;
 
+    }
+
+    function getAllTipesOfAnimals(){
+        $animal_donacion = array();
+        $background_color = array('#4ccd32','#6632cd','#cdb432','#3299cd','#c45850');
+		$posts_animals = Donacion::orderBy( 'desc_animal', 'ASC' )->distinct()->pluck( 'desc_animal' );
+        $posts_animals = json_decode( $posts_animals );
+
+        if ( ! empty( $posts_animals ) ) {
+			foreach ( $posts_animals as $animal ){
+                $animal_donacion_count = $this->getDonationAnimalCount( $animal );
+				array_push( $animal_donacion, $animal_donacion_count );
+			}
+        }
+
+        $animal_donacion_array = array(
+            'animals' => $posts_animals,
+            'post_count_animals' => $animal_donacion,
+            'background_color' => $background_color
+        );
+
+          return $animal_donacion_array;
+    }
+
+    function getDonationAnimalCount( $animal ) {
+        $animal_donacion_count = Donacion::where( 'desc_animal', $animal )->get()->count();
+		return $animal_donacion_count;
     }
 }
 

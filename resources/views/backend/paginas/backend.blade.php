@@ -61,7 +61,7 @@
                 <h6 class="text-uppercase">Donaciones del mes</h6>
                 <div class="card h-100 text-center">
                     <div class="card-body">
-                        <img src="{{ asset('./img/ejemploGrafico.png') }}" width="300px" alt="">
+                        <canvas id="myAreaChart" width="100%" height="40"></canvas>
                     </div>
                 </div>
             </div>
@@ -127,6 +127,14 @@
         </form>
     </div>
 
+    @endsection
+
+    @section( 'scripts' )
+        <script src="{{url( 'js/charts/jquery.min.js' )}}"></script>
+
+        <script src="{{url( 'js/charts/Chart.min.js' )}}"></script>
+
+        <script src="{{url( 'js/charts/create-line_bar-charts.js' )}}"></script>
     @endsection
 
 
