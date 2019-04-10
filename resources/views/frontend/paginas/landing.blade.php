@@ -102,7 +102,7 @@
                     <!-- Area Chart -->
                     <div class="card mb-3">
                         <div class="card-header">
-                            <i class="fa fa-area-chart"></i> Donut </div>
+                            <i class="fa fa-area-chart"></i> Donaciones por animal </div>
                         <div class="card-body">
                             <canvas id="doughnutChar" width="100%" height="30"></canvas>
                         </div>
