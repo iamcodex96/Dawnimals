@@ -56,23 +56,26 @@
                     datasets: [{
                         label: "Donaciones por mes",
                         type: 'line',
+                        showInLegend: 'line',
                         lineTension: 0.3,
-                        backgroundColor: "rgba(2,117,216,0.2)",
-                        borderColor: "rgba(2,117,216,1)",
+                        backgroundColor: "rgba(102,50,205)",
+                        borderColor: "rgba(102,50,205)",
                         pointRadius: 5,
-                        pointBackgroundColor: "rgba(2,117,216,1)",
-                        pointBorderColor: "rgba(255,255,255,0.8)",
+                        pointBackgroundColor: "rgba(102,50,205)",
+                        pointBorderColor: "rgba(102,50,205)",
                         pointHoverRadius: 5,
-                        pointHoverBackgroundColor: "rgba(2,117,216,1)",
+                        pointHoverBackgroundColor: "rgba(102,50,205)",
                         pointHitRadius: 20,
                         pointBorderWidth: 2,
                         fill: 'false',
-                        data: response.post_count_data // The response got from the ajax request containing data for the completed jobs in the corresponding months
+                        data: response.post_count_data, // The response got from the ajax request containing data for the completed jobs in the corresponding months
+                        yAxisID: 'y-axis-2'
+
                     }, {
                         label: "Money",
                         lineTension: 0.3,
-                        backgroundColor: "rgba(2,117,216,0.2)",
-                        borderColor: "rgba(2,117,216,1)",
+                        backgroundColor: "rgba(153,205,50)",
+                        borderColor: "rgba(76,205,50)",
                         pointRadius: 5,
                         pointBackgroundColor: "rgba(2,117,216,1)",
                         pointBorderColor: "rgba(255,255,255,0.8)",
@@ -80,7 +83,8 @@
                         pointHoverBackgroundColor: "rgba(2,117,216,1)",
                         pointHitRadius: 20,
                         pointBorderWidth: 2,
-                        data: response.money
+                        data: response.money,
+                        yAxisID: 'y-axis-1'
                     },
                     ]
                 },
@@ -97,22 +101,74 @@
                                 maxTicksLimit: 7
                             }
                         }],
+                        // yAxes: [{
+                        //     ticks: {
+                        //         stacked: true,
+                        //         min: 0,
+                        //         max: response.max, // The response got from the ajax request containing max limit for y axis
+                        //         maxTicksLimit: 5,
+                        //         id: 'A',
+                        //         //type: 'linear',
+                        //         position: 'right'
+                        //     },
+                        //     ticks: {
+                        //         stacked: false,
+                        //         min: 0,
+                        //         max: 10, // The response got from the ajax request containing max limit for y axis
+                        //         maxTicksLimit: 5,
+                        //         id: 'B',
+                        //         //type: 'linear',
+                        //         position: 'left'
+                        //     },
+                        //     gridLines: {
+                        //         color: "rgba(0, 0, 0, .125)",
+                        //     }
+                        // //     stacked: true,
+                        // //     position: "left",
+                        // //     id: "y-axis-0",
+                        // // }, {
+                        // //     stacked: false,
+                        // //     position: "right",
+                        // //     id: "y-axis-1",
+                        // }],
                         yAxes: [{
-                            ticks: {
-                                min: 0,
-                                max: response.max, // The response got from the ajax request containing max limit for y axis
-                                maxTicksLimit: 5
+                            //type: "linear",
+                            display: true,
+                            position: "left",
+                            id: "y-axis-1",
+                            min: 0,
+                            max:10,
+                            maxTicksLimit: 5,
+                            gridLines:{
+                                display: false
                             },
-                            gridLines: {
-                                color: "rgba(0, 0, 0, .125)",
+                            labels: {
+                                show:true,
+
                             }
-                        }],
+                        }, {
+                            //type: "linear",
+                            display: true,
+                            position: "right",
+                            id: "y-axis-2",
+                            min: 0,
+                            max:  response.max,
+                            maxTicksLimit: 5,
+                            gridLines:{
+                                display: false
+                            },
+                            labels: {
+                                show:true,
+
+                            }
+                        }]
                     },
                     legend:{
                         display:true,
-                        position:'right',
+                        position:'top',
                         labels:{
-                            fontColor:'#000'
+                            fontColor:'#000',
+                            useLineStyle: true
                         }
                         },
                 }
