@@ -17,7 +17,7 @@ class DonacionFormResource extends JsonResource
         //return parent::toArray($request);
         return [
             "tipos" => $this['tipos'],
-            "centros" => $this['centros'],
+            "centros" => $this['centro'],
         ];
     }
 }
