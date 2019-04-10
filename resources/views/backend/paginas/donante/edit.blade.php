@@ -135,7 +135,7 @@
     <label for="animal_id" class="control-label">{{__('backend.tipo_animal')}}</label>
     <select class="form-control" name="animal_id">
             @foreach ($animales as $animal)
-            <option value="{{$animal->id}}" {{$donante->animales == $animal->id ? 'selected' :'' }}>{{$animal->nombre}}</option>
+            <option value="{{$animal->id}}">{{$animal->nombre}}</option>
             @endforeach
     </select>
 </div>
