@@ -11,13 +11,43 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Classes\Utilitat;
+use App\Exports\ConverterExcel;
+
 class DonacionController extends Controller
 {
     const PREFIX = 'backend.paginas.donaciones.';
     const CONTROLADOR = 'Backend\DonacionController@';
-    public function index()
+
+    public function index(Request $request)
     {
         $donaciones = Donacion::all();
+
+        if ($request->input('submit') == 'excel'){
+
+            $queryFin = [];
+
+            foreach($donaciones as $donacion){
+
+                array_push($queryFin, [
+                    $donacion->subtipos_id,
+                    $donacion->desc_animal,
+                    $donacion->centros_receptor_id
+
+                ]);
+            }
+            $queryFin = collect($queryFin);
+
+            $headings = [
+                __("backend.nombre"),
+                __("backend.usuario"),
+                __("backend.correo"),
+
+            ];
+
+            return ConverterExcel::export($queryFin, $headings, __("backend.usuarios"));
+        }
+
+
         $data['donaciones']=$donaciones;
         return view(self::PREFIX.'index',$data);
     }
@@ -66,6 +96,7 @@ class DonacionController extends Controller
         $donacion->hay_factura = $request->input('hay_factura');
         $donacion->ruta_factura = $request->input('ruta_factura');
         $donacion->es_coordinada = $request->input('es_coordinada');
+
         try{
             $donacion->save();
             return redirect()->action(self::CONTROLADOR .'index');
