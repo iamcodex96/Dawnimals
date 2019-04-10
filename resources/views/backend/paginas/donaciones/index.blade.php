@@ -78,9 +78,6 @@
                             </select>
                         </div>
 
-
-
-
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="form-group">
@@ -95,20 +92,17 @@
                             <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="">
                     </div>
 
-
-
                     <button type="button" id="button-filter" class="btn btn-primary float-right"><i class="fa fa-search"></i> Filtro</button>
-
+                    <div class="form-group col-md-6">
+                        <input type="submit" class="btn btn-primary" value="Filtrar">
+                        <input type="submit" name="submit" class="d-none" id="exportarExcel" value="excel">
+                    </div>
                 </div>
 
-
-
-
-
             </div>
+
         </div>
 </div>
-
 
 
 <div class="card mt-3 mb-3 mr-3 ml-3">

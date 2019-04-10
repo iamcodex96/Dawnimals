@@ -48,9 +48,7 @@
 
   #imghuellas{
     background-image: url("../../img/paw.png");
-    min-height: 900px;
-
-
+    min-height: 800px;
 }
 
 
@@ -220,5 +218,6 @@
     border-radius: 30%!important;
     background-color: #99cd32;
 }
+
 
   /*# sourceMappingURL=landing.css.map */

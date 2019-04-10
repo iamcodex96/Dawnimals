@@ -21,13 +21,13 @@
                 <a class="nav-link" href="{{ url('/quien_somos') }}">Quiénes somos</a>
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link" href="{{ url('/como_ayudar') }}">Como Ayudar</a>
+                <a class="nav-link" href="{{ url('/como_ayudar') }}">Cómo Ayudar</a>
               </li>
               <li class="nav-item p-2">
-                <a class="nav-link" href="{{ url('/estadisticas') }}">Estadisticas</a>
+                <a class="nav-link" href="{{ url('/estadisticas') }}">Estadísticas</a>
                 </li>
               <li class="nav-item p-2">
-                <a class="nav-link" href="https://www.protectoramataro.org/es/">Pagina Official</a>
+                <a class="nav-link" href="https://www.protectoramataro.org/es/">Página Oficial</a>
               </li>
             </ul>
           </div>
