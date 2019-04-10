@@ -32,10 +32,20 @@
             </ul>
           </div>
           <div class="option-container row">
+                <div class="dropdown" style="float: left;">
+                        <button class="btn bg-transparent " style="color:grey" type="button" id="drIdioma" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <span class="fa fa-globe"></span> <span class="fa fa-sort-down mb-1"></span>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="drIdioma">
+                                        <a class="dropdown-item" href="{{ url('chgIdioma/ca') }}">Català</a>
+                                        <a class="dropdown-item" href="{{ url('chgIdioma/es') }}">Español</a>
+                                        <a class="dropdown-item" href="{{ url('chgIdioma/en') }}">Inglés</a>
+                                    </div>
+                    </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="nav-link btn mr-2" href="{{ url('backend/login') }}"><i class="fas fa-sign-in-alt" style="font-size: 25px"></i></a>
+                <a class="nav-link btn mr-2" href="{{ url('backend/login') }}"><i class="fas fa-sign-in-alt" style="font-size: 20px"></i></a>
           </div>
     </nav>
 

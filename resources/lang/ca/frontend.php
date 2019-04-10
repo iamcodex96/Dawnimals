@@ -13,7 +13,12 @@ return [
     "who-sensibilizacion"=>"Sensibilització",
     "who-sensibilizacion-desc"=>"Apropem a la ciutadania la realitat de l'abandonament dels animals de companyia i la necessitat de tenir-los de manera responsable.",
     "who-junta"=>"Junta directiva",
+    "who-presidenta"=>"Presidenta",
+    "who-vpresidenta"=>"Vice-presidenta",
+    "who-social"=>"Gestor d'events i xarxes socials",
+    "who-tresorera"=>"Tresorera",
     "nuestros_retos"=>"Els nostres reptes",
+
 ];
 
 ?>

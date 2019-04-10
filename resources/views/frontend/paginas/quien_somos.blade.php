@@ -83,7 +83,7 @@
                 </div>
                 <img class="foto rounded-circle m-0" class="rounded-circle"src="{{ asset('img/quien-somos/presidenta.jpg') }}">
                 <div class="card-info mt-5">
-                    <h3>Presidenta</h3>
+                    <h3>{{__("frontend.who-presidenta")}}</h3>
                     <h5>Sílvia Serra Lafarga</h5>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                 <div class="em-color"></div>
                 <img class="foto rounded-circle m-0" class="rounded-circle"src="{{ asset('img/quien-somos/antua.jpg') }}">
                 <div class="card-info mt-5">
-                    <h3>Social Media & Event Manager</h3>
+                    <h3>{{__("frontend.who-social")}}</h3>
                     <h5>Antonio Rubio Bautista</h5>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                 <div class="em-color"></div>
                 <img class="foto rounded-circle m-0" class="rounded-circle"src="{{ asset('img/quien-somos/nuria.jpg') }}">
                 <div class="card-info mt-5">
-                    <h3>Vice-Presidenta</h3>
+                    <h3>{{__("frontend.who-vpresidenta")}}</h3>
                     <h5>Núria Garcia i Amat</h5>
                 </div>
             </div>
@@ -113,7 +113,7 @@
                 <div class="em-color"></div>
                 <img class="foto rounded-circle m-0" class="rounded-circle"src="{{ asset('img/quien-somos/tresorera.jpg.png') }}">
                 <div class="card-info mt-5">
-                    <h3>Tresorera</h3>
+                    <h3>{{__("frontend.who-tresorera")}}</h3>
                     <h5>Marta Masmitjà Prada</h5>
                 </div>
             </div>
