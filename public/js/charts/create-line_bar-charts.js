@@ -56,7 +56,6 @@
                     datasets: [{
                         label: "Donaciones por mes",
                         type: 'line',
-                        showInLegend: 'line',
                         lineTension: 0.3,
                         backgroundColor: "rgba(102,50,205)",
                         borderColor: "rgba(102,50,205)",
@@ -72,7 +71,7 @@
                         yAxisID: 'y-axis-2'
 
                     }, {
-                        label: "Money",
+                        label: "Dinero donado",
                         lineTension: 0.3,
                         backgroundColor: "rgba(153,205,50)",
                         borderColor: "rgba(76,205,50)",
@@ -144,7 +143,9 @@
                             },
                             labels: {
                                 show:true,
-
+                            },
+                            ticks:{
+                                fontColor: "rgba(153,205,50)",
                             }
                         }, {
                             //type: "linear",
@@ -159,7 +160,9 @@
                             },
                             labels: {
                                 show:true,
-
+                            },
+                            ticks:{
+                                fontColor: "#6632cd",
                             }
                         }]
                     },
@@ -168,7 +171,6 @@
                         position:'top',
                         labels:{
                             fontColor:'#000',
-                            useLineStyle: true
                         }
                         },
                 }
