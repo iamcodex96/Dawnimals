@@ -81,7 +81,7 @@
 
 <div class="form-group float-left col-md-6">
     <label for="ciudad" class="control-label">Coste</label>
-    <input type="number" class="form-control" id="coste" name="coste" value="{{$donacion->coste}}">
+    <input type="number" step="any" class="form-control" id="coste" name="coste" value="{{$donacion->coste}}">
 </div>
 
 <div class="form-group float-left col-md-6">
