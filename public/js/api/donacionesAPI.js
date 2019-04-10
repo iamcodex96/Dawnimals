@@ -1,6 +1,6 @@
 
 //var urlApi = 'http://localhost:8080/Dawnimals/public/api/';
-var urlApi = 'www.abp-politecnics.com/2019/daw/projecte02/dw04/public/api';
+var urlApi = 'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/api/';
 var ftipos=[];
 var fcentros=[];
 var inputTipo = $('#tipo');
