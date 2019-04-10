@@ -125,11 +125,20 @@
             </select>
 </div>
 
-
-
-
-<!--pendiente saber de qué, alta o última donación-->
-<input class="form-control" name="fecha_actual" id="fecha" type="hidden">
+<div class="form-group float-left col-md-6">
+        <div class="custom-control custom-checkbox">
+                <input type="checkbox" name="spam" class="custom-control-input" id="customCheck1"  {{$donante->spam ? 'checked' :'' }}>
+                <label class="custom-control-label" for="customCheck1">{{__('backend.recibir_spam')}}</label>
+        </div>
+    </div>
+<div id="animal" class="form-group float-left col-md-6">
+    <label for="animal_id" class="control-label">{{__('backend.tipo_animal')}}</label>
+    <select class="form-control" name="animal_id">
+            @foreach ($animales as $animal)
+            <option value="{{$animal->id}}" {{$donante->animales == $animal->id ? 'selected' :'' }}>{{$animal->nombre}}</option>
+            @endforeach
+    </select>
+</div>
 @endsection
 @section('scripts')
 <script>

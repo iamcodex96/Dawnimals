@@ -68,7 +68,7 @@
 
 <div class="form-group float-left col-md-6">
     <label for="tieneAnimales" class="control-label">{{__('backend.donante_animales')}}</label>
-    <select class="form-control" name="tieneAnimales">
+    <select id="tieneA" class="form-control" name="tieneAnimales">
                     <option value="*"></option>
                     <option value="1">Sí</option>
                     <option value="0">No</option>
@@ -129,10 +129,35 @@
                         <option value="Voluntario">Voluntario acogidas</option>
                 </select>
 </div>
+<div class="form-group float-left col-md-6">
+        <div class="custom-control custom-checkbox">
+                <input type="checkbox" name="spam" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">{{__('backend.recibir_spam')}}</label>
+        </div>
+    </div>
+<div id="animal" class="form-group float-left col-md-6">
+    <label for="animal_id" class="control-label">{{__('backend.tipo_animal')}}</label>
+    <select class="form-control" name="animal_id">
+            @foreach ($animales as $animal)
+            <option value="{{$animal->id}}">{{$animal->nombre}}</option>
+            @endforeach
+    </select>
+</div>
 @endsection
 
 @section('scripts')
 <script>
+    var inputTieneA = $('#tieneA');
+    var inputAnimales = $('#animal');
+    inputAnimales.hide();
+    inputTieneA.on('change',function(){
+        console.log(inputTieneA.val());
+        if(inputTieneA.val()==1){
+            inputAnimales.show();
+        }else if(inputTieneA.val()!=1){
+            inputAnimales.hide();
+        }
+    })
     restcountries.getAll(function(countries){
             countries.forEach(function(country){
                 var $country = $("<option></option>").val(country.code).html(country.nombre);

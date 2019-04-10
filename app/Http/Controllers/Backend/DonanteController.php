@@ -90,7 +90,7 @@ class DonanteController extends Controller
             $donante->correo = $request->input('email');
             $donante->tiene_aninales = $request->input('tieneAnimales');
             $donante->es_habitual = $request->input('esHabitual');
-            $donante->spam = $request->input('aAdoptado');
+            $donante->spam = $request->input('spam');
             $donante->es_colaborador = $request->input('esColaborador');
             $donante->tipo_colaboracion = $request->input('tipoColaborador');
             $donante->vinculo_entidad = $request->input('vinculo');
@@ -189,8 +189,8 @@ class DonanteController extends Controller
             $donante->fecha_alta = (new \DateTime())->format('Y-m-d H:i:s');
 
             try{
-                $donante->animales->detach();
-                $donante->animales->attach($request->input('animal_id'));
+                $donante->animales()->detach();
+                $donante->animales()->attach($request->input('animal_id'));
 
                 $donante->save();
                 return redirect()->action(self::CONTROLADOR .'index');

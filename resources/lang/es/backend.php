@@ -32,6 +32,8 @@
         "lista_donantes"=>"Lista donantes",
         "nombre_donante"=>"Nombre o razon social",
         "animal_adoptado"=>"Animal adoptado",
+        "tipo_animal"=>"Tipo animal",
+        "recibir_spam"=>"Quiere recibir notificaciones?",
         "tipo_donante"=>"Tipo donante",
         "sexo"=>"Sexo",
         "localidad"=>"Localidad",

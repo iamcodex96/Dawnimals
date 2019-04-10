@@ -33,6 +33,8 @@
         "lista_donantes"=>"Llista de donantes",
         "nombre_donante"=>"Nom o raó social",
         "animal_adoptado"=>"Animal adoptat",
+        "tipo_animal"=>"Tipu animal",
+        "recibir_spam"=>"Vol rebre notificacions?",
         "tipo_donante"=>"Tipus Donant",
         "sexo"=>"Sexe",
         "localidad"=>"Localitat",
