@@ -130,7 +130,7 @@
     @endsection
 
     @section( 'scripts' )
-        <script src="{{url( 'js/charts/jquery.min.js' )}}"></script>
+        {{-- <script src="{{url( 'js/charts/jquery.min.js' )}}"></script> --}}
 
         <script src="{{url( 'js/charts/Chart.min.js' )}}"></script>
 
