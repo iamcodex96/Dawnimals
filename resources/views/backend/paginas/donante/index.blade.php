@@ -10,23 +10,23 @@
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <div class="form-group">
                     <label class="control-label" for="input-name">{{__('backend.nombre_donante')}}</label>
-                    <input type="text" name="filtros[nombre]" value="" placeholder="Nombre o Razón social del donante" id="input-name" class="form-control"
+                    <input type="text" name="filtros[nombre]" value="" id="input-name" class="form-control"
                         autocomplete="off">
                     <ul class="dropdown-menu"></ul>
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="input-email">{{__('backend.correo')}}</label>
-                    <input type="text" name="filter_email" value="" placeholder="E-Mail" id="input-email" class="form-control" autocomplete="off">
+                    <input type="text" name="filtros[correo]" value="" id="input-email" class="form-control" autocomplete="off">
                     <ul class="dropdown-menu"></ul>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label" for="input-customer-group">{{__('backend.habitual')}}</label>
                     <select name="filter_donante_habitual" id="input-donante-habitual" class="form-control">
-                                        <option value="*"></option>
-                                        <option value="">Sí</option>
-                                        <option value="">No</option>
-                                    </select>
+                        <option value="*"></option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
                 </div>
 
             </div>
@@ -34,7 +34,7 @@
 
                 <div class="form-group">
                     <label class="control-label" for="input-customer-group">{{__('backend.tipo_donante')}}</label>
-                    <select name="filter_donante_tipo" id="input-donante-tipo" class="form-control">
+                    <select name="donante_tipo" id="input-donante-tipo" class="form-control">
                                         <option value="*"></option>
                                         <option value="">Particular</option>
                                         <option value="">Empresa</option>
@@ -46,23 +46,17 @@
                 <div class="form-group">
                     <label class="control-label" for="input-customer-group">{{__('backend.localidad')}}</label>
                     <select name="filter_donante_localidad" id="input-donante-localidad" class="form-control">
-                                        <option value="*"></option>
-                                        <option value="">BD</option>
-                                        <option value="">BD</option>
-                                        <option value="">BD</option>
-                                        <option value="">BD</option>
-                                        <option value="">BD</option>
-                                    </select>
+                        <option value="*"></option>
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label" for="input-customer-group">{{__('backend.adopta')}}</label>
                     <select name="filter_haAdoptado" id="input-haAdoptado" class="form-control">
-                                        <option value="*"></option>
-                                        <option value="1">Sí</option>
-                                        <option value="2">No</option>
-
-                                    </select>
+                        <option value="*"></option>
+                        <option value="1">Sí</option>
+                        <option value="2">No</option>
+                     </select>
                 </div>
 
 
@@ -81,14 +75,13 @@
                 <div class="form-group">
                     <label class="control-label" for="input-customer-group">{{__('backend.vinculo')}}</label>
                     <select name="filter_donante_vinculo" id="input-donante-vinculo" class="form-control">
-                                        <option value="*"></option>
-                                        <option value="">Socio</option>
-                                        <option value="">Patrocinador</option>
-                                        <option value="">Teamer</option>
-                                        <option value="">Adoptante</option>
-                                        <option value="">Voluntario acogidas</option>
-
-                                    </select>
+                        <option value="*"></option>
+                        <option value="">Socio</option>
+                        <option value="">Patrocinador</option>
+                        <option value="">Teamer</option>
+                        <option value="">Adoptante</option>
+                        <option value="">Voluntario acogidas</option>
+                    </select>
                 </div>
 
                 <div class="form-group" id="listaAnimales" style="display: none;">

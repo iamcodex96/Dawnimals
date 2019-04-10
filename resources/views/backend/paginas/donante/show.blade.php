@@ -6,7 +6,7 @@
 <div class="table-responsive" text-align="center">
         <div class="card m-4">
             <div class="row">
-                <div class="col-md-1" style="background-color:#99cd32"><h4 class="p-2" style="writing-mode: vertical-lr;transform: rotate(180deg);color:white">Informacion Personal</h4></div>
+                <div class="col-md-1" style="background-color:#99cd32"><h4 class="p-0 m-2" style="writing-mode: vertical-lr;transform: rotate(180deg);color:white">Informacion Personal</h4></div>
                 <div class="col-md-11">
                     <div class="row p-3">
                             <div class="col-md-6">

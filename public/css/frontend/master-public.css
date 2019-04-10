@@ -69,6 +69,11 @@ a.nav-link{
 
 }
 
-
+.footer{
+    background-color: #4d445e !important;
+}
+.footer p{
+    color:white;
+}
 
 

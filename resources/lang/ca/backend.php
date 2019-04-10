@@ -33,7 +33,7 @@
         "animal_adoptado"=>"Animal adoptat",
         "tipo_donante"=>"Tipus Donant",
         "sexo"=>"Sexe",
-        "localidad"=>"localitat",
+        "localidad"=>"Localitat",
         "vinculo"=>"Vincle Entitat",
         "habitual"=>"Donant Habitual",
         "adopta"=>"Ha adoptat abans?",

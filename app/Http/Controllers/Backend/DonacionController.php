@@ -84,11 +84,11 @@ class DonacionController extends Controller
      * @param  \App\Models\Donacion  $donacion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Donacion $donacion)
+    public function edit(Donacion $donacione)
     {
-        $donacion = Donacion::find($id);
+        //$donacion = Donacion::find($id);
 
-        $data['donacion'] = $donacion;
+        $data['donacion'] = $donacione;
         $data['tiposDonacion'] = Tipo::all();
         $data['subtiposDonacion'] = Subtipo::all();
         $data['centros'] = Centro::all();
