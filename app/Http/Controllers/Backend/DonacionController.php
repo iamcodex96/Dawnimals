@@ -5,6 +5,8 @@ use App\Models\Donacion;
 use App\Models\Centro;
 use App\Models\Tipo;
 use App\Models\Subtipo;
+use App\Models\Usuario;
+use App\Models\Donante;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -29,10 +31,15 @@ class DonacionController extends Controller
         $centros= Centro::all();
         $tipos = Tipo::all();
         $subtipos = Subtipo::all();
+        $usuarios = Usuario::all();
+        $donantes = Donante::all();
 
+        $data["donantes"] = $donantes;
+        $data['usuarios'] = $usuarios;
         $data['centros'] = $centros;
         $data['tiposDonacion'] = $tipos;
         $data['subtiposDonacion'] = $subtipos;
+
         return view(self::PREFIX.'create', $data);
     }
     /**
@@ -48,7 +55,7 @@ class DonacionController extends Controller
         $donacion->desc_animal = $request->input('desc_animal');
         $donacion->centros_receptor_id = $request->input('centros_receptor_id');
         $donacion->centro_receptor_altres = $request->input('centro_receptor_altres');
-        $donacion->usuarios_id = $request->input('usuarios_id');
+        $donacion->usuarios_id = \Auth::user()->id;
         $donacion->usuario_receptor = $request->input('usuario_receptor');
         $donacion->centros_desti_id = $request->input('centros_desti_id');
         $donacion->donantes_id = $request->input('donantes_id');
@@ -86,11 +93,12 @@ class DonacionController extends Controller
      */
     public function edit(Donacion $donacione)
     {
-
         $data['donacion'] = $donacione;
         $data['tiposDonacion'] = Tipo::all();
         $data['subtiposDonacion'] = Subtipo::all();
         $data['centros'] = Centro::all();
+        $data['usuarios'] = Usuario::all();
+        $data["donantes"] = Donante::all();
         return view(self::PREFIX.'edit',$data);
     }
     /**

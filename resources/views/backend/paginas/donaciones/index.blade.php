@@ -25,7 +25,6 @@
                             <label class="control-label" for="input-customer-group">Subtipo Donativo</label>
                             <select id="subtipo" name="filter_subtipo_donativo" id="input-subtipo_donativo" class="form-control">
                                 <option value="*"></option>
-
                             </select>
                         </div>
                     </div>
@@ -140,7 +139,7 @@
 
                                     <td class="text-center">{{$donacion->id}}</td>
                                     <td class="text-center">{{$donacion->subtipos->tipos->nombre}}</td>
-                                    <td class="text-center">{{$donacion->subtipos->nombre}}</td>
+                                    <td class="text-center">{{ \App::getLocale() == "ca" ? $donacion->subtipos->nombre_cat : $donacion->subtipos->nombre_esp}}</td>
                                     <td class="text-center">{{$donacion->centro->nombre}}</td>
                                     <td class="text-center">{{$donacion->coste}}</td>
 

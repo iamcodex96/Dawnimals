@@ -50,14 +50,12 @@
 {{-- este tendrá que asignarse según el usuario logado!!!! --}}
 
 <div class="form-group float-left col-md-6">
-    <label for="ciudad" class="control-label">Usuario</label>
-    <input type="number" class="form-control" id="usuarios_id" name="usuarios_id" value="{{$donacion->usuarios_id}}">
-</div>
-
-
-<div class="form-group float-left col-md-6">
     <label for="cp" class="control-label">Usuario Receptor</label>
-    <input type="text" class="form-control" id="usuario_receptor" name="usuario_receptor" value="{{$donacion->usuario_receptor}}">
+    <select class="form-control" id="usuario_receptor" name="usuario_receptor">
+        @foreach($usuarios as $usuario)
+            <option value="{{ $usuario->id }}" {{ $usuario->id == $donacion->usuario_receptor ? "selected" : ""}}>{{ $usuario->nombre }}</option>
+        @endforeach
+    </select>
 </div>
 
 
@@ -72,9 +70,13 @@
 </div>
 
 <div class="form-group float-left col-md-6">
-    <label for="ciudad" class="control-label">Donante ID</label>
-    <input type="number" class="form-control" id="donantes_id" name="donantes_id" value="{{$donacion->donantes_id}}">
-</div>
+        <label for="ciudad" class="control-label">Donante</label>
+        <select class="form-control" id="donantes_id" name="donantes_id">
+            @foreach($donantes as $donante)
+            <option value="{{ $donante->id }}" {{ $donante->id == $donacion->donantes_id ? "selected" : "" }}>{{$donante->nombre }} - ({{  $donante->id }})</option>
+            @endforeach
+        </select>
+    </div>
 
 
 <div class="form-group float-left col-md-6">

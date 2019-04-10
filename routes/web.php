@@ -45,7 +45,7 @@ Route::prefix("backend/")->middleware("locale")->group(function() {
 
         Route::get('/', function () {
             $donaciones = Donacion::all();
-            $data['donaciones']=$donaciones;
+            $data['donaciones'] = $donaciones;
 
             $completados = 0;
             $retos = Challenge::whereDate('fecha_ini', '<=', Carbon::now())->whereDate('fecha_fin', '>=', Carbon::now())->get();
