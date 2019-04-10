@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Classes\Utilitat;
 use App\Exports\ConverterExcel;
+use Carbon\Carbon;
 
 class DonacionController extends Controller
 {
@@ -26,7 +27,7 @@ class DonacionController extends Controller
         $data = [];
         $data["centros"] = Centro::all();
 
-        $query = Utilitat::setFiltros($request, $query, $data);
+        $query = Utilitat::setFiltros($request, $query, $data)->orderBy('fecha_donativo', 'DESC');
 
         if ($request->input('submit') == 'excel'){
 
@@ -35,6 +36,7 @@ class DonacionController extends Controller
             foreach($query->get() as $donacion){
 
                 array_push($queryFin, [
+                    $donacion->fecha_donativo,
                     $donacion->subtipos->tipos->nombre,
                     \App::getLocale() == "ca" ? $donacion->subtipos->nombre_cat : $donacion->subtipos->nombre_esp,
                     $donacion->centro->nombre,
@@ -42,7 +44,7 @@ class DonacionController extends Controller
                     $donacion->animales->first()->nombre,
                     $donacion->usuario->nombre,
                     $donacion->usuario_recep->nombre,
-                    $donacion->donantes->nombre,
+                    $donacion->donantes != null ? $donacion->donantes->nombre : __("backend.anonimo"),
                     $donacion->coste,
                     $donacion->unidades,
                     $donacion->peso,
@@ -52,6 +54,7 @@ class DonacionController extends Controller
             $queryFin = collect($queryFin);
 
             $headings = [
+                __("backend.fecha"),
                 __("backend.tipo"),
                 __("backend.subtipo"),
                 __("backend.centro_receptor"),
@@ -71,7 +74,7 @@ class DonacionController extends Controller
         }
 
 
-        $data['donaciones']=$query->get();
+        $data['donaciones']=$query->paginate(25);
         return view(self::PREFIX.'index',$data);
     }
     /**
@@ -107,7 +110,6 @@ class DonacionController extends Controller
     {
         $donacion = new Donacion();
         $donacion->subtipos_id = $request->input('subtipos_id');
-        //$donacion->desc_animal = $request->input('desc_animal');
         $donacion->centros_receptor_id = $request->input('centros_receptor_id');
         $donacion->centro_receptor_altres = $request->input('centro_receptor_altres');
         $donacion->usuarios_id = \Auth::user()->id;
@@ -117,7 +119,7 @@ class DonacionController extends Controller
         $donacion->coste = $request->input('coste');
         $donacion->unidades = $request->input('unidades');
         $donacion->peso = $request->input('peso');
-        $donacion->fecha_donativo = (new \DateTime())->format('Y-m-d H:i:s');
+        $donacion->fecha_donativo = Carbon::now('Europe/Madrid');
         $donacion->hay_factura = $request->input('hay_factura');
         $donacion->ruta_factura = $request->input('ruta_factura');
         $donacion->es_coordinada = $request->input('es_coordinada');
@@ -181,7 +183,6 @@ class DonacionController extends Controller
             $donacione->desc_animal = $request->input('desc_animal');
             $donacione->centros_receptor_id = $request->input('centros_receptor_id');
             $donacione->centro_receptor_altres = $request->input('centro_receptor_altres');
-            // $donacione->usuarios_id = $request->input('usuarios_id');
             $donacione->usuario_receptor = $request->input('usuario_receptor');
             $donacione->centros_desti_id = $request->input('centros_desti_id');
             $donacione->donantes_id = $request->input('donantes_id');
@@ -215,6 +216,7 @@ class DonacionController extends Controller
     {
         try{
             if($donacione!=null){
+                $donacione->animales()->detach();
                 $donacione->delete();
                 return redirect()->action(self::CONTROLADOR .'index');
             }

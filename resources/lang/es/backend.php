@@ -116,5 +116,7 @@
         "unidades" => "Unidades",
         "peso" => "Peso",
         "es_coordinada" => "Es coordinada",
+        "fecha" => "Fecha",
+        "anonimo" => "Anónimo",
     ]
 ?>

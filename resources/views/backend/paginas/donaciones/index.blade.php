@@ -101,7 +101,7 @@ url('backend/donaciones/create'))
 
                 <thead class=" thead-dark">
                     <tr>
-                        <th class="text-center">ID</th>
+                        <th class="text-center">{{ __("backend.fecha") }}</th>
                         <th class="text-center">{{ __("backend.tipo") }}</th>
                         <th class="text-center">{{ __("backend.subtipo") }}</th>
                         <th class="text-center">{{ __("backend.donante") }}</th>
@@ -113,47 +113,49 @@ url('backend/donaciones/create'))
                 </thead>
                 <tbody>
                     @foreach ($donaciones as $donacion)
+                    <tr>
 
-                    <td class="text-center">{{$donacion->id}}</td>
-                    <td class="text-center">{{$donacion->subtipos->tipos->nombre}}</td>
-                    <td class="text-center">{{ \App::getLocale() == "ca" ? $donacion->subtipos->nombre_cat : $donacion->subtipos->nombre_esp}}</td>
-                    <td class="text-center">{{$donacion->donantes->nombre}}</td>
-                    <td class="text-center">{{$donacion->centro->nombre}}</td>
-                    <td class="text-center">{{$donacion->centro_destino->nombre}}</td>
-                    <td class="text-center">{{$donacion->coste}}</td>
+                        <td class="text-center">{{$donacion->fecha_donativo}}</td>
+                        <td class="text-center">{{$donacion->subtipos->tipos->nombre}}</td>
+                        <td class="text-center">{{ \App::getLocale() == "ca" ? $donacion->subtipos->nombre_cat : $donacion->subtipos->nombre_esp}}</td>
+                        <td class="text-center">{{ $donacion->donantes != null ? $donacion->donantes->nombre : __("backend.anonimo")}}</td>
+                        <td class="text-center">{{$donacion->centro->nombre}}</td>
+                        <td class="text-center">{{$donacion->centro_destino->nombre}}</td>
+                        <td class="text-center">{{$donacion->coste}}</td>
 
 
-                    <td colspan="2" style="width: 1%" class="text-center">
+                        <td colspan="2" style="width: 1%" class="text-center">
 
-                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <div class="btn-group" role="group" aria-label="Basic example">
 
-                            {{-- <form class="p-0 m-0" action="" method="GET">
-                                @csrf
-                                <button type="submit" data-toggle="tooltip" title="Ver" class="btn btn-primary" data-original-title="Ver"><i class="fa fa-eye"></i></button>
-                            </form> --}}
+                                {{--
+                                <form class="p-0 m-0" action="" method="GET">
+                                    @csrf
+                                    <button type="submit" data-toggle="tooltip" title="Ver" class="btn btn-primary" data-original-title="Ver"><i class="fa fa-eye"></i></button>
+                                </form> --}}
 
-                            <form class="p-0 m-0" action="{{ action('Backend\DonacionController@edit',[$donacion->id]) }}" method="GET">
-                                <button type="submit" data-toggle="tooltip" title="Modificar" class="btn btn-warning" data-original-title="Ver"><i class="fa fa-edit"></i></button>
-                            </form>
-                            <form class="p-0 m-0" action="{{ action('Backend\DonacionController@destroy',[$donacion->id]) }}" method="post">
-                                @method('delete') @csrf
-                                <button type="submit" onclick="destroySubmit(this, event, {{$donacion->nombre}})" data-toggle="tooltip" title="Borrar" class="btn btn-danger"
-                                    data-original-title="Ver"><i class="fa fa-trash"></i></button>
-                            </form>
-                        </div>
-                    </td>
+                                <form class="p-0 m-0" action="{{ action('Backend\DonacionController@edit',[$donacion->id]) }}" method="GET">
+                                    <button type="submit" data-toggle="tooltip" title="Modificar" class="btn btn-warning" data-original-title="Ver"><i class="fa fa-edit"></i></button>
+                                </form>
+                                <form class="p-0 m-0" action="{{ action('Backend\DonacionController@destroy',[$donacion->id]) }}" method="post">
+                                    @method('delete') @csrf
+                                    <button type="submit" onclick="destroySubmit(this, event, '{{$donacion->fecha_donativo}} - {{$donacion->subtipos->tipos->nombre}} - {{ $donacion->donantes != null ? $donacion->donantes->nombre : __("backend.anonimo")}}')" data-toggle="tooltip" title="Borrar" class="btn btn-danger"
+                                        data-original-title="Ver"><i class="fa fa-trash"></i></button>
+                                </form>
+                            </div>
+                        </td>
 
                     </tr>
                     @endforeach
-
                 </tbody>
             </table>
+
+            {{ $donaciones->appends($_GET)->links() }}
         </div>
     </div>
 </div>
 
 
-</form>
 
 
 
@@ -177,6 +179,7 @@ url('backend/donaciones/create'))
                     $('#subtipoDonativos').hide();
                 }
             });
+
 </script>
 <script src="{{ asset('js/api/donacionesAPI.js') }}"></script>
 @endsection

@@ -65,6 +65,7 @@
 <div class="form-group float-left col-md-6">
     <label for="ciudad" class="control-label">Donante</label>
     <select class="form-control" id="donantes_id" name="donantes_id">
+        <option value="">{{ __("backend.anonimo") }}</option>
         @foreach($donantes as $donante)
             <option value="{{ $donante->id }}" {{ $donante->id == old('donantes_id') ? "selected" : "" }}>{{$donante->nombre }} - ({{  $donante->id }})</option>
         @endforeach

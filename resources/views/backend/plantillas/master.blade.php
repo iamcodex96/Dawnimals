@@ -85,7 +85,7 @@
         </div>
         </nav>
 
-        <div class="container" style="margin-top: 100px;">
+        <div class="container" style="padding-top: 100px;">
     @include('backend.partial.mensajes') @yield('contenido') @yield('modals')
         </div>
 
