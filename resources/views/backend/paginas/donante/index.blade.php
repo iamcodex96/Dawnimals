@@ -11,45 +11,50 @@
 
                 <div class="form-group col-sm-4">
                     <label class="control-label" for="input-name">{{__('backend.nombre_donante')}}</label>
-                    <input type="text" name="filtros[nombre]" value="{{ $filtros["nombre"] }}" placeholder="Nombre o Razón social del donante" id="input-name" class="form-control">
+                    <input type="text" name="filtros[nombre]" value="" id="input-name" class="form-control"
+                        autocomplete="off">
+                    <ul class="dropdown-menu"></ul>
                 </div>
                 <div class="form-group col-sm-4">
                     <label class="control-label" for="input-email">{{__('backend.correo')}}</label>
-                    <input type="text" name="filtros[correo]" value="{{ $filtros["correo"] }}" placeholder="E-Mail" id="input-email" class="form-control" autocomplete="off">
+                    <input type="text" name="filtros[correo]" value="" id="input-email" class="form-control" autocomplete="off">
+                    <ul class="dropdown-menu"></ul>
                 </div>
 
                 <div class="form-group col-sm-4">
                     <label class="control-label" for="input-customer-group">{{__('backend.habitual')}}</label>
-                    <select name="filtrosBooleanos[es_habitual]" id="input-donante-habitual" class="form-control">
-                            <option value="">{{ __('backend.todos') }}</option>
-                            <option value="true" {{ $filtrosBooleanos["es_habitual"] === true ? "selected" : ""}}>{{ __('backend.si') }}</option>
-                            <option value="false" {{ $filtrosBooleanos["es_habitual"] === false ? "selected" : ""}}>{{ __('backend.no') }}</option>
-                        </select>
+                    <select name="filter_donante_habitual" id="input-donante-habitual" class="form-control">
+                        <option value="*"></option>
+                        <option value="1">Sí</option>
+                        <option value="0">No</option>
+                    </select>
                 </div>
 
                 <div class="form-group col-sm-4">
                     <label class="control-label" for="input-customer-group">{{__('backend.tipo_donante')}}</label>
-                    <select name="filtrosNumericos[tipos_donantes_id]" id="input-donante-tipo" class="form-control">
-                        <option value="">{{ __('backend.todos') }}</option>
-                        @foreach($tipos_donante as $tipo)
-                            <option value="{{ $tipo->id }}" {{ $tipo->id == $filtrosNumericos["tipos_donantes_id"] ? "selected" : "" }}>{{ $tipo->tipo }}</option>
-                        @endforeach
-                    </select>
+                    <select name="donante_tipo" id="input-donante-tipo" class="form-control">
+                                        <option value="*"></option>
+                                        <option value="">Particular</option>
+                                        <option value="">Empresa</option>
+                                        <option value="">Escuela</option>
+                                        <option value="">Anónimo</option>
+                                    </select>
                 </div>
 
                 <div class="form-group col-sm-4">
                     <label class="control-label" for="input-customer-group">{{__('backend.localidad')}}</label>
-                    <input type="text" name="filtros[poblacion]" value="{{ $filtros["poblacion"] }}" id="input-donante-localidad" class="form-control" />
+                    <select name="filter_donante_localidad" id="input-donante-localidad" class="form-control">
+                        <option value="*"></option>
+                    </select>
                 </div>
 
-                <div class="form-group col-sm-4">
-                    <label class="control-label" for="input-customer-group">{{__('backend.sexo')}}</label>
-                    <select name="filtrosNumericos[sexo.id]" id="input-donante-sexo" class="form-control">
-                        <option value="">{{ __('backend.todos') }}</option>
-                        @foreach($sexos as $sexo)
-                            <option value="{{ $sexo->id }}" {{ $sexo->id == $filtrosNumericos["sexo.id"] ? "selected" : "" }}>{{ $sexo->sexo }}</option>
-                        @endforeach
-                    </select>
+                <div class="form-group">
+                    <label class="control-label" for="input-customer-group">{{__('backend.adopta')}}</label>
+                    <select name="filter_haAdoptado" id="input-haAdoptado" class="form-control">
+                        <option value="*"></option>
+                        <option value="1">Sí</option>
+                        <option value="2">No</option>
+                     </select>
                 </div>
 
                 <div class="form-group col-sm-4">
@@ -69,12 +74,15 @@
                     <input class="form-control" name="filter_donante_fecha" id="input-donante-fecha" type="date">
                 </div>
 
-                <div class="form-group col-sm-4">
-                    <label class="control-label" for="input-customer-group">{{__('backend.adopta')}}</label>
-                    <select name="filter_haAdoptado" id="input-haAdoptado" class="form-control">
+                <div class="form-group">
+                    <label class="control-label" for="input-customer-group">{{__('backend.vinculo')}}</label>
+                    <select name="filter_donante_vinculo" id="input-donante-vinculo" class="form-control">
                         <option value="*"></option>
-                        <option value="1">Sí</option>
-                        <option value="2">No</option>
+                        <option value="">Socio</option>
+                        <option value="">Patrocinador</option>
+                        <option value="">Teamer</option>
+                        <option value="">Adoptante</option>
+                        <option value="">Voluntario acogidas</option>
                     </select>
                 </div>
 

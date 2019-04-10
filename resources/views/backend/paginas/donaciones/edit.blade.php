@@ -7,7 +7,7 @@
 <div class="form-group float-left col-md-6">
     <!-- State Button -->
     <label for="tipoDonacion" class="control-label">Tipo Donación</label>
-    <select class="form-control" name="tipos_id">
+    <select id="tipo" class="form-control" name="tipos_id">
         @foreach ($tiposDonacion as $td)
         <option value="{{$td->id}}" {{$donacion->subtipos->tipos_id == $td->id ? 'selected' :'' }}>{{$td->nombre}}</option>
         @endforeach
@@ -17,9 +17,9 @@
 <div class="form-group float-left col-md-6">
     <!-- State Button -->
     <label for="subtipos_id" class="control-label">Subtipo Donación</label>
-    <select class="form-control" name="subtipos_id">
+    <select id="subtipo" class="form-control" name="subtipos_id">
         @foreach ($subtiposDonacion as $td)
-        <option value="{{$td->id}}" {{$donacion->subtipos_id == $td->id ? 'selected' :'' }}>{{$td->nombre}}</option>
+        <option value="{{$td->id}}" {{$donacion->subtipos_id == $td->id ? 'selected' :'' }}>{{$td->nombre_esp}}</option>
         @endforeach
         </select>
 </div>

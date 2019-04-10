@@ -14,24 +14,28 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" background="none">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse text-black-50" id="navbarNav"><!-- d-flex justify-content-end -->
+            <a href="{{ url('/') }}"><img  src="{{ asset('./img/Spami_M.png') }}" width="60px" height="60px"  alt=""></a>
+        <div class="collapse navbar-collapse text-black-50 ml-4" id="navbarNav"><!-- d-flex justify-content-end -->
             <ul class="navbar-nav">
-              <li class="nav-item active navLogo">
-               <img  src="{{ asset('./img/Spami_M.png') }}" width="60px" height="60px"  alt="">
+              <li class="nav-item p-2">
+                <a class="nav-link" href="{{ url('/quien_somos') }}">Quiénes somos</a>
               </li>
-              <li class="nav-item texto">
-                <a class="nav-link" href="{{ url('/quien_somos') }}">¿Quiénes somos?</a>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="{{ url('/como_ayudar') }}">Como Ayudar</a>
               </li>
-              <li class="nav-item texto">
-                <a class="nav-link" href="https://www.protectoramataro.org/es/cercador-animals">Animals</a>
-              </li>
-              <li class="nav-item texto">
-                <a class="nav-link"href="{{ url('backend/login') }}">Acceso Portal</a>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="{{ url('/estadisticas') }}">Estadisticas</a>
+                </li>
+              <li class="nav-item p-2">
+                <a class="nav-link" href="https://www.protectoramataro.org/es/">Pagina Official</a>
               </li>
             </ul>
+          </div>
+          <div class="option-container row">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="nav-link btn mr-2" href="{{ url('backend/login') }}"><i class="fas fa-sign-in-alt" style="font-size: 25px"></i></a>
           </div>
     </nav>
     <nav class="nav flex-column p-0 navegacion">
@@ -40,17 +44,45 @@
         <a href="#tercero" onclick="updateIcon(2,'tercero')" data-toggle="tooltip" data-placement="left" title="Opcion 3" class="nav-link mt-3"><i class="far fa-circle"></i></a>
         <a href="#cuarto" onclick="updateIcon(3,'cuarto')" data-toggle="tooltip" data-placement="left" title="Opcion 4" class="nav-link mt-3"><i class="far fa-circle"></i></a>
     </nav>
-    <div id="overlay">
-
-            <nav class="nav flex-column p-0 d-flex justify-content-center">
-                <a href="https://www.protectoramataro.org/es" class="nav-link text-center">SPAM</a>
-                <a href="https://www.protectoramataro.org/es/quienes-somos-que-hacemos" class="nav-link text-center">Quien Somos?</a>
-                <a href="https://www.protectoramataro.org/es/cercador-animals" class="nav-link text-center">Animales</a>
-                <a href="{{ url('backend/login') }}" class="nav-link text-center">Acceso Portal</a>
-            </nav>
-
-    </div>
     @yield('contenido')
+    <footer class="footer p-5" >
+        <div class="row">
+                <div class="col-md-6">
+                    <h5 style="color: #fff !important">Direccion</h5>
+                    <p style="font-size: 12px !important;text-align:justify">
+                            Servicios Centrales:
+                            Calle Sant Cugat 102-104, Mataró 08302 (Barcelona). Tel. 937566066-647972293
+                    </p>
+                    <p style="font-size: 12px !important;text-align:justify">
+                            Espacio Veterinario: (adopción de cachorros de gatos y asistencia veterinaria):
+                            Calle Sant Cugat, 102 Bajos 08302 Mataró (Barcelona). Tel. 937566066-647972293
+                    </p>
+                    <p style="font-size: 12px !important;text-align:justify">
+                            Refugio Cal Pilè (adopción de perros adultos y cachorros, y adopción de gatos adultos):
+                            Ctra NII Km 648,4 08301 Mataró (Barcelona). Tel. 687976037
+                    </p>
+                </div>
+                <div class="col-md-6">
+                        <h5 style="color: #fff !important">Horarios</h5>
+                        <p style="font-size: 12px !important;text-align:justify">
+                                Horarios de oficinas: De lunes a viernes de 9 a 19h.
+                        </p>
+                        <p style="font-size: 12px !important;text-align:justify">
+                                Horarios Servicios Veterinarios (Mataró): De lunes a sábado, de 11 a 14h y de 15 a 18h (para adopciones de 11 a 13h y de 15 a 17h). Domingos y festivos, de 11 a 14h (para adopciones de 11 a 13h).
+                        </p>
+                        <p style="font-size: 12px !important;text-align:justify">
+                                Horarios Cal Pilé (Mataró) y CCAAC Barcelonès (Badalona): De lunes a viernes, de 11 a 14'30 y de 15 a 17h. Sábados, de 11 a 14'30 y de 15 a 18h. Domingos y festivos, de 11 a 14h.
+                        </p>
+                </div>
+                <div class="d-flex justify-content-center w-100">
+                        <a class="pr-3 pl-3" href="http://www.facebook.com/protectoramataro"><i class="fab fa-facebook-f" style="font-size: 25px;color:white"></i></a>
+                        <a class="pr-3 pl-3" href="https://www.instagram.com/protectoramataro/"><i class="fab fa-instagram" style="font-size: 25px;color:white"></i></a>
+                        <a class="pr-3 pl-3" href="https://twitter.com/protemataro"><i class="fab fa-twitter" style="font-size: 25px;color:white"></i></a>
+                </div>
+        </div>
+    </footer>
+
+
     @yield('js_loaded')
     <!-- Popper.JS -->
     <script src="{{ asset('Bootstrap/js/popper.min.js') }}"></script>

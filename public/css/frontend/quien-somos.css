@@ -15,16 +15,20 @@ body {
   overflow-x: hidden;
 }
 
-h5 {
-  font-family: J-light;
+main h5 {
+  font-family: Josefin;
 }
 
-h1, h2, h3 {
+.card h5{
+    font-family: J-light;
+}
+
+main  h1, h2, h3 {
   font-family: Josefin;
   color: #454049;
 }
 
-p {
+main  p {
   font-family: Roboto;
   color: #454049;
 }
@@ -59,5 +63,4 @@ p {
   text-align: center;
   width: 100%;
 }
-
 /*# sourceMappingURL=quien-somos.css.map */

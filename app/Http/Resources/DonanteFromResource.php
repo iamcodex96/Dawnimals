@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class DonanteResource extends JsonResource
+class DonanteFormResourse extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,6 +14,9 @@ class DonanteResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            "sexos" => $this['sexos'],
+            "tipo_donante" => $this['tipo_donante'],
+        ];
     }
 }
