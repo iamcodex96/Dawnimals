@@ -34,12 +34,11 @@
 
 <div class="form-group float-left col-md-6">
     <label for="desc_animal" class="control-label">Donación para:</label>
-    <select class="form-control" name="desc_animal">
-                    <option value="Perro">Perro</option>
-                    <option value="Gato">Gato</option></option>
-                    <option value="Otros">Otros</option>
-                    <option value="Todos">Todos</option>
-                </select>
+    <select class="form-control" name="animal_id">
+        @foreach($animales as $animal)
+            <option value="{{ $animal->id }}" {{ $animal->id == old('animal_id') ? "selected" : "" }}>{{ $animal->nombre }}</option>
+        @endforeach
+    </select>
 </div>
 
 

@@ -106,5 +106,15 @@
         "catalan" => "Catalan",
         "español" => "Castellano",
         "ingles" => "Ingles",
+
+        "centro_receptor" => "Centro receptor",
+        "centro_destino" => "Centro destino",
+        "animal" => "Animal",
+        "usuario_receptor" => "Usuario receptor",
+        "donante" => "Donante",
+        "coste" => "Coste",
+        "unidades" => "Unidades",
+        "peso" => "Peso",
+        "es_coordinada" => "Es coordinada",
     ]
 ?>

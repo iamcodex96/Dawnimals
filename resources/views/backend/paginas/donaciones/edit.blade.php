@@ -38,11 +38,10 @@
 
 <div class="form-group float-left col-md-6">
     <label for="desc_animal" class="control-label">Donación para:</label>
-    <select class="form-control" name="desc_animal">
-        <option {{$donacion->desc_animal == 'Perro' ? 'selected' :'' }} value="Perro">Perro</option>
-        <option {{$donacion->desc_animal == 'Gato' ? 'selected' :'' }} value="Gato">Gato</option></option>
-        <option {{$donacion->desc_animal == 'Otros' ? 'selected' :'' }} value="Otros">Otros</option>
-        <option {{$donacion->desc_animal == 'Todos' ? 'selected' :'' }} value="Todos">Todos</option>
+    <select class="form-control" name="animal_id">
+        @foreach($animales as $animal)
+            <option value="{{ $animal->id }}" {{ $animal->id == $donacion->animales->first()->id ? "selected" : "" }}>{{ $animal->nombre }}</option>
+        @endforeach
     </select>
 </div>
 
