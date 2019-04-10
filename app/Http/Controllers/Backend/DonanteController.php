@@ -32,12 +32,36 @@ class DonanteController extends Controller
         $query = Utilitat::setFiltros($request, $query, $data);
 
         if ($request->input('submit') == 'excel'){
+            $queryFin =[];
+            foreach($query->get() as $item){
+                \array_push($queryFin,[
+                    $item->tipos_donantes_id,
+                    $item->nombre,
+                    $item->cif,
+                    $item->direcion,
+                    $item->poblacion,
+                    $item->telefono,
+                    $item->pais,
+                    $item->cp,
+                    $item->sexos_id,
+                    $item->correo,
+                    $item->tiene_aninales,
+                    $item->es_habitual,
+                    $item->spam,
+                    $item->es_colaborador,
+                    $item->tipo_colaboracion,
+                    $item->vinculo_entidad,
+                    $item->fecha_alta,
+                ]);
+            };
+            $queryFin = collect($queryFin);
             $headings = [
-                'id','tipos_donantes_id','es_habitual','nombre','cif','cp','sexos_id','tiene_aninales','telefono',
-                'correo','direccion','vinculo_entidad','spam','poblacion','pais','es_colaborador','tipo_colaboracion',
-                'fecha_alta'
+                'id','Tipos donantes','habitual','nombre','cif','codigo postal','sexos','tiene animales','telefono',
+                'correo','direccion','vinculo entidad','spam','poblacion','pais','colaborador','tipo colaboracion',
+                'fecha alta'
             ];
-            return ConverterExcel::export($query, $headings, "Donantes");
+
+            return ConverterExcel::export($queryFin, $headings, "Donantes");
         }
 
         $data['donantes'] = $query->get();
@@ -90,7 +114,13 @@ class DonanteController extends Controller
             $donante->correo = $request->input('email');
             $donante->tiene_aninales = $request->input('tieneAnimales');
             $donante->es_habitual = $request->input('esHabitual');
-            $donante->spam = $request->input('spam');
+            $meh = $request->input('animal_id');
+            if($request->input('spam')==null){
+                $donante->spam =false;
+            }else{
+                $donante->spam =true;
+            }
+
             $donante->es_colaborador = $request->input('esColaborador');
             $donante->tipo_colaboracion = $request->input('tipoColaborador');
             $donante->vinculo_entidad = $request->input('vinculo');
@@ -99,7 +129,7 @@ class DonanteController extends Controller
             try{
                 $donante->save();
 
-                $donante->animales->attach($request->input('animal_id'));
+                $donante->animales()->attach($request->input('animal_id'));
 
                 return redirect()->action(self::CONTROLADOR .'index');
             }catch(QueryException $e){
@@ -182,7 +212,11 @@ class DonanteController extends Controller
             $donante->correo = $request->input('email');
             $donante->tiene_aninales = $request->input('tieneAnimales');
             $donante->es_habitual = $request->input('esHabitual');
-            $donante->spam = $request->input('aAdoptado');
+            if($request->input('spam')==null){
+                $donante->spam =false;
+            }else{
+                $donante->spam =true;
+            }
             $donante->es_colaborador = $request->input('esColaborador');
             $donante->tipo_colaboracion = $request->input('tipoColaborador');
             $donante->vinculo_entidad = $request->input('vinculo');
