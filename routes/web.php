@@ -87,6 +87,8 @@ Route::get('/get-post-chart-data', 'ChartDataController@getMonthlyPostData');
 
 Route::get('/get-post-animal-data', 'ChartDataController@getAllTipesOfAnimals');
 
+Route::get('/get-post-center-data', 'ChartDataController@getAllCentros');
+
 //////////////////////////// PAGS CHARTS ////////////////////////////////////
 
 
