@@ -76,8 +76,8 @@
                                   <span class="fa fa-globe"></span> <span class="fa fa-sort-down mb-1"></span>
                                 </button>
                         <div class="dropdown-menu" aria-labelledby="drIdioma">
-                            <a class="dropdown-item" href="{{ url('backend/chgIdioma/ca') }}">Català</a>
-                            <a class="dropdown-item" href="{{ url('backend/chgIdioma/es') }}">Español</a>
+                            <a class="dropdown-item" href="{{ url('chgIdioma/ca') }}">Català</a>
+                            <a class="dropdown-item" href="{{ url('chgIdioma/es') }}">Español</a>
                         </div>
                     </div>
                     <a class="btn btn-danger" href="{{ url('/backend/logout') }}"><i class="fas fa-sign-out-alt"></i></a>
