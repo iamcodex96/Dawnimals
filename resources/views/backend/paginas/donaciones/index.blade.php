@@ -5,7 +5,7 @@
 
 @section('m_contenido')
 
-<div class="card m-3">
+<div class="card m-3 collapse filtro">
     <form class="form-horizontal" action="" method="post">
 
         <div class="m-5">
@@ -15,26 +15,16 @@
 
                     <div class="form-group">
                         <label class="control-label" for="input-customer-group">Tipo Donativo</label>
-                        <select name="filter_tipo_donativo" id="input-tipo_donativo" class="form-control">
+                        <select id="tipo" name="filter_tipo_donativo" id="input-tipo_donativo" class="form-control">
                             <option value="*"></option>
-                            <option value="">Alimentos</option>
-                            <option value="">Veterinario</option>
-                            <option value="">Oficinas</option>
-                            <option value="">Complementos</option>
-                            <option value="">Encantes</option>
-                            <option value="">Aportaciones monetarias</option>
                         </select>
                     </div>
 
                     <div id="subtipoDonativos" style="display: none;">
                     <div class="form-group">
                             <label class="control-label" for="input-customer-group">Subtipo Donativo</label>
-                            <select name="filter_subtipo_donativo" id="input-subtipo_donativo" class="form-control">
+                            <select id="subtipo" name="filter_subtipo_donativo" id="input-subtipo_donativo" class="form-control">
                                 <option value="*"></option>
-                                <option value="">Se </option>
-                                <option value="">Rellena</option>
-                                <option value="">Según</option>
-                                <option value="">Tipo</option>
 
                             </select>
                         </div>
@@ -74,11 +64,8 @@
 
                     <div class="form-group">
                         <label class="control-label" for="input-customer-group">Centro receptor</label>
-                        <select name="filter_receptor" id="input-receptor" class="form-control">
+                        <select id="centroR" name="filter_receptor" id="input-receptor" class="form-control">
                             <option value="*"></option>
-                            <option value="">Lista</option>
-                            <option value="">de</option>
-                            <option value="">usuarios?</option>
                         </select>
                     </div>
 
@@ -99,13 +86,8 @@
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="form-group">
                         <label class="control-label" for="input-customer-group">Centro Destino</label>
-                        <select name="filter_destino" id="input-destino" class="form-control">
+                        <select id="centroD" name="filter_destino" id="input-destino" class="form-control">
                             <option value="*"></option>
-                            <option value="">Lista</option>
-                            <option value="">de</option>
-                            <option value="">Destinos</option>
-                            <option value="">BD</option>
-
                         </select>
                     </div>
 
@@ -195,26 +177,29 @@
 
 
 </form>
+@section('scripts')
+@parent
+    <script>
+        idioma = "{{App::getLocale()}}";
+        console.log(idioma);
+    </script>
+    <script>
+            $('#tipo').change(function() {
 
-<script>
+                opt = $('#tipo').val();
 
-    $('#input-tipo_donativo').change(function() {
+                console.log(opt);
 
-        opt = $('#input-tipo_donativo').val();
+                if (opt != "") {
+                    $('#subtipoDonativos').show();
+                } else {
+                    $('#subtipoDonativos').hide();
+                }
 
-        console.log(opt);
-
-        if (opt == "") {
-            $('#subtipoDonativos').show();
-        } else {
-            $('#subtipoDonativos').hide();
-        }
-
-    });
-
-</script>
-
-
+            });
+        </script>
+    <script src="{{ asset('js/api/donacionesAPI.js') }}"></script>
+    @endsection
 
 
 @endsection

@@ -1,25 +1,28 @@
 
 var urlApi = 'http://localhost:8080/Dawnimals/public/api/';
 var ftipos=[];
-var fsexos=[];
+var fcentros=[];
 var inputTipo = $('#tipo');
 var inputSubTipo=$('#subtipo');
+var inputCentroR=$('#centroR');
+var inputCentroD=$('#centroD');
 setAttr();
+
 function pushDatos(datos){
 
     var datos = datos['data'];
     var tiposData = [];
-    var sexosData = [];
+    var  centroData= [];
     datos['tipos'].forEach(function(elem){
         tiposData.push(elem);
     });
-    datos['sexos'].forEach(function(elem){
-        sexosData.push(elem);
+    datos['centros'].forEach(function(elem){
+        centroData.push(elem);
     });
-
     ftipos = tiposData;
-    fsexos = sexosData;
+    fcentros = centroData;
     crearOpcionesTipo(ftipos);
+    crearOpcionesCentro(fcentros);
 }
 
 inputTipo.on("change",function(){
@@ -38,9 +41,25 @@ function setSubtiposByTipo(){
         }
     })
 }
+
+function crearOpcionesCentro(listaCentros){
+    listaCentros.forEach(function(centro){
+        var option=$('<option></option>');
+        option.attr('value',centro.id);
+        option.html(centro.nombre);
+        inputCentroD.append(option);
+    });
+    listaCentros.forEach(function(centro){
+        var option=$('<option></option>');
+        option.attr('value',centro.id);
+        option.html(centro.nombre);
+        inputCentroR.append(option);
+    });
+}
+
 function setAttr(){
     $.ajax({
-        url:urlApi+'formdata',
+        url:urlApi+'donacionesData',
         method: "get",
         contentType: "text",
         dataType: "text",
@@ -64,7 +83,10 @@ function crearOpcionesSubtipo(subtipos){
         subtipos['data'].forEach(function(subtipo){
         var option=$('<option></option>');
         option.attr('value',subtipo.id);
-        option.html(subtipo.nombre);
+        switch(idioma){
+            case 'es': option.html(subtipo.nombre_esp);break;
+            case 'ca': option.html(subtipo.nombre_cat);break;
+        }
         inputSubTipo.append(option);
     });
 }

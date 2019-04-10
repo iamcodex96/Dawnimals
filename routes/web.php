@@ -1,11 +1,18 @@
 <?php
 use App\Models\Donacion;
 use App\Models\Challenge;
+use Carbon\Carbon;
 //////////////////////////// PAGS FRONTEND ///////////////////////////////////
 Route::redirect('/', 'landing');
 
 Route::get('/landing', function () {
-    $data["retos"] = Challenge::all();
+    $retos = Challenge::whereDate('fecha_ini', '<=', Carbon::now())->whereDate('fecha_fin', '>=', Carbon::now())->get();
+    foreach($retos as $reto){
+        $reto->cantidad = $reto->subtipo->donacion->sum('peso');
+    }
+
+    $data["retos"] = $retos;
+
     return view('frontend.paginas.landing', $data);
 })->name("landing");
 Route::get('/quien_somos', function () {
