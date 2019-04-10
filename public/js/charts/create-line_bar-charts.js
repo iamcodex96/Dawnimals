@@ -12,8 +12,8 @@
 
 		ajaxGetPostMonthlyData: function () {
             //artisan serve
-            //var urlPath =  'http://' + window.location.hostname + ':8000/get-post-chart-data';
-            var urlPath ='http://localhost:8080/Dawnimals/public/get-post-chart-data';
+            var urlPath =  'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/get-post-chart-data';
+            //var urlPath ='http://localhost:8080/Dawnimals/public/get-post-chart-data';
 			var request = $.ajax( {
 				method: 'GET',
 				url: urlPath

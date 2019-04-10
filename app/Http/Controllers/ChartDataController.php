@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Donacion;
+use App\Models\Centro;
 use Carbon\Carbon;
 
 class ChartDataController extends Controller
@@ -92,6 +93,31 @@ class ChartDataController extends Controller
     function getDonationAnimalCount( $animal, $month ) {
         $animal_donacion_count = Donacion::where( 'desc_animal', $animal )->whereMonth( 'fecha_donativo', $month )->get()->count();
 		return $animal_donacion_count;
+    }
+
+    function getAllCentros(){
+        $now = Carbon::now();
+        $centros_receptor = array();
+        $centros_receptor_id = Donacion::orderBy( 'centros_receptor_id', 'ASC' )
+        ->whereMonth( 'fecha_donativo', $now->month )
+        ->whereYear( 'fecha_donativo', $now->year )
+        ->distinct()
+        ->pluck( 'centros_receptor_id' );
+        $centros_receptor_id = json_decode( $centros_receptor_id );
+
+
+        if ( ! empty( $centros_receptor_id ) ) {
+			foreach ( $centros_receptor_id as $centrosreceptor ){
+                $centros_receptor_nom = $this->getNomCentreReceptor( $centrosreceptor );
+				array_push( $centros_receptor, $centros_receptor_nom );
+			}
+        }
+        return $centros_receptor;
+    }
+
+    function getNomCentreReceptor ( $centros_receptor_id ) {
+        $centro_donacion_nom = Centro::where( 'id', $centros_receptor_id )->pluck( 'nombre' );;
+		return $centro_donacion_nom;
     }
 }
 
