@@ -148,12 +148,11 @@ class DonacionController extends Controller
      * @param  \App\Models\Donacion  $donacion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Donacion $donacion)
+    public function destroy(Donacion $donacione)
     {
-        $donacion = Donacion::find($id);
         try{
-            if($donacion!=null){
-                $donacion->delete();
+            if($donacione!=null){
+                $donacione->delete();
                 return redirect()->action(self::CONTROLADOR .'index');
             }
         }catch(QueryException $e){

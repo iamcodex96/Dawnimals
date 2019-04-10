@@ -18,7 +18,7 @@
                                 <i class="fa fa-list fa-4x mb-3 text-left"></i>
                             </div>
                                 <div class="botonAdd col-3 text-right">
-                                <a href="" class="btn btn-secondary mr-2" data-toggle="tooltip" data-placement="top" title="Agregar donación"> <i class="fa fa-plus fa-2x"></i> </a>
+                                <a href="{{url('/backend/donaciones')}}" class="btn mr-2 btn-secondary" id="botonDonaciones" data-toggle="tooltip" data-placement="top" title="Agregar donación"> <i class="fa fa-plus fa-2x"></i> </a>
                                 </div>
                             </div>
                             <div class="row">
@@ -33,14 +33,14 @@
 
 
             <div class="col-xl-6 col-sm-6 py-2">
-                <div class="card text-white bg-secondary h-100">
-                    <div class="card-body bg-secondary">
+                <div class="card text-white h-100 " id="cardDonantes">
+                    <div class="card-body">
                         <div class="row">
                             <div class="text-left col-9">
                                 <i class="fa fa-user fa-4x mb-3"></i>
                             </div>
                                 <div class="botonAdd col-3 text-right">
-                                    <a href="" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Agregar donante"> <i class="fa fa-plus fa-2x"></i> </a>
+                                    <a href="{{url('/backend/donantes')}}" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Agregar donante"> <i class="fa fa-plus fa-2x"></i> </a>
                                 </div>
                             </div>
                             <div class="row">
