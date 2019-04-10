@@ -75,7 +75,7 @@
 
 <div class="form-group float-left col-md-6">
     <label for="ciudad" class="control-label">Coste</label>
-    <input type="number" class="form-control" id="coste" name="coste" placeholder="">
+    <input type="number" step="any" class="form-control" id="coste" name="coste" placeholder="">
 </div>
 
 <div class="form-group float-left col-md-6">

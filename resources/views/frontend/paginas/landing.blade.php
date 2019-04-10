@@ -14,10 +14,10 @@
         <div class="imgParallax3" id="background1">
                 <div class="explicacion">
                         <div class="row mt-0 mr-3">
-                            <div class="col-md-5 texto-container mt-5">
+                            <div class="col-md-5 texto-container bannerInitDerecha">
                                 <div class="texto">
                                     <p class="m-5 landingText">Gestionamos centros de acogida con una filosofía proteccionista, luchamos por la vida de los animales y trabajamos día tras día para evitar su sufrimiento. Nuestra tarea también es divulgativa: concienciamos a la sociedad sobre la tenencia responsable de los animales de compañía, los derechos de los animales, los beneficios de la adopción y una buena convivencia entre los animales y los ciudadanos</p>
-                                    <p class="m-5 landingText">¿Nos ayudas?</p>
+                                    <p class="landingText">¿Nos ayudas?</p>
                                 </div>
 
                                 <div class="logoQuienes text-center">
