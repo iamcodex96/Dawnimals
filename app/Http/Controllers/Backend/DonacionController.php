@@ -124,6 +124,8 @@ class DonacionController extends Controller
         $donacion->ruta_factura = $request->input('ruta_factura');
         $donacion->es_coordinada = $request->input('es_coordinada');
 
+        $donacion->desc_animal = Animal::find($request->input("animal_id"))->nombre;
+
         try{
             $donacion->save();
 
@@ -192,6 +194,8 @@ class DonacionController extends Controller
             $donacione->hay_factura = $request->input('hay_factura');
             $donacione->ruta_factura = $request->input('ruta_factura');
             $donacione->es_coordinada = $request->input('es_coordinada');
+
+            $donacione->desc_animal = Animal::find($request->input("animal_id"))->nombre;
 
             try{
                 $donacione->animales()->detach();
