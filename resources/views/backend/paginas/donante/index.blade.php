@@ -100,8 +100,6 @@
                     <button type="submit" name="submit" id="button-filter" class="btn btn-primary"><i class="fa fa-search"></i> {{__('backend.filtro')}}</button>
                     <input type="submit" name="submit" class="d-none" id="exportarExcel" value="excel">
                 </div>
-
-
         </div>
     </form>
 </div>

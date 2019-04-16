@@ -112,6 +112,7 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
      */
     public function guess($path)
     {
+
         if (!is_file($path)) {
             throw new FileNotFoundException($path);
         }
@@ -120,14 +121,16 @@ class MimeTypeGuesser implements MimeTypeGuesserInterface
             throw new AccessDeniedException($path);
         }
 
-        foreach ($this->guessers as $guesser) {
-            if (null !== $mimeType = $guesser->guess($path)) {
-                return $mimeType;
-            }
-        }
+        return "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
 
-        if (2 === \count($this->guessers) && !FileBinaryMimeTypeGuesser::isSupported() && !FileinfoMimeTypeGuesser::isSupported()) {
-            throw new \LogicException('Unable to guess the mime type as no guessers are available (Did you enable the php_fileinfo extension?)');
-        }
+        // foreach ($this->guessers as $guesser) {
+        //     if (null !== $mimeType = $guesser->guess($path)) {
+        //         return $mimeType;
+        //     }
+        // }
+
+        // if (2 === \count($this->guessers) && !FileBinaryMimeTypeGuesser::isSupported() && !FileinfoMimeTypeGuesser::isSupported()) {
+        //     throw new \LogicException('Unable to guess the mime type as no guessers are available (Did you enable the php_fileinfo extension?)');
+        // }
     }
 }

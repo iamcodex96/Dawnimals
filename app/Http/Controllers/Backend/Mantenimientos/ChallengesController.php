@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Classes\Utilitat;
 use Illuminate\Database\QueryException;
 use App\Exports\ConverterExcel;
+use Carbon\Carbon;
 
 class ChallengesController extends Controller
 {
@@ -68,8 +69,8 @@ class ChallengesController extends Controller
 
         $challenge->nombre = $request->input("nombre");
         $challenge->descripcion = $request->input("descripcion");
-        $challenge->fecha_ini = \DateTime::createFromFormat('d/m/Y', $request->input("fecha_ini"));
-        $challenge->fecha_fin = \DateTime::createFromFormat('d/m/Y', $request->input("fecha_fin"));
+        $challenge->fecha_ini = Carbon::createFromFormat('d/m/Y', $request->input("fecha_ini"))->startOfDay();
+        $challenge->fecha_fin = Carbon::createFromFormat('d/m/Y', $request->input("fecha_fin"))->endOfDay();
         $challenge->objetivo = $request->input("objetivo");
         $challenge->subtipo_id = $request->input("subtipo_id");
 
@@ -96,8 +97,8 @@ class ChallengesController extends Controller
     {
         $challenge->nombre = $request->input("nombre");
         $challenge->descripcion = $request->input("descripcion");
-        $challenge->fecha_ini = \DateTime::createFromFormat('d/m/Y', $request->input("fecha_ini"));
-        $challenge->fecha_fin = \DateTime::createFromFormat('d/m/Y', $request->input("fecha_fin"));
+        $challenge->fecha_ini = Carbon::createFromFormat('d/m/Y', $request->input("fecha_ini"))->startOfDay();
+        $challenge->fecha_fin = Carbon::createFromFormat('d/m/Y', $request->input("fecha_fin"))->endOfDay();
         $challenge->objetivo = $request->input("objetivo");
         $challenge->subtipo_id = $request->input("subtipo_id");
 

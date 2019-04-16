@@ -25,4 +25,21 @@ class Donacion extends Model
     {
         return $this->belongsTo('App\Models\Centro', 'centros_receptor_id');
     }
+
+    public function centro_destino(){
+        return $this->belongsTo('App\Models\Centro', 'centros_desti_id');
+    }
+
+    public function animales()
+    {
+        return $this->belongsToMany('App\Models\Animal', 'animales_donativos', 'donativos_id', 'animales_id');
+    }
+
+    public function usuario(){
+        return $this->belongsTo('App\Models\Usuario', 'usuarios_id');
+    }
+
+    public function usuario_recep(){
+        return $this->belongsTo('App\Models\Usuario', 'usuario_receptor');
+    }
 }
