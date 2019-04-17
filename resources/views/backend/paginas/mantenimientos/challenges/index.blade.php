@@ -70,6 +70,7 @@
                         @endforeach
                     </tbody>
             </table>
+            {{ $challenges->appends($_GET)->links() }}
 </div>
 
 @endsection

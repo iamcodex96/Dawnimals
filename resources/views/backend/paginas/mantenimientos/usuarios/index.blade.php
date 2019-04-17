@@ -65,4 +65,5 @@
         @endforeach
     </tbody>
 </table>
+{{ $usuarios->appends($_GET)->links() }}
 @endsection

@@ -22,59 +22,11 @@ class DonacionController extends Controller
 
     public function index(Request $request)
     {
-        $query = Donacion::query();
+        $resultado = Utilitat::cargaMantenimiento($request, Donacion::class, 'donaciones', __("backend.donacion"), $data, 25);
+        if ($resultado != null) return $resultado;
 
-        $data = [];
         $data["centros"] = Centro::all();
 
-        $query = Utilitat::setFiltros($request, $query, $data)->orderBy('fecha_donativo', 'DESC');
-
-        if ($request->input('submit') == 'excel'){
-
-            $queryFin = [];
-
-            foreach($query->get() as $donacion){
-
-                array_push($queryFin, [
-                    $donacion->fecha_donativo,
-                    $donacion->subtipos->tipos->nombre,
-                    \App::getLocale() == "ca" ? $donacion->subtipos->nombre_cat : $donacion->subtipos->nombre_esp,
-                    $donacion->centro->nombre,
-                    $donacion->centro_destino->nombre,
-                    $donacion->animales->first()->nombre,
-                    $donacion->usuario->nombre,
-                    $donacion->usuario_recep->nombre,
-                    $donacion->donantes != null ? $donacion->donantes->nombre : __("backend.anonimo"),
-                    $donacion->coste,
-                    $donacion->unidades,
-                    $donacion->peso,
-                    $donacion->es_coordinada == 1 ? __("backend.si") : __("backend.no")
-                ]);
-            }
-            $queryFin = collect($queryFin);
-
-            $headings = [
-                __("backend.fecha"),
-                __("backend.tipo"),
-                __("backend.subtipo"),
-                __("backend.centro_receptor"),
-                __("backend.centro_destino"),
-                __("backend.animal"),
-                __("backend.usuario"),
-                __("backend.usuario_receptor"),
-                __("backend.donante"),
-                __("backend.coste"),
-                __("backend.unidades"),
-                __("backend.peso"),
-                __("backend.es_coordinada"),
-
-            ];
-
-            return ConverterExcel::export($queryFin, $headings, __("backend.usuarios"));
-        }
-
-
-        $data['donaciones']=$query->paginate(25);
         return view(self::PREFIX.'index',$data);
     }
     /**

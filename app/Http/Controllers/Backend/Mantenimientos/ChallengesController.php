@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Classes\Utilitat;
 use Illuminate\Database\QueryException;
-use App\Exports\ConverterExcel;
 use Carbon\Carbon;
 
 class ChallengesController extends Controller
@@ -18,39 +17,9 @@ class ChallengesController extends Controller
 
     public function index(Request $request)
     {
-        $query = Challenge::query();
+        $resultado = Utilitat::cargaMantenimiento($request, Challenge::class, 'challenges', __("backend.challenges"), $data, 20);
+        if ($resultado != null) return $resultado;
 
-        $data = [];
-        $query = Utilitat::setFiltros($request, $query, $data);
-
-        if ($request->input('submit') == 'excel'){
-            $queryFin = [];
-
-            foreach($query->get() as $item){
-                array_push($queryFin, [
-                    $item->nombre,
-                    $item->descripcion,
-                    $item->fecha_ini,
-                    $item->fecha_fin,
-                    $item->objetivo,
-                    \App::getLocale() != "ca" ? $item->subtipo->nombre_cat : $item->subtipo->nombre_esp
-                ]);
-            }
-            $queryFin = collect($queryFin);
-
-            $headings = [
-                __("backend.nombre"),
-                __("backend.descripcion"),
-                __("backend.fecha_ini"),
-                __("backend.fecha_fin"),
-                __("backend.objetivo"),
-                __("backend.subtipo")
-            ];
-
-            return ConverterExcel::export($queryFin, $headings, __("backend.challenges"));
-        }
-
-        $data["challenges"] = $query->paginate(8);
         $data["subtipos"] = Subtipo::all();
 
         return view(self::PREFIX . "index", $data);

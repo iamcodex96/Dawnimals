@@ -24,35 +24,9 @@ class UsuariosController extends Controller
 
     public function index(Request $request)
     {
-        $query = Usuario::query();
+        $resultado = Utilitat::cargaMantenimiento($request, Usuario::class, 'usuarios', __("backend.usuarios"), $data, 10);
+        if ($resultado != null) return $resultado;
 
-        $data = [];
-        $query = Utilitat::setFiltros($request, $query, $data);
-
-        if ($request->input('submit') == 'excel'){
-            $queryFin = [];
-
-            foreach($query->get() as $item){
-                array_push($queryFin, [
-                    $item->nombre,
-                    $item->nombre_usuario,
-                    $item->correo,
-                    $item->admin ? __("backend.administrador") : __("backend.trabajador")
-                ]);
-            }
-            $queryFin = collect($queryFin);
-
-            $headings = [
-                __("backend.nombre"),
-                __("backend.usuario"),
-                __("backend.correo"),
-                __("backend.perfil")
-            ];
-
-            return ConverterExcel::export($queryFin, $headings, __("backend.usuarios"));
-        }
-
-        $data["usuarios"] = $query->paginate(10);
         $data["roles"] = $this->getRoles();
 
         return view(self::PREFIX . "index", $data);
