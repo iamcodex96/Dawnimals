@@ -15,8 +15,6 @@ Route::middleware('locale')->group(function(){
     Route::get('/landing', function () {
         $retos = Challenge::whereDate('fecha_ini', '<=', Carbon::now())->whereDate('fecha_fin', '>=', Carbon::now())->get();
         foreach($retos as $reto){
-            $reto->cantidad = $reto->subtipo->donacion()->whereDate('fecha_donativo', '>=', $reto->fecha_ini)->whereDate('fecha_donativo', '<=', $reto->fecha_fin)->sum('peso');
-
             if ($reto->objetivo == 0){
                 $reto->objetivo = 1;
             }
@@ -55,8 +53,7 @@ Route::middleware('locale')->group(function(){
                 $completados = 0;
                 $retos = Challenge::whereDate('fecha_ini', '<=', Carbon::now())->whereDate('fecha_fin', '>=', Carbon::now())->get();
                 foreach($retos as $reto){
-                    $reto->cantidad = $reto->subtipo->donacion()->whereDate('fecha_donativo', '>=', $reto->fecha_ini)->whereDate('fecha_donativo', '<=', $reto->fecha_fin)->sum('peso');
-                    if ($reto->cantidad >= $reto->objetivo) $completados++;
+                    if ($reto->getCantidad() >= $reto->objetivo) $completados++;
                 }
                 $data["retos_completados"] = $completados;
                 $data["retos_total"] = count($retos);

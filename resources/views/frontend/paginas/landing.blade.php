@@ -131,7 +131,7 @@
                     </div>
                     <div class="col-12  mb-4">
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{ ($reto->cantidad / $reto->objetivo) * 100 }}%" aria-valuenow="{{ $reto->cantidad }}" aria-valuemin="0" aria-valuemax="{{ $reto->objetivo }}"></div>
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{ ($reto->getCantidad() / $reto->objetivo) * 100 }}%" aria-valuenow="{{ $reto->getCantidad() }}" aria-valuemin="0" aria-valuemax="{{ $reto->objetivo }}"></div>
                         </div>
                     </div>
                 @endforeach
