@@ -1,0 +1,25 @@
+.challenge img {
+  display: none;
+}
+.challenge .progress {
+  height: 50px;
+  border-radius: 25px;
+}
+.challenge.completado {
+  position: relative;
+}
+.challenge.completado img {
+  display: block;
+  position: absolute;
+  height: 110px;
+  z-index: 100;
+  opacity: 1;
+  right: 88px;
+  transform: rotate(12deg);
+  border-radius: 50% !important;
+}
+.challenge.completado > div {
+  opacity: 0.2;
+}
+
+/*# sourceMappingURL=challenges.css.map */

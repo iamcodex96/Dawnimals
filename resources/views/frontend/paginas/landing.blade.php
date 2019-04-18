@@ -1,78 +1,84 @@
 @extends('frontend.plantillas.master')
-
 @section('css_propio')
 <link rel="stylesheet" href="{{ asset('css/frontend/landing.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/challenges.css') }}">
 @endsection
 
-@section('titulo')
-    Landing
+@section('titulo') Landing
 @endsection
 
 @section('contenido')
 <nav class="nav flex-column p-0 navegacion">
-        <a href="#primero" onclick="updateIcon(0,'primero')" data-toggle="tooltip" data-placement="left" title="Opcion 1" class="nav-link mt-3"><i class="fas fa-circle"></i></a>
-        <a href="#segundo" onclick="updateIcon(1,'segundo')" data-toggle="tooltip" data-placement="left" title="Opcion 2" class="nav-link mt-3"><i class="far fa-circle"></i></a>
-        <a href="#tercero" onclick="updateIcon(2,'tercero')" data-toggle="tooltip" data-placement="left" title="Opcion 3" class="nav-link mt-3"><i class="far fa-circle"></i></a>
-        <a href="#cuarto" onclick="updateIcon(3,'cuarto')" data-toggle="tooltip" data-placement="left" title="Opcion 4" class="nav-link mt-3"><i class="far fa-circle"></i></a>
-    </nav>
+    <a href="#primero" onclick="updateIcon(0,'primero')" data-toggle="tooltip" data-placement="left" title="Opcion 1" class="nav-link mt-3"><i class="fas fa-circle"></i></a>
+    <a href="#segundo" onclick="updateIcon(1,'segundo')" data-toggle="tooltip" data-placement="left" title="Opcion 2" class="nav-link mt-3"><i class="far fa-circle"></i></a>
+    <a href="#tercero" onclick="updateIcon(2,'tercero')" data-toggle="tooltip" data-placement="left" title="Opcion 3" class="nav-link mt-3"><i class="far fa-circle"></i></a>
+    <a href="#cuarto" onclick="updateIcon(3,'cuarto')" data-toggle="tooltip" data-placement="left" title="Opcion 4" class="nav-link mt-3"><i class="far fa-circle"></i></a>
+</nav>
 <main data-spy="scroll" data-target="#list-opciones" class="container-fluid">
     <div id="primero">
         <div class="imgParallax3" id="background1">
-                <div class="explicacion">
-                        <div class="row mt-0 mr-3">
-                            <div class="col-md-5 texto-container bannerInitDerecha">
-                                <div class="texto">
-                                    <p class="m-5 landingText">Gestionamos centros de acogida con una filosofía proteccionista, luchamos por la vida de los animales y trabajamos día tras día para evitar su sufrimiento. Nuestra tarea también es divulgativa: concienciamos a la sociedad sobre la tenencia responsable de los animales de compañía, los derechos de los animales, los beneficios de la adopción y una buena convivencia entre los animales y los ciudadanos</p>
-                                    <p class="landingText">¿Nos ayudas?</p>
-                                </div>
+            <div class="explicacion">
+                <div class="row mt-0 mr-3">
+                    <div class="col-md-5 texto-container bannerInitDerecha">
+                        <div class="texto">
+                            <p class="m-5 landingText">Gestionamos centros de acogida con una filosofía proteccionista, luchamos por la vida de los
+                                animales y trabajamos día tras día para evitar su sufrimiento. Nuestra tarea también es divulgativa:
+                                concienciamos a la sociedad sobre la tenencia responsable de los animales de compañía, los
+                                derechos de los animales, los beneficios de la adopción y una buena convivencia entre los
+                                animales y los ciudadanos</p>
+                            <p class="landingText">¿Nos ayudas?</p>
+                        </div>
 
-                                <div class="logoQuienes text-center">
-                                  <img src="{{ asset('./img/logo_OK_transparencia_2.png') }}" width="350px" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-6 texto-container mt-5">  </div>
+                        <div class="logoQuienes text-center">
+                            <img src="{{ asset('./img/logo_OK_transparencia_2.png') }}" width="350px" alt="">
                         </div>
                     </div>
+                    <div class="col-md-6 texto-container mt-5"> </div>
                 </div>
+            </div>
+        </div>
     </div>
 
     <div class="intermedio">
-    <div class="col-md-12 col-sm-0 imgParallax2" id="imghuellas">
-    </div>
-
-
-    </div>
-
-    {{-- <div class="imgParallax" id="img1">
-        </div> --}}
+        <div class="col-md-12 col-sm-0 imgParallax2" id="imghuellas">
         </div>
+
+
+    </div>
+
+    {{--
+    <div class="imgParallax" id="img1">
+    </div> --}}
+    </div>
     </div>
     <div id="segundo" class="p-5">
-        <h1 class="" z-index= "-1">¿ Como puedes ayudar ?</h1>
+        <h1 class="" z-index="-1">¿ Como puedes ayudar ?</h1>
 
-        <h2 class="texto-container text-center mb-5" z-index= "-1">eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse luctus per interdum ad.</h2>
+        <h2 class="texto-container text-center mb-5" z-index="-1">eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis
+            natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse
+            luctus per interdum ad.</h2>
         <div class="row">
             <div class="col-md-4">
-                    <div class="card rounded-circle">
-                        <img class="card-img-top" src="{{ asset('./img/insta001.png') }}" alt="Card image cap">
-                        <h2 class="text-center"> Dona amor</h2>
-                        <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_AMOR.png') }}" width="70px" alt=""></div>
+                <div class="card rounded-circle">
+                    <img class="card-img-top" src="{{ asset('./img/insta001.png') }}" alt="Card image cap">
+                    <h2 class="text-center"> Dona amor</h2>
+                    <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_AMOR.png') }}" width="70px" alt=""></div>
 
-                    </div>
+                </div>
             </div>
             <div class="col-md-4">
-                    <div class="card rounded-circle">
-                        <img class="card-img-top" src="{{ asset('./img/insta002.png') }}" alt="Card image cap">
-                        <h2 class="text-center"> Dona dinero</h2>
-                        <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_MONEDA.png') }}" width="70px" alt=""></div>
-                    </div>
+                <div class="card rounded-circle">
+                    <img class="card-img-top" src="{{ asset('./img/insta002.png') }}" alt="Card image cap">
+                    <h2 class="text-center"> Dona dinero</h2>
+                    <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_MONEDA.png') }}" width="70px" alt=""></div>
+                </div>
             </div>
             <div class="col-md-4">
-                    <div class="card rounded-circle">
-                        <img class="card-img-top" src="{{ asset('./img/insta003.png') }}" alt="Card image cap">
-                        <h2 class="text-center"> Dona tiempo</h2>
-                        <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_TIEMPO.png') }}" width="70px" alt=""></div>
-                    </div>
+                <div class="card rounded-circle">
+                    <img class="card-img-top" src="{{ asset('./img/insta003.png') }}" alt="Card image cap">
+                    <h2 class="text-center"> Dona tiempo</h2>
+                    <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_TIEMPO.png') }}" width="70px" alt=""></div>
+                </div>
             </div>
         </div>
 
@@ -80,39 +86,43 @@
 
     <div id="tercero" class="p-5">
         <h1 class="">Nuestras donaciones</h1>
-        <h2 class="texto-container text-center mb-5">eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse luctus per interdum ad.</h2>
+        <h2 class="texto-container text-center mb-5">eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis
+            natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse
+            luctus per interdum ad.</h2>
 
         <div class="row">
 
-                <div class="col-md-6 col-sm-12 quesito">
+            <div class="col-md-6 col-sm-12 quesito">
 
-                        <!-- Area Chart -->
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <i class="fa fa-area-chart"></i> Donaciones del mes </div>
-                            <div class="card-body">
-                                <canvas id="myAreaChart" width="100%" height="30"></canvas>
-                            </div>
-                            <div class="card-footer small text-muted">Updated yesterday at @php  echo date('F j, Y', time() ) @endphp</div>
-                        </div>
-
-                </div>
-
-                <div class="col-md-6 col-sm-12 line">
-                    <!-- Area Chart -->
-                    <div class="card mb-3">
-                        <div class="card-header">
-                            <i class="fa fa-area-chart"></i> Donaciones por animal </div>
-                        <div class="card-body">
-                            <canvas id="doughnutChar" width="100%" height="30"></canvas>
-                        </div>
-                        <div class="card-footer small text-muted">Updated yesterday at @php  echo date('F j, Y', time() ) @endphp</div>
+                <!-- Area Chart -->
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fa fa-area-chart"></i> Donaciones del mes </div>
+                    <div class="card-body">
+                        <canvas id="myAreaChart" width="100%" height="30"></canvas>
                     </div>
+                    <div class="card-footer small text-muted">Updated yesterday at @php echo date('F j, Y', time() )
+@endphp</div>
                 </div>
 
-                <div class="col-md-12 text-center mb-5">
-                    <a name="" id="" class="btn btn-primary" href="#" role="button">DONACIONES</a>
+            </div>
+
+            <div class="col-md-6 col-sm-12 line">
+                <!-- Area Chart -->
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fa fa-area-chart"></i> Donaciones por animal </div>
+                    <div class="card-body">
+                        <canvas id="doughnutChar" width="100%" height="30"></canvas>
+                    </div>
+                    <div class="card-footer small text-muted">Updated yesterday at @php echo date('F j, Y', time() )
+@endphp</div>
                 </div>
+            </div>
+
+            <div class="col-md-12 text-center mb-5">
+                <a name="" id="" class="btn btn-primary" href="#" role="button">DONACIONES</a>
+            </div>
         </div>
 
 
@@ -122,32 +132,36 @@
         <h1 class="">{{ __("frontend.nuestros_retos") }}</h1>
         <h2 class="texto-container text-center mb-5">Participa en nuestros retos y ayudanos a cumplir nuestra meta :).</h2>
         <div class="container">
-            <div class="row">
-                @foreach($retos as $reto)
-                    <div class="col-12 d-flex justify-content-between">
-                        <h4 style="width:110px">0 {{ $reto->subtipo->tipo_unidad}}</h4>
-                        <h4>{{ $reto->subtipo->nombre_cat }}</h4>
-                        <h4 style="width:110px" class="text-right">{{ $reto->objetivo }} {{ $reto->subtipo->tipo_unidad}}</h4>
-                    </div>
-                    <div class="col-12  mb-4">
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{ ($reto->getCantidad() / $reto->objetivo) * 100 }}%" aria-valuenow="{{ $reto->getCantidad() }}" aria-valuemin="0" aria-valuemax="{{ $reto->objetivo }}"></div>
+
+            @foreach($retos as $reto)
+            <div class="row challenge {{ ($reto->getCantidad() >= $reto->objetivo) ? "completado" : "" }}">
+                <img class="shadow" src="{{ asset('img/SPAMI_RETO_SS.png') }}">
+                <div class="col-12 d-flex justify-content-between">
+                    <div style="width:110px"></div>
+                    <h4>{{ $reto->subtipo->nombre_cat }}</h4>
+                    <h4 style="width:110px" class="text-right">{{ $reto->objetivo }} {{ $reto->subtipo->tipo_unidad}}</h4>
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{ ($reto->getCantidad() / $reto->objetivo) * 100 }}%"
+                            aria-valuenow="{{ $reto->getCantidad() }}" aria-valuemin="0" aria-valuemax="{{ $reto->objetivo }}">
+                            <h5 class="mb-0">{{$reto->getCantidad()}} {{ $reto->subtipo->tipo_unidad}}</h5>
                         </div>
                     </div>
-                @endforeach
+                </div>
             </div>
+            @endforeach
         </div>
     </div>
 </main>
-
 @endsection
 
-@section('js_loaded')
-{{-- <script src="{{ asset('./js/frontend/landing.js') }}"></script> --}}
-    <script src="{{url( 'js/charts/jquery.min.js' )}}"></script>
+@section('js_loaded') {{--
+<script src="{{ asset('./js/frontend/landing.js') }}"></script> --}}
+<script src="{{url( 'js/charts/jquery.min.js' )}}"></script>
 
-    <script src="{{url( 'js/charts/Chart.min.js' )}}"></script>
+<script src="{{url( 'js/charts/Chart.min.js' )}}"></script>
 
-    <script src="{{url( 'js/charts/create-line_bar-charts.js' )}}"></script>
-    <script src="{{url( 'js/charts/create-doughnut-chart.js' )}}"></script>
+<script src="{{url( 'js/charts/create-line_bar-charts.js' )}}"></script>
+<script src="{{url( 'js/charts/create-doughnut-chart.js' )}}"></script>
 @endsection
