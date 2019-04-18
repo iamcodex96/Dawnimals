@@ -7,12 +7,16 @@ return [
     "who-recogida"=>"Recogida y acogida de animales perdidos y abandonados",
     "who-recogida-desc"=>"En los centros de acogida que gestionamos, ofrecemos bienestar y atención veterinaria a los animales hasta que son adoptados",
     "who-gestion"=>"Gestión de colonias de gatos callejeros",
-    "who-gestion-desc"=>"We sterilize, feed and take care of the hygiene and sanitary control of the stray cats of the colonies that we control.",
+    "who-gestion-desc"=>"Esterilizamos, alimentamos y nos ocupamos de la higiene y del control sanitario de los gatos callejeros de las colonias que controlamos.",
     "who-fomento"=>"Fomento de la adopción",
     "who-fomento-desc"=>"Que los animales sean adoptados es nuestra prioridad. Trabajamos para divulgar y dar a conocer a los animales de los refugios, y ayudamos a los animales que lo tienen más dificil mediante campañas específicas que faciliten su adopción.",
     "who-sensibilizacion"=>"Sensibilización",
     "who-sensibilizacion-desc"=>"Acercamos a la ciudadanía la realidad del abandono de los animales de compañía y la necesidad de tenerlos de manera responsable.",
     "who-junta"=>"Junta directiva",
+    "who-presidenta"=>"Presidenta",
+    "who-vpresidenta"=>"Vice-presidenta",
+    "who-social"=>"Gestor de eventos y redes sociales",
+    "who-tresorera"=>"Tesorera",
     "nuestros_retos"=>"Nuestros retos",
     ]
 

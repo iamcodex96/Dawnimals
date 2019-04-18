@@ -14,5 +14,9 @@ return [
     "who-sensibilizacion"=>"Awareness",
     "who-sensibilizacion-desc"=>"We bring the public the reality of the abandonment of pets and the need for them responsibly.",
     "who-junta"=>"Board of directors",
+    "who-presidenta"=>"President",
+    "who-vpresidenta"=>"Vice-president",
+    "who-social"=>"Social Media & Event Manager",
+    "who-tresorera"=>"Tresurer",
 ]
 ?>

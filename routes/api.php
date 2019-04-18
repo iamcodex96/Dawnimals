@@ -12,10 +12,10 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::apiResource('donantes','API\DonanteController');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 Route::get('/donacionesData', 'API\GlobalAPIController@getDonacionesData');
+Route::get('/donantes', 'API\GlobalAPIController@getDonantesData');
 Route::get('/subtipo/{id}', 'API\GlobalAPIController@getSubTiposByTipo');
