@@ -66,13 +66,13 @@
     <label for="ciudad" class="control-label">Donante</label>
     <div class="row">
         <div class="col-md-9">
-            <input type="hidden" id="donantes_id">
-            <input type="text" class="form-control" id="donantes_nombre" readonly>
+            <input id="d-id" type="hidden" name="donantes_id" id="donantes_id">
+            <input id="d-nombre" type="text" class="form-control" id="donantes_nombre" readonly>
         </div>
 
         <div class="col-md-3">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalBuscarDonante"><i class="fas fa-search"></i></a>
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalCreateDoanante"><i class="fas fa-plus"></i></a>
+            <button type="button" class="btn btn-primary mr-1" data-toggle="modal" data-target="#modalBuscarDonante"><i class="fas fa-search"></i></a>
+            <button type="button" class="btn btn-success ml-1" data-toggle="modal" data-target="#modalCreateDoanante"><i class="fas fa-plus"></i></a>
         </div>
     </div>
 
@@ -138,6 +138,21 @@
                 </button>
             </div>
             <div class="modal-body">
+                <div>
+                    <div class="row">
+                        <div class="form-group float-left col-md-6">
+                            <label for="cif" class="control-label">DNI/CIF</label>
+                            <input type="text" id="input-cif" class="form-control">
+                        </div>
+                        <div class="form-group float-left col-md-6">
+                            <label for="cp" class="control-label">Correo</label>
+                            <input type="text" id="input-correo" class="form-control">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary">Filtrar</button>
+                </div>
+
+                <hr>
             <div class="table-responsive text-center">
                 <table class="table table-striped">
                     <thead class=" thead-dark">
@@ -163,7 +178,7 @@
     </div>
 </div>
 <div class="modal fade" id="modalCreateDoanante" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 1200px" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title modalTitulo">Nuevo Donante</h5>
@@ -172,10 +187,35 @@
                 </button>
             </div>
             <div class="modal-body">
-                Crear
+                <div class="row">
+                        <div class="form-group col-md-6">
+                            <!-- State Button -->
+                            <label for="tipoD" class="control-label">{{__('backend.tipo_donante')}}</label>
+                            <select id="selTipoDonante" class="form-control">
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <!-- State Button -->
+                            <label for="tipoD" class="control-label">{{__('backend.sexo')}}</label>
+                            <select id="selSexos" class="form-control">
+                            </select>
+                        </div>
+                        <div class="form-group float-left col-md-6">
+                            <label for="full_name_id" class="control-label">{{__('backend.nombre_donante')}}</label>
+                            <input type="text" class="form-control" id="nombreD" name="full_name" placeholder="">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="cif" class="control-label">CIF/NIF</label>
+                            <input type="text" class="form-control" id="cif" name="cif" placeholder="">
+                        </div>
+                        <div class="form-group float-left col-md-12">
+                            <label for="email" class="control-label">{{__('backend.correo')}}</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="">
+                        </div>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btnAceptar">{{ __('backend.aceptar') }}</button>
+                <button type="button" onclick="guardarDonante()" class="btn btn-primary btnAceptar">{{ __('backend.guardar') }}</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('backend.cancelar') }}</button>
             </div>
         </div>
@@ -191,6 +231,11 @@
     </script>
     <script src="{{ asset('js/api/donacionesAPI.js') }}"></script>
     <script>
-
+        function setDonante(id,nombre){
+            var inputId = $('#d-id');
+            var inputNombre = $('#d-nombre');
+            inputId.val(id);
+            inputNombre.val(nombre);
+        }
     </script>
 @endsection

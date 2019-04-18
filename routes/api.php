@@ -18,4 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/donacionesData', 'API\GlobalAPIController@getDonacionesData');
 Route::get('/donantes', 'API\GlobalAPIController@getDonantesData');
+Route::post('/crearDonante','API\GlobalAPIController@createDonante');
 Route::get('/subtipo/{id}', 'API\GlobalAPIController@getSubTiposByTipo');

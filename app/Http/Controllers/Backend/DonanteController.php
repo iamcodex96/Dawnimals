@@ -76,7 +76,6 @@ class DonanteController extends Controller
             $donante->correo = $request->input('email');
             $donante->tiene_aninales = $request->input('tieneAnimales');
             $donante->es_habitual = $request->input('esHabitual');
-            $meh = $request->input('animal_id');
             if ($request->input('spam') == null) {
                 $donante->spam = false;
             } else {

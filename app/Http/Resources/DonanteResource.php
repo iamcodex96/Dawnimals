@@ -16,7 +16,9 @@ class DonanteResource extends JsonResource
     {
         //return parent::toArray($request);
         return [
-            "donantes" => $this['donante']
+            "donantes" => $this['donante'],
+            "tipoDonantes"=>$this['tipoDonante'],
+            "sexos"=>$this['sexo']
         ];
     }
 }
