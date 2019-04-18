@@ -65,11 +65,14 @@
 <div class="form-group float-left col-md-6">
     <label for="ciudad" class="control-label">Donante</label>
     <div class="row">
-        <div class="col-md-9"><input type="text" class="form-control" readonly></div>
+        <div class="col-md-9">
+            <input type="hidden" id="donantes_id">
+            <input type="text" class="form-control" id="donantes_nombre" readonly>
+        </div>
 
         <div class="col-md-3">
-            <a class="btn btn-primary" data-toggle="modal" data-target="#modalBuscarDonante"><i class="fas fa-search"></i></a>
-            <a class="btn btn-success" data-toggle="modal" data-target="#modalCreateDoanante"><i class="fas fa-plus"></i></a>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalBuscarDonante"><i class="fas fa-search"></i></a>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalCreateDoanante"><i class="fas fa-plus"></i></a>
         </div>
     </div>
 
@@ -126,7 +129,7 @@
 </div>
 
 <div class="modal fade" id="modalBuscarDonante" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 1200px" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title modalTitulo">Donantes</h5>
@@ -153,8 +156,8 @@
             </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btnAceptar">aceptar</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">cancelar</button>
+                <button type="button" class="btn btn-primary btnAceptar">{{ __('backend.aceptar') }}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('backend.cancelar') }}</button>
             </div>
         </div>
     </div>
@@ -172,8 +175,8 @@
                 Crear
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btnAceptar">aceptar</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">cancelar</button>
+                <button type="button" class="btn btn-primary btnAceptar">{{ __('backend.aceptar') }}</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('backend.cancelar') }}</button>
             </div>
         </div>
     </div>
