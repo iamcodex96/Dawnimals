@@ -2,6 +2,8 @@
 
 namespace App\Classes;
 
+use App\Exports\ConverterExcel;
+
 class Utilitat
 {
     public static function setFiltros($request, $query, &$data){
@@ -87,6 +89,19 @@ class Utilitat
             }
         }
         return $query;
+    }
+
+    public static function cargaMantenimiento($request, $clase, $nombreListado, $nombreExcel, &$data, $cantidadPaginacion = null) {
+        $query = $clase::query();
+
+        $data = [];
+        $query = self::setFiltros($request, $query, $data);
+
+        if ($request->input('submit') == 'excel') {
+            return ConverterExcel::export($query, $nombreExcel);
+        }
+
+        $data[$nombreListado] = $cantidadPaginacion == null ? $query->get() : $query->paginate($cantidadPaginacion);
     }
 
     public static function controlError($ex)

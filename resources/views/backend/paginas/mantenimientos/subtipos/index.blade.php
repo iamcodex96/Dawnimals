@@ -67,4 +67,5 @@
             @endforeach
         </tbody>
 </table>
+{{ $subtipos->appends($_GET)->links() }}
 @endsection

@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Donante;
+use App\Classes\Utilitat;
+use App\Http\Controllers\Controller;
+use App\Models\Animal;
 use App\Models\Donacion;
+use App\Models\Donante;
 use App\Models\Sexo;
 use App\Models\TipoDonante;
-use App\Models\Animal;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
-use App\Classes\Utilitat;
-use App\Exports\ConverterExcel;
-
 
 class DonanteController extends Controller
 {
@@ -26,50 +24,14 @@ class DonanteController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Donante::query();
+        $resultado = Utilitat::cargaMantenimiento($request, Donante::class, 'donantes', 'Donantes', $data);
+        if ($resultado != null) return $resultado;
 
-        $data = [];
-        $query = Utilitat::setFiltros($request, $query, $data);
-
-        if ($request->input('submit') == 'excel'){
-            $queryFin =[];
-            foreach($query->get() as $item){
-                \array_push($queryFin,[
-                    $item->tipos_donantes_id,
-                    $item->nombre,
-                    $item->cif,
-                    $item->direcion,
-                    $item->poblacion,
-                    $item->telefono,
-                    $item->pais,
-                    $item->cp,
-                    $item->sexos_id,
-                    $item->correo,
-                    $item->tiene_aninales,
-                    $item->es_habitual,
-                    $item->spam,
-                    $item->es_colaborador,
-                    $item->tipo_colaboracion,
-                    $item->vinculo_entidad,
-                    $item->fecha_alta,
-                ]);
-            };
-            $queryFin = collect($queryFin);
-            $headings = [
-                'id','Tipos donantes','habitual','nombre','cif','codigo postal','sexos','tiene animales','telefono',
-                'correo','direccion','vinculo entidad','spam','poblacion','pais','colaborador','tipo colaboracion',
-                'fecha alta'
-            ];
-
-            return ConverterExcel::export($queryFin, $headings, "Donantes");
-        }
-
-        $data['donantes'] = $query->get();
         $data['animales'] = Animal::all();
         $data['sexos'] = Sexo::all();
         $data['tipos_donante'] = TipoDonante::all();
 
-        return view(self::PREFIX.'index',$data);
+        return view(self::PREFIX . 'index', $data);
     }
 
     /**
@@ -79,11 +41,11 @@ class DonanteController extends Controller
      */
     public function create()
     {
-        $data['sexos']=Sexo::all();
-        $data['tipodonantes']=TipoDonante::all();
+        $data['sexos'] = Sexo::all();
+        $data['tipodonantes'] = TipoDonante::all();
         $data['animales'] = Animal::all();
 
-        return view(self::PREFIX.'create',$data);
+        return view(self::PREFIX . 'create', $data);
     }
 
     /**
@@ -96,11 +58,11 @@ class DonanteController extends Controller
     {
 
         $validation = validator($request->all());
-        if($validation->fails()){
+        if ($validation->fails()) {
             return redirect('DonanteController@create')
-                        ->withErrors($validator)
-                        ->withInput();
-        }else{
+                ->withErrors($validator)
+                ->withInput();
+        } else {
             $donante = new Donante();
             $donante->tipos_donantes_id = $request->input('tipoD');
             $donante->nombre = $request->input('full_name');
@@ -114,11 +76,10 @@ class DonanteController extends Controller
             $donante->correo = $request->input('email');
             $donante->tiene_aninales = $request->input('tieneAnimales');
             $donante->es_habitual = $request->input('esHabitual');
-            $meh = $request->input('animal_id');
-            if($request->input('spam')==null){
-                $donante->spam =false;
-            }else{
-                $donante->spam =true;
+            if ($request->input('spam') == null) {
+                $donante->spam = false;
+            } else {
+                $donante->spam = true;
             }
 
             $donante->es_colaborador = $request->input('esColaborador');
@@ -126,19 +87,18 @@ class DonanteController extends Controller
             $donante->vinculo_entidad = $request->input('vinculo');
             $donante->fecha_alta = (new \DateTime())->format('Y-m-d H:i:s');
 
-            try{
+            try {
                 $donante->save();
 
                 $donante->animales()->attach($request->input('animal_id'));
 
-                return redirect()->action(self::CONTROLADOR .'index');
-            }catch(QueryException $e){
+                return redirect()->action(self::CONTROLADOR . 'index');
+            } catch (QueryException $e) {
                 $error = Utilitat::errorMessages($e);
-                $request->session()->flash('error',$error);
-                return redirect()->action(self::CONTROLADOR .'create')->withInput();
+                $request->session()->flash('error', $error);
+                return redirect()->action(self::CONTROLADOR . 'create')->withInput();
             }
         }
-
 
     }
     protected function validator(array $data)
@@ -146,10 +106,10 @@ class DonanteController extends Controller
         return Validator::make($data, [
             'tipoD' => ['required', 'int'],
             'full_name' => ['string', 'max:64'],
-            'telefono'=>['number','max:45'],
-            'cif' => ['unique:donantes','string', 'max:9','min:9'],
-            'direccion'=> ['max:45'],
-            'ciudad'=> ['max:45']
+            'telefono' => ['number', 'max:45'],
+            'cif' => ['unique:donantes', 'string', 'max:9', 'min:9'],
+            'direccion' => ['max:45'],
+            'ciudad' => ['max:45'],
         ]);
     }
 
@@ -161,12 +121,12 @@ class DonanteController extends Controller
      */
     public function show(Donante $donante)
     {
-        $data['donante']=$donante;
-        $donaciones=Donacion::where('donantes_id',$donante->id)->get();
+        $data['donante'] = $donante;
+        $donaciones = Donacion::where('donantes_id', $donante->id)->get();
         $data['donaciones'] = $donaciones;
-        $data['titulo']=$donante->nombre;
+        $data['titulo'] = $donante->nombre;
 
-        return view(self::PREFIX.'show',$data);
+        return view(self::PREFIX . 'show', $data);
     }
 
     /**
@@ -177,12 +137,12 @@ class DonanteController extends Controller
      */
     public function edit(Donante $donante)
     {
-        $data['donante']=$donante;
-        $data['sexos']=Sexo::all();
-        $data['tipodonantes']=TipoDonante::all();
+        $data['donante'] = $donante;
+        $data['sexos'] = Sexo::all();
+        $data['tipodonantes'] = TipoDonante::all();
         $data['animales'] = Animal::all();
 
-        return view(self::PREFIX.'edit',$data);
+        return view(self::PREFIX . 'edit', $data);
     }
 
     /**
@@ -195,11 +155,11 @@ class DonanteController extends Controller
     public function update(Request $request, Donante $donante)
     {
         $validation = validator($request->all());
-        if($validation->fails()){
+        if ($validation->fails()) {
             return redirect('DonanteController')
-                        ->withErrors($validator)
-                        ->withInput();
-        }else{
+                ->withErrors($validator)
+                ->withInput();
+        } else {
             $donante->tipos_donantes_id = $request->input('tipoD');
             $donante->nombre = $request->input('full_name');
             $donante->cif = $request->input('cif');
@@ -212,26 +172,26 @@ class DonanteController extends Controller
             $donante->correo = $request->input('email');
             $donante->tiene_aninales = $request->input('tieneAnimales');
             $donante->es_habitual = $request->input('esHabitual');
-            if($request->input('spam')==null){
-                $donante->spam =false;
-            }else{
-                $donante->spam =true;
+            if ($request->input('spam') == null) {
+                $donante->spam = false;
+            } else {
+                $donante->spam = true;
             }
             $donante->es_colaborador = $request->input('esColaborador');
             $donante->tipo_colaboracion = $request->input('tipoColaborador');
             $donante->vinculo_entidad = $request->input('vinculo');
             $donante->fecha_alta = (new \DateTime())->format('Y-m-d H:i:s');
 
-            try{
+            try {
                 $donante->animales()->detach();
                 $donante->animales()->attach($request->input('animal_id'));
 
                 $donante->save();
-                return redirect()->action(self::CONTROLADOR .'index');
-            }catch(QueryException $e){
+                return redirect()->action(self::CONTROLADOR . 'index');
+            } catch (QueryException $e) {
                 $error = Utilitat::errorMessages($e);
-                $request->session()->flash('error',$error);
-                return redirect()->action(self::CONTROLADOR .'edit')->withInput();
+                $request->session()->flash('error', $error);
+                return redirect()->action(self::CONTROLADOR . 'edit')->withInput();
             }
         }
     }
@@ -244,21 +204,21 @@ class DonanteController extends Controller
      */
     public function destroy(Donante $donante)
     {
-        try{
-            if($donante!=null){
+        try {
+            if ($donante != null) {
                 $donante->animales()->detach();
-                $donaciones = Donacion::where('donantes_id',$donante->id)->get();
+                $donaciones = Donacion::where('donantes_id', $donante->id)->get();
                 foreach ($donaciones as $d) {
                     $d->donantes_id = null;
                     $d->save();
                 }
                 $donante->delete();
-                return redirect()->action(self::CONTROLADOR .'index');
+                return redirect()->action(self::CONTROLADOR . 'index');
             }
-        }catch(QueryException $e){
+        } catch (QueryException $e) {
             $error = Utilitat::errorMessages($e);
-            $request->session()->flash('error',$error);
-            return redirect()->action(self::CONTROLADOR .'index');
+            $request->session()->flash('error', $error);
+            return redirect()->action(self::CONTROLADOR . 'index');
         }
 
     }

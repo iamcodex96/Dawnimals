@@ -1,0 +1,29 @@
+.challenge{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    img{
+        display: none;
+    }
+
+    .progress{
+        height: 50px;
+        border-radius: 25px;
+    }
+    &.completado{
+        position: relative;
+
+        img{
+            display: block;
+            position: absolute;
+            height: 100%;
+            z-index: 100;
+            opacity: 1;
+            right: 90px;
+            transform: rotate(12deg);
+            border-radius: 50% !important;
+        }
+        & > div{
+            opacity: 0.4;
+        }
+    }
+}

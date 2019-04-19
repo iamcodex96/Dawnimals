@@ -71,21 +71,21 @@
                     <i class="fas fa-align-justify"></i>
                 </button>
                 <div id="left-menu">
-                    <div class="dropdown" style="float: left;margin-right: 10px;">
-                        <button class="btn btn-secondary " type="button" id="drIdioma" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <span class="fa fa-globe"></span> <span class="fa fa-sort-down mb-1"></span>
-                                </button>
-                        <div class="dropdown-menu" aria-labelledby="drIdioma">
-                            <a class="dropdown-item" href="{{ url('chgIdioma/ca') }}">Català</a>
-                            <a class="dropdown-item" href="{{ url('chgIdioma/es') }}">Español</a>
-                        </div>
-                    </div>
+                        <div class="dropdown" style="float: left;margin-right: 10px;">
+                                <button class="btn btn-secondary " type="button" id="drIdioma" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          <span class="fa fa-globe"></span> <span class="fa fa-sort-down mb-1"></span>
+                                        </button>
+                                <div class="dropdown-menu" aria-labelledby="drIdioma">
+                                    <a class="dropdown-item" href="{{ url('chgIdioma/ca') }}">Català</a>
+                                    <a class="dropdown-item" href="{{ url('chgIdioma/es') }}">Español</a>
+                                </div>
+                            </div>
                     <a class="btn btn-danger" href="{{ url('/backend/logout') }}"><i class="fas fa-sign-out-alt"></i></a>
                 </div>
         </div>
         </nav>
 
-        <div class="container" style="padding-top: 100px;">
+        <div class="container" style="margin-top: 100px;">
     @include('backend.partial.mensajes') @yield('contenido') @yield('modals')
         </div>
 

@@ -55,7 +55,7 @@
                         <td>{{ $challenge->descripcion }}</td>
                         <td class="text-center">{{ date('d/m/Y', strtotime($challenge->fecha_ini)) }}</td>
                         <td class="text-center">{{ date('d/m/Y', strtotime($challenge->fecha_fin)) }}</td>
-                        <td>{{ $challenge->objetivo }}</td>
+                        <td>{{ $challenge->getCantidad() }} / {{ $challenge->objetivo }}</td>
                         <td>{{ \App::getLocale() == "ca" ? $challenge->subtipo->nombre_cat : $challenge->subtipo->nombre_esp }}</td>
                         <td class="text-center">
                             <div class="form-group btn-group btn-group-form">
@@ -70,6 +70,7 @@
                         @endforeach
                     </tbody>
             </table>
+            {{ $challenges->appends($_GET)->links() }}
 </div>
 
 @endsection

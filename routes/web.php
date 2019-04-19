@@ -15,8 +15,6 @@ Route::middleware('locale')->group(function(){
     Route::get('/landing', function () {
         $retos = Challenge::whereDate('fecha_ini', '<=', Carbon::now())->whereDate('fecha_fin', '>=', Carbon::now())->get();
         foreach($retos as $reto){
-            $reto->cantidad = $reto->subtipo->donacion()->whereDate('fecha_donativo', '>=', $reto->fecha_ini)->whereDate('fecha_donativo', '<=', $reto->fecha_fin)->sum('peso');
-
             if ($reto->objetivo == 0){
                 $reto->objetivo = 1;
             }
@@ -25,6 +23,26 @@ Route::middleware('locale')->group(function(){
         $data["retos"] = $retos;
 
         return view('frontend.paginas.landing', $data);
+    })->name("landing");
+    Route::get('/challenges', function () {
+        $retos = Challenge::whereDate('fecha_ini', '<=', Carbon::now())->whereDate('fecha_fin', '>=', Carbon::now())->orderBy('fecha_fin', 'DESC')->get();
+        foreach($retos as $reto){
+            if ($reto->objetivo == 0){
+                $reto->objetivo = 1;
+            }
+        }
+
+        $data["retos"] = $retos;
+
+        $retosAcabados = Challenge::whereDate('fecha_fin', '<', Carbon::now())->orderBy('fecha_fin', 'DESC')->get();
+        foreach($retosAcabados as $reto){
+            if ($reto->objetivo == 0){
+                $reto->objetivo = 1;
+            }
+        }
+        $data["retosAcabados"] = $retosAcabados;
+
+        return view('frontend.paginas.challenges', $data);
     })->name("landing");
     Route::get('/quien_somos', function () {
         return view('frontend.paginas.quien_somos');
@@ -55,8 +73,7 @@ Route::middleware('locale')->group(function(){
                 $completados = 0;
                 $retos = Challenge::whereDate('fecha_ini', '<=', Carbon::now())->whereDate('fecha_fin', '>=', Carbon::now())->get();
                 foreach($retos as $reto){
-                    $reto->cantidad = $reto->subtipo->donacion()->whereDate('fecha_donativo', '>=', $reto->fecha_ini)->whereDate('fecha_donativo', '<=', $reto->fecha_fin)->sum('peso');
-                    if ($reto->cantidad >= $reto->objetivo) $completados++;
+                    if ($reto->getCantidad() >= $reto->objetivo) $completados++;
                 }
                 $data["retos_completados"] = $completados;
                 $data["retos_total"] = count($retos);

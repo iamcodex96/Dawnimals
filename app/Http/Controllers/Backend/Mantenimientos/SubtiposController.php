@@ -17,41 +17,9 @@ class SubtiposController extends Controller
 
     public function index(Request $request)
     {
-        $query = Subtipo::query();
+        $resultado = Utilitat::cargaMantenimiento($request, Subtipo::class, 'subtipos', __("backend.subtipos"), $data, 10);
+        if ($resultado != null) return $resultado;
 
-        $data = [];
-        $query = Utilitat::setFiltros($request, $query, $data);
-
-        if ($request->input('submit') == 'excel'){
-            $queryFin = [];
-
-            $lang = \App::getLocale();
-
-            foreach($query->get() as $item){
-                array_push($queryFin, [
-                    $lang = "ca" ? $item->nombre_cat : $item->nombre_esp,
-                    $item->tipos->nombre,
-                    $item->gama_alta,
-                    $item->gama_media,
-                    $item->gama_baja,
-                    $item->tipo_unidad
-                ]);
-            }
-            $queryFin = collect($queryFin);
-
-            $headings = [
-                __("backend.nombre"),
-                __("backend.tipo"),
-                __("backend.alta"),
-                __("backend.media"),
-                __("backend.baja"),
-                __("backend.unidad")
-            ];
-
-            return ConverterExcel::export($queryFin, $headings, __("backend.subtipos"));
-        }
-
-        $data["subtipos"] = $query->paginate(10);
         $data["tipos"] = Tipo::all();
 
         return view(self::PREFIX . "index", $data);

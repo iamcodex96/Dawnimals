@@ -102,6 +102,7 @@
         "fecha_ini" => "Fecha Inicio",
         "fecha_fin" => "Fecha Fin",
         "objetivo" => "Objetivo",
+        "cantidad" => "Cantidad",
 
         "catalan" => "Catalan",
         "español" => "Castellano",
