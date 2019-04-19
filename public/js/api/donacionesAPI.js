@@ -1,6 +1,6 @@
 
-var urlApi = 'http://localhost:8080/Dawnimals/public/api/';
-//var urlApi = 'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/api/';
+//var urlApi = 'http://localhost:8080/Dawnimals/public/api/';
+var urlApi = 'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/api/';
 var ftipos=[];
 var fcentros=[];
 var datos = null;
@@ -111,7 +111,6 @@ function recuperarDonantes(){
         });
     }
 }
-/* MARC ESTA ES LA FUNCION */
 /* OK JUSTINE, YA FUNCIONA */
 function guardarDonante(){
     var selTipoDonante = $('#selTipoDonante');
@@ -164,7 +163,7 @@ function createTable(donantes){
         btngroup.append('<button onclick="setDonante('+donante.id+","+'\''+donante.nombre+'\''+')" data-dismiss="modal" class="btn btn-success"><i class="fas fa-hand-pointer"></i></button>');
         btngroup.append('<a href="'+ urledit +'" class="btn btn-warning"><i class="fas fa-edit"></i></a>');
         acciones.append(btngroup);
-        var trDonante=$('<tr></tr>');
+        var trDonante=$('<tr data-correo="'+donante.correo+'" data-cif="'+donante.cif+'"></tr>');
         var cif = $('<td></td>');
         var nombre = $('<td></td>');
         var direccion = $('<td></td>');
@@ -175,9 +174,34 @@ function createTable(donantes){
         nombre.html(donante.nombre);
         direccion.html(donante.direccion);
         telefono.html(donante.telefono);
-        correo.html(donante.telefono);
+        correo.html(donante.correo);
         accion.append(acciones);
         trDonante.append(cif).append(nombre).append(direccion).append(telefono).append(correo).append(accion);
         tBody.append(trDonante);
+    });
+}
+
+function filtroDonante(){
+    var donantes = $('tr[data-correo]');
+    var filtroCif = $('#input-cif').val();
+    var filtroCorreo = $('#input-correo').val();
+    console.log(donantes);
+    console.log(filtroCif);
+    console.log(filtroCorreo);
+    donantes.each(function(){
+        $(this).show();
+        var dcif=$(this).data('cif');
+        var dcorreo=$(this).data('correo');
+        if(filtroCif!=null&&filtroCif!=""){
+            console.log($(this).data('cif'));
+            if(dcif.indexOf(filtroCif)<=-1){
+                $(this).hide();
+            }
+        }
+        if(filtroCorreo!=null&&filtroCorreo!=""){
+            if(dcorreo.indexOf(filtroCorreo)<=-1){
+                $(this).hide();
+            }
+        }
     });
 }
