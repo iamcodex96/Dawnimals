@@ -130,27 +130,10 @@
     <div class="imgParallax" id="img2"></div>
     <div id="cuarto" class="p-5">
         <h1 class="">{{ __("frontend.nuestros_retos") }}</h1>
-        <h2 class="texto-container text-center mb-5">Participa en nuestros retos y ayudanos a cumplir nuestra meta :).</h2>
+        <h2 class="texto-container text-center mb-5">{{ __('frontend.retos_participa') }}</h2>
         <div class="container">
 
-            @foreach($retos as $reto)
-            <div class="row challenge {{ ($reto->getCantidad() >= $reto->objetivo) ? "completado" : "" }}">
-                <img class="shadow" src="{{ asset('img/SPAMI_RETO_SS.png') }}">
-                <div class="col-12 d-flex justify-content-between">
-                    <div style="width:110px"></div>
-                    <h4>{{ $reto->subtipo->nombre_cat }}</h4>
-                    <h4 style="width:110px" class="text-right">{{ $reto->objetivo }} {{ $reto->subtipo->tipo_unidad}}</h4>
-                </div>
-                <div class="col-12 mb-4">
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: {{ ($reto->getCantidad() / $reto->objetivo) * 100 }}%"
-                            aria-valuenow="{{ $reto->getCantidad() }}" aria-valuemin="0" aria-valuemax="{{ $reto->objetivo }}">
-                            <h5 class="mb-0">{{$reto->getCantidad()}} {{ $reto->subtipo->tipo_unidad}}</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
+                @component('frontend.componentes.challenges', ['retos' => $retos, 'isAnterior' => false]) @endcomponent
         </div>
     </div>
 </main>

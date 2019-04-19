@@ -1,3 +1,7 @@
+.challenge {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .challenge img {
   display: none;
 }
@@ -11,15 +15,15 @@
 .challenge.completado img {
   display: block;
   position: absolute;
-  height: 110px;
+  height: 100%;
   z-index: 100;
   opacity: 1;
-  right: 88px;
+  right: 90px;
   transform: rotate(12deg);
   border-radius: 50% !important;
 }
 .challenge.completado > div {
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
 /*# sourceMappingURL=challenges.css.map */

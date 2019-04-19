@@ -18,6 +18,15 @@ return [
     "who-social"=>"Gestor de eventos y redes sociales",
     "who-tresorera"=>"Tesorera",
     "nuestros_retos"=>"Nuestros retos",
+    "retos_participa" => "Participa en nuestros retos y ayúdanos a cumplir nuestra meta :)",
+    "retos_finaliza" => "Este reto finaliza el ",
+    "retos_finalizo" => "Este reto finalizó el ",
+    "anteriores" => "Anteriores",
+
+    "quienes_somos" => "Quiénes somos",
+    "como_ayudar" => "Como ayudar",
+    "estadisticas" => "Estadísitcas",
+    "pagina_oficial" => "Página Oficial",
     ]
 
 ?>

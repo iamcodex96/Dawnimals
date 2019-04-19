@@ -112,6 +112,7 @@ function recuperarDonantes(){
     }
 }
 /* MARC ESTA ES LA FUNCION */
+/* OK JUSTINE, YA FUNCIONA */
 function guardarDonante(){
     var selTipoDonante = $('#selTipoDonante');
     var selSexos = $('#selSexos');
@@ -126,11 +127,12 @@ function guardarDonante(){
     var donantejson = JSON.parse(donante);
     console.log(donante);
     console.log(JSON.stringify(donantejson));
+    var jsonString = JSON.stringify(donantejson);
     $.ajax({
         url:urlApi+'crearDonante',
         method: "post",
-        contentType: "json",
-        data:donantejson
+        contentType: "application/json",
+        data: jsonString
     });
 }
 
