@@ -176,6 +176,7 @@ function createTable(donantes){
         correo.html(donante.telefono);
         accion.append(acciones);
         trDonante.append(cif).append(nombre).append(direccion).append(telefono).append(correo).append(accion);
+        trDonante.data('correo',donante.correo).data('cif',donante.cif);
         tBody.append(trDonante);
     });
 }
