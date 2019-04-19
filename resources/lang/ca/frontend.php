@@ -18,7 +18,15 @@ return [
     "who-social"=>"Gestor d'events i xarxes socials",
     "who-tresorera"=>"Tresorera",
     "nuestros_retos"=>"Els nostres reptes",
+    "retos_participa" => "Participa en els nostres reptes i ajuda'ns a complir els nostres objectius :)",
+    "retos_finaliza" => "Aquest repte finalitza el ",
+    "retos_finalizo" => "Aquest repte va finalitzar el ",
+    "anteriores" => "Anteriors",
 
+    "quienes_somos" => "Qui som",
+    "como_ayudar" => "Com ajudar",
+    "estadisticas" => "Estadístiques",
+    "pagina_oficial" => "Pagina Oficial",
 ];
 
 ?>

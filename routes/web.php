@@ -24,6 +24,26 @@ Route::middleware('locale')->group(function(){
 
         return view('frontend.paginas.landing', $data);
     })->name("landing");
+    Route::get('/challenges', function () {
+        $retos = Challenge::whereDate('fecha_ini', '<=', Carbon::now())->whereDate('fecha_fin', '>=', Carbon::now())->orderBy('fecha_fin', 'DESC')->get();
+        foreach($retos as $reto){
+            if ($reto->objetivo == 0){
+                $reto->objetivo = 1;
+            }
+        }
+
+        $data["retos"] = $retos;
+
+        $retosAcabados = Challenge::whereDate('fecha_fin', '<', Carbon::now())->orderBy('fecha_fin', 'DESC')->get();
+        foreach($retosAcabados as $reto){
+            if ($reto->objetivo == 0){
+                $reto->objetivo = 1;
+            }
+        }
+        $data["retosAcabados"] = $retosAcabados;
+
+        return view('frontend.paginas.challenges', $data);
+    })->name("landing");
     Route::get('/quien_somos', function () {
         return view('frontend.paginas.quien_somos');
     })->name("quien_somos");
