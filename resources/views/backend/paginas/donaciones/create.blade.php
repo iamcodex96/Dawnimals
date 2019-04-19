@@ -132,7 +132,7 @@
     <div class="modal-dialog modal-dialog-centered" style="max-width: 1200px" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title modalTitulo">Donantes</h5>
+                <h5 class="modal-title modalTitulo">{{__('backend.donantes')}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -145,11 +145,11 @@
                             <input type="text" id="input-cif" class="form-control">
                         </div>
                         <div class="form-group float-left col-md-6">
-                            <label for="cp" class="control-label">Correo</label>
+                            <label for="cp" class="control-label">{{__('backend.correo')}}</label>
                             <input type="text" id="input-correo" class="form-control">
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary">Filtrar</button>
+                    <button onclick="filtroDonante()" type="button" class="btn btn-primary">Filtrar</button>
                 </div>
 
                 <hr>
@@ -171,7 +171,6 @@
             </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary btnAceptar">{{ __('backend.aceptar') }}</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('backend.cancelar') }}</button>
             </div>
         </div>
@@ -181,7 +180,7 @@
     <div class="modal-dialog modal-dialog-centered" style="max-width: 1200px" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title modalTitulo">Nuevo Donante</h5>
+                <h5 class="modal-title modalTitulo">{{__('backend.donante_añadir')}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
