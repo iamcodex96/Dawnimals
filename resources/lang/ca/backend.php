@@ -119,5 +119,12 @@
         "es_coordinada" => "Es coordinada",
         "fecha" => "Data",
         "anonimo" => "Anonim",
+
+        "diploma" => "Diploma",
+        "diploma_donacion" => "Diploma de donació",
+        "diploma_agradecimiento" => "Agraïment a: ",
+        "diploma_por_donacion" => "Per haver fet una donació de :cantidad :unidad de :tipo,",
+        "diploma_cuidando" => "que ens permetrà seguir cuidant dels animals com es mereixen.",
+        "diploma_modificar" => "Modificar nom d'agraïment",
     ]
 ?>

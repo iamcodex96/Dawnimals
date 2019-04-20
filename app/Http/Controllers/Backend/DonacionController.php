@@ -182,4 +182,10 @@ class DonacionController extends Controller
             return redirect()->action(self::CONTROLADOR .'index');
         }
     }
+
+    public function diploma(Donacion $donacione){
+        $data['donacion'] = $donacione;
+
+        return view('backend.paginas.donaciones.diploma', $data);
+    }
 }

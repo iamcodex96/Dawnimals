@@ -1,0 +1,27 @@
+$spam-original: rgb(130, 179, 0);
+
+#logo{
+    height: 180px;
+}
+
+#daina, #sello{
+    width:150px;
+    margin-left: 50px;
+}
+
+#diploma_nombre, #titulo-donacion {
+    min-width: 500px;
+}
+
+#titulo-donacion {
+    background-color: $spam-original;
+}
+
+#diploma {
+    border-color: $spam-original;
+    border-width: 20px;
+}
+
+#diploma_nombre {
+    border-bottom: 5px solid $spam-original;
+}
