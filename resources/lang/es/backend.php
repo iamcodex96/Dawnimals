@@ -119,5 +119,12 @@
         "es_coordinada" => "Es coordinada",
         "fecha" => "Fecha",
         "anonimo" => "Anónimo",
+
+        "diploma" => "Diploma",
+        "diploma_donacion" => "Diploma de donación",
+        "diploma_agradecimiento" => "Agradecimiento a: ",
+        "diploma_por_donacion" => "Por hacer una donacion de :cantidad :unidad de :tipo,",
+        "diploma_cuidando" => "que nos permitirá seguir cuidando a los animales como se merecen.",
+        "diploma_modificar" => "Modificar nombre de agradecimiento",
     ]
 ?>

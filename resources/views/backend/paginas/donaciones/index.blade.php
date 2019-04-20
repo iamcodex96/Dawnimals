@@ -134,6 +134,10 @@ url('backend/donaciones/create'))
                                     <button type="submit" data-toggle="tooltip" title="Ver" class="btn btn-primary" data-original-title="Ver"><i class="fa fa-eye"></i></button>
                                 </form> --}}
 
+                                <form class="p-0 m-0" action="{{ action('Backend\DonacionController@diploma',[$donacion->id]) }}" method="GET">
+                                    <button type="submit" data-toggle="tooltip" title="Diploma" class="btn btn-primary" data-original-title="Diploma"><i class="fa fa-certificate"></i></button>
+                                </form>
+
                                 <form class="p-0 m-0" action="{{ action('Backend\DonacionController@edit',[$donacion->id]) }}" method="GET">
                                     <button type="submit" data-toggle="tooltip" title="Modificar" class="btn btn-warning" data-original-title="Ver"><i class="fa fa-edit"></i></button>
                                 </form>

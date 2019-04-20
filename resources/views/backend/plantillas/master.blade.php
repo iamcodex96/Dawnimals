@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{asset('css/backend/dashboard.css')}}">
     <link rel="stylesheet" href="{{ asset('Bootstrap/css/jquery.mCustomScrollbar.min.css') }}">
 
+    @yield('css')
+
     <!-- Font Awesome JS -->
     <script defer src="{{ asset('Bootstrap/js/solid.js') }}"></script>
     <script defer src="{{ asset('Bootstrap/js/fontawesome.js') }}"></script>

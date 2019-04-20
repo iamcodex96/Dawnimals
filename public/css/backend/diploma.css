@@ -1,0 +1,27 @@
+#logo {
+  height: 180px;
+}
+
+#daina, #sello {
+  width: 150px;
+  margin-left: 50px;
+}
+
+#diploma_nombre, #titulo-donacion {
+  min-width: 500px;
+}
+
+#titulo-donacion {
+  background-color: #82b300;
+}
+
+#diploma {
+  border-color: #82b300;
+  border-width: 20px;
+}
+
+#diploma_nombre {
+  border-bottom: 5px solid #82b300;
+}
+
+/*# sourceMappingURL=diploma.css.map */
