@@ -14,8 +14,33 @@
     <a href="#tercero" onclick="updateIcon(2,'tercero')" data-toggle="tooltip" data-placement="left" title="Opcion 3" class="nav-link mt-3"><i class="far fa-circle"></i></a>
     <a href="#cuarto" onclick="updateIcon(3,'cuarto')" data-toggle="tooltip" data-placement="left" title="Opcion 4" class="nav-link mt-3"><i class="far fa-circle"></i></a>
 </nav>
+
+
+
 <main data-spy="scroll" data-target="#list-opciones" class="container-fluid">
-    <div id="primero">
+
+<div id="primero" class="container-fluid" id="containerVideo">
+
+    <video autoplay muted loop id="myVideo">
+
+        <source src="{{ asset('./img/versionWebSPAM.mp4') }}">
+                Your browser does not support HTML5 video.
+    </video>
+
+    <div class="container-fluid h-100 prueba">
+    		<div class="align-items-center justify-content-center">
+    			<div class="col">
+                    <section id="section03" class="demo" height="2000px">
+                            <i class="fas fa-paw fa-rotate-180 fa-4x" id="botonBajar"></i>
+                    </section>
+    			</div>
+    		</div>
+    </div>
+
+
+</div>
+
+    {{-- <div id="primero">
         <div class="imgParallax3" id="background1">
             <div class="explicacion">
                 <div class="row mt-0 mr-3">
@@ -44,15 +69,18 @@
         </div>
 
 
-    </div>
+    </div> --}}
 
     {{--
     <div class="imgParallax" id="img1">
     </div> --}}
-    </div>
-    </div>
+    {{-- </div>
+    </div> --}}
+
     <div id="segundo" class="p-5">
         <h1 class="" z-index="-1">¿ Como puedes ayudar ?</h1>
+
+
 
         <h2 class="texto-container text-center mb-5" z-index="-1">eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis
             natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse
@@ -137,6 +165,8 @@
         </div>
     </div>
 </main>
+
+
 @endsection
 
 @section('js_loaded') {{--
@@ -147,4 +177,7 @@
 
 <script src="{{url( 'js/charts/create-line_bar-charts.js' )}}"></script>
 <script src="{{url( 'js/charts/create-doughnut-chart.js' )}}"></script>
+<script src="{{url( 'js/huella.js' )}}"></script>
+
+
 @endsection
