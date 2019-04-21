@@ -16,9 +16,9 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" background="none">
-        <a href="{{ url('/') }}"><img  src="{{ asset('./img/Spami_M.png') }}" width="60px" height="60px"  alt=""></a>
-        <div class="collapse navbar-collapse text-black-50 ml-4" id="navbarNav">
-            <!-- d-flex justify-content-end -->
+        <a href="{{ url('/') }}"><img  src="{{ asset('./img/LogoSPAM_sin.png') }}"alt="" id="logoNavbar"></a>
+        <div class="collapse navbar-collapse text-black-50 ml-4 justify-content-end" id="navbarNav">
+
             <ul class="navbar-nav">
                 <li class="nav-item p-2">
                     <a class="nav-link" href="{{ url('/quien_somos') }}">{{ __('frontend.quienes_somos') }}</a>

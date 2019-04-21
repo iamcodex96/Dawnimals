@@ -1,3 +1,19 @@
+
+  @font-face {
+    font-family: "Josefin";
+    src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
+  }
+
+  @font-face {
+      font-family: "Montserrat Light";
+      src: url("../../fuentes/Montserrat/Montserrat-Light.ttf");
+    }
+
+    @font-face {
+      font-family: "Montserrat Bold";
+      src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
+    }
+
 .navegacion {
   position: fixed;
   right: 30px;
@@ -40,7 +56,7 @@
   top: 20%;
 }
 #overlay nav a {
-  color: whitesmoke;
+  color: white;
   font-size: 50px;
 }
 #overlay nav a:hover {
@@ -65,9 +81,19 @@ li.nav-item.navLogo{
 }
 
 a.nav-link{
-    color:purple !important;
+    color:#88aa00 !important;
+    font-family: Montserrat bold;
+
+
 
 }
+
+
+#logoNavbar{
+    width:156px;
+    height: 81px;
+
+    }
 
 .footer{
     background-color: #4d445e !important;
@@ -76,4 +102,16 @@ a.nav-link{
     color:white;
 }
 
+.bg-light {
+    background-color:white !important;
+}
 
+.ml-4{
+    margin-right: 2.0rem!important;
+}
+
+.navbar-nav {
+
+    padding-right: 53px !important;
+
+}

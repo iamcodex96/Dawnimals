@@ -159,13 +159,13 @@
   #segundo .card {
 
     transform: scale(0.85);
-    border: 3px solid #99cd32;
+    border: 3px solid #fdfdfd;
     border-radius: 10px;
     overflow: hidden;
   }
   #segundo .card img {
-    border-bottom: 5px solid #99cd32;
-    background-color: #99cd32;
+    border-bottom: 5px solid #88aa00;
+    background-color: #88aa00;
   }
   #segundo .card:hover {
     transform: scale(1);
@@ -178,12 +178,12 @@
     top: -35px;
     width: 100%;
     padding: 10px;
-    background-color: #99cd32;
+    background-color: #88aa00;
     color: white;
   }
 
   #tercero {
-    height: 1000px;
+    height: 800px;
   }
   #tercero h1 {
       width: 100%;
@@ -194,7 +194,7 @@
   }
   #tercero button {
     margin: 5px;
-    border: solid 5px #99cd32;
+    border: solid 5px #88aa00;
     border-radius: 50px;
   }
   #tercero button img {
@@ -202,7 +202,7 @@
     height: 120px;
   }
   #tercero button:hover {
-    background-color: #99cd32;
+    background-color: #88aa00;
     transition: all 0.5s;
   }
   #tercero .info-necessidades {
@@ -216,7 +216,53 @@
 
   .rounded-circle {
     border-radius: 30%!important;
-    background-color: #99cd32;
+    background-color: #88aa00;
 }
+
+.embed-responsive {
+    max-width: 1500px;
+    margin: auto;
+}
+
+#myVideo {
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
+.containerVideo{
+    position: absolute;
+    top: 7%;
+}
+
+#botonBajar{
+    color: #88aa00;
+
+}
+
+#huellaVideo {
+    position: absolute;
+    left: 45%;
+    margin-top: -7em;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 100px;
+    padding: 1.2em;
+}
+
+#huellaVideo:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+
+
+#huellaVideo {
+    scroll-behavior: smooth;
+}
+
+
+
+
 
   /*# sourceMappingURL=landing.css.map */
