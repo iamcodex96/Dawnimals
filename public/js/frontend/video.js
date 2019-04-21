@@ -5,16 +5,25 @@ var videoCheckInterval;
 $(".controlsPause").hide();
 
 setInterval(function() {
+
     if (myvideo.paused && !$(".video-links").is(':visible')) {
         $(".video-links").fadeIn();
         $(".video-controls").fadeIn();
-        if (myvideo.ended) {
+
+    } else if (!myvideo.paused) {
+        if (myvideo.currentTime>=274) {
+            myvideo.pause();
             myvideo.currentTime = 0;
         }
 
-    } else if (!myvideo.paused && $(".video-links").is(':visible')) {
-        $(".video-links").fadeOut();
+        if(myvideo.currentTime>=252){
 
+            $(".video-links").fadeIn();
+
+        }else{
+
+            $(".video-links").fadeOut();
+        }
 
         // $("#myVideo").hover(
         //     function() {
@@ -53,6 +62,7 @@ $(".video-links a").each(function() {
         myvideo.play();
 
         videoCheckInterval = setInterval(function() {
+
             if(myvideo.currentTime >= end) {
                 myvideo.currentTime = 252;
                 myvideo.play();
