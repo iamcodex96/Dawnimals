@@ -1,7 +1,7 @@
 
 
 $("#botonBajar").on('click', function() {
-    var posicion= $("#texto").offset().top;
+    var posicion= $("#segundo").offset().top - 35;
     $("html, body").animate({
       scrollTop: posicion
 

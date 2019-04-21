@@ -159,13 +159,13 @@
   #segundo .card {
 
     transform: scale(0.85);
-    border: 3px solid #99cd32;
+    border: 3px solid #fdfdfd;
     border-radius: 10px;
     overflow: hidden;
   }
   #segundo .card img {
-    border-bottom: 5px solid #99cd32;
-    background-color: #99cd32;
+    border-bottom: 5px solid #88aa00;
+    background-color: #88aa00;
   }
   #segundo .card:hover {
     transform: scale(1);
@@ -178,12 +178,12 @@
     top: -35px;
     width: 100%;
     padding: 10px;
-    background-color: #99cd32;
+    background-color: #88aa00;
     color: white;
   }
 
   #tercero {
-    height: 1000px;
+    height: 800px;
   }
   #tercero h1 {
       width: 100%;
@@ -194,7 +194,7 @@
   }
   #tercero button {
     margin: 5px;
-    border: solid 5px #99cd32;
+    border: solid 5px #88aa00;
     border-radius: 50px;
   }
   #tercero button img {
@@ -202,7 +202,7 @@
     height: 120px;
   }
   #tercero button:hover {
-    background-color: #99cd32;
+    background-color: #88aa00;
     transition: all 0.5s;
   }
   #tercero .info-necessidades {
@@ -216,17 +216,15 @@
 
   .rounded-circle {
     border-radius: 30%!important;
-    background-color: #99cd32;
+    background-color: #88aa00;
 }
 
-@media screen and (max-width: 812px) {
-    #myVideo{
-      display:none;
-    }
+.embed-responsive {
+    max-width: 1500px;
+    margin: auto;
 }
 
 #myVideo {
-    position: initial;
     right: 0;
     bottom: 0;
     min-width: 100%;
@@ -234,119 +232,34 @@
 }
 
 
-.prueba{
+.containerVideo{
     position: absolute;
     top: 7%;
 }
 
-#section03 a {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 60px;
-    height: 60px;
-    margin-left: -23px;
-    border: 3px solid #fff;
-    border-radius: 100%;
-    box-sizing: border-box;
-  }
-#section03 a::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  content: '';
-  width: 16px;
-  height: 16px;
-  margin: -12px 0 0 -8px;
-  border-left: 3px solid #fff;
-  border-bottom: 3px solid #fff;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  box-sizing: border-box;
-}
-#section03 a::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  content: '';
-  width: 58px;
-  height: 58px;
-  box-shadow: 0 0 0 0 rgba(255,255,255,.3);
-  border-radius: 100%;
-  opacity: 0;
-  -webkit-animation: sdb03 3s infinite;
-  animation: sdb03 3s infinite;
-  box-sizing: border-box;
-}
-
 #botonBajar{
-    margin-top: 23%;
-    color: #368636;
+    color: #88aa00;
 
 }
 
+#huellaVideo {
+    position: absolute;
+    left: 45%;
+    margin-top: -7em;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 100px;
+    padding: 1.2em;
+}
 
-@-webkit-keyframes sdb03 {
-    0% {
-      opacity: 0;
-    }
-    30% {
-      opacity: 1;
-    }
-    60% {
-      box-shadow: 0 0 0 60px rgba(255,255,255,.3);
-      opacity: 0;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  @keyframes sdb03 {
-    0% {
-      opacity: 0;
-    }
-    30% {
-      opacity: 1;
-    }
-    60% {
-      box-shadow: 0 0 0 60px rgba(255, 255, 255, 0.3);
-      opacity: 0;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  video.container-fluid{
-      margin: 0px;
-      padding: 0px;
-  }
-  @media screen and (max-width: 812px) {
-    #myVideo{
-      display:none;
-    }
-    #imgMovil{
-        display: block;
-        position: initial;
-        right: 0;
-        bottom: 0;
-        width:100%;
+#huellaVideo:hover {
+    background-color: rgba(0,0,0,0.7);
+}
 
 
-    }
-    #imgMovil img{
-        width: 100%;
-        height: 670px;
-    }
 
-    #botonBajar{
-        display:none;
-    }
-    .texto{
-        margin-top: 5%;
-
-    }
-  }
+#huellaVideo {
+    scroll-behavior: smooth;
+}
 
 
 

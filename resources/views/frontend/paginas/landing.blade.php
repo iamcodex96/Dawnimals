@@ -21,19 +21,21 @@
 
 <div id="primero" class="container-fluid" id="containerVideo">
 
-    <video autoplay muted loop id="myVideo">
+    <div align="center" class="embed-responsive embed-responsive-16by9">
 
-        <source src="{{ asset('./img/versionWebSPAM.mp4') }}">
-                Your browser does not support HTML5 video.
-    </video>
+        <video autoplay muted loop id="myVideo"class="embed-responsive-item">
 
-    <div class="container-fluid h-100 prueba">
-    		<div class="align-items-center justify-content-center">
-    			<div class="col">
-                    <section id="section03" class="demo" height="2000px">
-                            <i class="fas fa-paw fa-rotate-180 fa-4x" id="botonBajar"></i>
+            <source src="{{ asset('./img/versionWebSPAM.mp4') }}">
+                    Your browser does not support HTML5 video.
+        </video>
+
+    </div>
+
+    <div class="container-fluid h-100">
+    		<div>
+                    <section id="huellaVideo" data-toggle="tooltip" data-placement="top" title= "{{__("frontend.toggle_ayudar")}}" >
+                            <a href="#segundo"><i class="fas fa-paw fa-rotate-180 fa-4x" id="botonBajar"></i></a>
                     </section>
-    			</div>
     		</div>
     </div>
 
@@ -78,18 +80,16 @@
     </div> --}}
 
     <div id="segundo" class="p-5">
-        <h1 class="" z-index="-1">¿ Como puedes ayudar ?</h1>
+        <h1 class="" z-index="-1">{{__("frontend.toggle_ayudar")}}</h1>
 
 
 
-        <h2 class="texto-container text-center mb-5" z-index="-1">eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis
-            natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse
-            luctus per interdum ad.</h2>
+        <h2 class="texto-container text-center mb-5" z-index="-1">{{__("frontend.textoComoayudar")}}</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="card rounded-circle">
                     <img class="card-img-top" src="{{ asset('./img/insta001.png') }}" alt="Card image cap">
-                    <h2 class="text-center"> Dona amor</h2>
+                    <h2 class="text-center"> {{__("frontend.donaAmor")}}</h2>
                     <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_AMOR.png') }}" width="70px" alt=""></div>
 
                 </div>
@@ -97,14 +97,14 @@
             <div class="col-md-4">
                 <div class="card rounded-circle">
                     <img class="card-img-top" src="{{ asset('./img/insta002.png') }}" alt="Card image cap">
-                    <h2 class="text-center"> Dona dinero</h2>
+                    <h2 class="text-center"> {{__("frontend.donaDinero")}}</h2>
                     <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_MONEDA.png') }}" width="70px" alt=""></div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card rounded-circle">
                     <img class="card-img-top" src="{{ asset('./img/insta003.png') }}" alt="Card image cap">
-                    <h2 class="text-center"> Dona tiempo</h2>
+                    <h2 class="text-center">{{__("frontend.donaTiempo")}}</h2>
                     <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_TIEMPO.png') }}" width="70px" alt=""></div>
                 </div>
             </div>
@@ -113,10 +113,8 @@
     </div>
 
     <div id="tercero" class="p-5">
-        <h1 class="">Nuestras donaciones</h1>
-        <h2 class="texto-container text-center mb-5">eleifend nibh dignissim, torquent mauris purus sapien tempus cras placerat phasellus, nec etiam sodales egestas sagittis
-            natoque. Congue ridiculus erat suspendisse diam class hac, conubia eu blandit quis curabitur velit rutrum, habitasse
-            luctus per interdum ad.</h2>
+        <h1 class="">{{__("frontend.tituloNuestrasDonaciones")}}</h1>
+        <h2 class="texto-container text-center mb-5">{{__("frontend.textoNuestrasDonaciones")}}</h2>
 
         <div class="row">
 

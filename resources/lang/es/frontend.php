@@ -24,9 +24,18 @@ return [
     "anteriores" => "Anteriores",
 
     "quienes_somos" => "Quiénes somos",
-    "como_ayudar" => "Como ayudar",
-    "estadisticas" => "Estadísitcas",
+    "como_ayudar" => "Cómo ayudar",
+    "estadisticas" => "Estadísticas",
     "pagina_oficial" => "Página Oficial",
+
+    // *** pendiente otros idiomas**
+    "toggle_ayudar" => "¿Cómo puedes ayudar?",
+    "tituloNuestrasDonaciones" => "Nuestras Donaciones",
+    "donaAmor" => "Dona amor",
+    "donaDinero" => "Dona dinero o recursos",
+    "donaTiempo" => "Dona tiempo",
+    "textoComoayudar" => "Puedes ayudarnos de diferentes formas, adoptanto uno de nuestros animales, con donaciones monetarias, materiales o con tu tiempo, cualquier ayuda por pequeña que sea nos ayuda muchísimo a poder tener a nuestros animales en las mejores condiciones posibles",
+    "textoNuestrasDonaciones" => "En SPAM queremos ofrecer la máxima transparencia posible sobre nuestras donaciones, por ese motivo hemos creado una sección en la que te mostramos toda la información sobre las aportaciones que recibimos",
     ]
 
 ?>

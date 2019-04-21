@@ -71,8 +71,19 @@
     </div>
     <hr>
     <div id="video" class="d-flex justify-content-center">
-            <iframe width="1280" height="720" src="https://www.youtube.com/embed/qRdSLZ5UmSE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <video controls loop id="myVideo"class="d-flex justify-content-center" width="1280" height="720"  type="video/mp4">
+
+                <source src="{{ asset('./img/versionWebSPAM.mp4') }}">
+                        Your browser does not support HTML5 video.
+        </video>
+
     </div>
+
+
+
+
+
     <hr>
     <h1 class="pl-5 mt-5">{{__("frontend.who-junta")}}</h1>
     <div id="empleados" class="row p-5 d-flex justify-content-center">

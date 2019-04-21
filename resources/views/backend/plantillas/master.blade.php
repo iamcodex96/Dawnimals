@@ -34,7 +34,7 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                    <img src="{{ asset('./img/logo_OK_transparencia_2.png') }}" width="200px" alt="">
+                    <img src="{{ asset('./img/logo_OK.png') }}" width="200px" alt="">
             </div>
 
             <ul class="list-unstyled components">
