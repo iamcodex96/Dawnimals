@@ -4,6 +4,23 @@ body {
   background: #fafafa;
 }
 
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
+    }
+
+    @font-face {
+        font-family: "Josefin";
+        src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
+      }
+
+
+    h1,h2,h3,h4,h5,h6{
+
+        font-family: "Montserrat";
+
+    }
+
 p {
   font-family: "Poppins", sans-serif;
   font-size: 1.1em;
@@ -36,12 +53,12 @@ a:hover, a:focus {
   border: #d75bad;
 }
 .navbar .btn-info:hover {
-  background: #a4287a;
-  border: #a4287a;
+  background: #aa0088;
+  border: #aa0088;
 }
 .navbar .btn-info:active {
-  background: #a4287a !important;
-  border: #a4287a !important;
+  background: #aa0088 !important;
+  border: #aa0088 !important;
 }
 .navbar .sticky-top {
   z-index: 0 !important;
@@ -70,7 +87,7 @@ a:hover, a:focus {
   left: -250px;
   height: 100vh;
   z-index: 999;
-  background: #99cd32;
+  background: #88aa00;
   color: #fff;
   transition: all 0.3s;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
@@ -84,7 +101,7 @@ a:hover, a:focus {
   height: 35px;
   line-height: 35px;
   text-align: center;
-  background: #855bd7;
+  background: #663366;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -95,7 +112,7 @@ a:hover, a:focus {
 }
 #dismiss:hover {
   background: #fff;
-  color: #855bd7;
+  color: #663366;
 }
 
 .overlay {
@@ -127,7 +144,7 @@ a:hover, a:focus {
 }
 #sidebar ul.components li a:hover {
   color: white;
-  background: #7aa428;
+  background: #5f7600;
 }
 #sidebar ul.components p {
   color: #fff;
@@ -135,7 +152,7 @@ a:hover, a:focus {
 }
 #sidebar ul.components.active > a {
   color: #fff;
-  background: #a384e1;
+  background: #be6abeda;
 }
 #sidebar ul.collapse li a {
   padding: 10px;
@@ -144,12 +161,12 @@ a:hover, a:focus {
 }
 #sidebar ul.collapse li a:hover {
   color: white;
-  background: #c2adeb;
+  background: #be6abeda;
 }
 
 a[aria-expanded=true] {
   color: #fff;
-  background: #855bd7;
+  background: #663366;
 }
 a[data-toggle=collapse] {
   position: relative;
@@ -166,7 +183,7 @@ a[data-toggle=collapse] {
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
-  background: #b8dc70;
+  background: #82b41e;
 }
 ul.CTAs {
   padding: 20px;
@@ -181,7 +198,7 @@ ul.CTAs a {
 
 a.download {
   background: #fff;
-  color: #855bd7;
+  color: #663366;;
 }
 a.article {
   background: #6632cd !important;
@@ -217,13 +234,31 @@ th.buttons-2 {
 }
 
 #cardDonantes{
-background-color:#A93BBC;
+background-color:#663366;
 
 }
 
 
 #botonDonaciones{
-    background-color:#A93BBC;
+    background-color:#663366;
 
     }
+
+#cardDonaciones{
+    background-color:#88aa00;
+
+}
+
+#botonDonantes{
+    background-color:#88aa00;
+
+    }
+
+#sidebar .sidebar-header{
+
+    background-color:white;
+
+}
+
+
 

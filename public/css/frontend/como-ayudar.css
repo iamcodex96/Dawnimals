@@ -87,6 +87,7 @@
     background-color: rgba(102,51,102,0.8);
     color:white;
     margin:10px;
+    border-radius: 20px;
 }
 
 .botonVideo:hover{
