@@ -4,6 +4,23 @@ body {
   background: #fafafa;
 }
 
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
+    }
+
+    @font-face {
+        font-family: "Josefin";
+        src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
+      }
+
+
+    h1,h2,h3,h4,h5,h6{
+
+        font-family: "Montserrat";
+
+    }
+
 p {
   font-family: "Poppins", sans-serif;
   font-size: 1.1em;
