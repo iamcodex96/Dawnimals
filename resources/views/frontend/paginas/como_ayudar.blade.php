@@ -11,39 +11,36 @@
 
 @section('contenido')
 <main class="container-fluid">
-
-        <div class="text-center m-5">
+        {{-- <img src="{{ asset('img/quien-somos/img-quien-somos-8.png') }}" class="img-fluid" alt="Responsive image"> --}}
+        <div class="text-center mt-5 mb-3">
                 <h1>¿Cómo puedo ayudar?</h1>
-
         </div>
 
+        <div class="col-12 text-center video-links2" height="1000px">
 
-
-   {{-- <img src="{{ asset('img/quien-somos/img-quien-somos-8.png') }}" class="img-fluid" alt="Responsive image"> --}}
-
-   <div class="col-12 mb-5 text-center video-links">
-        <a  class="btn  botonVideo" data-start="4" data-end="64" id="intro" href="#" role="button">DATOS</a>
-        <a  class="btn  botonVideo" data-start="65" data-end="125" id="adopcion" href="#" role="button">ADOPCIÓN</a>
-        <a  class="btn  botonVideo" data-start="126" data-end="189" id="donacion" href="#" role="button">DONACIÓN</a>
-        <a  class="btn  botonVideo" data-start="190" data-end="500" id="voluntario"href="#"  role="button">VOLUNTARIO</a>
-        <a  class="btn  botonVideo" data-start="4" data-end="500" id="todo" href="#" role="button">VER TODO</a>
-
-</div>
-
-    <div id="video" class="d-flex justify-content-center mt-5">
-
-            <div class="video-controls">
-                    <i class="fas fa-play"></i>
+            <div class="col-12 text-center video-links">
+                    <a  class="btn  botonVideo" data-start="4" data-end="64" id="intro" href="#" role="button">DATOS</a>
+                    <a  class="btn  botonVideo" data-start="65" data-end="125" id="adopcion" href="#" role="button">ADOPCIÓN</a>
+                    <a  class="btn  botonVideo" data-start="126" data-end="189" id="donacion" href="#" role="button">DONACIÓN</a>
+                    <a  class="btn  botonVideo" data-start="190" data-end="500" id="voluntario"href="#"  role="button">VOLUNTARIO</a>
+                    <a  class="btn  botonVideo" data-start="4" data-end="500" id="todo" href="#" role="button">VER TODO</a>
+                </div>
             </div>
 
-            <video id="myVideo"class="d-flex justify-content-center" width="1280" height="720"  type="video/mp4">
+        <div id="video" class="d-flex justify-content-center">
 
-                    <source src="{{ asset('./videos/SPAM_videoInteractivo.mp4') }}">
-                            Your browser does not support HTML5 video.
-            </video>
+                <div class="video-controls">
+                        <i class="fas fa-play"></i>
+                </div>
 
-        </div>
 
+                <video id="myVideo"class="embed-responsive" width="1280" height="720"  type="video/mp4">
+
+                        <source src="{{ asset('./videos/SPAM_videoInteractivo.mp4') }}">
+                                Your browser does not support HTML5 video.
+                </video>
+
+            </div>
 
     <div class="text-center m-5">
         <h1>Dona dinero</h1>
