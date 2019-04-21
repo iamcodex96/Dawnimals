@@ -21,11 +21,18 @@
 
 
 .video-links {
-    position: absolute;
+
     z-index: 2;
-    top:30%;
 
 }
+
+.video-links2 {
+
+    z-index: 2;
+    height:70px;
+
+}
+
 
 .video-controls {
     cursor: pointer;
@@ -49,7 +56,12 @@
     color: #FFFFFF;
 }
 
-/* .video-controlsPause {
+.video-controls:hover{
+    background-color: rgba(102,51,102,0.8);
+
+}
+
+/* .controlsPause {
     float: left;
     position: absolute;
     z-index: 2;

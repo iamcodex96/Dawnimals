@@ -2,6 +2,8 @@ var myvideo = document.getElementById('myVideo');
 
 var videoCheckInterval;
 
+$(".controlsPause").hide();
+
 setInterval(function() {
     if (myvideo.paused && !$(".video-links").is(':visible')) {
         $(".video-links").fadeIn();
@@ -12,6 +14,16 @@ setInterval(function() {
 
     } else if (!myvideo.paused && $(".video-links").is(':visible')) {
         $(".video-links").fadeOut();
+
+
+        // $("#myVideo").hover(
+        //     function() {
+        //         console.log("Entra");
+        //         $(".controlsPause").fadeIn();
+        //     }, function() {
+        //         $(".controlsPause").fadeOut();
+        //     }
+        //   );
     }
 
 }, 500);
