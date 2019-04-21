@@ -12,15 +12,15 @@
       src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
     }
 
-    @font-face {
-        font-family: "Montserrat Light";
-        src: url("../../fuentes/Montserrat/Montserrat-Light.ttf");
-      }
+@font-face {
+    font-family: "Montserrat Light";
+    src: url("../../fuentes/Montserrat/Montserrat-Light.ttf");
+    }
 
-      @font-face {
-        font-family: "Montserrat Bold";
-        src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
-      }
+@font-face {
+font-family: "Montserrat Bold";
+src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
+}
 
 
   body {

@@ -2,6 +2,7 @@
 
 @section('css_propio')
 <link rel="stylesheet" href="{{ asset('css/frontend/quien-somos.css') }}">
+<link rel="stylesheet" href="{{ asset('css/frontend/como-ayudar.css') }}">
 @endsection
 
 @section('titulo')
@@ -16,20 +17,26 @@
 
         </div>
 
-        <div class="col-12 mb-5 text-center">
-                <a  class="btn btn-secondary" id="intro" href="#" role="button">INTRODUCCIÓN</a>
-                <a  class="btn btn-secondary" id="adopcion" href="#" role="button">ADOPCIÓN</a>
-                <a  class="btn btn-secondary" id="donacion" href="#" role="button">DONACIÓN</a>
-                <a  class="btn btn-secondary" id="voluntario"href="#"  role="button">VOLUNTARIO</a>
-                <a  class="btn btn-secondary" id="todo" href="#" role="button">VER TODO</a>
-        </div>
+
 
    {{-- <img src="{{ asset('img/quien-somos/img-quien-somos-8.png') }}" class="img-fluid" alt="Responsive image"> --}}
 
+   <div class="col-12 mb-5 text-center video-links">
+        <a  class="btn  botonVideo" data-start="4" data-end="64" id="intro" href="#" role="button">DATOS</a>
+        <a  class="btn  botonVideo" data-start="65" data-end="125" id="adopcion" href="#" role="button">ADOPCIÓN</a>
+        <a  class="btn  botonVideo" data-start="126" data-end="189" id="donacion" href="#" role="button">DONACIÓN</a>
+        <a  class="btn  botonVideo" data-start="190" data-end="500" id="voluntario"href="#"  role="button">VOLUNTARIO</a>
+        <a  class="btn  botonVideo" data-start="4" data-end="500" id="todo" href="#" role="button">VER TODO</a>
+
+</div>
 
     <div id="video" class="d-flex justify-content-center mt-5">
 
-            <video controls id="myVideo"class="d-flex justify-content-center" width="1280" height="720"  type="video/mp4">
+            <div class="video-controls">
+                    <i class="fas fa-play"></i>
+            </div>
+
+            <video id="myVideo"class="d-flex justify-content-center" width="1280" height="720"  type="video/mp4">
 
                     <source src="{{ asset('./videos/SPAM_videoInteractivo.mp4') }}">
                             Your browser does not support HTML5 video.
@@ -62,7 +69,7 @@
 <script src="{{ asset('./js/frontend/video.js') }}"></script>
 <script>
     var $spam = $('#spam');
-    console.log($spam.position().top);
+
     $(window).scroll(function(){
         console.log($(this).scrollTop());
     })
