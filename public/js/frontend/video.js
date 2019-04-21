@@ -58,3 +58,7 @@ $(".video-controls").click(function() {
     myvideo.play();
     $(".video-controls").fadeOut();
 })
+
+
+
+

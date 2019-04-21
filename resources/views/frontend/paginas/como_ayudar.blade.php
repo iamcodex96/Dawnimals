@@ -21,15 +21,17 @@
 
    {{-- <img src="{{ asset('img/quien-somos/img-quien-somos-8.png') }}" class="img-fluid" alt="Responsive image"> --}}
 
+   <div class="col-12 mb-5 text-center video-links">
+        <a  class="btn  botonVideo" data-start="4" data-end="64" id="intro" href="#" role="button">DATOS</a>
+        <a  class="btn  botonVideo" data-start="65" data-end="125" id="adopcion" href="#" role="button">ADOPCIÓN</a>
+        <a  class="btn  botonVideo" data-start="126" data-end="189" id="donacion" href="#" role="button">DONACIÓN</a>
+        <a  class="btn  botonVideo" data-start="190" data-end="500" id="voluntario"href="#"  role="button">VOLUNTARIO</a>
+        <a  class="btn  botonVideo" data-start="4" data-end="500" id="todo" href="#" role="button">VER TODO</a>
+
+</div>
 
     <div id="video" class="d-flex justify-content-center mt-5">
-            <div class="col-12 mb-5 text-center video-links">
-                    <a  class="btn btn-secondary" data-start="0" data-end="64" id="intro" href="#" role="button">INTRODUCCIÓN</a>
-                    <a  class="btn btn-secondary" data-start="65" data-end="128" id="adopcion" href="#" role="button">ADOPCIÓN</a>
-                    <a  class="btn btn-secondary" data-start="0" data-end="64" id="donacion" href="#" role="button">DONACIÓN</a>
-                    <a  class="btn btn-secondary" data-start="0" data-end="64" id="voluntario"href="#"  role="button">VOLUNTARIO</a>
-                    <a  class="btn btn-secondary" data-start="0" data-end="500" id="todo" href="#" role="button">VER TODO</a>
-            </div>
+
             <div class="video-controls">
                     <i class="fas fa-play"></i>
             </div>
