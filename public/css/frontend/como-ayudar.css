@@ -1,0 +1,26 @@
+.video-links {
+    position: absolute;
+    z-index: 2;
+}
+
+.video-controls {
+    cursor: pointer;
+}
+
+.video-controls {
+    float: left;
+    position: absolute;
+    z-index: 2;
+    z-index: 2;
+    margin: auto;
+    margin-top: 5em;
+    font-size: 56px;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 45px;
+    padding-right: 35px;
+    text-align: center;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
