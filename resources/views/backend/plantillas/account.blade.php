@@ -25,7 +25,7 @@
         <div id="login-form" class="position-relative">
 
             <div id="logo" class="rounded-circle shadow">
-                <img src="{{ asset('img/spam.jpg') }}">
+                <img src="{{ asset('img/logoSPAM_sin.png') }}">
             </div>
 
             <div class="card p-2 shadow" style="padding-top:120px !important; border-radius: 35px;">
