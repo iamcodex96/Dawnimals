@@ -69,19 +69,6 @@
                 </div>
             </div>
     </div>
-    <hr>
-    <div id="video" class="d-flex justify-content-center">
-
-        <video controls loop id="myVideo"class="d-flex justify-content-center" width="1280" height="720"  type="video/mp4">
-
-                <source src="{{ asset('./img/versionWebSPAM.mp4') }}">
-                        Your browser does not support HTML5 video.
-        </video>
-
-    </div>
-
-
-
 
 
     <hr>

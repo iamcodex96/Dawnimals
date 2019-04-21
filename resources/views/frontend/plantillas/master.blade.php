@@ -16,7 +16,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" background="none">
-        <a href="{{ url('/') }}"><img  src="{{ asset('./img/LogoSPAM_sin.png') }}"alt="" id="logoNavbar"></a>
+        <a href="{{ url('/') }}"><img  src="{{ asset('./img/LogoSPAM_sin.png') }}" class="m-2"alt="" id="logoNavbar"></a>
         <div class="collapse navbar-collapse text-black-50 ml-4 justify-content-end" id="navbarNav">
 
             <ul class="navbar-nav">

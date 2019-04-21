@@ -28,21 +28,21 @@
     overflow-x: hidden;
   }
 
-  #background1{
+  /* #background1{
     background-image: url("../../img/prote_4.png");
     min-height: 900px;
   }
 
   #img1{
    background-image: url("../../img/perro_gato.jpeg");
-   min-height: 600px;
+   min-height: 450px;
 
 
-  }
+  } */
 
   #img2{
       background-image: url("../../img/cat_.png");
-      min-height: 600px;
+      min-height: 450px;
 
   }
 
@@ -92,7 +92,7 @@
 
   h1 {
     font-family: Josefin;
-    color: #454049;
+    color: #663366;
   }
 
   p {
@@ -171,7 +171,7 @@
     transform: scale(1);
     transition: transform 0.2s ease-in;
   }
-  #segundo .card h2 {
+  #segundo .card h3 {
     position: relative;
     padding: 0;
     margin: 0;
@@ -180,6 +180,7 @@
     padding: 10px;
     background-color: #88aa00;
     color: white;
+    font-family: Montserrat bold;
   }
 
   #tercero {
@@ -207,6 +208,17 @@
   }
   #tercero .info-necessidades {
     border: solid 3px black;
+  }
+
+  #cuarto {
+
+  }
+  #cuarto h1 {
+      width: 100%;
+      padding: 15px;
+      padding-left: 100px;
+      margin-left: -50px;
+      text-align: center;
   }
 
   .container-fluid {
@@ -259,6 +271,13 @@
 
 #huellaVideo {
     scroll-behavior: smooth;
+}
+
+h3.texto-container{
+
+    color:#746F79;
+    font-family: Montserrat bold;
+
 }
 
 
