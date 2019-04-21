@@ -10,7 +10,34 @@
 
 @section('contenido')
 <main class="container-fluid">
-    <img src="{{ asset('img/quien-somos/img-quien-somos-8.png') }}" class="img-fluid" alt="Responsive image">
+
+        <div class="text-center m-5">
+                <h1>¿Cómo puedo ayudar?</h1>
+
+        </div>
+
+        <div class="col-12 mb-5 text-center">
+                <a  class="btn btn-secondary" id="intro" href="#" role="button">INTRODUCCIÓN</a>
+                <a  class="btn btn-secondary" id="adopcion" href="#" role="button">ADOPCIÓN</a>
+                <a  class="btn btn-secondary" id="donacion" href="#" role="button">DONACIÓN</a>
+                <a  class="btn btn-secondary" id="voluntario"href="#"  role="button">VOLUNTARIO</a>
+                <a  class="btn btn-secondary" id="todo" href="#" role="button">VER TODO</a>
+        </div>
+
+   {{-- <img src="{{ asset('img/quien-somos/img-quien-somos-8.png') }}" class="img-fluid" alt="Responsive image"> --}}
+
+
+    <div id="video" class="d-flex justify-content-center mt-5">
+
+            <video controls id="myVideo"class="d-flex justify-content-center" width="1280" height="720"  type="video/mp4">
+
+                    <source src="{{ asset('./videos/SPAM_videoInteractivo.mp4') }}">
+                            Your browser does not support HTML5 video.
+            </video>
+
+        </div>
+
+
     <div class="text-center m-5">
         <h1>Dona dinero</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit cras varius sollicitudin, taciti vel mollis nunc pretium netus sodales volutpat luctus conubia neque, convallis orci suspendisse leo integer libero commodo inceptos curae. Velit pellentesque curabitur eget aliquet cursus lectus ad maecenas suscipit pulvinar congue luctus ultricies, curae porta vulputate lobortis neque hac porttitor potenti dui senectus sollicitudin integer. Condimentum diam eu fermentum nam metus platea neque in mattis tempus dis tempor, ad sed molestie mi porta blandit bibendum tortor arcu proin hendrerit.
@@ -31,7 +58,8 @@
 @endsection
 
 @section('js_loaded')
-<script src="{{ asset('./js/frontend/landing.js') }}"></script>
+{{-- <script src="{{ asset('./js/frontend/landing.js') }}"></script> --}}
+<script src="{{ asset('./js/frontend/video.js') }}"></script>
 <script>
     var $spam = $('#spam');
     console.log($spam.position().top);

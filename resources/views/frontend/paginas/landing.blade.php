@@ -25,7 +25,7 @@
 
         <video autoplay muted loop id="myVideo"class="embed-responsive-item">
 
-            <source src="{{ asset('./img/versionWebSPAM.mp4') }}">
+            <source src="{{ asset('./videos/versionWebSPAM.mp4') }}">
                     Your browser does not support HTML5 video.
         </video>
 
@@ -84,12 +84,12 @@
 
 
 
-        <h2 class="texto-container text-center mb-5" z-index="-1">{{__("frontend.textoComoayudar")}}</h2>
+        <h3 class="texto-container text-center mb-5" z-index="-1">{{__("frontend.textoComoayudar")}}</h3>
         <div class="row">
             <div class="col-md-4">
                 <div class="card rounded-circle">
                     <img class="card-img-top" src="{{ asset('./img/insta001.png') }}" alt="Card image cap">
-                    <h2 class="text-center"> {{__("frontend.donaAmor")}}</h2>
+                    <h3 class="text-center"> {{__("frontend.donaAmor")}}</h3>
                     <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_AMOR.png') }}" width="70px" alt=""></div>
 
                 </div>
@@ -97,14 +97,14 @@
             <div class="col-md-4">
                 <div class="card rounded-circle">
                     <img class="card-img-top" src="{{ asset('./img/insta002.png') }}" alt="Card image cap">
-                    <h2 class="text-center"> {{__("frontend.donaDinero")}}</h2>
+                    <h3 class="text-center"> {{__("frontend.donaDinero")}}</h3>
                     <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_MONEDA.png') }}" width="70px" alt=""></div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card rounded-circle">
                     <img class="card-img-top" src="{{ asset('./img/insta003.png') }}" alt="Card image cap">
-                    <h2 class="text-center">{{__("frontend.donaTiempo")}}</h2>
+                    <h3 class="text-center">{{__("frontend.donaTiempo")}}</h3>
                     <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_TIEMPO.png') }}" width="70px" alt=""></div>
                 </div>
             </div>
@@ -114,7 +114,7 @@
 
     <div id="tercero" class="p-5">
         <h1 class="">{{__("frontend.tituloNuestrasDonaciones")}}</h1>
-        <h2 class="texto-container text-center mb-5">{{__("frontend.textoNuestrasDonaciones")}}</h2>
+        <h3 class="texto-container text-center mb-5">{{__("frontend.textoNuestrasDonaciones")}}</h3>
 
         <div class="row">
 
@@ -156,7 +156,7 @@
     <div class="imgParallax" id="img2"></div>
     <div id="cuarto" class="p-5">
         <h1 class="">{{ __("frontend.nuestros_retos") }}</h1>
-        <h2 class="texto-container text-center mb-5">{{ __('frontend.retos_participa') }}</h2>
+        <h3 class="texto-container text-center mb-5">{{ __('frontend.retos_participa') }}</h3>
         <div class="container">
 
                 @component('frontend.componentes.challenges', ['retos' => $retos, 'isAnterior' => false]) @endcomponent

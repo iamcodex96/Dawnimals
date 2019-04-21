@@ -14,6 +14,20 @@
       src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
     }
 
+    @font-face {
+        font-family: "Montserrat Medium";
+        src: url("../../fuentes/Montserrat/Montserrat-Medium.ttf");
+      }
+
+
+h1 {
+    font-family: Josefin!important;
+    color: #663366!important;
+    }
+p{
+    font-family: Montserrat medium!important;
+}
+
 .navegacion {
   position: fixed;
   right: 30px;
