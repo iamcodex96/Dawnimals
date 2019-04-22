@@ -3,6 +3,8 @@
 @section('contenido')
 <br>
 <div class="container">
+        <img src="{{ asset('img/banner-stats.png') }}" class="img-fluid" alt="Responsive image">
+        <h1 style="position: relative;left: -476px;top: -65px; text-align:center"id="typer"></h1>
     <!-- Bar and Line Chart -->
     <div class="card mb-3">
         <div class="card-header">
@@ -58,4 +60,22 @@
 <script src="{{url( 'js/charts/create-doughnut-chart.js' )}}"></script>
 <script src="{{url( 'js/charts/create-polar-area-chart.js' )}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script>
+        var typer = $('#typer');
+        var txt = '{{__("frontend.estadisticas")}}';
+        var textoAmostrar='';
+        var speed = 50;
+        var i=0;
+        var j=0;
+        typerEffect();
+
+    function typerEffect(){
+        if (i < txt.length){
+            textoAmostrar+= txt.charAt(i)
+            typer.html(textoAmostrar);
+            i++;
+            setTimeout(typerEffect, speed);
+        }
+    };
+    </script>
     @endsection

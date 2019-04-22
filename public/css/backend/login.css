@@ -66,8 +66,8 @@ body::before {
 }
 
 .btn-primary {
-    background-color: #b6b221 !important;
-    border-color: #b6b221 !important;
+    background-color: #88aa00 !important;
+    border-color: #88aa00 !important;
 }
 
 .btn:hover{
@@ -75,3 +75,5 @@ body::before {
     color: gray !important;
 
 }
+
+

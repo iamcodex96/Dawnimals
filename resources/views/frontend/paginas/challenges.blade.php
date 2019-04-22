@@ -9,8 +9,11 @@
 
 @section('contenido')
 
+<div class="container">
+        <img src="{{ asset('img/banner-challenge.png') }}" class="img-fluid" alt="Responsive image">
+        <h1 style="position: relative;left: -476px;top: -65px; text-align:center"id="typer"></h1>
+    </div>
 <div id="cuarto" class="p-5">
-    <h1 class="">{{ __("frontend.nuestros_retos") }}</h1>
     <h2 class="texto-container text-center mb-5">{{ __('frontend.retos_participa') }}</h2>
     <div class="container">
 
@@ -37,5 +40,21 @@
 
             swichClass($("#btnMuestraAnteriores .fa"), "fa-chevron-down", "fa-chevron-up");
         });
+        var typer = $('#typer');
+        var txt = '{{__("frontend.nuestros_retos")}}';
+        var textoAmostrar='';
+        var speed = 50;
+        var i=0;
+        var j=0;
+        typerEffect();
+
+    function typerEffect(){
+        if (i < txt.length){
+            textoAmostrar+= txt.charAt(i)
+            typer.html(textoAmostrar);
+            i++;
+            setTimeout(typerEffect, speed);
+        }
+    };
     </script>
 @endsection

@@ -9,8 +9,11 @@
 @endsection
 
 @section('contenido')
-<main class="container-fluid">
+<div class="container">
     <img src="{{ asset('img/quien-somos/img-quien-somos-1.png') }}" class="img-fluid" alt="Responsive image">
+    <h1 style="position: relative;left: -476px;top: -65px; text-align:center"id="typer"></h1>
+</div>
+<main class="container-fluid">
     <hr>
     <div class="p-5">
         <div id="spam" class="row">
@@ -69,10 +72,8 @@
                 </div>
             </div>
     </div>
-    <hr>
-    <div id="video" class="d-flex justify-content-center">
-            <iframe width="1280" height="720" src="https://www.youtube.com/embed/qRdSLZ5UmSE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+
+
     <hr>
     <h1 class="pl-5 mt-5">{{__("frontend.who-junta")}}</h1>
     <div id="empleados" class="row p-5 d-flex justify-content-center">
@@ -126,15 +127,20 @@
 @section('js_loaded')
 <script src="{{ asset('./js/frontend/landing.js') }}"></script>
 <script>
-    var $spam = $('#spam');
-    console.log($spam.position().top);
-    $(window).scroll(function(){
-        console.log($(this).scrollTop());
-    })
-
-    function showOnScroll(divId){
-        var divMostrar = $('#'+divId);
-    }
-
+    var typer = $('#typer');
+    var txt = '{{__("frontend.who-quien")}}';
+    var textoAmostrar='';
+    var speed = 100;
+    var i=0;
+    var j=0;
+    typerEffect();
+    function typerEffect(){
+        if (i < txt.length){
+            textoAmostrar+= txt.charAt(i)
+            typer.html(textoAmostrar);
+            i++;
+            setTimeout(typerEffect, speed);
+        }
+    };
 </script>
 @endsection

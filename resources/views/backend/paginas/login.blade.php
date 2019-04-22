@@ -5,6 +5,7 @@
 
 @section('contenido')
 
+
 <form action="{{ route('login') }}" method="post">
     @csrf
     <div class="form-group">
@@ -30,9 +31,13 @@
     </div>
 
     <div class="form-group text-center mt-4">
+        <a class="btn btn-lg btn-primary" href="{{ url('/') }}"><i class="fas fa-sign-out-alt fa-flip-horizontal volverPublica"></i></a>
+
         <button type="submit" class="btn btn-lg btn-primary">
                 {{ __("backend.iniciar_sesion")}}
-            </button>
+        </button>
+
+
     </div>
 
     <a href="{{ route('requestReset') }}" class="btn btn-link float-right">

@@ -1,6 +1,8 @@
 <?php
 
 return [
+    "home"=>"Inici",
+    "who-quien"=>"Qui som?",
     "who-nombre"=>"Societat Protectora d'Animals de Mataró",
     "who-spam"=>"Treballem des de l’any 1971 amb l'objectiu d'acollir, emparar i promoure l'adopció dels animals abandonats. Gestionem centres d’acollida amb una filosofia proteccionista, lluitem per la vida dels animals i treballem dia rera dia per evitar el seu patiment. La nostra feina també és divulgativa: conscienciem la societat sobre la tinença responsable dels animals de companyia, sobre els drets dels animals, sobre els beneficis de l'adopció i sobre una bona convivència entre els animals i la ciutadania.",
     "who-actividades"=>"Activitats principals",
@@ -17,6 +19,33 @@ return [
     "who-vpresidenta"=>"Vice-presidenta",
     "who-social"=>"Gestor d'events i xarxes socials",
     "who-tresorera"=>"Tresorera",
+    "how-dona-dinero"=>"Dona diners",
+    "how-dona-dinero-txt"=>"Ajuda'ns a recaptar fons per a les cures i necessitats dels animals que resideixen en les nostres protectores.",
+    "how-dona-tiempo"=>"Dona temps",
+    "how-dona-tiempo-texto"=>"Ajudans uninte al nostre equip de voluntaris que ajudan a cuidar dels animals, donant una mica del teu temps jugant y pasejant als animals o també pots cuidar dels mes petits de la casa",
+    "how-dona-amor"=>"Dona amor",
+    "how-dona-amor-adopta"=>"Adopta",
+    "how-text-amor"=>"Els nostres gossos i gats necessiten una segona oportunitat, una llar on oblidar els moments difícils i traumàtics de l'abandonament.  És per tot això que el nostre principal objectiu és l'adopció.
+
+    Al nostre cercador, trobaràs informació actualitzada diàriament dels animals que recollim i acollim. També t'animem a que t'apropis als nostres centres per conèixer els animals personalment, donat que no hi ha res com tenir-los davant per descobrir qui d'ells et robarà el cor. Deixa't assessorar pels nostres professionals i segur que trobaràs la teva mitja taronja de quatre potes.",
+    "how-requisitos"=>"Requeriments per adoptar un animal",
+    "how-requisitos-txt"=>"Ser major d’edat, presentar el DNI, signar el contracte d’adopció i fer efectiu el cost de l’adopció. Si tens dubtes pots consultar la nostra pàgina de preguntes freqüents sobre l'adopció o posar-te en contacte amb nosaltres a info@protectoramataro.org.",
+    "how-coste"=>"Cost d'adopció",
+    "how-coste-txt01"=>"El cost de l'adopció ho és en concepte de primera vacuna, desparasitació interna i externa, esterilització i microxip.",
+    "how-coste-txt02"=>" - 100€ en el cas d'un gos/gossa adult (a partir de 4 mesos)",
+    "how-coste-txt03"=>" - 180€ si és un cadell de gos/gossa de menys de 4 mesos",
+    "how-coste-txt04"=>" - 75€ si és un cadell de gat de fins a 4 mesos",
+    "how-coste-txt05"=>" - 50€ en el cas d'un gat/gata adult",
+    "how-coste-txt06"=>" - 30€ per gossos pertanyents a la campanya 'els invisibles'",
+    "how-coste-txt07"=>" - 30€ per gats pertanyents a la campanya 'els invisibles'",
+    "how-voluntario"=>"Informació",
+    "how-voluntario-txt01"=>"Si voleu ser voluntaris per passejar els nostres gossos o estar amb els nostres gats, heu d'enviar un correu a voluntariat@protectoramataro.org. Un cop enviat, us convocarem a una petita reunió informativa des de la que us  explicarem el nostre funcionament i us donarem els consells i indicacions bàsiques per ajudar els nostres animals. Per ser voluntaris de passeig, cal que sigueu majors de 18 anys. Si teniu 16 anys, haureu de venir a la reunió informativa en companyia dels vostres pares o tutors legals, que hauràn de signar un permís. Caldrà que porteu una fotocòpia del vostre DNI i moltes ganes de ser d'ajut als animals abandonats.També és important que vingueu amb roba còmode i amb calçat apropiat.",
+    "how-voluntario-txt02"=>"NOTA: També hi ha altres maneres d'ajudar-nos. Si voleu ser voluntaris a fires, a parades de recollida d'aliments a supermecats, fent de casa d'acollida per animals convalescents, o d'altres maneres que se us puguin ocòrrer, només heu d'enviar un correu a info@protectoramataro.org",
+    "how-facebook"=>" Facebook",
+    "how-grano"=>"Gra de sorra",
+    "how-socio"=>"Feste soci",
+    "how-padrino"=>"Ajuda com a padrí",
+    "how-teaming"=>"Participa en els teamings",
     "nuestros_retos"=>"Els nostres reptes",
     "retos_participa" => "Participa en els nostres reptes i ajuda'ns a complir els nostres objectius :)",
     "retos_finaliza" => "Aquest repte finalitza el ",
@@ -27,6 +56,7 @@ return [
     "como_ayudar" => "Com ajudar",
     "estadisticas" => "Estadístiques",
     "pagina_oficial" => "Pagina Oficial",
+    "toggle_ayudar" => "¿Com puc ajudar?",
 ];
 
 ?>

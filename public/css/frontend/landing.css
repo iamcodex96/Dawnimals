@@ -1,26 +1,26 @@
-@font-face {
+/* @font-face {
     font-family: "Permanent";
     src: url("../../fuentes/Permanent_Marker/PermanentMarker-Regular.ttf");
   }
   @font-face {
     font-family: "Roboto";
     src: url("../../fuentes/Roboto/Roboto-Medium.ttf");
-  }
+  } */
 
-  @font-face {
-      font-family: "Josefin";
-      src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
+@font-face {
+    font-family: "Josefin";
+    src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat Light";
+    src: url("../../fuentes/Montserrat/Montserrat-Light.ttf");
     }
 
-    @font-face {
-        font-family: "Montserrat Light";
-        src: url("../../fuentes/Montserrat/Montserrat-Light.ttf");
-      }
-
-      @font-face {
-        font-family: "Montserrat Bold";
-        src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
-      }
+@font-face {
+font-family: "Montserrat Bold";
+src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
+}
 
 
   body {
@@ -28,21 +28,21 @@
     overflow-x: hidden;
   }
 
-  #background1{
+  /* #background1{
     background-image: url("../../img/prote_4.png");
     min-height: 900px;
   }
 
   #img1{
    background-image: url("../../img/perro_gato.jpeg");
-   min-height: 600px;
+   min-height: 450px;
 
 
-  }
+  } */
 
   #img2{
       background-image: url("../../img/cat_.png");
-      min-height: 600px;
+      min-height: 450px;
 
   }
 
@@ -52,6 +52,11 @@
 }
 
 
+@media only screen and (max-device-width: 1366px) {
+    .imgParallax {
+      background-attachment: scroll;
+    }
+  }
 
   .imgParallax{
 
@@ -92,7 +97,7 @@
 
   h1 {
     font-family: Josefin;
-    color: #454049;
+    color: #663366;
   }
 
   p {
@@ -158,32 +163,33 @@
   }
   #segundo .card {
 
-    transform: scale(0.85);
-    border: 3px solid #99cd32;
+    transform: scale(0.95);
+    border: 3px solid #fdfdfd;
     border-radius: 10px;
     overflow: hidden;
   }
   #segundo .card img {
-    border-bottom: 5px solid #99cd32;
-    background-color: #99cd32;
+    border-bottom: 5px solid #88aa00;
+    background-color: #88aa00;
   }
   #segundo .card:hover {
     transform: scale(1);
     transition: transform 0.2s ease-in;
   }
-  #segundo .card h2 {
+  #segundo .card h3 {
     position: relative;
     padding: 0;
     margin: 0;
     top: -35px;
     width: 100%;
     padding: 10px;
-    background-color: #99cd32;
+    background-color: #88aa00;
     color: white;
+    font-family: Montserrat bold;
   }
 
   #tercero {
-    height: 1000px;
+    height: 900px;
   }
   #tercero h1 {
       width: 100%;
@@ -194,7 +200,7 @@
   }
   #tercero button {
     margin: 5px;
-    border: solid 5px #99cd32;
+    border: solid 5px #88aa00;
     border-radius: 50px;
   }
   #tercero button img {
@@ -202,11 +208,22 @@
     height: 120px;
   }
   #tercero button:hover {
-    background-color: #99cd32;
+    background-color: #88aa00;
     transition: all 0.5s;
   }
   #tercero .info-necessidades {
     border: solid 3px black;
+  }
+
+  #cuarto {
+
+  }
+  #cuarto h1 {
+      width: 100%;
+      padding: 15px;
+      padding-left: 100px;
+      margin-left: -50px;
+      text-align: center;
   }
 
   .container-fluid {
@@ -216,7 +233,78 @@
 
   .rounded-circle {
     border-radius: 30%!important;
-    background-color: #99cd32;
+    background-color: #88aa00;
 }
+
+.embed-responsive {
+    max-width: 1500px;
+    margin: auto;
+}
+
+#myVideo {
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+
+.containerVideo{
+    position: absolute;
+    top: 7%;
+}
+
+#botonBajar{
+    color: #88aa00;
+
+}
+
+#huellaVideo {
+    position: absolute;
+    left: 45%;
+    margin-top: -7em;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 100px;
+    padding: 1.2em;
+}
+
+#huellaVideo:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+
+
+#huellaVideo {
+    scroll-behavior: smooth;
+}
+
+h3.texto-container{
+
+    color:#746F79;
+    font-family: Montserrat bold;
+
+}
+
+.botonIrA{
+    border-color:none;
+    font-family: Montserrat bold;
+    width:400px;
+    background-color: rgba(136,170,0,0.8);
+    color:white;
+    margin:10px;
+    border-radius: 45px;
+    height:60px;
+    font-size:1.5em;
+    text-align: center;
+    padding: 12px;
+}
+
+.botonIrA:hover{
+
+    background-color: rgba(102,51,102,0.8);
+    color:white;
+
+}
+
 
   /*# sourceMappingURL=landing.css.map */

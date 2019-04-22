@@ -1,6 +1,8 @@
 <?php
 
 return [
+    "home"=>"Inicio",
+    "who-quien"=>"Quien somos?",
     "who-nombre"=>"Sociedad Protectora de Animales de Mataró",
     "who-spam"=>"Trabajamos desde el año 1971 con el objetivo de acoger, amparar y promover la adopción de los animales abandonados. Gestionamos centros de acogida con una filosofía proteccionista, luchamos por la vida de los animales y trabajamos día tras día para evitar su sufrimiento. Nuestra tarea también es divulgativa: concienciamos a la sociedad sobre la tenencia responsable de los animales de compañía, sobre los derechos de los animales, sobre los beneficios de la adopción y sobre una buena convivencia entre los animales y los ciudadanos.",
     "who-actividades"=>"Actividades principales",
@@ -17,6 +19,34 @@ return [
     "who-vpresidenta"=>"Vice-presidenta",
     "who-social"=>"Gestor de eventos y redes sociales",
     "who-tresorera"=>"Tesorera",
+    "how-dona-dinero"=>"Dona dinero",
+    "how-dona-dinero-txt"=>"Ayudanos a recaudar fondos para los cuidados y necesidades de los animales que reciden en nuestras protectoras.",
+    "how-dona-tiempo"=>"Dona tiempo",
+    "how-dona-tiempo-texto"=>"Ayudanos uniendote a nuestro equipo de voluntarios que ayudan a cuidar de los animales, dandonos un poco de tu tiempo jugando y paseando a los animales o tambien puedes cuidar a los mas pequeños de la casa. ",
+    "how-dona-amor"=>"Dona amor",
+    "how-dona-amor-adopta"=>"Adopta",
+    "how-text-amor"=>"Nuestros perros y gatos necesitan una segunda oportunidad, un hogar desde el que olvidar los momentos difíciles y traumáticos del abandono. Por todo ello nuestro principal objetivo es la adopción.
+
+    En nuestro buscador, encontrarás información actualizada diariamente de los animales que recogemos y acogemos. También te animamos a que te acerques a nuestros centros para conocerles personalmente, ya que lo mejor es tenerlos delante para descubrir quién de ellos te robará el corazón. Déjate asesorar por nuestros profesionales y seguro que encontrarás a tu media naranja de cuatro patas.",
+    "how-requisitos"=>"Requisitos para adoptar un animal",
+    "how-requisitos-txt"=>"Ser mayor de edad, presentar el DNI, firmar el contrato de adopción y hacer efectivo el coste de la adopción. Si tienes dudas puedes consultar nuestra página de preguntas frecuentes sobre la adopción o o ponerte en contacto con nosotros en info@protectoramataro.org.",
+    "how-coste"=>"Coste de la adopción",
+    "how-coste-txt01"=>"La adopción tiene un coste en concepto de vacunación, desparasitación, esterilización y microchip. El coste de las adopciones es el siguiente:",
+    "how-coste-txt02"=>" - 100€ en el caso de un perro/perra adulto (a partir de 4 meses).",
+    "how-coste-txt03"=>" - 180€ si es un cachorro de perro/perra de menos de 4 meses.",
+    "how-coste-txt04"=>" - 75€ si es un cachorro de gato hasta 4 meses",
+    "how-coste-txt05"=>" - 50€ en el caso de un gato/gata adulto",
+    "how-coste-txt06"=>" - 30€ para perros pertenecientes a la campaña 'los invisbles'.",
+    "how-coste-txt07"=>" - 30€ para gatos pertenecientes a la campaña 'los invisibles'",
+    "how-voluntario"=>"Informacion",
+    "how-voluntario-txt01"=>"Si queréis ser voluntarios par pasear a nuestros perros o estar con nuestros gatos, tenéis que enviar un correo a voluntariat@protectoramataro.org. Una vez enviado, os convocaremos a una pequeña reunión informativa en la que os explicaremos nuestro funcionamiento y os daremos los consejos e indicaciones básicas para ayudar a nuestros animales. Para ser voluntarios de paseo, tenéis que ser mayores de 18 años. Si tenéis 16 años, tendreis que venir a la reunión informativa acompañados de vuestros padres o tutores legales, que tendrán que firmar un permiso. Es necesario que traigáis una fotocopia de vuestro DNI y muchas ganas de ser de ayuda a los animales abandonados.
+    También es importante que vengáis con ropa cómoda y con calzado apropiado.",
+    "how-voluntario-txt02"=>"NOTA : También hay otras maneras de ayudarnos. Si queréis ser voluntarios en ferias, en paradas de recogida de alimentos en supermecados, haciendo de casa de acogida para animales convalecientes, o de otras formas que se os puedan ocurrir, no tenéis más que enviar un correo a info@protectoramataro.org",
+    "how-facebook"=>" Facebook",
+    "how-grano"=>"Grano de arena",
+    "how-socio"=>"Hazte socio",
+    "how-padrino"=>"Ayuda como padrino",
+    "how-teaming"=>"Participa en los teamings",
     "nuestros_retos"=>"Nuestros retos",
     "retos_participa" => "Participa en nuestros retos y ayúdanos a cumplir nuestra meta :)",
     "retos_finaliza" => "Este reto finaliza el ",
@@ -24,9 +54,21 @@ return [
     "anteriores" => "Anteriores",
 
     "quienes_somos" => "Quiénes somos",
-    "como_ayudar" => "Como ayudar",
-    "estadisticas" => "Estadísitcas",
+    "como_ayudar" => "Cómo ayudar",
+    "estadisticas" => "Estadísticas",
     "pagina_oficial" => "Página Oficial",
+
+    // *** pendiente otros idiomas**
+    "toggle_ayudar" => "¿Cómo puedes ayudar?",
+    "tituloNuestrasDonaciones" => "Nuestras Donaciones",
+    "donaAmor" => "Dona amor",
+    "donaDinero" => "Dona dinero o recursos",
+    "donaTiempo" => "Dona tiempo",
+    "textoComoayudar" => "Puedes ayudarnos de diferentes formas, adoptanto uno de nuestros animales, con donaciones monetarias, materiales o con tu tiempo, cualquier ayuda por pequeña que sea nos ayuda muchísimo a poder tener a nuestros animales en las mejores condiciones posibles",
+    "textoNuestrasDonaciones" => "En SPAM queremos ofrecer la máxima transparencia posible sobre nuestras donaciones, por ese motivo hemos creado una sección en la que te mostramos toda la información sobre las aportaciones que recibimos",
+    "irAComoAyudar"=> "IR A CÓMO AYUDAR",
+    "irAEstadisticas"=> "IR A ESTADÍSTICAS",
+    "irARetos"=> "IR A NUESTROS RETOS"
     ]
 
 ?>

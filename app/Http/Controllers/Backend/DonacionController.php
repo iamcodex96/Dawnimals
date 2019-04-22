@@ -113,7 +113,7 @@ class DonacionController extends Controller
         $data['subtiposDonacion'] = Subtipo::all();
         $data['centros'] = Centro::all();
         $data['usuarios'] = Usuario::all();
-        $data["donantes"] = Donante::all();
+        $data["donante"] = Donante::where('id',$donacione->donantes_id)->first();
         $data["animales"] = Animal::all();
         return view(self::PREFIX.'edit',$data);
     }

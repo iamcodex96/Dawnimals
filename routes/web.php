@@ -1,5 +1,6 @@
 <?php
 use App\Models\Donacion;
+use App\Models\Donante;
 use App\Models\Challenge;
 use Carbon\Carbon;
 
@@ -24,6 +25,7 @@ Route::middleware('locale')->group(function(){
 
         return view('frontend.paginas.landing', $data);
     })->name("landing");
+
     Route::get('/challenges', function () {
         $retos = Challenge::whereDate('fecha_ini', '<=', Carbon::now())->whereDate('fecha_fin', '>=', Carbon::now())->orderBy('fecha_fin', 'DESC')->get();
         foreach($retos as $reto){
@@ -43,6 +45,7 @@ Route::middleware('locale')->group(function(){
         $data["retosAcabados"] = $retosAcabados;
 
         return view('frontend.paginas.challenges', $data);
+
     })->name("landing");
     Route::get('/quien_somos', function () {
         return view('frontend.paginas.quien_somos');
@@ -67,8 +70,17 @@ Route::middleware('locale')->group(function(){
         Route::group(['middleware' => ['auth']], function () {
 
             Route::get('/', function () {
-                $donaciones = Donacion::all();
+
+                $data['fecha_ini'] = Carbon::now()->startOfMonth()->format('d/m/Y');
+                $data['fecha_fin'] = Carbon::now()->endOfMonth()->format('d/m/Y');
+
+                $query = Donacion::whereDate('fecha_donativo', '>=', Carbon::now()->startOfMonth())->whereDate('fecha_donativo', '<=', Carbon::now()->endOfMonth())->orderBy('fecha_donativo', 'DESC');
+
+                $donaciones = $query->take(15)->get();
                 $data['donaciones'] = $donaciones;
+                $data["total_donaciones"] = $query->sum('coste');
+
+                $data["total_donantes"] = Donante::whereDate('fecha_alta', '>=', Carbon::now()->startOfMonth())->whereDate('fecha_alta', '<=', Carbon::now()->endOfMonth())->count();
 
                 $completados = 0;
                 $retos = Challenge::whereDate('fecha_ini', '<=', Carbon::now())->whereDate('fecha_fin', '>=', Carbon::now())->get();
@@ -81,10 +93,12 @@ Route::middleware('locale')->group(function(){
                 return view('backend.paginas.backend',$data);
             });
 
-            Route::prefix('donaciones')->group(function(){
-                Route::resource('', 'Backend\DonacionController');
-                Route::get('diploma/{donacione}', 'Backend\DonacionController@diploma');
-            });
+            // Route::prefix('donaciones')->group(function(){
+            //     Route::resource('/', 'Backend\DonacionController');
+            //     Route::get('diploma/{donacione}', 'Backend\DonacionController@diploma');
+            // });
+            Route::resource('donaciones', 'Backend\DonacionController');
+            Route::get('donaciones/diploma/{donacione}', 'Backend\DonacionController@diploma');
 
 
             Route::resource('donantes', 'Backend\DonanteController');

@@ -67,17 +67,20 @@
         @endforeach
     </select>
 </div>
-
 <div class="form-group float-left col-md-6">
-        <label for="ciudad" class="control-label">Donante</label>
-        <select class="form-control" id="donantes_id" name="donantes_id">
-            <option value="">{{ __("backend.anonimo") }}</option>
-            @foreach($donantes as $donante)
-            <option value="{{ $donante->id }}" {{ $donante->id == $donacion->donantes_id ? "selected" : "" }}>{{$donante->nombre }} - ({{  $donante->id }})</option>
-            @endforeach
-        </select>
-    </div>
+    <label for="ciudad" class="control-label">Donante</label>
+    <div class="row">
+        <div class="col-md-9">
+            <input id="d-id" type="hidden" name="donantes_id" id="donantes_id" value="{{$donante->id}}">
+            <input id="d-nombre" type="text" class="form-control" id="donantes_nombre" readonly value="{{$donante->nombre}}">
+        </div>
 
+        <div class="col-md-3">
+            <button type="button" class="btn btn-primary mr-1" data-toggle="modal" data-target="#modalBuscarDonante"><i class="fas fa-search"></i></a>
+            <button type="button" class="btn btn-success ml-1" data-toggle="modal" data-target="#modalCreateDoanante"><i class="fas fa-plus"></i></a>
+        </div>
+    </div>
+</div>
 
 <div class="form-group float-left col-md-6">
     <label for="ciudad" class="control-label">Coste</label>
@@ -118,6 +121,100 @@
     <label for="cp" class="control-label">Factura</label>
     <input type="text" class="form-control" id="ruta_factura" name="ruta_factura" placeholder="cambiar por fichero">
 </div>
+<div class="modal fade" id="modalBuscarDonante" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="max-width: 1200px" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title modalTitulo">{{__('backend.donantes')}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <div class="row">
+                            <div class="form-group float-left col-md-6">
+                                <label for="cif" class="control-label">DNI/CIF</label>
+                                <input type="text" id="input-cif" class="form-control">
+                            </div>
+                            <div class="form-group float-left col-md-6">
+                                <label for="cp" class="control-label">{{__('backend.correo')}}</label>
+                                <input type="text" id="input-correo" class="form-control">
+                            </div>
+                        </div>
+                        <button onclick="filtroDonante()" type="button" class="btn btn-primary">Filtrar</button>
+                    </div>
+
+                    <hr>
+                <div class="table-responsive text-center">
+                    <table class="table table-striped">
+                        <thead class=" thead-dark">
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th class="text-center">{{__('backend.nombre_donante')}}</th>
+                                <th class="text-center">{{__('backend.direccion')}}</th>
+                                <th class="text-center">{{__('backend.telefono')}}</th>
+                                <th class="text-center">{{__('backend.correo')}}</th>
+                                <th colspan="2" class="text-center">{{__('backend.accion')}}</th>
+                            </tr>
+                        </thead>
+                        <tbody id="donanteTableBody">
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('backend.cancelar') }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCreateDoanante" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" style="max-width: 1200px" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title modalTitulo">{{__('backend.donante_añadir')}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                                <div class="form-group col-md-6">
+                                    <!-- State Button -->
+                                    <label for="tipoD" class="control-label">{{__('backend.tipo_donante')}}</label>
+                                    <select id="selTipoDonante" class="form-control">
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <!-- State Button -->
+                                    <label for="tipoD" class="control-label">{{__('backend.sexo')}}</label>
+                                    <select id="selSexos" class="form-control">
+                                    </select>
+                                </div>
+                                <div class="form-group float-left col-md-6">
+                                    <label for="full_name_id" class="control-label">{{__('backend.nombre_donante')}}</label>
+                                    <input type="text" class="form-control" id="nombreD" name="full_name" placeholder="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="cif" class="control-label">CIF/NIF</label>
+                                    <input type="text" class="form-control" id="cif" name="cif" placeholder="">
+                                </div>
+                                <div class="form-group float-left col-md-12">
+                                    <label for="email" class="control-label">{{__('backend.correo')}}</label>
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="">
+                                </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="guardarDonante()" class="btn btn-primary btnAceptar">{{ __('backend.guardar') }}</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('backend.cancelar') }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 @endsection
 @section('scripts')
 @parent
