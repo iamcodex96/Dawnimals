@@ -109,7 +109,7 @@ url('backend/donaciones/create'))
         </thead>
         <tbody>
             @foreach ($donaciones as $donacion)
-            <tr>
+            <tr data-alta="{{$donacion->fecha_donativo}}">
 
                 <td class="text-center">{{$donacion->fecha_donativo}}</td>
                 <td class="text-center">{{$donacion->subtipos->tipos->nombre}}</td>
@@ -165,7 +165,19 @@ url('backend/donaciones/create'))
 
 </script>
 <script>
-
+    var isAdmin = '{{Auth::user()->admin}}';
+    var donaciones = $('[data-alta]');
+    donaciones.each(function(){
+        var fecha =new Date( $(this).data('alta'));
+        var fecha30 = new Date(fecha);
+        fecha30.setMinutes(fecha.getMinutes()+30);
+        var now = new Date(Date.now);
+        if(fecha30<now){
+            console.log($(this).children());
+        }
+    });
+    console.log(donaciones);
+    console.log(isAdmin);
     $('#tipo').change(function() {
 
                 opt = $('#tipo').val();
