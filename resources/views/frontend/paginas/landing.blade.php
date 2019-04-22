@@ -42,51 +42,15 @@
 
 </div>
 
-    {{-- <div id="primero">
-        <div class="imgParallax3" id="background1">
-            <div class="explicacion">
-                <div class="row mt-0 mr-3">
-                    <div class="col-md-5 texto-container bannerInitDerecha">
-                        <div class="texto">
-                            <p class="m-5 landingText">Gestionamos centros de acogida con una filosofía proteccionista, luchamos por la vida de los
-                                animales y trabajamos día tras día para evitar su sufrimiento. Nuestra tarea también es divulgativa:
-                                concienciamos a la sociedad sobre la tenencia responsable de los animales de compañía, los
-                                derechos de los animales, los beneficios de la adopción y una buena convivencia entre los
-                                animales y los ciudadanos</p>
-                            <p class="landingText">¿Nos ayudas?</p>
-                        </div>
-
-                        <div class="logoQuienes text-center">
-                            <img src="{{ asset('./img/logo_OK_transparencia_2.png') }}" width="350px" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-6 texto-container mt-5"> </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="intermedio">
-        <div class="col-md-12 col-sm-0 imgParallax2" id="imghuellas">
-        </div>
-
-
-    </div> --}}
-
-    {{--
-    <div class="imgParallax" id="img1">
-    </div> --}}
-    {{-- </div>
-    </div> --}}
-
     <div id="segundo" class="p-5">
         <h1 class="" z-index="-1">{{__("frontend.toggle_ayudar")}}</h1>
 
 
 
         <h3 class="texto-container text-center mb-5" z-index="-1">{{__("frontend.textoComoayudar")}}</h3>
+
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 col-xs-10">
                 <div class="card rounded-circle">
                     <img class="card-img-top" src="{{ asset('./img/insta001.png') }}" alt="Card image cap">
                     <h3 class="text-center"> {{__("frontend.donaAmor")}}</h3>
@@ -94,20 +58,25 @@
 
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card rounded-circle">
+            <div class="col-md-4 col-xs-10">
+                <div class="card rounded-circle" href="">
                     <img class="card-img-top" src="{{ asset('./img/insta002.png') }}" alt="Card image cap">
                     <h3 class="text-center"> {{__("frontend.donaDinero")}}</h3>
                     <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_MONEDA.png') }}" width="70px" alt=""></div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-xs-10">
                 <div class="card rounded-circle">
                     <img class="card-img-top" src="{{ asset('./img/insta003.png') }}" alt="Card image cap">
                     <h3 class="text-center">{{__("frontend.donaTiempo")}}</h3>
                     <div class="text-center pb-3"><img src="{{ asset('./img/SPAMI_LOGO_TIEMPO.png') }}" width="70px" alt=""></div>
                 </div>
             </div>
+        </div>
+
+
+        <div class="col-md-12 text-center mt-5">
+            <a class="btn botonIrA" href="#" role="button">{{__("frontend.irAComoAyudar")}}</a>
         </div>
 
     </div>
@@ -146,8 +115,8 @@
                 </div>
             </div>
 
-            <div class="col-md-12 text-center mb-5">
-                <a name="" id="" class="btn btn-primary" href="#" role="button">DONACIONES</a>
+            <div class="col-md-12 text-center mt-5">
+                <a name="" id="" class="btn botonIrA" href="#" role="button">{{__("frontend.irAEstadisticas")}}</a>
             </div>
         </div>
 
@@ -160,6 +129,10 @@
         <div class="container">
 
                 @component('frontend.componentes.challenges', ['retos' => $retos, 'isAnterior' => false]) @endcomponent
+        </div>
+
+        <div class="col-md-12 text-center mt-5">
+            <a name="" id="" class="btn botonIrA" href="#" role="button">{{__("frontend.irARetos")}}</a>
         </div>
     </div>
 </main>
