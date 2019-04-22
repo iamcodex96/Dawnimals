@@ -93,10 +93,12 @@ Route::middleware('locale')->group(function(){
                 return view('backend.paginas.backend',$data);
             });
 
-            Route::prefix('donaciones')->group(function(){
-                Route::resource('', 'Backend\DonacionController');
-                Route::get('diploma/{donacione}', 'Backend\DonacionController@diploma');
-            });
+            // Route::prefix('donaciones')->group(function(){
+            //     Route::resource('/', 'Backend\DonacionController');
+            //     Route::get('diploma/{donacione}', 'Backend\DonacionController@diploma');
+            // });
+            Route::resource('donaciones', 'Backend\DonacionController');
+            Route::get('donaciones/diploma/{donacione}', 'Backend\DonacionController@diploma');
 
 
             Route::resource('donantes', 'Backend\DonanteController');
