@@ -1,5 +1,7 @@
 ( function ( $ ) {
 
+    actualvalue = 0;
+
 	var charts = {
 		init: function () {
 			// -- Set new default font family and font color to mimic Bootstrap's default styling
@@ -12,8 +14,8 @@
 
 		ajaxGetPostMonthlyData: function () {
             //artisan serve
-            var urlPath =  'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/get-post-animal-data';
-            //var urlPath ='http://localhost:8080/Dawnimals/public/get-post-animal-data';
+            //var urlPath =  'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/get-post-animal-data';
+            var urlPath ='http://localhost:8080/Dawnimals/public/get-post-animal-data';
 			var request = $.ajax( {
 				method: 'GET',
 				url: urlPath
@@ -59,6 +61,34 @@
                             fontColor:'#000',
                         }
                     },
+                    plugins: {
+                        datalabels: {
+                            formatter: (value, ctx) => {
+
+                                let datasets = ctx.chart.data.datasets;
+
+                                actualvalue = value;
+                                if(value != 0){
+                                    //console.log('SUMA DE PERCENTATGE: ' + value);
+                                    if (datasets.indexOf(ctx.dataset) === datasets.length - 1) {
+                                        let sum = datasets[0].data.reduce((a, b) => a + b, 0);
+
+                                        let percentage = Math.round((value / sum) * 100) + '%';
+                                        return percentage;
+                                        } else {
+                                        return percentage;
+                                        }
+                                }
+                            },
+                            // display: function(context) {
+                            //     if(actualvalue != 0){
+                            //     console.log('actualvalue: ' +actualvalue);
+                            //      return context.dataIndex; // display labels with an odd index
+                            //     }
+                            // },
+                            color: '#fff',
+                        }
+                    }
                 },
 
 			});
