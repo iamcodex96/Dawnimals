@@ -71,7 +71,7 @@
     <label for="ciudad" class="control-label">Donante</label>
     <div class="row">
         <div class="col-md-9">
-            <input id="d-id" type="hidden" name="donantes_id" id="donantes_id">
+            <input id="d-id" type="hidden" name="donantes_id" id="donantes_id" value="{{$donante->id}}">
             <input id="d-nombre" type="text" class="form-control" id="donantes_nombre" readonly value="{{$donante->nombre}}">
         </div>
 
@@ -80,17 +80,7 @@
             <button type="button" class="btn btn-success ml-1" data-toggle="modal" data-target="#modalCreateDoanante"><i class="fas fa-plus"></i></a>
         </div>
     </div>
-<!--
-<div class="form-group float-left col-md-6">
-        <label for="ciudad" class="control-label">Donante</label>
-        <select class="form-control" id="donantes_id" name="donantes_id">
-            <option value="">{{ __("backend.anonimo") }}</option>
-            @foreach($donantes as $donante)
-            <option value="{{ $donante->id }}" {{ $donante->id == $donacion->donantes_id ? "selected" : "" }}>{{$donante->nombre }} - ({{  $donante->id }})</option>
-            @endforeach
-        </select>
-    </div>
--->
+</div>
 
 <div class="form-group float-left col-md-6">
     <label for="ciudad" class="control-label">Coste</label>
