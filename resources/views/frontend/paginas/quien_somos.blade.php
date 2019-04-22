@@ -9,8 +9,11 @@
 @endsection
 
 @section('contenido')
-<main class="container-fluid">
+<div class="container">
     <img src="{{ asset('img/quien-somos/img-quien-somos-1.png') }}" class="img-fluid" alt="Responsive image">
+    <h1 style="position: relative;left: -476px;top: -65px; text-align:center"id="typer"></h1>
+</div>
+<main class="container-fluid">
     <hr>
     <div class="p-5">
         <div id="spam" class="row">
@@ -124,15 +127,20 @@
 @section('js_loaded')
 <script src="{{ asset('./js/frontend/landing.js') }}"></script>
 <script>
-    var $spam = $('#spam');
-    console.log($spam.position().top);
-    $(window).scroll(function(){
-        console.log($(this).scrollTop());
-    })
-
-    function showOnScroll(divId){
-        var divMostrar = $('#'+divId);
-    }
-
+    var typer = $('#typer');
+    var txt = '{{__("frontend.who-quien")}}';
+    var textoAmostrar='';
+    var speed = 100;
+    var i=0;
+    var j=0;
+    typerEffect();
+    function typerEffect(){
+        if (i < txt.length){
+            textoAmostrar+= txt.charAt(i)
+            typer.html(textoAmostrar);
+            i++;
+            setTimeout(typerEffect, speed);
+        }
+    };
 </script>
 @endsection

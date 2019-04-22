@@ -123,6 +123,8 @@ Route::get('/get-post-animal-data', 'ChartDataController@getAllTipesOfAnimals');
 
 Route::get('/get-post-center-data', 'ChartDataController@getAllCentros');
 
+Route::get('/test', 'ChartDataController@getDonacionXAnyo');
+
 //////////////////////////// PAGS CHARTS ////////////////////////////////////
 
 

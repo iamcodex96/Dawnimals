@@ -1,6 +1,7 @@
 <?php
 
 return [
+    "who-quien"=>"Who are we?",
     "who-nombre"=>"Mataró animal protection society",
     "who-spam"=>"We have been working since 1971 with the aim of welcoming, protecting and promoting the adoption of abandoned animals. We manage shelters with a protectionist philosophy, we fight for the life of the animals and we work day after day to avoid their suffering. Our task is also informative: we raise awareness in society about responsible ownership of pets, about the rights of animals, about the benefits of adoption and about a good coexistence between animals and citizens.",
     "who-actividades"=>"Main Activities",
@@ -17,6 +18,32 @@ return [
     "who-vpresidenta"=>"Vice-president",
     "who-social"=>"Social Media & Event Manager",
     "who-tresorera"=>"Tresurer",
+    "how-dona-dinero"=>"Donate money",
+    "how-dona-tiempo"=>"Donate time",
+    "how-dona-amor"=>"Donate Love",
+    "how-text-amor"=>"Our dogs and cats need a second chance, a home from which to forget the difficult and traumatic moments of abandonment. Therefore, our main objective is adoption.
+
+         In our searcher, you will find daily updated information on the animals that we collect and welcome. We also encourage you to come to our centers to meet them personally, as it is best to have them in front of you to discover which of them will steal your heart. Let yourself be advised by our professionals and you will surely find your four legs orange.",
+    "how-requisitos"=>"Requirements to adopt an animal",
+    "how-requisitos-txt"=>"Be of legal age, present the DNI, sign the adoption contract and make the cost of the adoption effective. If you have questions, you can consult our page of frequently asked questions about adoption or contact us at info@protectoramataro.org.",
+    "how-coste"=>"Cost of adoption",
+    "how-coste-txt01"=>"The adoption has a cost for vaccination, deworming, sterilization and microchip. The cost of adoptions is as follows:",
+    "how-coste-txt02"=>" - 100€ in the case of an adult dog / cat (from 4 months).",
+    "how-coste-txt03"=>" - 180€ if it is a puppy dog / cat of less than 4 months.",
+    "how-coste-txt04"=>" - 75€ for a cat puppy up to 4 months",
+    "how-coste-txt05"=>" - 50€ in the case of an adult cat / cat",
+    "how-coste-txt06"=>" - 30€ for dogs belonging to the 'invisible' campaign.",
+    "how-coste-txt07"=>" - 30€ for cats belonging to the 'invisible' campaign",
+    "how-voluntario"=>"Information",
+    "how-voluntario-txt01"=>"If you want to volunteer to walk our dogs or be with our cats, you have to send an email to voluntariat@protectoramataro.org. Once sent, we will call you to a small informative meeting where we will explain our operation and we will give you the tips and basic instructions to help our animals. To be a tour volunteer, you must be over 18 years old. If you are 16 years old, you will have to come to the information meeting accompanied by your parents or legal guardians, who will have to sign a permit. It is necessary that you bring a photocopy of your ID and many wishes to be of help to abandoned animals.
+         It is also important that you come with comfortable clothes and appropriate footwear.",
+    "how-voluntario-txt02"=>"NOTE: There are also other ways to help us. If you want to be a volunteer in fairs, in food pick-up stops in supermarkets, as a shelter for convalescent animals, or in other ways that you can think of, you only have to send an email to info@protectoramataro.org",
+
+    "how-facebook"=>" Facebook",
+    "how-grano"=>"Grain of sand",
+    "how-socio"=>"Become a partner",
+    "how-padrino"=>"Help as a sponsor",
+    "how-teaming"=>"Participate on teamings",
     "nuestros_retos"=>"Our challenges",
     "retos_participa" => "Take part on our challenges and help us complete our goal :)",
     "retos_finaliza" => "This challenge ends on ",
@@ -27,5 +54,6 @@ return [
     "como_ayudar" => "How to help",
     "estadisticas" => "Statistics",
     "pagina_oficial" => "Official Web",
+    "toggle_ayudar" => "¿How can I help?",
 ]
 ?>
