@@ -93,44 +93,6 @@
                         <option {{$donante->spam == 0 ? 'selected' :'' }} value="0">No</option>
                     </select>
 </div>
-
-
-<div class="form-group float-left col-md-6">
-    <label for="esColaborador" class="control-label">{{__('backend.colaborador')}}</label>
-    <select class="form-control" name="esColaborador">
-                        <option value="*"></option>
-                        <option {{$donante->es_colaborador == 1 ? 'selected' :'' }} value="1">Sí</option>
-                        <option {{$donante->es_colaborador == 0 ? 'selected' :'' }} value="0">No</option>
-                    </select>
-</div>
-
-<div class="form-group float-left col-md-6">
-    <label for="tipoColaborador" class="control-label">{{__('backend.tipo_colab')}}?</label>
-    <select class="form-control" id="tipoColaborador">
-                        <option value="*"></option>
-                        <option {{$donante->es_colaborador == 1 ? 'selected' :'' }} value="1">no sé</option>
-                        <option {{$donante->es_colaborador == 0 ? 'selected' :'' }} value="0">no sé</option>
-                    </select>
-</div>
-
-<div class="form-group float-left col-md-6">
-    <label for="vinculo" class="control-label">{{__('backend.vinculo')}}</label>
-    <select class="form-control" name="vinculo">
-                    <option value="*"></option>
-                    <option {{$donante->vinculo_entidad == 'Socio' ? 'selected' :'' }} value="Socio">Socio</option>
-                    <option {{$donante->vinculo_entidad == 'Patrocinador' ? 'selected' :'' }} value="Patrocinador">Patrocinador</option>
-                    <option {{$donante->vinculo_entidad == 'Teamer' ? 'selected' :'' }} value="Teamer">Teamer</option>
-                    <option {{$donante->vinculo_entidad == 'Adoptante' ? 'selected' :'' }} value="Adoptante">Adoptante</option>
-                    <option {{$donante->vinculo_entidad == 'Voluntario' ? 'selected' :'' }} value="Voluntario">Voluntario acogidas</option>
-            </select>
-</div>
-
-<div class="form-group float-left col-md-6">
-        <div class="custom-control custom-checkbox">
-                <input type="checkbox" name="spam" class="custom-control-input" id="customCheck1"  {{$donante->spam ? 'checked' :'' }}>
-                <label class="custom-control-label" for="customCheck1">{{__('backend.recibir_spam')}}</label>
-        </div>
-    </div>
 <div id="animal" class="form-group float-left col-md-6">
     <label for="animal_id" class="control-label">{{__('backend.tipo_animal')}}</label>
     <select class="form-control" name="animal_id">
@@ -139,6 +101,24 @@
             @endforeach
     </select>
 </div>
+
+{{-- <div class="form-group float-left col-md-6">
+    <label for="esColaborador" class="control-label">{{__('backend.colaborador')}}</label>
+    <select class="form-control" name="esColaborador">
+                        <option value="*"></option>
+                        <option {{$donante->es_colaborador == 1 ? 'selected' :'' }} value="1">Sí</option>
+                        <option {{$donante->es_colaborador == 0 ? 'selected' :'' }} value="0">No</option>
+                    </select>
+</div> --}}
+
+
+<div class="form-group float-left col-md-6">
+        <div class="custom-control custom-checkbox">
+                <input type="checkbox" name="spam" class="custom-control-input" id="customCheck1"  {{$donante->spam ? 'checked' :'' }}>
+                <label class="custom-control-label" for="customCheck1">{{__('backend.recibir_spam')}}</label>
+        </div>
+    </div>
+
 @endsection
 @section('scripts')
 <script>
