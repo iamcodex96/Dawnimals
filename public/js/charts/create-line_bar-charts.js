@@ -26,8 +26,8 @@
 
 		ajaxGetPostMonthlyData: function (fechaInicio, fechaFinal) {
             //artisan serve
-            //var urlPath =  'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/get-post-chart-data';
-            var urlPath ='http://localhost:8080/Dawnimals/public/get-post-chart-data/'+fechaInicio+'/'+fechaFinal;;
+            var urlPath =  'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/get-post-chart-data';
+            //var urlPath ='http://localhost:8080/Dawnimals/public/get-post-chart-data/'+fechaInicio+'/'+fechaFinal;;
 			var request = $.ajax( {
 				method: 'GET',
 				url: urlPath
