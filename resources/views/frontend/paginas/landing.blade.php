@@ -9,10 +9,10 @@
 
 @section('contenido')
 <nav class="nav flex-column p-0 navegacion">
-    <a href="#primero" onclick="updateIcon(0,'primero')" data-toggle="tooltip" data-placement="left" title="Opcion 1" class="nav-link mt-3"><i class="fas fa-circle"></i></a>
-    <a href="#segundo" onclick="updateIcon(1,'segundo')" data-toggle="tooltip" data-placement="left" title="Opcion 2" class="nav-link mt-3"><i class="far fa-circle"></i></a>
-    <a href="#tercero" onclick="updateIcon(2,'tercero')" data-toggle="tooltip" data-placement="left" title="Opcion 3" class="nav-link mt-3"><i class="far fa-circle"></i></a>
-    <a href="#cuarto" onclick="updateIcon(3,'cuarto')" data-toggle="tooltip" data-placement="left" title="Opcion 4" class="nav-link mt-3"><i class="far fa-circle"></i></a>
+<a href="#primero" onclick="updateIcon(0,'primero')" data-toggle="tooltip" data-placement="left" title="{{__("frontend.home")}}" class="nav-link mt-3"><i class="fas fa-circle"></i></a>
+    <a href="#segundo" onclick="updateIcon(1,'segundo')" data-toggle="tooltip" data-placement="left" title="{{__("frontend.toggle_ayudar")}}" class="nav-link mt-3"><i class="far fa-circle"></i></a>
+    <a href="#tercero" onclick="updateIcon(2,'tercero')" data-toggle="tooltip" data-placement="left" title="{{__("frontend.estadisticas")}}" class="nav-link mt-3"><i class="far fa-circle"></i></a>
+    <a href="#cuarto" onclick="updateIcon(3,'cuarto')" data-toggle="tooltip" data-placement="left" title="{{__("frontend.nuestros_retos")}}" class="nav-link mt-3"><i class="far fa-circle"></i></a>
 </nav>
 
 
