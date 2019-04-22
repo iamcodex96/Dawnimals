@@ -36,7 +36,7 @@ class ChartDataController extends Controller
         $dinero = Donacion::whereMonth( 'fecha_donativo', $month )->sum('coste');
         return $dinero;
     }
-
+    //Cantidad donaciones y cantidad de dinero donado  por mes
 	function getMonthlyPostData() {
 
         $monthly_post_count_array = array();
@@ -66,7 +66,7 @@ class ChartDataController extends Controller
 		return $monthly_post_data_array;
 
     }
-
+    //cantidad donaciones por animal
     function getAllTipesOfAnimals(){
         $now = Carbon::now();
         $animal_donacion = array();
@@ -76,7 +76,7 @@ class ChartDataController extends Controller
 
         if ( ! empty( $posts_animals ) ) {
 			foreach ( $posts_animals as $animal ){
-                $animal_donacion_count = $this->getDonationAnimalCount( $animal, $now->month );
+                $animal_donacion_count = $this->getDonationAnimalCount( $animal, $now );
 				array_push( $animal_donacion, $animal_donacion_count );
 			}
         }
@@ -90,14 +90,21 @@ class ChartDataController extends Controller
           return $animal_donacion_array;
     }
 
-    function getDonationAnimalCount( $animal, $month ) {
-        $animal_donacion_count = Donacion::where( 'desc_animal', $animal )->whereMonth( 'fecha_donativo', $month )->get()->count();
+    function getDonationAnimalCount( $animal, $now ) {
+        $animal_donacion_count = Donacion::where( 'desc_animal', $animal )
+        ->whereMonth( 'fecha_donativo', $now->month )
+        ->whereYear( 'fecha_donativo', $now->year )
+        ->get()
+        ->count();
 		return $animal_donacion_count;
     }
-
+    //Cantidad donaciones por  centro
     function getAllCentros(){
         $now = Carbon::now();
+        $centros_receptor_array = array();
         $centros_receptor = array();
+        $centros_receptor_cantidad = array();
+        $background_color = array('#4ccd32','#6632cd','#cdb432','#3299cd','#c45850');
         $centros_receptor_id = Donacion::orderBy( 'centros_receptor_id', 'ASC' )
         ->whereMonth( 'fecha_donativo', $now->month )
         ->whereYear( 'fecha_donativo', $now->year )
@@ -109,15 +116,44 @@ class ChartDataController extends Controller
         if ( ! empty( $centros_receptor_id ) ) {
 			foreach ( $centros_receptor_id as $centrosreceptor ){
                 $centros_receptor_nom = $this->getNomCentreReceptor( $centrosreceptor );
-				array_push( $centros_receptor, $centros_receptor_nom );
+                $centros_receptor_count = $this->getDonationCentroCount( $centrosreceptor, $now );
+                array_push( $centros_receptor, $centros_receptor_nom->nombre );
+                array_push( $centros_receptor_cantidad, $centros_receptor_count );
 			}
         }
-        return $centros_receptor;
+
+        $centros_receptor_array = array(
+            'nombre_centros' => $centros_receptor,
+            'cantidad_donaciones' => $centros_receptor_cantidad,
+            'background_color' => $background_color
+        );
+
+        return $centros_receptor_array;
     }
 
     function getNomCentreReceptor ( $centros_receptor_id ) {
-        $centro_donacion_nom = Centro::where( 'id', $centros_receptor_id )->pluck( 'nombre' );;
+        $centro_donacion_nom = Centro::find( $centros_receptor_id );
 		return $centro_donacion_nom;
     }
+
+    function getDonationCentroCount( $centros_receptor_id, $now ) {
+        $centro_donacion_count = Donacion::where( 'centros_receptor_id', $centros_receptor_id )
+        ->whereMonth( 'fecha_donativo', $now->month )
+        ->whereYear( 'fecha_donativo', $now->year )
+        ->get()
+        ->count();
+		return $centro_donacion_count;
+    }
+
+    //Cantidad donaciones y dinero por año
+
+    function  getDonacionXAnyo(){
+        $now = Carbon::now();
+        $donaciones_count = Donacion::whereYear( 'fecha_donativo', $now->year )
+        ->get()
+        ->count();
+		return $donaciones_count;
+    }
+
 }
 
