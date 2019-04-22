@@ -74,7 +74,14 @@
                     <option value="0">No</option>
                 </select>
 </div>
-
+<div id="animal" class="form-group float-left col-md-6">
+    <label for="animal_id" class="control-label">{{__('backend.tipo_animal')}}</label>
+    <select class="form-control" name="animal_id">
+            @foreach ($animales as $animal)
+            <option value="{{$animal->id}}">{{$animal->nombre}}</option>
+            @endforeach
+    </select>
+</div>
 <div class="form-group float-left col-md-6">
     <label for="esHabitual" class="control-label">¿{{__('backend.habitual')}}?</label>
     <select class="form-control" name="esHabitual">
@@ -126,14 +133,7 @@
                 <label class="custom-control-label" for="customCheck1">{{__('backend.recibir_spam')}}</label>
         </div>
     </div>
-<div id="animal" class="form-group float-left col-md-6">
-    <label for="animal_id" class="control-label">{{__('backend.tipo_animal')}}</label>
-    <select class="form-control" name="animal_id">
-            @foreach ($animales as $animal)
-            <option value="{{$animal->id}}">{{$animal->nombre}}</option>
-            @endforeach
-    </select>
-</div>
+
 @endsection
 
 @section('scripts')
