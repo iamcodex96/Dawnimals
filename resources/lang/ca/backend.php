@@ -126,5 +126,11 @@
         "diploma_por_donacion" => "Per haver fet una donació de :cantidad :unidad de :tipo,",
         "diploma_cuidando" => "que ens permetrà seguir cuidant dels animals com es mereixen.",
         "diploma_modificar" => "Modificar nom d'agraïment",
+
+        "total_donaciones" => "Total donacions",
+        "total_donantes" => "Total donants",
+        "retos_dashboard" => "Reptes (Complerts / Actius)",
+        "donaciones_mes" => "Donacions del mes",
+        "retos_activos" => "Reptes actius",
     ]
 ?>

@@ -126,5 +126,11 @@
         "diploma_por_donacion" => "Por hacer una donacion de :cantidad :unidad de :tipo,",
         "diploma_cuidando" => "que nos permitirá seguir cuidando a los animales como se merecen.",
         "diploma_modificar" => "Modificar nombre de agradecimiento",
+
+        "total_donaciones" => "Total donaciones",
+        "total_donantes" => "Total donantes",
+        "retos_dashboard" => "Retos (Completos / Activos)",
+        "donaciones_mes" => "Donaciones del mes",
+        "retos_activos" => "Retos activos",
     ]
 ?>
