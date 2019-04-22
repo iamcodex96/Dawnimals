@@ -1,6 +1,7 @@
 <?php
 
 return [
+    "who-quien"=>"Qui som?",
     "who-nombre"=>"Societat Protectora d'Animals de Mataró",
     "who-spam"=>"Treballem des de l’any 1971 amb l'objectiu d'acollir, emparar i promoure l'adopció dels animals abandonats. Gestionem centres d’acollida amb una filosofia proteccionista, lluitem per la vida dels animals i treballem dia rera dia per evitar el seu patiment. La nostra feina també és divulgativa: conscienciem la societat sobre la tinença responsable dels animals de companyia, sobre els drets dels animals, sobre els beneficis de l'adopció i sobre una bona convivència entre els animals i la ciutadania.",
     "who-actividades"=>"Activitats principals",

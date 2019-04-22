@@ -1,6 +1,7 @@
 <?php
 
 return [
+    "who-quien"=>"Who are we?",
     "who-nombre"=>"Mataró animal protection society",
     "who-spam"=>"We have been working since 1971 with the aim of welcoming, protecting and promoting the adoption of abandoned animals. We manage shelters with a protectionist philosophy, we fight for the life of the animals and we work day after day to avoid their suffering. Our task is also informative: we raise awareness in society about responsible ownership of pets, about the rights of animals, about the benefits of adoption and about a good coexistence between animals and citizens.",
     "who-actividades"=>"Main Activities",
