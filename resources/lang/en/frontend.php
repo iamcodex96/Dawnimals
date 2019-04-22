@@ -21,6 +21,7 @@ return [
     "how-dona-dinero"=>"Donate money",
     "how-dona-tiempo"=>"Donate time",
     "how-dona-amor"=>"Donate Love",
+    "how-dona-amor-adopta"=>"Adopt",
     "how-text-amor"=>"Our dogs and cats need a second chance, a home from which to forget the difficult and traumatic moments of abandonment. Therefore, our main objective is adoption.
 
          In our searcher, you will find daily updated information on the animals that we collect and welcome. We also encourage you to come to our centers to meet them personally, as it is best to have them in front of you to discover which of them will steal your heart. Let yourself be advised by our professionals and you will surely find your four legs orange.",

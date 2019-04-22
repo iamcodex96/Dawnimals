@@ -66,7 +66,7 @@
 
     <div class="text-center m-5 hideme">
         <h1>{{__("frontend.how-dona-amor")}}</h1>
-        <p>{{__("frontend.how-text-amor")}}</p>
+        <h4>{{__("frontend.how-text-amor")}}</h4>
     </div>
     <div class="row p-5">
         <div class="col-md-6 hideme">
@@ -84,12 +84,13 @@
             <br>{{__("frontend.how-coste-txt06")}}
             <br>{{__("frontend.how-coste-txt07")}}
             </p>
-            <a href="https://www.protectoramataro.org/ca/cercador-animals" class="btn btn-lg btn-spam">Adopta</a>
+            <a href="https://www.protectoramataro.org/ca/cercador-animals" class="btn btn-lg btn-spam">{{__("frontend.how-dona-amor-adopta")}}</a>
         </div>
     </div>
+    <hr>
     <div class="text-center m-5 hideme">
             <h1>{{__("frontend.how-dona-tiempo")}}</h1>
-            <p>{{__("frontend.how-dona-tiempo-texto")}}</p>
+            <h4>{{__("frontend.how-dona-tiempo-texto")}}</h4>
         </div>
         <div class="row p-5">
             <div class="col-md-6 hideme">
@@ -101,9 +102,10 @@
                     <img src="{{ asset('img/quien-somos/happy.jpg') }}" class="img-fluid hideme" alt="Responsive image">
             </div>
         </div>
+        <hr>
     <div class="text-center m-5 hideme">
         <h1>{{__("frontend.how-dona-dinero")}}</h1>
-        <p>{{__("frontend.how-dona-dinero-txt")}}</p>
+        <h4>{{__("frontend.how-dona-dinero-txt")}}</h4>
     </div>
     <div class="row p-5">
         <div class="col-md-6 hideme">
