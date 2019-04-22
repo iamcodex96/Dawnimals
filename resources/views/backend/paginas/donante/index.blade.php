@@ -109,7 +109,7 @@
     <div class="col-lg-12 col-md-8">
         <div class="table-responsive text-center">
             <table class="table table-striped">
-                <thead class=" thead-dark">
+                <thead class="" style="background-color: #663366; color: white;">
                     <tr>
                         <th class="text-center">#</th>
                         <th class="text-center">{{__('backend.nombre_donante')}}</th>

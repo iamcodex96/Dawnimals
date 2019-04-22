@@ -99,7 +99,7 @@ url('backend/donaciones/create'))
         <div class="table-responsive">
             <table class="table table-bordered table-striped">
 
-                <thead class=" thead-dark">
+                <thead class="" style="background-color: #88AA00; color: white;">
                     <tr>
                         <th class="text-center">{{ __("backend.fecha") }}</th>
                         <th class="text-center">{{ __("backend.tipo") }}</th>
