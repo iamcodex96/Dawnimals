@@ -65,6 +65,9 @@ return [
     "donaTiempo" => "Dona tiempo",
     "textoComoayudar" => "Puedes ayudarnos de diferentes formas, adoptanto uno de nuestros animales, con donaciones monetarias, materiales o con tu tiempo, cualquier ayuda por pequeña que sea nos ayuda muchísimo a poder tener a nuestros animales en las mejores condiciones posibles",
     "textoNuestrasDonaciones" => "En SPAM queremos ofrecer la máxima transparencia posible sobre nuestras donaciones, por ese motivo hemos creado una sección en la que te mostramos toda la información sobre las aportaciones que recibimos",
+    "irAComoAyudar"=> "IR A CÓMO AYUDAR",
+    "irAEstadisticas"=> "IR A ESTADÍSTICAS",
+    "irARetos"=> "IR A NUESTROS RETOS"
     ]
 
 ?>
