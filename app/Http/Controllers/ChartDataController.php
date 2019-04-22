@@ -10,10 +10,15 @@ use Carbon\Carbon;
 
 class ChartDataController extends Controller
 {
-    public function getAllMonths(){
+    public function getAllMonths($dateini, $datefin){
 
 		$month_array = array();
-		$posts_dates = Donacion::orderBy( 'fecha_donativo', 'ASC' )->pluck( 'fecha_donativo' );
+        $posts_dates = Donacion::whereMonth('fecha_donativo', '>=', $dateini->month)
+        ->whereYear('fecha_donativo', '>=', $dateini->year)
+        ->whereMonth('fecha_donativo', '<=', $datefin->month)
+        ->whereYear('fecha_donativo', '<=', $datefin->year)
+        ->orderBy( 'fecha_donativo', 'ASC' )
+        ->pluck( 'fecha_donativo' );
 		$posts_dates = json_decode( $posts_dates );
 
 		if ( ! empty( $posts_dates ) ) {
@@ -37,11 +42,12 @@ class ChartDataController extends Controller
         return $dinero;
     }
     //Cantidad donaciones y cantidad de dinero donado  por mes
-	function getMonthlyPostData() {
-
+	function getMonthlyPostData($fechaini, $fechafin) {
+        $dateini = new Carbon( $fechaini );
+        $datefin = new Carbon( $fechafin );
         $monthly_post_count_array = array();
         $monthly_money_count_array = array();
-		$month_array = $this->getAllMonths();
+		$month_array = $this->getAllMonths($dateini, $datefin);
         $month_name_array = array();
 
 		if ( ! empty( $month_array ) ) {

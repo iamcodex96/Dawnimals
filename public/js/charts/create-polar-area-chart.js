@@ -1,19 +1,21 @@
 ( function ( $ ) {
 
 	var charts = {
-		init: function () {
+		init: function (fechaini, fechafin) {
 			// -- Set new default font family and font color to mimic Bootstrap's default styling
 			Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 			Chart.defaults.global.defaultFontColor = '#292b2c';
 
-			this.ajaxGetPostMonthlyData();
+			this.ajaxGetPostMonthlyData(fechaini, fechafin);
 
 		},
 
-		ajaxGetPostMonthlyData: function () {
+		ajaxGetPostMonthlyData: function (fechaini, fechafin) {
             //artisan serve
             //var urlPath =  'http://' + window.location.hostname + ':8000/get-post-chart-data';
             var urlPath ='http://localhost:8080/Dawnimals/public/get-post-center-data';
+            //var urlPath ='http://localhost:8080/Dawnimals/public/prova/'+fechaini+'/'+fechafin;
+            console.log('fechaini: ' + fechaini+' // ' + fechafin);
             //var urlPath ='http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/get-post-center-data';
 			var request = $.ajax( {
 				method: 'GET',
@@ -82,6 +84,25 @@
 		}
 	};
 
-	charts.init();
+     charts.init();
+
+    // $('#groupFechasTipos > div > input').change(function(){
+    //     getDates();
+    // });
+
+    // function getDates() {
+    //     if($('#groupFechasTipos > div > #fechaInicioTipos').val() && $('#groupFechasTipos > div > #fechaFinalTipos').val()){
+    //         var fechaInicio = $('#fechaInicioTipos').val();
+
+    //         var fechaFinal = $('#fechaFinalTipos').val();
+
+    //         console.log(fechaInicio);
+
+    //         //return 'fechainici: '+ fechaInicio + ' fechafinal: ' + fechaFinal;
+    //         charts.init(fechaInicio, fechaFinal);
+    //     }
+    // }
+
+    // getDates();
 
 } )( jQuery );

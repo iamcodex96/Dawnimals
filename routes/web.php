@@ -105,13 +105,15 @@ Route::middleware('locale')->group(function(){
 Route::get('/estadisticas', function () {
     return view('chart');
 });
-Route::get('/get-post-chart-data', 'ChartDataController@getMonthlyPostData');
+Route::get('/get-post-chart-data/{fechainicio}/{fechafin}', 'ChartDataController@getMonthlyPostData');
 
 Route::get('/get-post-animal-data', 'ChartDataController@getAllTipesOfAnimals');
 
 Route::get('/get-post-center-data', 'ChartDataController@getAllCentros');
 
 Route::get('/test', 'ChartDataController@getDonacionXAnyo');
+
+//Route::get('/prova/{fechainicio}/{fechafin}', 'ChartDataController@getDates');
 
 //////////////////////////// PAGS CHARTS ////////////////////////////////////
 
