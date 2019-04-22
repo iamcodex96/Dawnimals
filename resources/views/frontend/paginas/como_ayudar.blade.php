@@ -84,7 +84,7 @@
             <br>{{__("frontend.how-coste-txt06")}}
             <br>{{__("frontend.how-coste-txt07")}}
             </p>
-            <a href="https://www.protectoramataro.org/ca/cercador-animals" class="btn btn-lg btn-spam">Adopta</a>
+            <a href="https://www.protectoramataro.org/ca/cercador-animals" class="btn btn-lg btn-spam">{{__("frontend.how-dona-amor-adopta")}}</a>
         </div>
     </div>
     <div class="text-center m-5 hideme">
