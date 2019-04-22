@@ -55,12 +55,27 @@
                         <i class="fas fa-play"></i>
                 </div>
 
+                {{-- VÍDEO EN ESPAÑOL --}}
+                @if(App::getLocale() == 'es')
 
                 <video id="myVideo"class="embed-responsive" width="1280" height="720"  type="video/mp4">
 
-                        <source src="{{ asset('./videos/SPAM_videoInteractivo.mp4') }}">
-                                Your browser does not support HTML5 video.
+                    <source src="{{ asset('./videos/SPAM_videoInteractivo.mp4') }}">
+                            Your browser does not support HTML5 video.
                 </video>
+
+
+                {{-- VÍDEO EN INGLÉS --}}
+                @elseif(App::getLocale() == 'en')
+
+                <video id="myVideo"class="embed-responsive" width="1280" height="720"  type="video/mp4">
+
+                    <source src="{{ asset('./videos/SPAM_videoInteractivoIngles.mp4') }}">
+                            Your browser does not support HTML5 video.
+                </video>
+
+
+                @endif
 
             </div>
 

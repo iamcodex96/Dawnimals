@@ -52,6 +52,11 @@ src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
 }
 
 
+@media only screen and (max-device-width: 1366px) {
+    .imgParallax {
+      background-attachment: scroll;
+    }
+  }
 
   .imgParallax{
 
@@ -158,7 +163,7 @@ src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
   }
   #segundo .card {
 
-    transform: scale(0.85);
+    transform: scale(0.95);
     border: 3px solid #fdfdfd;
     border-radius: 10px;
     overflow: hidden;
@@ -184,7 +189,7 @@ src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
   }
 
   #tercero {
-    height: 800px;
+    height: 900px;
   }
   #tercero h1 {
       width: 100%;
@@ -280,8 +285,22 @@ h3.texto-container{
 
 }
 
+.botonIrA{
+    border-color:none;
+    font-family: Montserrat bold;
+    width:400px;
+    background-color: rgba(136,170,0,0.8);
+    color:white;
+    margin:10px;
+    border-radius: 20px;
+}
 
+.botonIrA:hover{
 
+    background-color: rgba(102,51,102,0.8);
+    color:white;
+
+}
 
 
   /*# sourceMappingURL=landing.css.map */
