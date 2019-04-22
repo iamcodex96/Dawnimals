@@ -165,7 +165,7 @@ url('backend/donaciones/create'))
 
 </script>
 <script>
-    var usrRole = $;
+    var usrRole = '{{}}';
     var time = '{{$donacion->fecha_donativo}}';
     var $edit = $;
     var
