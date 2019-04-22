@@ -167,17 +167,23 @@ url('backend/donaciones/create'))
 <script>
     var isAdmin = '{{Auth::user()->admin}}';
     var donaciones = $('[data-alta]');
-    donaciones.each(function(){
-        var fecha =new Date( $(this).data('alta'));
-        var fecha30 = new Date(fecha);
-        fecha30.setMinutes(fecha.getMinutes()+30);
-        var now = new Date(Date.now);
-        if(fecha30<now){
-            console.log($(this).children());
-        }
-    });
-    console.log(donaciones);
-    console.log(isAdmin);
+    removeEdit();
+    function removeEdit(){
+
+            donaciones.each(function(){
+                var fecha =new Date( $(this).data('alta'));
+                var fecha30 = new Date(fecha);
+                fecha30.setMinutes(fecha.getMinutes()+30);
+                var now = new Date(Date.now());
+                if(fecha30<now){
+                    $($($($(this).children()[7]).children()).children()[1]).hide();
+                }
+            });
+
+    }
+    if(!isAdmin){
+    setInterval(removeEdit,300000);
+    }
     $('#tipo').change(function() {
 
                 opt = $('#tipo').val();
