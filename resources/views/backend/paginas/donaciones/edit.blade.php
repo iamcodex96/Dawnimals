@@ -119,7 +119,7 @@
 
 <div class="form-group float-left col-md-6">
     <label for="cp" class="control-label">Factura</label>
-    <input type="text" class="form-control" id="ruta_factura" name="ruta_factura" placeholder="cambiar por fichero">
+    <input type="file" class="form-control" id="ruta_factura" name="ruta_factura" placeholder="">
 </div>
 <div class="modal fade" id="modalBuscarDonante" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" style="max-width: 1200px" role="document">
