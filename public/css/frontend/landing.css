@@ -1,26 +1,26 @@
-@font-face {
+/* @font-face {
     font-family: "Permanent";
     src: url("../../fuentes/Permanent_Marker/PermanentMarker-Regular.ttf");
   }
   @font-face {
     font-family: "Roboto";
     src: url("../../fuentes/Roboto/Roboto-Medium.ttf");
-  }
+  } */
 
-  @font-face {
-      font-family: "Josefin";
-      src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
+@font-face {
+    font-family: "Josefin";
+    src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat Light";
+    src: url("../../fuentes/Montserrat/Montserrat-Light.ttf");
     }
 
-    @font-face {
-        font-family: "Montserrat Light";
-        src: url("../../fuentes/Montserrat/Montserrat-Light.ttf");
-      }
-
-      @font-face {
-        font-family: "Montserrat Bold";
-        src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
-      }
+@font-face {
+font-family: "Montserrat Bold";
+src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
+}
 
 
   body {

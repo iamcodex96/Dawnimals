@@ -96,7 +96,7 @@
 </div>
 
 
-<div class="form-group float-left col-md-6">
+{{-- <div class="form-group float-left col-md-6">
     <label for="esColaborador" class="control-label">{{__('backend.colaborador')}}
 
                     </label>
@@ -105,18 +105,9 @@
                             <option value="1">Sí</option>
                             <option value="0">No</option>
                         </select>
-</div>
+</div> --}}
 
-<div class="form-group float-left col-md-6">
-    <label for="tipoColaborador" class="control-label">{{__('backend.tipo_colab')}}
 
-                    </label>
-    <select class="form-control" id="tipoColaborador">
-                            <option value="*"></option>
-                            <option value="1">no sé</option>
-                            <option value="0">no sé</option>
-                        </select>
-</div>
 
 <div class="form-group float-left col-md-6">
     <label for="vinculo" class="control-label">{{__('backend.vinculo')}}</label>
@@ -129,7 +120,7 @@
                         <option value="Voluntario">Voluntario acogidas</option>
                 </select>
 </div>
-<div class="form-group float-left col-md-6">
+<div class="form-group float-left col-md-6 mt-4">
         <div class="custom-control custom-checkbox">
                 <input type="checkbox" name="spam" class="custom-control-input" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1">{{__('backend.recibir_spam')}}</label>

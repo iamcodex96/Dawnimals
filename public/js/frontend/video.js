@@ -1,68 +1,86 @@
-var myvideo = document.getElementById('myVideo'),
-   // playbutton = document.getElementById('intro'),
-    jumplink = document.getElementById('intro');
-    jumplink1 = document.getElementById('adopcion');
-    jumplink2 = document.getElementById('donacion');
-    jumplink3 = document.getElementById('voluntario');
-    jumplink4 = document.getElementById('todo');
+var myvideo = document.getElementById('myVideo');
 
+var videoCheckInterval;
 
-//INTRO
-jumplink.addEventListener("click", function (event) {
+$(".controlsPause").hide();
 
-    event.preventDefault();
+setInterval(function() {
 
-    myvideo.currentTime = 0;
-    myvideo.play();
+    if (myvideo.paused && !$(".video-links").is(':visible')) {
+        $(".video-links").fadeIn();
+        $(".video-controls").fadeIn();
 
-
-    myvideo.addEventListener("timeupdate", function(){
-
-        if(this.currentTime >= 64) {
-            this.currentTime = 252;
-            this.play();
+    } else if (!myvideo.paused) {
+        if (myvideo.currentTime>=274) {
+            myvideo.pause();
+            myvideo.currentTime = 0;
         }
-    });
 
-}, false);
+        if(myvideo.currentTime>=252){
 
+            $(".video-links").fadeIn();
 
-//ADOPCIÓN
-jumplink1.addEventListener("click", function (event) {
-    event.preventDefault();
+        }else{
 
-    myvideo.currentTime = 65;
+            $(".video-links").fadeOut();
+        }
+
+        // $("#myVideo").hover(
+        //     function() {
+        //         console.log("Entra");
+        //         $(".controlsPause").fadeIn();
+        //     }, function() {
+        //         $(".controlsPause").fadeOut();
+        //     }
+        //   );
+    }
+
+}, 500);
+
+$("#myVideo").click(function() {
+    if (!myvideo.paused) {
+        myvideo.pause();
+    }
+
+})
+
+//Init video links buttons
+$(".video-links a").each(function() {
+    $(this).click(function(ev) {
+        $(".video-controls").fadeOut();
+        if (videoCheckInterval) {
+            clearInterval(videoCheckInterval);
+            videoCheckInterval = null;
+        }
+
+        ev.preventDefault();
+
+        var start = parseInt($(this).data("start"));
+        var end = parseInt($(this).data("end"));
+
+        myvideo.currentTime = start;
+        myvideo.play();
+
+        videoCheckInterval = setInterval(function() {
+
+            if(myvideo.currentTime >= end) {
+                myvideo.currentTime = 252;
+                myvideo.play();
+                if (videoCheckInterval) {
+                    clearInterval(videoCheckInterval);
+                    videoCheckInterval = null;
+                }
+            }
+        }, 100)
+
+    })
+});
+
+$(".video-controls").click(function() {
     myvideo.play();
-
-}, false);
-
-
-//DONACIÓN
-jumplink2.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    myvideo.currentTime = 126;
-    myvideo.play();
-
-}, false);
+    $(".video-controls").fadeOut();
+})
 
 
-
-//VOLUNTARIO
-jumplink3.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    myvideo.currentTime = 191;
-    myvideo.play();
-}, false);
-
-
-
-//VER TODO
-jumplink4.addEventListener("click", function (event) {
-    event.preventDefault();
-    myvideo.currentTime = 0;
-    myvideo.play();
-}, false);
 
 

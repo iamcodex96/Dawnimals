@@ -1,0 +1,98 @@
+@font-face {
+    font-family: "Montserrat Bold";
+    src: url("../../fuentes/Montserrat/Montserrat-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../../fuentes/Montserrat/Montserrat-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Josefin regular";
+    src: url("../../fuentes/Josefin_Sans/JosefinSans-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "Josefin";
+    src: url("../../fuentes/Josefin_Sans/JosefinSans-Bold.ttf");
+  }
+
+
+
+.video-links {
+
+    z-index: 2;
+
+}
+
+.video-links2 {
+
+    z-index: 2;
+    height:70px;
+
+}
+
+
+.video-controls {
+    cursor: pointer;
+}
+
+.video-controls {
+    float: left;
+    position: absolute;
+    z-index: 2;
+    z-index: 2;
+    margin: auto;
+    margin-top: 5em;
+    font-size: 56px;
+    background-color: rgba(102,51,102,0.7);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 45px;
+    padding-right: 35px;
+    text-align: center;
+    border-radius: 8px;
+    color: #FFFFFF;
+}
+
+.video-controls:hover{
+    background-color: rgba(102,51,102,0.8);
+
+}
+
+/* .controlsPause {
+    float: left;
+    position: absolute;
+    z-index: 2;
+    z-index: 2;
+    margin: auto;
+    margin-top: 5em;
+    font-size: 56px;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 45px;
+    padding-right: 35px;
+    text-align: center;
+    border-radius: 8px;
+    color: #FFFFFF;
+} */
+
+.botonVideo{
+
+    border-color:none;
+    font-family: Josefin Regular;
+    width:160px;
+    background-color: rgba(102,51,102,0.8);
+    color:white;
+    margin:10px;
+    border-radius: 20px;
+}
+
+.botonVideo:hover{
+
+    background-color: rgba(136,170,0,0.8);
+    color:white;
+
+}
