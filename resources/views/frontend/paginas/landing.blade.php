@@ -76,7 +76,7 @@
 
 
         <div class="col-md-12 text-center mt-5">
-            <a class="btn botonIrA" href="#" role="button">{{__("frontend.irAComoAyudar")}}</a>
+            <a class="btn botonIrA" href="{{ url('/como_ayudar') }}" role="button">{{__("frontend.irAComoAyudar")}}</a>
         </div>
 
     </div>
@@ -116,7 +116,7 @@
             </div>
 
             <div class="col-md-12 text-center mt-5">
-                <a name="" id="" class="btn botonIrA" href="#" role="button">{{__("frontend.irAEstadisticas")}}</a>
+                <a name="" id="" class="btn botonIrA" href="{{ url('/estadisticas') }}" role="button">{{__("frontend.irAEstadisticas")}}</a>
             </div>
         </div>
 
@@ -132,7 +132,7 @@
         </div>
 
         <div class="col-md-12 text-center mt-5">
-            <a name="" id="" class="btn botonIrA" href="#" role="button">{{__("frontend.irARetos")}}</a>
+            <a name="" id="" class="btn botonIrA" href="{{ url('/challenges') }}" role="button">{{__("frontend.irARetos")}}</a>
         </div>
     </div>
 </main>
