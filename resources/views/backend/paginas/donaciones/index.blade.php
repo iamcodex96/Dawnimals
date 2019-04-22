@@ -134,7 +134,7 @@ url('backend/donaciones/create'))
                             <button type="submit" data-toggle="tooltip" title="Diploma" class="btn btn-primary" data-original-title="Diploma"><i class="fa fa-certificate"></i></button>
                         </form>
 
-                        <form class="p-0 m-0" action="{{ action('Backend\DonacionController@edit',[$donacion->id]) }}" method="GET">
+                        <form id="editForm" class="p-0 m-0" action="{{ action('Backend\DonacionController@edit',[$donacion->id]) }}" method="GET">
                             <button type="submit" data-toggle="tooltip" title="Modificar" class="btn btn-warning" data-original-title="Ver"><i class="fa fa-edit"></i></button>
                         </form>
                         <form class="p-0 m-0" action="{{ action('Backend\DonacionController@destroy',[$donacion->id]) }}" method="post">
@@ -165,6 +165,11 @@ url('backend/donaciones/create'))
 
 </script>
 <script>
+    var usrRole = $;
+    var time = '{{$donacion->fecha_donativo}}';
+    var $edit = $;
+    var
+
     $('#tipo').change(function() {
 
                 opt = $('#tipo').val();
