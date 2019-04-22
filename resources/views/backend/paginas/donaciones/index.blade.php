@@ -167,7 +167,6 @@ url('backend/donaciones/create'))
 <script>
     var isAdmin = '{{Auth::user()->admin}}';
     var donaciones = $('[data-alta]');
-    removeEdit();
     function removeEdit(){
 
             donaciones.each(function(){
