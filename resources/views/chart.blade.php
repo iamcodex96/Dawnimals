@@ -10,7 +10,7 @@
         <div class="card-header">
             <i class="fa fa-area-chart"></i> Donaciones del mes </div>
         <div class="card-body">
-            <div id="groupFechasTipos" class="form-group row">
+            {{-- <div id="groupFechasTipos" class="form-group row">
                     <div class="col-xl-4 m-auto">
                         <label for="fechaInicioTipos" class="">De: </label>
                         <input type="month" name="fechaInicioTipos" id="fechaInicioTipos" class="form-control d-inline" value="2018-04">
@@ -20,7 +20,7 @@
                         <label for="fechaFinalTipos" class="d-inline">Hasta: </label>
                         <input type="month" name="fechaFinalTipos" id="fechaFinalTipos" class="form-control" value="2019-04">
                     </div>
-                </div>
+                </div>--}}
             <canvas id="myAreaChart" width="100%" height="30"></canvas>
         </div>
         {{-- <div class="card-footer small text-muted">Updated today at @php  echo date('F j, Y', time() ) @endphp</div> --}}
