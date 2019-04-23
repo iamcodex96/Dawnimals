@@ -10,7 +10,7 @@
 
 		},
 
-		ajaxGetPostMonthlyData: function (fechaini, fechafin) {
+		ajaxGetPostMonthlyData: function () {
             //artisan serve
             //var urlPath =  'http://' + window.location.hostname + ':8000/get-post-chart-data';
             var urlPath ='http://localhost:8080/Dawnimals/public/get-post-center-data';

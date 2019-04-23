@@ -37,6 +37,7 @@
             //artisan serve
             //var urlPath ='http://127.0.0.1:8000/get-post-chart-data/'+fechaInicio+'/'+fechaFinal;
 			request = $.ajax( {
+
 				method: 'GET',
                 url: urlPath,
                 success: function () {
@@ -190,11 +191,11 @@
         },
 	};
 
-    //charts.init();
+    charts.init();
 
     $('#groupFechasTipos > div > input').change(function(){
-        getDates();
-    });
+         getDates();
+     });
 
     function getDates() {
         if($('#groupFechasTipos > div > #fechaInicioTipos').val() && $('#groupFechasTipos > div > #fechaFinalTipos').val()){
@@ -204,7 +205,6 @@
             charts.init(fechaInicio, fechaFinal);
         }
     }
-
-    getDates();
+     getDates();
 
 } )( jQuery );

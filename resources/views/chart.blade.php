@@ -10,7 +10,10 @@
         <div class="card-header">
             <i class="fa fa-area-chart"></i> Donaciones del mes </div>
         <div class="card-body">
+
               <div id="groupFechasTipos" class="form-group row">
+
+
                     <div class="col-xl-4 m-auto">
                         <label for="fechaInicioTipos" class="">De: </label>
                         <input type="month" name="fechaInicioTipos" id="fechaInicioTipos" class="form-control d-inline" value="{{ \Carbon\Carbon::now()->subYears(1)->format('Y-m')}}">
