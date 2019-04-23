@@ -64,7 +64,18 @@
                 <h6 class="text-uppercase">{{ __('backend.donaciones_mes') }}</h6>
                 <div class="card h-100 text-center">
                     <div class="card-body">
-                        <canvas id="myAreaChart" width="100%" height="40"></canvas>
+                            <div id="groupFechasTipos" class="form-group row">
+                                    <div class="col-xl-4 m-auto">
+                                        <label for="fechaInicioTipos" class="">De: </label>
+                                        <input type="month" name="fechaInicioTipos" id="fechaInicioTipos" class="form-control d-inline" value="{{ \Carbon\Carbon::now()->subYears(1)->format('Y-m')}}">
+                                    </div>
+
+                                    <div class="col-xl-4 m-auto">
+                                        <label for="fechaFinalTipos" class="d-inline">Hasta: </label>
+                                        <input type="month" name="fechaFinalTipos" id="fechaFinalTipos" class="form-control" value="{{date('Y-m')}}">
+                                    </div>
+                                </div>
+                        <canvas id="myAreaChart" data-upd="0" width="100%" height="40"></canvas>
                     </div>
                 </div>
             </div>
@@ -131,11 +142,13 @@
     @endsection
 
     @section( 'scripts' )
-        {{-- <script src="{{url( 'js/charts/jquery.min.js' )}}"></script> --}}
+
 
         <script src="{{url( 'js/charts/Chart.min.js' )}}"></script>
 
         <script src="{{url( 'js/charts/create-line_bar-charts.js' )}}"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     @endsection
 
 

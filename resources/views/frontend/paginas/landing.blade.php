@@ -93,11 +93,21 @@
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fa fa-area-chart"></i> Donaciones del mes </div>
-                    <div class="card-body">
-                        <canvas id="myAreaChart" width="100%" height="30"></canvas>
-                    </div>
-                    <div class="card-footer small text-muted">Updated yesterday at @php echo date('F j, Y', time() )
-@endphp</div>
+                        <div class="card-body">
+                                <div id="groupFechasTipos" class="form-group row">
+                                      <div class="col-xl-4 m-auto">
+                                          <label for="fechaInicioTipos" class="">De: </label>
+                                          <input type="month" name="fechaInicioTipos" id="fechaInicioTipos" class="form-control d-inline" value="{{ \Carbon\Carbon::now()->subYears(1)->format('Y-m')}}">
+                                      </div>
+
+                                      <div class="col-xl-4 m-auto">
+                                          <label for="fechaFinalTipos" class="d-inline">Hasta: </label>
+                                          <input type="month" name="fechaFinalTipos" id="fechaFinalTipos" class="form-control" value="{{date('Y-m')}}">
+                                      </div>
+                                  </div>
+                              <canvas id="myAreaChart" width="100%" data-upd="0" height="30"></canvas>
+                          </div>
+
                 </div>
 
             </div>
@@ -148,6 +158,7 @@
 
 <script src="{{url( 'js/charts/create-line_bar-charts.js' )}}"></script>
 <script src="{{url( 'js/charts/create-doughnut-chart.js' )}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 <script src="{{url( 'js/huella.js' )}}"></script>
 
 

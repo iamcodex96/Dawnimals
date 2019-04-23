@@ -10,56 +10,62 @@ use Carbon\Carbon;
 
 class ChartDataController extends Controller
 {
-    public function getAllMonths($dateini, $datefin){
+    public function getAllMonths($fechaini, $fechafin){
+
+        $dateini = new Carbon( $fechaini );
+        $datefin = new Carbon( $fechafin );
+
 
 		$month_array = array();
-        $posts_dates = Donacion::whereMonth('fecha_donativo', '>=', $dateini->month)
-        ->whereYear('fecha_donativo', '>=', $dateini->year)
-        ->whereMonth('fecha_donativo', '<=', $datefin->month)
-        ->whereYear('fecha_donativo', '<=', $datefin->year)
-        ->orderBy( 'fecha_donativo', 'ASC' )
+        $posts_dates = Donacion::whereDate('fecha_donativo', '>=', $dateini)
+        ->whereDate('fecha_donativo', '<=', $datefin->addMonths(1))
+        ->orderBy( 'fecha_donativo', 'ASC' )->get()
         ->pluck( 'fecha_donativo' );
-		$posts_dates = json_decode( $posts_dates );
+		//$posts_dates = json_decode( $posts_dates );
 
 		if ( ! empty( $posts_dates ) ) {
 			foreach ( $posts_dates as $unformatted_date ) {
 				$date = new \DateTime( $unformatted_date );
-				$month_no = $date->format( 'm' );
-				$month_name = $date->format( 'M' );
-				$month_array[ $month_no ] = $month_name;
+				$month_no = $date->format( 'Y-m' );
+				$month_name = $date->format( 'm-Y' );
+                $month_array[ $month_no ] = $month_name;
 			}
         }
-          return $month_array;
+          return $month_array ;
 	}
 
 	function getMonthlyPostCount( $month ) {
-        $monthly_post_count = Donacion::whereMonth( 'fecha_donativo', $month )->get()->count();
+        $monthly_post_count = Donacion::whereMonth( 'fecha_donativo', $month->month )->get()->count();
 		return $monthly_post_count;
     }
 
     function getMoneyPostCount( $month ){
-        $dinero = Donacion::whereMonth( 'fecha_donativo', $month )->sum('coste');
+        $dinero = Donacion::whereMonth( 'fecha_donativo', $month->month )->sum('coste');
         return $dinero;
     }
     //Cantidad donaciones y cantidad de dinero donado  por mes
 	function getMonthlyPostData($fechaini, $fechafin) {
-        $dateini = new Carbon( $fechaini );
-        $datefin = new Carbon( $fechafin );
+        //$dateini = new Carbon( $fechaini );
+        //$datefin = new Carbon( $fechafin );
         $monthly_post_count_array = array();
         $monthly_money_count_array = array();
-		$month_array = $this->getAllMonths($dateini, $datefin);
+        $month_array = $this->getAllMonths($fechaini, $fechafin);
         $month_name_array = array();
 
 		if ( ! empty( $month_array ) ) {
 			foreach ( $month_array as $month_no => $month_name ){
-                $monthly_post_count = $this->getMonthlyPostCount( $month_no );
-                $monthly_money_count = $this->getMoneyPostCount( $month_no );
-                array_push( $monthly_post_count_array, $monthly_post_count );
-                array_push( $monthly_money_count_array, $monthly_money_count );
-				array_push( $month_name_array, $month_name );
-			}
-        }
+                $month =  new Carbon( $month_no );
+                $monthly_post_count = $this->getMonthlyPostCount( $month );
+                $monthly_money_count = $this->getMoneyPostCount( $month );
+                 array_push( $monthly_post_count_array, $monthly_post_count );
+                 array_push( $monthly_money_count_array, $monthly_money_count );
+                 array_push( $month_name_array, $month_name );
+                //return $monthly_post_count_array;
+            }
 
+
+        }
+           //return $monthly_money_count_array;
 		$max_no = max( $monthly_money_count_array );
 		$max = round(( $max_no + 10/2 ) / 10 ) * 10;
 		$monthly_post_data_array = array(

@@ -1,5 +1,6 @@
 ( function ( $ ) {
 
+
     colors_array = [
 		'#FF3784',
 		'#36A2EB',
@@ -13,30 +14,46 @@
 		'#8FBE00',
 		'#606060'
 	];
-
+    var myLineChart;
 	var charts = {
+
 		init: function (fechaInicio, fechaFinal) {
 			// -- Set new default font family and font color to mimic Bootstrap's default styling
 			Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-			Chart.defaults.global.defaultFontColor = '#292b2c';
+            Chart.defaults.global.defaultFontColor = '#292b2c';
+
+            document.getElementById("myAreaChart");
+            $("#myAreaChart").html('');
 
 			this.ajaxGetPostMonthlyData(fechaInicio, fechaFinal);
 
 		},
 
 		ajaxGetPostMonthlyData: function (fechaInicio, fechaFinal) {
-            //artisan serve
+
+
             //var urlPath =  'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/get-post-chart-data';
-            var urlPath ='http://localhost:8080/Dawnimals/public/get-post-chart-data/'+fechaInicio+'/'+fechaFinal;;
-			var request = $.ajax( {
+            var urlPath ='http://localhost:8080/Dawnimals/public/get-post-chart-data/'+fechaInicio+'/'+fechaFinal;
+            //artisan serve
+            //var urlPath ='http://127.0.0.1:8000/get-post-chart-data/'+fechaInicio+'/'+fechaFinal;
+			request = $.ajax( {
 				method: 'GET',
-				url: urlPath
+                url: urlPath,
+                success: function () {
+                    request.done( function ( response ) {
+                        console.log( response );
+                        $("#myAreaChart").html('');
+
+                        charts.createDonativoYDineroChart( response );
+
+                    });
+                },
+                error: function (err) {
+                    $("#myAreaChart").html("Error");
+                }
 		} );
 
-			request.done( function ( response ) {
-				console.log( response );
-				charts.createDonativoYDineroChart( response );
-			});
+
 		},
 
 		/**
@@ -44,26 +61,19 @@
 		 */
 		createDonativoYDineroChart: function ( response ) {
 
-			var ctx = document.getElementById("myAreaChart");
-			var myLineChart = new Chart(ctx, {
-				// type: 'line',
-				// data: {
-					// labels: response.months, // The response got from the ajax request containing all month names in the database
-					// datasets: [{
-					// 	label: "Donaciones por mes",
-					// 	lineTension: 0.3,
-					// 	backgroundColor: "rgba(2,117,216,0.2)",
-					// 	borderColor: "rgba(2,117,216,1)",
-					// 	pointRadius: 5,
-					// 	pointBackgroundColor: "rgba(2,117,216,1)",
-					// 	pointBorderColor: "rgba(255,255,255,0.8)",
-					// 	pointHoverRadius: 5,
-					// 	pointHoverBackgroundColor: "rgba(2,117,216,1)",
-					// 	pointHitRadius: 20,
-					// 	pointBorderWidth: 2,
-					// 	data: response.post_count_data // The response got from the ajax request containing data for the completed jobs in the corresponding months
-					// }],
-                // },
+            var recu = document.getElementById("myAreaChart").getAttribute("data-upd");
+
+            if(recu == 1){
+                myLineChart.destroy();
+            }
+
+            var ctx = document.getElementById("myAreaChart").getContext('2d');
+            //var upd = document.getElementById("myAreaChart").getAttribute("data-upd");
+            var mod = document.getElementById("myAreaChart").setAttribute("data-upd", '1');
+
+
+
+            myLineChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: response.months, // The response got from the ajax request containing all month names in the database
@@ -114,39 +124,6 @@
                             },
                             formatter: Math.round
                         }
-                        // datalabels: {
-                        //     align: function(context) {
-                        //         var index = context.dataIndex;
-                        //         var curr = context.dataset.data[index];
-                        //         var prev = context.dataset.data[index - 1];
-                        //         var next = context.dataset.data[index + 1];
-                        //         return prev < curr && next < curr ? 'end' :
-                        //             prev > curr && next > curr ? 'start' :
-                        //             'center';
-                        //     },
-                        //     backgroundColor: 'rgba(255, 255, 255, 0.7)',
-                        //     borderColor: 'rgba(128, 128, 128, 0.7)',
-                        //     borderRadius: 4,
-                        //     borderWidth: 1,
-                        //     color: function(context) {
-                        //         var i = context.dataIndex;
-                        //         var value = context.dataset.data[i];
-                        //         var prev = context.dataset.data[i - 1];
-                        //         var diff = prev !== undefined ? value - prev : 0;
-                        //         return diff < 0 ? colors_array[0] :
-                        //             diff > 0 ? colors_array[1] :
-                        //             'gray';
-                        //     },
-                        //     offset: 8,
-                        //     align: 'end',
-						// formatter: function(value, context) {
-						// 	var i = context.dataIndex;
-						// 	var prev = context.dataset.data[i - 1];
-						// 	var diff = prev !== undefined ? prev - value : 0;
-						// 	var glyph = diff < 0 ? '\u25B2' : diff > 0 ? '\u25BC' : '\u25C6';
-						// 	return glyph + ' ' + Math.round(value);
-						// }
-                        // }
                     },
                     scales: {
                         xAxes: [{
@@ -208,8 +185,9 @@
                         },
 
                 }
-			});
-		}
+
+            });
+        },
 	};
 
     //charts.init();
@@ -221,12 +199,8 @@
     function getDates() {
         if($('#groupFechasTipos > div > #fechaInicioTipos').val() && $('#groupFechasTipos > div > #fechaFinalTipos').val()){
             var fechaInicio = $('#fechaInicioTipos').val();
-
             var fechaFinal = $('#fechaFinalTipos').val();
-
-            console.log(fechaInicio);
-
-            //return 'fechainici: '+ fechaInicio + ' fechafinal: ' + fechaFinal;
+            //console.log(fechaInicio);
             charts.init(fechaInicio, fechaFinal);
         }
     }
