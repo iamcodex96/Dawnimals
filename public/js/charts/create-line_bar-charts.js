@@ -24,10 +24,10 @@
 
 		},
 
-		ajaxGetPostMonthlyData: function (fechaInicio, fechaFinal) {
+		ajaxGetPostMonthlyData: function () {
             //artisan serve
-            var urlPath =  'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/get-post-chart-data';
-            //var urlPath ='http://localhost:8080/Dawnimals/public/get-post-chart-data/'+fechaInicio+'/'+fechaFinal;;
+            //var urlPath =  'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/get-post-chart-data';
+            var urlPath ='http://localhost:8080/Dawnimals/public/get-post-chart-data;
 			var request = $.ajax( {
 				method: 'GET',
 				url: urlPath
@@ -212,25 +212,25 @@
 		}
 	};
 
-    //charts.init();
+    charts.init();
 
-    $('#groupFechasTipos > div > input').change(function(){
-        getDates();
-    });
+//     $('#groupFechasTipos > div > input').change(function(){
+//         getDates();
+//     });
 
-    function getDates() {
-        if($('#groupFechasTipos > div > #fechaInicioTipos').val() && $('#groupFechasTipos > div > #fechaFinalTipos').val()){
-            var fechaInicio = $('#fechaInicioTipos').val();
+//     function getDates() {
+//         if($('#groupFechasTipos > div > #fechaInicioTipos').val() && $('#groupFechasTipos > div > #fechaFinalTipos').val()){
+//             var fechaInicio = $('#fechaInicioTipos').val();
 
-            var fechaFinal = $('#fechaFinalTipos').val();
+//             var fechaFinal = $('#fechaFinalTipos').val();
 
-            console.log(fechaInicio);
+//             console.log(fechaInicio);
 
-            //return 'fechainici: '+ fechaInicio + ' fechafinal: ' + fechaFinal;
-            charts.init(fechaInicio, fechaFinal);
-        }
-    }
+//             //return 'fechainici: '+ fechaInicio + ' fechafinal: ' + fechaFinal;
+//             charts.init(fechaInicio, fechaFinal);
+//         }
+//     }
 
-    getDates();
+//     getDates();
 
 } )( jQuery );
