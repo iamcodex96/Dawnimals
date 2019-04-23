@@ -106,6 +106,7 @@
                             },
                             borderRadius: 4,
                             color: 'white',
+                            display: 'auto',
                             font: {
                                 weight: 'bold'
                             },
@@ -148,7 +149,7 @@
                             position: "right",
                             id: "y-axis-2",
                             min: 0,
-                            max:  10,
+                            max:  response.max,
                             maxTicksLimit: 5,
                             gridLines:{
                                 display: false
@@ -159,13 +160,14 @@
                             ticks:{
                                 fontColor: "#6632cd",
                                 beginAtZero: true,
-                                minRotation: 30
+                                minRotation: 30,
+                                max: response.max
                             }
                         }]
                     },
                     legend:{
                         display:true,
-                        position:'top',
+                        position:'bottom',
                         labels:{
                             fontColor:'#000',
                         }
