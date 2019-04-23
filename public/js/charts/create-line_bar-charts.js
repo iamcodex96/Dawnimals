@@ -1,19 +1,5 @@
 ( function ( $ ) {
 
-
-    colors_array = [
-		'#FF3784',
-		'#36A2EB',
-		'#4BC0C0',
-		'#F77825',
-		'#9966FF',
-		'#00A8C6',
-		'#379F7A',
-		'#CC2738',
-		'#8B628A',
-		'#8FBE00',
-		'#606060'
-	];
     var myLineChart;
 	var charts = {
 

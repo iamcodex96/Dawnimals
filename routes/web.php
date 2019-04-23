@@ -127,7 +127,7 @@ Route::get('/get-post-animal-data', 'ChartDataController@getAllTipesOfAnimals');
 
 Route::get('/get-post-center-data', 'ChartDataController@getAllCentros');
 
-Route::get('/test/{fechainicio}/{fechafin}', 'ChartDataController@getAllMonths');
+Route::get('/get-post-subtipos-data', 'ChartDataController@getAllSubtipos');
 
 //////////////////////////// PAGS CHARTS ////////////////////////////////////
 

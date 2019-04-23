@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Donacion;
 use App\Models\Centro;
+use App\Models\Subtipo;
 use Carbon\Carbon;
 
 class ChartDataController extends Controller
@@ -82,7 +83,7 @@ class ChartDataController extends Controller
     function getAllTipesOfAnimals(){
         $now = Carbon::now();
         $animal_donacion = array();
-        $background_color = array('#4ccd32','#6632cd','#cdb432','#3299cd','#c45850');
+        $background_color = array('#99CD32','#6632cd','#cdb432','#3299cd','#c45850');
 		$posts_animals = Donacion::orderBy( 'desc_animal', 'ASC' )->distinct()->pluck( 'desc_animal' );
         $posts_animals = json_decode( $posts_animals );
 
@@ -116,7 +117,7 @@ class ChartDataController extends Controller
         $centros_receptor_array = array();
         $centros_receptor = array();
         $centros_receptor_cantidad = array();
-        $background_color = array('#4ccd32','#6632cd','#cdb432','#3299cd','#c45850');
+        $background_color = array('#99CD32','#6632cd','#cdb432','#3299cd','#c45850');
         $centros_receptor_id = Donacion::orderBy( 'centros_receptor_id', 'ASC' )
         ->whereMonth( 'fecha_donativo', $now->month )
         ->whereYear( 'fecha_donativo', $now->year )
@@ -162,6 +163,53 @@ class ChartDataController extends Controller
     function  getDonacionXAnyo(){
         $now = Carbon::now();
         $donaciones_count = Donacion::whereYear( 'fecha_donativo', $now->year )
+        ->get()
+        ->count();
+		return $donaciones_count;
+    }
+
+
+    function getAllSubtipos(){
+        $now = Carbon::now();
+        $subtipos_id_array = array();
+        $subtipos_id_nom = array();
+        $subtipos_id_cantidad = array();
+        $background_color = array('#99CD32','#6632cd','#cdb432','#3299cd','#c45850');
+        $subtipos_id = Donacion::orderBy( 'subtipos_id', 'ASC' )
+        ->whereMonth( 'fecha_donativo', $now->month )
+        ->whereYear( 'fecha_donativo', $now->year )
+        ->distinct()
+        ->pluck( 'subtipos_id' );
+        $subtipos_id = json_decode( $subtipos_id );
+
+
+        if ( ! empty( $subtipos_id ) ) {
+			foreach ( $subtipos_id as $subtipos ){
+                $subtipos_id_nom_var = $this->getNomSubtipos( $subtipos );
+                $subtipos_id_cantidad_count = $this->getSubtipos( $subtipos );
+                array_push( $subtipos_id_nom, $subtipos_id_nom_var->nombre_esp );
+                array_push( $subtipos_id_cantidad, $subtipos_id_cantidad_count );
+			}
+        }
+
+        $subtipos_id_array = array(
+            'nombre_subtipos' => $subtipos_id_nom,
+            'cantidad_subtipos' => $subtipos_id_cantidad,
+            'background_color' => $background_color
+        );
+
+        return $subtipos_id_array;
+    }
+
+    function getNomSubtipos ( $subtipos_id ) {
+        $subtipos_id_nom = Subtipo::find( $subtipos_id );
+		return $subtipos_id_nom;
+    }
+
+    function  getSubtipos($subtipos_id){
+        $now = Carbon::now();
+        $donaciones_count = Donacion::where( 'subtipos_id', $subtipos_id )
+        ->whereMonth( 'fecha_donativo', $now->month )
         ->get()
         ->count();
 		return $donaciones_count;
