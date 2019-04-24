@@ -1,6 +1,6 @@
 
-var urlApi = 'http://localhost:8080/Dawnimals/public/api/';
-//var urlApi = 'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/api/';
+//var urlApi = 'http://localhost:8080/Dawnimals/public/api/';
+var urlApi = 'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/api/';
 var ftipos=[];
 var fcentros=[];
 var datos = null;
@@ -158,8 +158,8 @@ function createTable(donantes){
     donantes.forEach(function(donante){
         var acciones = $('<div></div>');
         var btngroup = $('<div></div>');
-        var urledit = 'http://localhost:8080/Dawnimals/public/backend/donantes/'+donante.id+'/edit';
-        //var urledit = 'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/backend/donantes/'+donante.id+'/edit';
+        //var urledit = 'http://localhost:8080/Dawnimals/public/backend/donantes/'+donante.id+'/edit';
+        var urledit = 'http://www.abp-politecnics.com/2019/daw/projecte02/dw04/public/backend/donantes/'+donante.id+'/edit';
         btngroup.addClass('btn-group');
         btngroup.append('<button onclick="setDonante('+donante.id+","+'\''+donante.nombre+'\''+')" data-dismiss="modal" class="btn btn-success"><i class="fas fa-hand-pointer"></i></button>');
         btngroup.append('<a href="'+ urledit +'" class="btn btn-warning"><i class="fas fa-edit"></i></a>');
