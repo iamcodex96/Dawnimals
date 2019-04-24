@@ -1,6 +1,6 @@
 @extends('backend.plantillas.m_index')
-@section('titulo','Donants')
-@section('subtitulo','Llistat de donants')
+@section('titulo','{{__("backend.donantes")}}')
+@section('subtitulo','{{__("backend.lista_donantes")}}')
 @section('url-crear',
 url('backend/donantes/create'))
 @section('m_contenido')
