@@ -175,7 +175,7 @@ class ChartDataController extends Controller
         $subtipos_id_nom = array();
         $subtipos_id_cantidad = array();
         $background_color = array('#99CD32','#6632cd','#cdb432','#3299cd','#c45850','#89b82d','#7546d2','#cdb432',
-        '#d2bb46','#c96861','#b04f48','#bda83f','#8258d6','#7ba528','#2db85d','#b82d88','#b82d43','#2DB8A2','#2DB85D',
+        '#8258d6','#c96861','#b04f48','#bda83f','#d2bb46','#7ba528','#2db85d','#b82d88','#b82d43','#2DB8A2','#2DB85D',
         '#B85D2D','#2D88B8','#88B82D','#B82D88','#2DB85D','#2DB8A3');
         $subtipos_id = Donacion::orderBy( 'subtipos_id', 'ASC' )
         ->whereMonth( 'fecha_donativo', $now->month )
