@@ -222,4 +222,12 @@
         idioma = "{{App::getLocale()}}";
     </script>
     <script src="{{ asset('js/api/donacionesAPI.js') }}"></script>
+    <script>
+    function setDonante(id,nombre){
+            var inputId = $('#d-id');
+            var inputNombre = $('#d-nombre');
+            inputId.val(id);
+            inputNombre.val(nombre);
+        }
+    </script>
 @endsection
