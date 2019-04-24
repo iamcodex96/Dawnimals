@@ -19,7 +19,7 @@ class ChartDataController extends Controller
 
 		$month_array = array();
         $posts_dates = Donacion::whereDate('fecha_donativo', '>=', $dateini)
-        ->whereDate('fecha_donativo', '<=', $datefin->addMonths(1))
+        ->whereDate('fecha_donativo', '<=', $datefin)
         ->orderBy( 'fecha_donativo', 'ASC' )->get()
         ->pluck( 'fecha_donativo' );
 		//$posts_dates = json_decode( $posts_dates );
