@@ -42,9 +42,15 @@ src: url("../../fuentes/Montserrat/Montserrat-SemiBold.ttf");
 
   #img2{
       background-image: url("../../img/cat_.png");
-      min-height: 450px;
+      min-height: 350px;
 
   }
+
+  #img3{
+    background-image: url("../../img/perro_prote.jpeg");
+    min-height: 350px;
+
+}
 
   #imghuellas{
     background-image: url("../../img/paw.png");
