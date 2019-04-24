@@ -80,6 +80,7 @@
         </div>
 
     </div>
+<div class="imgParallax" id="img3"></div>
 
     <div id="tercero" class="p-5">
         <h1 class="">{{__("frontend.tituloNuestrasDonaciones")}}</h1>
